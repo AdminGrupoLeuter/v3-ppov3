@@ -1,0 +1,206 @@
+SQL> SET TIMING ON
+SQL> 
+SQL> -----------------------------------INICIO MODIFICACIONES
+SQL> 
+SQL> --MAI
+SQL> CREATE TABLE EVE
+  2  (
+  3  EVEREF char(4) primary key,
+  4  EVEA varchar2(254),
+  5  EVECC varchar2(254),
+  6  EVECCO varchar2(254),
+  7  EVEMOM date
+  8  );
+
+Tabla creada.
+
+Transcurrido: 00:00:00.06
+SQL> 
+SQL> COMMENT ON TABLE EVE IS 'Eventos. Registro de a quien enviarlos';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN EVE.EVEREF IS 'Referencia';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.01
+SQL> COMMENT ON COLUMN EVE.EVEA IS 'Destinatario. Direcciones de correo separadas por coma';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN EVE.EVECC IS 'Con copia. Direcciones de correo separadas por coma';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN EVE.EVECCO IS 'Con copia oculta. Direcciones de correo separadas por coma';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.01
+SQL> COMMENT ON COLUMN EVE.EVEMOM IS 'En blanco, se envia automaticamente; si tiene valor se envia despues de pasado el momento';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> 
+SQL> CREATE TABLE MAI
+  2  (
+  3  MAICOD number(9) primary key,
+  4  MAIREF char(4) not null,
+  5  MAIASU varchar2(254),
+  6  MAITXT varchar2(1024),
+  7  MAIADJ varchar2(254),
+  8  MAISIT char(2),
+  9  MAIMOMCRE date,
+ 10  MAIMOMENV date,
+ 11  constraint fk_maieveref
+ 12  foreign key (mairef) references eve(everef)
+ 13  );
+
+Tabla creada.
+
+Transcurrido: 00:00:00.31
+SQL> 
+SQL> COMMENT ON TABLE MAI IS 'Mensajes para enviar';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.01
+SQL> COMMENT ON COLUMN MAI.MAICOD IS 'Codigo';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN MAI.MAIREF IS 'Referencia de evento';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN MAI.MAIASU IS 'Asunto del correo';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN MAI.MAITXT IS 'Mensaje del correo';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.02
+SQL> COMMENT ON COLUMN MAI.MAIADJ IS 'Lista de archivos .pdf para enviar separados por comas. No se usa de momento';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN MAI.MAISIT IS 'Situacion del correo: PD pendiente, CE enviado';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN MAI.MAIMOMCRE IS 'Momento de creacion del evento';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.01
+SQL> COMMENT ON COLUMN MAI.MAIMOMENV IS 'Momento de envio del evento';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> 
+SQL> CREATE OR REPLACE TRIGGER TR_MAI_INCI
+  2  BEFORE INSERT ON HISMOVALM
+  3  FOR EACH ROW
+  4  DECLARE
+  5  	l_Asunto     char(254);
+  6  	l_Mensaje    char(254);
+  7  	l_AccTipTar  char(4);
+  8  	l_ArtDes     char(40);
+  9  	l_RecMaqRef  char(16);
+ 10  	l_RecMaqDes  char(40);
+ 11  	l_RecOpeRef  char(16);
+ 12  	l_RecOpeDes  char(40);
+ 13  	l_RftTerRef  char(16);
+ 14  	l_RftTerDes  char(40);
+ 15  	l_NumVal     number(9,0);
+ 16  begin
+ 17  	l_AccTipTar := :new.AccTipTar;
+ 18  	if l_AccTipTar like 'IN%' then
+ 19  	   -- Tipo de incidencia
+ 20  	   l_Mensaje := 'Tipo incidencia: ' || l_AccTipTar || chr(10);
+ 21  	   -- Momento
+ 22  	   l_Mensaje := l_Mensaje || 'Momento: ' || :new.MomMov || chr(10);
+ 23  	   -- Ubicacion
+ 24  	   l_Mensaje := l_Mensaje || 'UbicaciÆn: ' || :new.AlmUbiRef || chr(10);
+ 25  	   -- Articulo
+ 26  	   select ArtDes
+ 27  	      into l_ArtDes
+ 28  	      from art
+ 29   where artcod = :new.ArtCod;
+ 30   l_Mensaje := l_Mensaje || 'ArtÕculo: ' || :new.ArtRef || ', ' || l_ArtDes || chr(10);
+ 31  	   -- Cantidad
+ 32   l_Mensaje := l_Mensaje || 'Cantidad: ' || :new.CanUni || ' UD' || chr(10);
+ 33   -- Operario
+ 34   select recmaqref,recoperef,rftterref
+ 35  	 into l_RecMaqRef,l_RecOpeRef,l_RftTerRef
+ 36  	 from hismovope
+ 37   where hisopecod = :new.hisopecod;
+ 38   select RecOpeDes
+ 39  	 into l_RecOpeDes
+ 40  	 from RecOpe
+ 41   where RecOpeRef = l_RecOpeRef;
+ 42   select RecMaqDes
+ 43  	 into l_RecMaqDes
+ 44  	 from RecMaq
+ 45   where RecMaqRef = l_RecMaqRef;
+ 46   select RftTerDes
+ 47  	 into l_RftTerDes
+ 48  	 from RftTer
+ 49   where RftTerRef = l_RftTerRef;
+ 50   l_Mensaje := l_Mensaje || 'Operario: ' || l_RecOpeRef || ', ' || l_RecOpeDes || chr(10);
+ 51  	   l_Mensaje := l_Mensaje || 'Terminal: ' || l_RftTerRef || ', ' || l_RftTerDes || chr(10);
+ 52  	   select ValAct
+ 53  	      into l_NumVal
+ 54  	 from gencon
+ 55   where genconcod = 'CMAI';
+ 56   update gencon
+ 57  	 set ValAct = l_NumVal +1
+ 58   where genconcod = 'CMAI';
+ 59   l_Asunto := 'Incidencia';
+ 60   insert into mai (maicod, mairef, maiasu, maitxt, maisit, maimomcre)
+ 61  	 values (l_NumVal,'INCI',l_Asunto,l_Mensaje,'PD',sysdate);
+ 62  	end if; -- if IN*
+ 63  end; -- begin del trigger
+ 64  /
+
+Disparador creado.
+
+Transcurrido: 00:00:01.05
+SQL> 
+SQL> -- Se deja desactivado
+SQL> ALTER TRIGGER TR_MAI_INCI DISABLE;
+
+Disparador modificado.
+
+Transcurrido: 00:00:00.03
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL>  -----------------------------------FIN MODIFICACIONES
+SQL> 
+SQL> UPDATE VERSIONES SET VERSION='0126', MOMENTO=SYSDATE WHERE SOFCOD='BD';
+
+1 fila actualizada.
+
+Transcurrido: 00:00:00.00
+SQL> COMMIT;
+
+ConfirmaciÆn terminada.
+
+Transcurrido: 00:00:00.00
+SQL> 
+SQL> SPOOL OFF;

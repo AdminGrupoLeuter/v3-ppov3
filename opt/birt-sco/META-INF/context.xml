@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+  <Listener className="org.apache.catalina.startup.TldConfig"/>
+  <Resource
+    auth="Container"
+    description="ADAIA"
+    name="jdbc/ADAIASRV"
+    type="javax.sql.DataSource"
+    maxActive="5"
+    maxIdle="-1"
+    username="sco"
+    maxWait="10000"
+    driverClassName="oracle.jdbc.OracleDriver"
+    password="sco"
+    url="jdbc:oracle:thin:@172.20.10.56:1521:adaiasrv"/>
+</Context>

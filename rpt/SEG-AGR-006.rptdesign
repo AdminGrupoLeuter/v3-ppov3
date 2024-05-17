@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Giménez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 09/03/2010 (versión inicial) 
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*       Informe de grupos de usuarios.
+*
+* PARAMETROS RECIBIDOS:
+*       1. pdecOpeAgrCod                        -> Código interno grupo de usuarios
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pdecOpeAgrCod" id="5796">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecOpeAgrCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">11</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="SEG" id="411">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@172.20.10.51:1521:adaiasrv</property>
+            <property name="odaUser">loreagx</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">bG9yZWFneA==</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="SEG-AGR-006 01 (Ppal)" id="6003">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">NUMORD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">RECOPEREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">RECOPEDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">SEG</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecOpeAgrCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">NUMORD</property>
+                    <property name="nativeName">NUMORD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">RECOPEREF</property>
+                    <property name="nativeName">RECOPEREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">RECOPEDES</property>
+                    <property name="nativeName">RECOPEDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.NUMORD,
+         b.RECOPEREF,
+         b.RECOPEDES
+FROM     RECOPEAGRREL a
+           LEFT OUTER JOIN RECOPE b
+              ON b.RECOPECOD = a.RECOPECOD
+WHERE    a.OPEAGRCOD = ?
+ORDER BY a.NUMORD</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="SEG-AGR-006 02 (Cab)" id="6181">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">OPEAGRREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">OPEAGRDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">OPEAGRACT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">SEG</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecOpeAgrCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">OPEAGRREF</property>
+                    <property name="nativeName">OPEAGRREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">OPEAGRDES</property>
+                    <property name="nativeName">OPEAGRDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">OPEAGRACT</property>
+                    <property name="nativeName">OPEAGRACT</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.OPEAGRREF,
+         a.OPEAGRDES,
+         a.OPEAGRACT
+FROM     RECOPEAGR a
+WHERE    a.OPEAGRCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="SEG-AGR-006 03 (Cab2)" id="6305">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">SEG</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1
+</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">portrait</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="InformeDeGruposDeUsuarios"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="6306">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">SEG-AGR-006 03 (Cab2)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(SEG-AGR-006)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="3563">
+            <property name="marginTop">0pt</property>
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">40%</property>
+            <column id="3564">
+                <property name="width">60mm</property>
+            </column>
+            <column id="3565">
+                <property name="width">60mm</property>
+            </column>
+            <column id="6267">
+                <property name="width">80mm</property>
+            </column>
+            <row id="3567">
+                <property name="height">0.312in</property>
+                <cell id="3568"/>
+                <cell id="3569"/>
+                <cell id="6265"/>
+            </row>
+            <row id="5225">
+                <cell id="5226">
+                    <label id="5444">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="GrupoDeUsuarios"></text-property>
+                    </label>
+                </cell>
+                <cell id="5227">
+                    <data id="6273">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">SEG-AGR-006 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">OPEAGRREF</property>
+                                <property name="displayName">OPEAGRREF</property>
+                                <expression name="expression">dataSetRow["OPEAGRREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">OPEAGRREF</property>
+                    </data>
+                </cell>
+                <cell id="6266">
+                    <data id="6274">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">SEG-AGR-006 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">OPEAGRDES</property>
+                                <property name="displayName">OPEAGRDES</property>
+                                <expression name="expression">dataSetRow["OPEAGRDES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">OPEAGRDES</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="6268">
+                <cell id="6269">
+                    <label id="6272">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Activo?"></text-property>
+                    </label>
+                </cell>
+                <cell id="6270">
+                    <data id="6275">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">SEG-AGR-006 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">OPEAGRACT</property>
+                                <property name="displayName">OPEAGRACT</property>
+                                <expression name="expression">dataSetRow["OPEAGRACT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">OPEAGRACT</property>
+                    </data>
+                </cell>
+                <cell id="6271"/>
+            </row>
+        </grid>
+        <table id="6276">
+            <property name="marginTop">0pt</property>
+            <property name="width">50%</property>
+            <property name="dataSet">SEG-AGR-006 01 (Ppal)</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">NUMORD</property>
+                    <property name="displayName">NUMORD</property>
+                    <expression name="expression">dataSetRow["NUMORD"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">RECOPEREF</property>
+                    <property name="displayName">RECOPEREF</property>
+                    <expression name="expression">dataSetRow["RECOPEREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RECOPEDES</property>
+                    <property name="displayName">RECOPEDES</property>
+                    <expression name="expression">dataSetRow["RECOPEDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="6295">
+                <property name="width">20mm</property>
+            </column>
+            <column id="6296">
+                <property name="width">40mm</property>
+            </column>
+            <column id="6297">
+                <property name="width">70mm</property>
+            </column>
+            <header>
+                <row id="6298">
+                    <property name="height">0.312in</property>
+                    <cell id="6299"/>
+                    <cell id="6300"/>
+                    <cell id="6301"/>
+                </row>
+                <row id="6277">
+                    <property name="verticalAlign">bottom</property>
+                    <cell id="6278">
+                        <label id="6302">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <text-property name="text" key="Orden"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6280">
+                        <label id="6303">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Usuario"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6282">
+                        <label id="6304">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Nombre"></text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="6284">
+                    <cell id="6285">
+                        <data id="6286">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">NUMORD</property>
+                        </data>
+                    </cell>
+                    <cell id="6287">
+                        <data id="6288">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">RECOPEREF</property>
+                        </data>
+                    </cell>
+                    <cell id="6289">
+                        <data id="6290">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">RECOPEDES</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="6291">
+                    <property name="height">0.312in</property>
+                    <cell id="6292"/>
+                    <cell id="6293"/>
+                    <cell id="6294"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

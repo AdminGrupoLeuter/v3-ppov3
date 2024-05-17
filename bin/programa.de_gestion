@@ -1,0 +1,248 @@
+# Parametro DELIVERY (SI/NO) determina si hay que copiar los TREXPORD.* en
+# el directorio determinado por la variable de entorno $ADAIA_A_DELIVERY
+DELIVERY=NO
+#-------------- DEFINICION DE FICHEROS Y PROGRAMAS ------------------#
+#
+#Definimos los nombres de Ficheros
+#
+             F_ARTICULOS=TRART*
+              F_TERCEROS=TRTER*
+        F_PRESENTACIONES=TRARPR*
+           F_UBICACIONES=TRARUB*
+                  F_KITS=TRARKT*
+              F_PRIVADOS=TRARPV*
+     F_ORDENES_RECEPCION=TRRECORD*
+   F_ALBARANES_RECEPCION=---TRALBREC*
+                 F_RUTAS=TRRUTA*
+    F_ORDENES_EXPEDICION=TREXPORD*
+  F_ALBARANES_EXPEDICION=---TRALBEXP*
+        F_CODIGOS_BARRAS=TRAREA*
+F_ARTICULOS_ALTERNATIVOS=TRARAL*
+ F_PALLETS_DE_PRODUCCION=TRUNIT*
+       F_CARGA_DE_CAMION=TRCARCAM*
+
+#Definimos los programas de Traspasos
+#
+             ARTICULOS=LOGIC-INT-ART-001
+              TERCEROS=LOGIC-INT-TER-001
+        PRESENTACIONES=LOGIC-INT-PRE-001
+           UBICACIONES=LOGIC-INT-AUB-001
+                  KITS=LOGIC-INT-KIT-001
+              PRIVADOS=LOGIC-PRV-INT-PRV-001
+     ORDENES_RECEPCION=LOGIC-INT-ORE-001
+   ALBARANES_RECEPCION=LOGIC-INT-RAL-001
+ 		 RUTAS=LOGIC-INT-RUT-001
+    ORDENES_EXPEDICION=LOGIC-INT-OEX-001
+  ALBARANES_EXPEDICION=LOGIC-INT-EAL-001
+        CODIGOS_BARRAS=LOGIC-INT-EAN-001
+ARTICULOS_ALTERNATIVOS=LOGIC-INT-ALT-001
+ PALLETS_DE_PRODUCCION=LOGIC-INT-RPR-001
+       CARGA_DE_CAMION=LOGIC-INT-CCD-001
+#--------------------------------------------------------------------#
+
+#
+function Lanza_Speedware
+{
+ FICHERO=$1
+
+ LANZA=FALSE
+ case $FICHERO in
+   $F_ARTICULOS)
+      SENTENCIA="$ARTICULOS USING '$FICHERO';";LANZA=TRUE;;
+   $F_TERCEROS)
+      SENTENCIA="$TERCEROS USING '$FICHERO';";LANZA=TRUE;;
+   $F_PRESENTACIONES)
+      SENTENCIA="$PRESENTACIONES USING '$FICHERO';";LANZA=TRUE;;
+   $F_UBICACIONES)
+      SENTENCIA="$UBICACIONES USING '$FICHERO';";LANZA=TRUE;;
+   $F_KITS)
+      SENTENCIA="$KITS USING '$FICHERO';";LANZA=TRUE;;
+   $F_PRIVADOS)
+      SENTENCIA="$PRIVADOS USING '$FICHERO';";LANZA=TRUE;;
+   $F_ORDENES_RECEPCION)
+      SENTENCIA="$ORDENES_RECEPCION USING '$FICHERO';";LANZA=TRUE;;
+   $F_ALBARANES_RECEPCION)
+      SENTENCIA="$ALBARANES_RECEPCION USING '$FICHERO';";LANZA=TRUE;;
+   $F_RUTAS)
+      SENTENCIA="$RUTAS USING '$FICHERO';";LANZA=TRUE;;
+   $F_ORDENES_EXPEDICION)
+      SENTENCIA="$ORDENES_EXPEDICION USING '$FICHERO';";LANZA=TRUE;;
+   $F_ALBARANES_EXPEDICION)
+      SENTENCIA="$ALBARANES_EXPEDICION USING '$FICHERO';";LANZA=TRUE;;
+   $F_CODIGOS_BARRAS)
+      SENTENCIA="$CODIGOS_BARRAS USING '$FICHERO';";LANZA=TRUE;;
+   $F_ARTICULOS_ALTERNATIVOS)
+      SENTENCIA="$ARTICULOS_ALTERNATIVOS USING '$FICHERO';";LANZA=TRUE;;
+   $F_PALLETS_DE_PRODUCCION)
+      SENTENCIA="$PALLETS_DE_PRODUCCION USING '$FICHERO';";LANZA=TRUE;;
+   $F_CARGA_DE_CAMION)
+      SENTENCIA="$CARGA_DE_CAMION USING '$FICHERO';";LANZA=TRUE;;
+ esac
+
+ if test $LANZA = 'TRUE'
+ then
+     adaia -Jl <<! 
+$SENTENCIA
+EXIT;
+!
+     if test $DELIVERY = 'SI' && test $FICHERO = $F_ORDENES_EXPEDICION
+     then
+	cp $FICHERO $ADAIA_A_DELIVERY
+     fi
+     mv $FICHERO $ADAIA_TMP
+    
+ fi
+}
+
+#
+function Procesa_Ficheros
+{
+ #TERCEROS
+ #========
+ for FNAME in `ls -rt $F_TERCEROS 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #ARTICULOS
+ #=========
+ for FNAME in `ls -rt $F_ARTICULOS 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #PRESENTACIONES
+ #==============
+ for FNAME in `ls -rt $F_PRESENTACIONES 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #UBICACIONES
+ #===========
+ for FNAME in `ls -rt $F_UBICACIONES 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #KITS
+ #====
+ for FNAME in `ls -rt $F_KITS 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #PRIVADOS
+ #========
+ for FNAME in `ls -rt $F_PRIVADOS 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #ORDENES_RECEPCION
+ #=================
+ for FNAME in `ls -rt $F_ORDENES_RECEPCION 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #ALBARANES_RECEPCION
+ #===================
+ for FNAME in `ls -rt $F_ALBARANES_RECEPCION 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #RUTAS
+ #==================
+ for FNAME in `ls -rt $F_RUTAS 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #ORDENES_EXPEDICION
+ #==================
+ for FNAME in `ls -rt $F_ORDENES_EXPEDICION 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #ALBARANES_EXPEDICION
+ #====================
+ for FNAME in `ls -rt $F_ALBARANES_EXPEDICION 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #CODIGOS_BARRAS
+ #==============
+ for FNAME in `ls -rt $F_CODIGOS_BARRAS 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #ARTICULOS_ALTERNATIVOS
+ #======================
+ for FNAME in `ls -rt $F_ARTICULOS_ALTERNATIVOS 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #PALLETS_DE_PRODUCCION
+ #======================
+ for FNAME in `ls -rt $F_PALLETS_DE_PRODUCCION 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+ #CARGA_DE_CAMION_DIRIGIDA
+ #========================
+ for FNAME in `ls -rt $F_CARGA_DE_CAMION 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+}
+#
+# Funciones del programa
+#
+
+# Sustituye los tabuladores por pipes
+
+function TabToPipes
+{
+FNAME=$1
+ex $ADAIA_TRASP/$FNAME >/dev/null 2>&1 <<?
+%s/	/|/g
+wq!
+?
+}
+
+############################################################################
+# Programa principal
+############################################################################
+
+# Cargamos el entorno
+
+. /home/sco/bin/entorno >/dev/null
+cd $ADAIA_DE_GESTION
+
+#Cojemos los ficheros de la mÄquina de gestion (descomentar en caso necesario)
+#ftpgets "*"
+
+#Enviamos los ficheros de 'de_gestion' al directorio de procesado $ADAIA_TRASP
+#
+for FNAME in `ls -rt $ADAIA_DE_GESTION`
+do
+#   TabToPipes $ADAIA_DE_GESTION/$FNAME
+   ex $ADAIA_TRASP/$FNAME >/dev/null 2>&1 <<!ex
+:r $ADAIA_DE_GESTION/$FNAME
+:x
+!ex
+   rm $ADAIA_DE_GESTION/$FNAME
+done
+
+#Procesamos los ficheros
+#
+cd $ADAIA_TRASP
+Procesa_Ficheros

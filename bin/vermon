@@ -1,0 +1,8 @@
+echo
+NUI=`ps -ef | grep "nui" | egrep -v grep |wc -l`
+if test $NUI -gt 1
+then
+   echo "WNAS (nui) activo"
+else
+   echo "WNAS (nui) inactivo !!"
+fi

@@ -1,0 +1,63 @@
+#Script de desactivacion de la version actual, y activacion de la anterior
+#
+#Sintaxis: ver_des 
+##############################################################
+#Descripcion: Modifica el entorno.real modificando el ADAIA_VERSION por el 
+# valor indicado en el ADAIA_VERSION_OLD si i solo si existe esa version
+
+. $ADAIA_HOME/bin/entorno.real
+
+ERROR=1
+if test $ADAIA_VERSION
+then
+   if test $ADAIA_VERSION_OLD
+   then
+      if test $ADAIA_VERSION = $ADAIA_VERSION_OLD
+      then 
+	 echo
+	 echo "La version anterior (\$ADAIA_VERSION_OLD) es la misma que la actual ($ADAIA_VERSION_OLD)"
+	 echo "no se puede desactivar la version !!!"
+	 echo
+	 echo "Utilice el comando 'activa'"
+	 exit
+      fi
+   fi
+fi
+
+#Comprovar si existe ADAIA_VERSION_OLD en el entorno.real
+#==========================================================
+#
+grep ADAIA_VERSION_OLD $ADAIA_HOME/bin/entorno.real >/dev/null
+RESP=$?
+if [ $RESP = 0 ]
+then 
+   #Modificar el valor de ADAIA_VERSION por $ADAIA_VERSION_OLD
+   #==========================================================
+   #
+   if test -d $ADAIA_VERSION_OLD
+   then
+   echo "Modificando el valor de ADAIA_VERSION ($ADAIA_VERSION_OLD)"
+   ex $ADAIA_HOME/bin/entorno.real >/dev/null 2>&1 <<?
+%s/ADAIA_VERSION=$ADAIA_VERSION/ADAIA_VERSION=$ADAIA_VERSION_OLD/g
+x!
+?
+   ERROR=0
+   else
+      echo
+      echo "NO EXISTE la version anterior $ADAIA_VERSION_OLD !!!"
+      echo "no se puede desactivar la version actual ($ADAIA_VERSION)"
+      echo
+   fi
+else
+   #Si no existe ADAIA_VERSION_OLD no podemos deactivar version
+   #===========================================================
+   #
+   echo
+   echo "No existe ADAIA_VERSION_OLD por lo tanto no se puede desactivar la version!!"
+   echo
+fi
+
+if test $ERROR = 0
+then
+echo Version $ADAIA_VERSION desactivada!
+fi

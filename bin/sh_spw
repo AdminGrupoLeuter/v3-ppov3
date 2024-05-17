@@ -1,0 +1,13 @@
+#Shell de acceso al S.O. desde Adaia
+if test $LOGNAME = 'adaia' or test $LOGNAME = 'leuter'
+then
+PS1='(exit para continuar) \
+Adaia:$PWD> '
+HOME=$ADAIA_HOME/usr/$LOGNAME
+cd $HOME
+clear
+sh
+else
+   echo "Usuario no autorizado para esta tarea"
+   sleep 2
+fi

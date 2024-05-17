@@ -1,0 +1,134 @@
+. /casa1/adaia/bin/entorno >/dev/null
+
+if test -r $ADAIA_A_GESTION/.tmp
+then
+   echo " "
+else
+   echo "Creando el directorio" $ADAIA_A_GESTION"/.tmp"
+   mkdir $ADAIA_A_GESTION/.tmp
+fi
+cd $ADAIA_A_GESTION/.tmp
+find .. -name 'TRREC.*' -exec mv {} . \;
+find .. -name 'TRARPR.*' -exec mv {} . \;
+find .. -name 'TRAREA.*' -exec mv {} . \;
+find .. -name 'TRSTOART.*' -exec mv {} . \;
+find .. -name 'TRSTOMOV.*' -exec mv {} . \;
+find .. -name 'TRCONT.*' -exec mv {} . \;
+find .. -name 'TRSTO.*' -exec mv {} . \;
+find .. -name 'TRSPCONS.*' -exec mv {} . \;
+find .. -name 'TREXPACC.*' -exec mv {} . \;
+find .. -name 'TREXP.*' -exec mv {} . \;
+find .. -name 'TRCAM.*' -exec mv {} . \;
+convierte.sh GESTION
+#Ficheros TRREC
+#--------------
+for FNAME in `find . -name 'TRREC.*'`
+do
+FNAME=`echo $FNAME|awk -F"\.\/" '{print $2}'`
+fname=`echo F$FNAME`
+mv $FNAME $fname
+ftpput_jpl $fname $FNAME
+done
+
+#Ficheros TRARPR
+#---------------
+for FNAME in `find . -name 'TRARPR.*'`
+do
+FNAME=`echo $FNAME|awk -F"\.\/" '{print $2}'`
+fname=`echo F$FNAME`
+mv $FNAME $fname
+ftpput_jpl $fname $FNAME
+done
+
+#Ficheros TRAREA
+#---------------
+for FNAME in `find . -name 'TRAREA.*'`
+do
+FNAME=`echo $FNAME|awk -F"\.\/" '{print $2}'`
+fname=`echo F$FNAME`
+mv $FNAME $fname
+ftpput_jpl $fname $FNAME
+done
+
+#Ficheros TRSTOART
+#---------------
+for FNAME in `find . -name 'TRSTOART.*'`
+do
+FNAME=`echo $FNAME|awk -F"\.\/" '{print $2}'`
+fname=`echo F$FNAME`
+mv $FNAME $fname
+ftpput_jpl $fname $FNAME
+done
+
+#Ficheros TRSTOMOV
+#---------------
+for FNAME in `find . -name 'TRSTOMOV.*'`
+do
+FNAME=`echo $FNAME|awk -F"\.\/" '{print $2}'`
+fname=`echo F$FNAME`
+mv $FNAME $fname
+ftpput_jpl $fname $FNAME
+done
+
+#Ficheros TRCONT
+#---------------
+for FNAME in `find . -name 'TRCONT.*'`
+do
+FNAME=`echo $FNAME|awk -F"\.\/" '{print $2}'`
+fname=`echo F$FNAME`
+mv $FNAME $fname
+ftpput_jpl $fname $FNAME
+done
+
+#Ficheros TRSTO
+#---------------
+for FNAME in `find . -name 'TRSTO.*'`
+do
+FNAME=`echo $FNAME|awk -F"\.\/" '{print $2}'`
+fname=`echo F$FNAME`
+mv $FNAME $fname
+ftpput_jpl $fname $FNAME
+done
+
+#Ficheros TRSPCONS
+#---------------
+for FNAME in `find . -name 'TRSPCONS.*'`
+do
+FNAME=`echo $FNAME|awk -F"\.\/" '{print $2}'`
+fname=`echo F$FNAME`
+mv $FNAME $fname
+ftpput_jpl $fname $FNAME
+done
+
+#Ficheros TREXPACC
+#---------------
+for FNAME in `find . -name 'TREXPACC.*'`
+do
+FNAME=`echo $FNAME|awk -F"\.\/" '{print $2}'`
+fname=`echo F$FNAME`
+mv $FNAME $fname
+ftpput_jpl $fname $FNAME
+done
+
+#Ficheros TREXP
+#---------------
+for FNAME in `find . -name 'TREXP.*'`
+do
+FNAME=`echo $FNAME|awk -F"\.\/" '{print $2}'`
+fname=`echo F$FNAME`
+mv $FNAME $fname
+ftpput_jpl $fname $FNAME
+done
+
+#Ficheros TRCAM
+#---------------
+for FNAME in `find . -name 'TRCAM.*'`
+do
+FNAME=`echo $FNAME|awk -F"\.\/" '{print $2}'`
+fname=`echo F$FNAME`
+mv $FNAME $fname
+ftpput_jpl $fname $FNAME
+done
+
+
+

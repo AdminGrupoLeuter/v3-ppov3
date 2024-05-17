@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;2.3.2.v20090601-0700></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">CEA, 25/10/2013: Creacion del informe</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pstrDesde" id="2251">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText">Fecha Desde DD/MM/YYYYHH24:MI:SS</text-property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">22/10/201300:00:00</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrHasta" id="2252">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText">Fecha Hasta DD/MM/YYYYHH24:MI:SS</text-property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">25/10/201323:59:59</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrTipo" id="2253">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText">Tipo</text-property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrDocumento" id="2255">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecPercentAlm" id="2254">
+            <property name="valueType">static</property>
+            <property name="dataType">float</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText">Porciento Almacen</text-property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">100</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Fixed</property>
+                <property name="pattern">Fixed</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Oracle" id="411">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@172.20.10.56:1521:adaiasrv</property>
+            <property name="odaUser">adaia3</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YWRhaWEz</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+        <script-data-source name="Script" id="2356"/>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Cabecera" id="2247">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Oracle</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1
+</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+
+  <Version>1.0</Version>
+
+  <design:ResultSets derivedMetaData="true">
+
+    <design:resultSetDefinitions>
+
+      <design:resultSetColumns>
+
+        <design:resultColumnDefinitions>
+
+          <design:attributes>
+
+            <design:name>CLIENTE</design:name>
+
+            <design:position>1</design:position>
+
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+
+            <design:precision>20</design:precision>
+
+            <design:scale>0</design:scale>
+
+            <design:nullability>NotNullable</design:nullability>
+
+            <design:uiHints>
+
+              <design:displayName>CLIENTE</design:displayName>
+
+            </design:uiHints>
+
+          </design:attributes>
+
+          <design:usageHints>
+
+            <design:label>CLIENTE</design:label>
+
+            <design:formattingHints>
+
+              <design:displaySize>20</design:displaySize>
+
+            </design:formattingHints>
+
+          </design:usageHints>
+
+        </design:resultColumnDefinitions>
+
+      </design:resultSetColumns>
+
+    </design:resultSetDefinitions>
+
+  </design:ResultSets>
+
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Lineas" id="2250">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">MOMINI</property>
+                    <property name="displayName">MOMINI</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CCATIP</property>
+                    <property name="displayName">CCATIP</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CNTDORREF</property>
+                    <property name="displayName">CNTDORREF</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CCASIT</property>
+                    <property name="displayName">CCASIT</property>
+                </structure>
+                <structure>
+                    <property name="columnName">RECOPEREF</property>
+                    <property name="displayName">RECOPEREF</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CNTCOD</property>
+                    <property name="displayName">CNTCOD</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">MOMINI</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CCATIP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CNTDORREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CCASIT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">RECOPEREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">CNTCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Oracle</property>
+            <method name="beforeOpen"><![CDATA[// len (DD/MM/YYYYHH:MI:SS)= 18
+
+if (params["pstrDesde"].value != null &amp;&amp; params["pstrDesde"].value.length==18) {
+  this.queryText = this.queryText + " AND MOMINI > LTR_TO_DATE('" + params["pstrDesde"].value + "','DD/MM/YYYYHH24:MI:SS')";
+}  
+if (params["pstrHasta"].value != null &amp;&amp; !params["pstrHasta"].value.length==18) {
+  this.queryText = this.queryText + " AND MOMINI < LTR_TO_DATE('" + params["pstrHasta"].value + "','DD/MM/YYYYHH24:MI:SS')";
+}
+if (params["pstrTipo"].value != null &amp;&amp; params["pstrTipo"].value.length>0) {
+	P_TIPO = BirtStr.left(params["pstrTipo"].value + "      ",4);
+	P_DOCUMENTO = params["pstrDocumento"].value;
+	
+	this.queryText = this.queryText +  " AND CCATIP = '" + P_TIPO + "'";
+	
+	if (P_DOCUMENTO != null &amp;&amp; P_DOCUMENTO.length > 0) {
+		
+		if (BirtComp.equalTo(P_TIPO,"EXP ")) {
+			this.queryText = this.queryText + " AND C.CNTCOD IN " +
+                       "(SELECT CNTEXTCOD " +
+                         "FROM CNTNDO, EXPORDCAB " +
+                          "WHERE CNTEXTCOD = C.CNTCOD " +
+                          "AND (CNTNDO.EXPORDCOD = EXPORDCAB.EXPORDCOD OR " +
+                               "CNTNDO.EXPORDCODORI = EXPORDCAB.EXPORDCOD) "+
+                          "AND EXPORDREF LIKE '%" + P_DOCUMENTO + "%')";
+		
+		}
+		if (BirtComp.equalTo(P_TIPO,"REP ")) {
+			this.queryText = this.queryText + " AND C.CNTCOD IN " +
+                       "(SELECT CNTEXTCOD " +
+                         "FROM CNTNDO, RECORDCAB, RECCAB " +
+                        "WHERE CNTEXTCOD = C.CNTCOD " +
+                          "AND RECCAB.RECORDCOD = RECORDCAB.RECORDCOD " +
+                          "AND (RECCAB.RECCOD = CNTNDO.RECCOD) " +
+                          "AND RECORDREF LIKE '%" + P_DOCUMENTO + "%')";
+		}
+	}
+} 
+this.queryText = this.queryText + " ORDER BY TO_CHAR(MOMINI,'YYYYMMDDHH24MISS') ";]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">MOMINI</property>
+                    <property name="nativeName">MOMINI</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CCATIP</property>
+                    <property name="nativeName">CCATIP</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CNTDORREF</property>
+                    <property name="nativeName">CNTDORREF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CCASIT</property>
+                    <property name="nativeName">CCASIT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">RECOPEREF</property>
+                    <property name="nativeName">RECOPEREF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">CNTCOD</property>
+                    <property name="nativeName">CNTCOD</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <property name="queryText">--where en SCRIPT
+SELECT MOMINI, CCATIP , CNTDORREF, CCASIT, RECOPEREF, C.CNTCOD
+FROM CCACAB C
+LEFT JOIN CNTDOR D ON D.CNTCOD = C.CNTCOD
+LEFT JOIN RECOPE O ON O.RECOPECOD = C.CNTRECOPE
+WHERE 1 = 1</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CCACOD</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CCACOD</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CCACOD</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CNTCOD</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CNTCOD</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CNTCOD</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>MOMINI</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>MOMINI</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MOMINI</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>MOMFIN</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>MOMFIN</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MOMFIN</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CCARECOPE</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CCARECOPE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CCARECOPE</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CNTRECOPE</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CNTRECOPE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CNTRECOPE</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>VERRECOPE</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>VERRECOPE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>VERRECOPE</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CCASIT</design:name>
+            <design:position>8</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>4</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CCASIT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CCASIT</design:label>
+            <design:formattingHints>
+              <design:displaySize>4</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CCATIP</design:name>
+            <design:position>9</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>4</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CCATIP</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CCATIP</design:label>
+            <design:formattingHints>
+              <design:displaySize>4</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Documento" id="2294">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RECORDREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">EXPORDREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">EXPORDCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">RECCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Oracle</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">pintCntcod</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">0</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RECORDREF</property>
+                    <property name="nativeName">RECORDREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">EXPORDREF</property>
+                    <property name="nativeName">EXPORDREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">EXPORDCOD</property>
+                    <property name="nativeName">EXPORDCOD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">RECCOD</property>
+                    <property name="nativeName">RECCOD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select RECORDREF, EXPORDREF,N.EXPORDCOD,N.RECCOD
+from CNTNDO N
+LEFT JOIN EXPORDCAB E ON N.EXPORDCOD = E.EXPORDCOD
+LEFT JOIN RECCAB R ON N.RECCOD = R.RECCOD
+LEFT JOIN RECORDCAB C ON R.RECORDCOD = C.RECORDCOD
+WHERE ROWNUM = 1
+AND CNTEXTCOD = :pintCntcod
+ORDER BY N.EXPORDCOD DESC, N.RECCOD DESC</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>'DOC'</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>3</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>'DOC'</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>'DOC'</design:label>
+            <design:formattingHints>
+              <design:displaySize>3</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <script-data-set name="PorcientoAlm" id="2357">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">PORCIENTOALM</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">PORCIENTOALM</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">PORCIENTOALM</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Script</property>
+            <method name="open"><![CDATA[totalrows = 1;
+currentrow = 0;]]></method>
+            <method name="fetch"><![CDATA[if (currentrow < totalrows) {
+	if (params["pdecPercentAlm"].value != null) {
+		row["PORCIENTOALM"] = params["pdecPercentAlm"].value
+	}
+	else  {
+		row["PORCIENTOALM"] = 100;
+	}
+	currentrow++;
+	return (true);
+}
+return (false);]]></method>
+        </script-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="PorcientoExp" id="2376">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">PORCIENTOEXP</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Oracle</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">pdecCntcod</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">690</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">PORCIENTOEXP</property>
+                    <property name="nativeName">PORCIENTOEXP</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT 
+ROUND(((SELECT COUNT (DISTINCT CNTCOD)                                                                                               
+          FROM CCACAB                                                           
+          WHERE CNTCOD IN (                                                     
+            SELECT DISTINCT CNTEXTCOD                                           
+             FROM CNTNDO                                                        
+            WHERE EXPORDCOD = pdecExpordcod)) /            
+(SELECT COUNT (DISTINCT CNTEXTCOD)    
+          FROM CNTNDO                                                         
+          WHERE EXPORDCOD = pdecExpordcod)) * 100,2) PorcientoExp
+FROM (SELECT MAX(EXPORDCOD)  pdecExpordcod FROM CNTNDO WHERE CNTEXTCOD = ?)</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="PorcientoRep" id="2396">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">PORCIENTOREC</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Oracle</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">pdecCntcod</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">690</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">PORCIENTOREC</property>
+                    <property name="nativeName">PORCIENTOREC</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT 
+ROUND(((SELECT COUNT (DISTINCT CNTCOD)                                                                                               
+          FROM CCACAB                                                           
+          WHERE CNTCOD IN (                                                     
+            SELECT DISTINCT CNTEXTCOD                                           
+             FROM CNTNDO                                                        
+            WHERE RECCOD = pdecReccod)) /            
+(SELECT COUNT (DISTINCT CNTEXTCOD)    
+          FROM CNTNDO                                                         
+          WHERE RECCOD = pdecReccod)) * 100,2) PorcientoRec
+FROM (SELECT MAX(RECCOD) pdecReccod FROM CNTNDO WHERE CNTEXTCOD = ?)</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="topMargin">0.25in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="height">1.4666666666666666in</property>
+                    <property name="width">7.7in</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">40%</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">40%</property>
+                    </column>
+                    <row id="1689">
+                        <cell id="145">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="146">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <property name="verticalAlign">middle</property>
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="controlCalidadContenedores">controlCalidadContenedores</text-property>
+                            </label>
+                        </cell>
+                        <cell id="2408">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="2249">
+                                <property name="dataSet">Cabecera</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <property name="displayName">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="86">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <property name="verticalAlign">bottom</property>
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(CCA-CNT-001)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="height">0.425in</property>
+                    <property name="width">7.725in</property>
+                    <column id="242">
+                        <property name="width">5.483333333333333in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">0.675in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.16666666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">1.4in</property>
+                    </column>
+                    <row id="234">
+                        <property name="height">0.425in</property>
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="2416">
+            <property name="color">#0000FF</property>
+            <property name="width">100%</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">desde</property>
+                    <property name="displayName">fecha</property>
+                    <expression name="expression">desde = params["pstrDesde"].value;
+hasta = params["pstrHasta"].value;
+if (desde == null) desde = "                                ";
+if (hasta == null) hasta = "                                 ";
+(BirtStr.left(desde,10) + "  ->  " + BirtStr.left(hasta,10));</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="2417">
+                <property name="width">1.1416666666666666in</property>
+            </column>
+            <column id="2466">
+                <property name="width">0.16666666666666666in</property>
+            </column>
+            <column id="2418">
+                <property name="width">2.825in</property>
+            </column>
+            <column id="2419">
+                <property name="width">1.0666666666666667in</property>
+            </column>
+            <column id="2473">
+                <property name="width">0.16666666666666666in</property>
+            </column>
+            <column id="2420"/>
+            <row id="2443">
+                <property name="height">5mm</property>
+                <cell id="2444"/>
+                <cell id="2462"/>
+                <cell id="2445"/>
+                <cell id="2446"/>
+                <cell id="2469"/>
+                <cell id="2447"/>
+            </row>
+            <row id="2421">
+                <cell id="2422">
+                    <text id="2431">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content" key="Fecha"><![CDATA[Fecha]]></text-property>
+                    </text>
+                </cell>
+                <cell id="2463">
+                    <text id="2467">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="2423">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <data id="2457">
+                        <property name="resultSetColumn">desde</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="2426">
+                <cell id="2427">
+                    <text id="2432">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content" key="Tipo"><![CDATA[Tipo]]></text-property>
+                    </text>
+                </cell>
+                <cell id="2464">
+                    <text id="2468">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="2428">
+                    <data id="2458">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrTipo</property>
+                                <expression name="expression">params["pstrTipo"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrTipo</property>
+                    </data>
+                </cell>
+                <cell id="2429">
+                    <text id="2459">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content" key="ccaDocumento"><![CDATA[DOCREF]]></text-property>
+                    </text>
+                </cell>
+                <cell id="2471">
+                    <text id="2474">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="2430">
+                    <data id="2460">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrDocumento</property>
+                                <expression name="expression">params["pstrDocumento"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrDocumento</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="2433">
+                <property name="height">5mm</property>
+                <cell id="2434"/>
+                <cell id="2465"/>
+                <cell id="2435"/>
+                <cell id="2436"/>
+                <cell id="2472"/>
+                <cell id="2437"/>
+            </row>
+        </grid>
+        <table id="2257">
+            <property name="marginTop">0pt</property>
+            <property name="width">100%</property>
+            <property name="dataSet">Lineas</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">MOMINI</property>
+                    <property name="displayName">D/MM/YYYY hh:m</property>
+                    <expression name="expression">dataSetRow["MOMINI"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">CCATIP</property>
+                    <property name="displayName">T</property>
+                    <expression name="expression">dataSetRow["CCATIP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CNTDORREF</property>
+                    <property name="displayName">CNTDORREF</property>
+                    <expression name="expression">dataSetRow["CNTDORREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RECOPEREF</property>
+                    <property name="displayName">RECOPEREF</property>
+                    <expression name="expression">dataSetRow["RECOPEREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CCASIT</property>
+                    <expression name="expression">dataSetRow["CCASIT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CNTCOD</property>
+                    <expression name="expression">dataSetRow["CNTCOD"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="2279">
+                <property name="width">1.5083333333333333in</property>
+            </column>
+            <column id="2280">
+                <property name="width">0.5in</property>
+                <property name="textAlign">center</property>
+            </column>
+            <column id="2281">
+                <property name="width">1.7in</property>
+                <property name="textAlign">center</property>
+            </column>
+            <column id="2282">
+                <property name="width">1.75in</property>
+                <property name="textAlign">center</property>
+            </column>
+            <column id="2283">
+                <property name="width">1.1916666666666667in</property>
+                <property name="textAlign">center</property>
+            </column>
+            <column id="2284">
+                <property name="textAlign">right</property>
+            </column>
+            <header>
+                <row id="2448">
+                    <property name="height">5mm</property>
+                    <property name="fontWeight">bold</property>
+                    <cell id="2449"/>
+                    <cell id="2450"/>
+                    <cell id="2451"/>
+                    <cell id="2452"/>
+                    <cell id="2453"/>
+                    <cell id="2454"/>
+                </row>
+                <row id="2258">
+                    <property name="fontWeight">bold</property>
+                    <cell id="2259">
+                        <label id="2285">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <text-property name="text" key="Fecha">Fecha</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2260">
+                        <label id="2287">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <text-property name="text" key="Tipo">Tipo</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2261">
+                        <text id="2339">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content" key="ccaDocumento"><![CDATA[DOCREF]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2262">
+                        <label id="2289">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <text-property name="text" key="Contenedor">CNTDORREF</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2263">
+                        <label id="2291">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <text-property name="text" key="ccaPreparador">RECOPEREF</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2264">
+                        <text id="2355">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[%]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="2265">
+                    <cell id="2266">
+                        <data id="2334">
+                            <property name="resultSetColumn">MOMINI</property>
+                        </data>
+                    </cell>
+                    <cell id="2267">
+                        <data id="2335">
+                            <property name="resultSetColumn">CCATIP</property>
+                        </data>
+                    </cell>
+                    <cell id="2268">
+                        <property name="paddingTop">1pt</property>
+                        <property name="paddingLeft">1pt</property>
+                        <property name="paddingBottom">1pt</property>
+                        <property name="paddingRight">1pt</property>
+                        <table id="2323">
+                            <property name="marginTop">0pt</property>
+                            <property name="width">100%</property>
+                            <property name="dataSet">Documento</property>
+                            <list-property name="paramBindings">
+                                <structure>
+                                    <property name="paramName">pintCntcod</property>
+                                    <expression name="expression">row["CNTCOD"]</expression>
+                                </structure>
+                            </list-property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">RECORDREF</property>
+                                    <property name="displayName">RECORDREF</property>
+                                    <expression name="expression">dataSetRow["RECORDREF"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Documento</property>
+                                    <property name="displayName">Documento</property>
+                                    <expression name="expression">if (row._outer["CCATIP"] == null) {
+	" "
+}
+else {
+	if (BirtComp.equalTo(row._outer["CCATIP"],"EXP ")) {
+		row["EXPORDREF"]
+	}
+	else {
+		if (BirtComp.equalTo(row._outer["CCATIP"],"REP ")) {
+			row["RECORDREF"]
+		}
+		else  {
+			 " "
+		}
+	}
+}</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">EXPORDREF</property>
+                                    <expression name="expression">dataSetRow["EXPORDREF"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                            </list-property>
+                            <column id="2330"/>
+                            <detail>
+                                <row id="2326">
+                                    <cell id="2327">
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">0pt</property>
+                                        <property name="paddingBottom">0pt</property>
+                                        <property name="paddingRight">0pt</property>
+                                        <data id="2338">
+                                            <property name="resultSetColumn">Documento</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </detail>
+                        </table>
+                    </cell>
+                    <cell id="2269">
+                        <data id="2336">
+                            <property name="resultSetColumn">CNTDORREF</property>
+                        </data>
+                    </cell>
+                    <cell id="2270">
+                        <data id="2337">
+                            <property name="resultSetColumn">RECOPEREF</property>
+                        </data>
+                    </cell>
+                    <cell id="2271">
+                        <table id="2398">
+                            <property name="width">100%</property>
+                            <property name="dataSet">PorcientoAlm</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">!BirtComp.equalTo(row._outer["CCATIP"],"ALM ")</expression>
+                                </structure>
+                            </list-property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">PORCIENTOALM</property>
+                                    <property name="displayName">%</property>
+                                    <expression name="expression">dataSetRow["PORCIENTOALM"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                            </list-property>
+                            <column id="2405"/>
+                            <detail>
+                                <row id="2401">
+                                    <cell id="2402">
+                                        <data id="2407">
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">Fixed</property>
+                                            </structure>
+                                            <property name="resultSetColumn">PORCIENTOALM</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </detail>
+                        </table>
+                        <table id="2368">
+                            <property name="marginTop">0pt</property>
+                            <property name="width">100%</property>
+                            <property name="dataSet">PorcientoExp</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">!BirtComp.equalTo(row._outer["CCATIP"],"EXP ")</expression>
+                                </structure>
+                            </list-property>
+                            <list-property name="paramBindings">
+                                <structure>
+                                    <property name="paramName">pdecCntcod</property>
+                                    <expression name="expression">row["CNTCOD"]</expression>
+                                </structure>
+                            </list-property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">PORCIENTOEXP</property>
+                                    <property name="displayName">%</property>
+                                    <expression name="expression">dataSetRow["PORCIENTOEXP"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                            </list-property>
+                            <column id="2375"/>
+                            <detail>
+                                <row id="2371">
+                                    <cell id="2372">
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">0pt</property>
+                                        <property name="paddingBottom">0pt</property>
+                                        <property name="paddingRight">0pt</property>
+                                        <data id="2377">
+                                            <property name="paddingTop">0pt</property>
+                                            <property name="paddingLeft">0pt</property>
+                                            <property name="paddingBottom">0pt</property>
+                            ¢  5„¬Ïéý  T  
+  	8ˆèŒÍ  ä2 5„ª‚ 
+  3 ÆæÊv À   èŒÍ 
+ 	 'Õ Ç6¼v Z                €   ZØ
+2    5„qk5„­õ úP¼š©¸Ç}ŒÖåô!0?N]l{Š™¨·ÆÕäó />M\kz‰˜§¶ÅÔãò.=L[jyˆ—¦µÄÓâñ -<KZix‡–¥´ÃÒáðÿ,;JYhw†•¤³ÂÑàïþ+:IXgv…”£²ÁÐßîý*9HWfu„“¢±ÀÏÞíü)8GVetƒ’¡°¿ÎÝìûæõ"1@O
+(7FUds‚^m|‘×È ¯¾‹ÍÜë›ª¹úP_nö#2AØçÉº«œ	'6ET~Q
+crŸ®½`oÌÛêù&5DSbq€ž­¼ËÚéB3aRC46ETcrŸ®½ÍÜëú	'$÷èÙÊ»¬ŽpÌÛêù&5DSbq€ž­¼ËÚéø%ø%¯¾s(7FUd4‚‘ CRapŽ¬»ÊÙè÷$3BQ`o~œ«ºÉØçö#2A    
+   ? Š ‹ Œ À;[~™# ! 5€j5€Bö      T_                              	 	2700017080122     2700017080139     2700017080146     2700017080153     2700017080160     2700017080177     2700017080184     2700017080,Ã)!Á	Ã0]ÂXÂX€€ÂX€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!Á
+Ã/SÂAZÂAZ€€ÂAZ€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ0EÂ
+Â
+€€Â
+€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ1Â`Â`€€Â`€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ0LÂAZÂAZ€€ÂAZ€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ2^ÂRÂR€€ÂR€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ1ÂRÂR€€ÂR€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ7Â7Â7€€Â7€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ0Â7Â7€€Â7€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ0Â!.Â!.€€Â!.€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ;DÂ7Â7€€Â7€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ0=Â&	Â&	€€Â&	€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ0$Â7Â7€€Â7€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ1Â\Â\€€Â\€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ;CÂ
+Â
+€€Â
+€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ:bÁ^Á^€€Á^€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ=&ÂAÂA€€ÂA€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ;Â!Â!€€Â!€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ;Â!Â!€€Â!€€€     ÿÿÿ ÿÿ€€€€€ÿ€ÿ                    €    ,Ã)!ÁÃ0FÂVÂV€€ÂV€€€     ÿÿÿ ÿÿ€€€€€ÿ Ä?B^5„ï×  Ä?B_5„Ôz  Ä?Bb5„Ð9 
+ Ä?Bb5„Ð9  Ä?Bb5„Ð9  Ä?Bb5„Ð9  Ä?Bb5„Ð9  Ä?Bb5„Ð9  Ä?Bc5„Ð9  Ä?Bc5„Ð9  Ä?Bc5„Ð9  Ä?Bb5„Ð) " Ä?Bb5„Ð) # Ä?Ba5„Ð)  Ä?Ba5„Ð)  Ä?Ba5„Ð)  Ä?Ba5„Ð)  Ä?Ba5„Ð)  Ä?Ba5„Ð)  Ä?Ba5„Ð)   Ä?Ba5„Ð%   Ä?Ba5„Ð% ! Ä?Ba5„Ð% " Ä?Ba5„Ð% # Ä?Ba5„Ð% $ Ä?Ba5„Ð% % Ä?Ba5„Ð% & Ä?Ba5„Ð% ' Ä?Ba5„Ð% ( Ä?Ba5„Ð% ) Ä?Ba5„Ð5   Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5 	 Ä?Ba5„Ð5 
+ Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð5  Ä?Ba5„Ð%  Ä?Ba5„Ð%  Ä?Ba5„Ð%  Ä?Ba5„Ð%  Ä?Ba5„Ð1  Ä?Ba5„

@@ -1,0 +1,1909 @@
+(****************************************************************************)
+(*     File Name              : D:\home\sco\a0000\adaias.txt                *)
+(*     START Date & Time   : lun sep 26 2016 17:42:48                       *)
+(*     Speedware/4GL Version            : 7.13.00 (B46)                     *)
+(*                                                                          *)
+(*     Legend                 :                                             *)
+(*                              SP    : SPEC                                *)
+(*                              ST    : SPECTEST                            *)
+(*                              SS    : SPECSTD                             *)
+(*                              OTH   : Other                               *)
+(*                                                                          *)
+(*     SPEC     : D:\HOME\SCO\A0000\ADAIAS                                  *)
+(*     SPECSTD  : D:\HOME\SCO\A0000\ADAIAG                                  *)
+(*     SPECTEST : SPECTEST                                                  *)
+(*     CATALOG  : D:\HOME\SCO\A0000\ADAIAC                                  *)
+(*     PROFILE  : D:\HOME\SCO\A0000\ADAIAP                                  *)
+(*     CONFIG   : C:\SPEEDWARE\SPW\V713\BIN\CONFIG                          *)
+(****************************************************************************)
+                                                                              
+(*     Section successfuly compiled  : GLOBAL                               *)
+                                                                              
+(*     Section successfuly compiled  : GLOBAL                               *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-CTR-PRD-000-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-Delivery                *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-DeliveryCsta            *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-DeliveryTab             *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-DeliveryVje             *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-LIB-UTI-MNU-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MENUPULL                *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-BLO-001-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-001-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-002-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-004-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-005-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-006-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-008-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-009-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-010-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-013-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-015-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-021-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-022-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-024-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-025-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-CNT-INT-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-DIS-001-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-EVE-001-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-EVE-CTR-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-EXP-001-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-EXP-002-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-EXP-005-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-EXP-009-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-EXP-012-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-EXP-014-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-MAP-001-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-MAP-002-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-MAP-003-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-MAP-004-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-MAP-005-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-REC-001-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-REC-002-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-REC-003-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-REC-005-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-REC-006-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-SEG-001-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-SIM-001-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-TAB-001-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-TAB-004-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-TAB-005-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-TAB-006-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-TAB-007-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-MNU-UMA-INV-PM          *)
+                                                                              
+(*     Section successfuly compiled  : PULLDOWNMENU-OEX-MAN-000-PM          *)
+                                                                              
+ERROR   Line : 1405, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB ,                                                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1408, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_GENPARCOD LIKE(NAME=GENPARCOD); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1409, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_VALALF LIKE(NAME=VALALF); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1410, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_VALNUM LIKE(NAME=VALNUM); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1411, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_VALDUR LIKE(NAME=VALDUR); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1412, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_EXISTE FORMAT(TYPE=INT,LENGTH=1,SUBTYPE=NUMERIC)  ,                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1446, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_EXISTE = 0; ,                                                               
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1450, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+GV_ERRRUT= 'GENPAR-ATR'; ,                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1452, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+IF P_GENPARCOD = '' OR P_GENPARCAT = '' THEN BEGIN ,                          
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1454, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   GV_ERRDES = 'Parametros P_GENPARCOD y P_GENPARCAT necesarios.'; ,          
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1455, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   RETURN; ,                                                                  
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1456, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+END; ,                                                                        
+^ Verbo desconocido o función indefinida  ;                                   
+                                                                              
+ERROR   Line : 1458, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+EXEC SQL ,                                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1465, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+IF L_EXISTE = 0 THEN BEGIN ,                                                  
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1467, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   GV_ERRDES = 'El parametro ' + $STR(P_GENPARCOD) + ,                        
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1469, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   RETURN; ,                                                                  
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1470, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+END; ,                                                                        
+^ Verbo desconocido o función indefinida  ;                                   
+                                                                              
+ERROR   Line : 1471, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB; ,                                                                     
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1472, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB ,                                                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1475, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_GENPARCOD LIKE(NAME=GENPARCOD); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1476, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_VALALF LIKE(NAME=VALALF); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1477, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_VALNUM LIKE(NAME=VALNUM); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1478, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_VALDUR LIKE(NAME=VALDUR); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1479, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_EXISTE FORMAT(TYPE=INT,LENGTH=1,SUBTYPE=NUMERIC)  ,                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1513, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_EXISTE = 0; ,                                                               
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1517, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+GV_ERRRUT= 'GENPAR-ATR'; ,                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1519, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+IF P_GENPARCOD = '' OR P_GENPARCAT = '' THEN BEGIN ,                          
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1521, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   GV_ERRDES = 'Parametros P_GENPARCOD y P_GENPARCAT necesarios.'; ,          
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1522, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   RETURN; ,                                                                  
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1523, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+END; ,                                                                        
+^ Verbo desconocido o función indefinida  ;                                   
+                                                                              
+ERROR   Line : 1525, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+EXEC SQL ,                                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1532, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+IF L_EXISTE = 0 THEN BEGIN ,                                                  
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1534, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   GV_ERRDES = 'El parametro ' + $STR(P_GENPARCOD) + ,                        
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1536, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   RETURN; ,                                                                  
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1537, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+END; ,                                                                        
+^ Verbo desconocido o función indefinida  ;                                   
+                                                                              
+ERROR   Line : 1538, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB; ,                                                                     
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1539, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB ,                                                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1542, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_GENPARCOD LIKE(NAME=GENPARCOD); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1543, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_VALALF LIKE(NAME=VALALF); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1544, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_VALNUM LIKE(NAME=VALNUM); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1545, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_VALDUR LIKE(NAME=VALDUR); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1546, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_EXISTE FORMAT(TYPE=INT,LENGTH=1,SUBTYPE=NUMERIC)  ,                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1580, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_EXISTE = 0; ,                                                               
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1584, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+GV_ERRRUT= 'GENPAR-ATR'; ,                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1586, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+IF P_GENPARCOD = '' OR P_GENPARCAT = '' THEN BEGIN ,                          
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1588, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   GV_ERRDES = 'Parametros P_GENPARCOD y P_GENPARCAT necesarios.'; ,          
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1589, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   RETURN; ,                                                                  
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1590, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+END; ,                                                                        
+^ Verbo desconocido o función indefinida  ;                                   
+                                                                              
+ERROR   Line : 1592, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+EXEC SQL ,                                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1599, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+IF L_EXISTE = 0 THEN BEGIN ,                                                  
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1601, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   GV_ERRDES = 'El parametro ' + $STR(P_GENPARCOD) + ,                        
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1603, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   RETURN; ,                                                                  
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1604, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+END; ,                                                                        
+^ Verbo desconocido o función indefinida  ;                                   
+                                                                              
+ERROR   Line : 1605, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB; ,                                                                     
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1606, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB ,                                                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1609, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_TERCOD LIKE(NAME=TERCOD); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1610, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_EXPORDCOD LIKE(NAME=EXPORDCOD); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1611, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_EXPORDLIN LIKE(NAME=EXPORDLIN); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1612, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_DIAMINCADEXP LIKE(NAME=DIAMINCADEXP); ,                                
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1613, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_DIAMAXCADEXP LIKE(NAME=DIAMINCADEXP); ,                                
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1614, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_VIDUTIPOR LIKE(NAME=NUMDIACALCAD); ,                                   
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1615, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_NUMDIACALCAD FORMAT(TYPE=INT,LENGTH=4,SUBTYPE=NUMERIC); ,              
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1616, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_AGRTARTER LIKE(NAME=AGRTARTER); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1617, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_AGRTARART LIKE(NAME=AGRTARART); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1618, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_VIDUTIMAX LIKE(NAME=VIDUTIPOR); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1661, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+P_DIAMINCADEXP = 0; ,                                                         
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1662, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+P_DIAMAXCADEXP = 0; ,                                                         
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1663, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+WHILE 1 = 1 DO BEGIN ,                                                        
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1674, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      IF L_VIDUTIPOR > 0 THEN ,                                               
+      ^ Verbo ilegal  ;                                                       
+                                                                              
+ERROR   Line : 1676, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      IF L_VIDUTIMAX > 0 THEN  (*solo tiene sentido con P_DIAMINCADEXP*) ,    
+      ^ Verbo ilegal  ;                                                       
+                                                                              
+ERROR   Line : 1679, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      IF P_DIAMINCADEXP <> 0 THEN ,                                           
+      ^ Verbo ilegal  ;                                                       
+                                                                              
+ERROR   Line : 1682, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      IF P_TERCOD = 0 THEN BEGIN ,                                            
+      ^ Verbo ilegal  ;                                                       
+                                                                              
+ERROR   Line : 1688, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      END; ,                                                                  
+      ^ Verbo desconocido o función indefinida  ;                             
+                                                                              
+ERROR   Line : 1689, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   END; (*IF P_EXPORDCOD <> 0 AND P_EXPORDLIN <> 0*) ,                        
+   ^ Verbo desconocido o función indefinida  ;                                
+                                                                              
+ERROR   Line : 1691, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   L_AGRTARTER = ' '; ,                                                       
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1692, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   L_AGRTARART = ' '; ,                                                       
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1693, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   IF P_TERCOD <> 0 THEN ,                                                    
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1698, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   IF P_ARTCOD <> 0 THEN ,                                                    
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1704, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   IF L_AGRTARTER <> ' ' AND L_AGRTARART <> ' ' THEN BEGIN ,                  
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1711, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   END; ,                                                                     
+   ^ Verbo desconocido o función indefinida  ;                                
+                                                                              
+ERROR   Line : 1712, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   IF P_DIAMINCADEXP <> 0 THEN ,                                              
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1715, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   IF P_ARTCOD <> 0 THEN BEGIN ,                                              
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1721, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   END;(*IF P_ARTCOD <> 0*) ,                                                 
+   ^ Verbo desconocido o función indefinida  ;                                
+                                                                              
+ERROR   Line : 1722, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   BREAK; ,                                                                   
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1723, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+END; (*WHILE 1=1*) ,                                                          
+^ Verbo desconocido o función indefinida  ;                                   
+                                                                              
+ERROR   Line : 1724, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB; ,                                                                     
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1725, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB ,                                                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1728, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_EXE FORMAT(TYPE=INT,LENGTH=1,SUBTYPE=NUMERIC)  ,                       
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1730, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_COMMAND FORMAT(TYPE=CHAR,LENGTH=600,SUBTYPE=ALPHA); ,                  
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1731, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM VARENT FORMAT(TYPE=CHAR,LENGTH=600,SUBTYPE=ALPHA); ,                     
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1732, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM I FORMAT(TYPE=INT,LENGTH=9,SUBTYPE=NUMERIC); ,                           
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1785, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+GV_ERRRUT = 'OTR-COMMAND'; ,                                                  
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1786, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+GV_ERRDES = ' '; ,                                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1787, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+GV_ERR    = 0; ,                                                              
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1790, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+IF P_COMMAND = ' ' THEN BEGIN ,                                               
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1792, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   GV_ERRDES  = 'No se ha especificado el comando'; ,                         
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1793, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   RETURN; ,                                                                  
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1794, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+END; ,                                                                        
+^ Verbo desconocido o función indefinida  ;                                   
+                                                                              
+ERROR   Line : 1796, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_COMMAND = P_COMMAND; ,                                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1801, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   I = $POS(L_COMMAND,'$'); ,                                                 
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1802, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   WHILE I > 0 DO BEGIN ,                                                     
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1804, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      IF $POS(VARENT,'/') > 0 THEN ,                                          
+      ^ Verbo ilegal  ;                                                       
+                                                                              
+ERROR   Line : 1806, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      ELSE ,                                                                  
+      ^ Verbo ilegal  ;                                                       
+                                                                              
+ERROR   Line : 1809, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      IF I = 1 THEN ,                                                         
+      ^ Verbo ilegal  ;                                                       
+                                                                              
+ERROR   Line : 1812, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      ELSE ,                                                                  
+      ^ Verbo ilegal  ;                                                       
+                                                                              
+ERROR   Line : 1817, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      I = $POS(L_COMMAND,'$'); ,                                              
+      ^ Verbo ilegal  ;                                                       
+                                                                              
+ERROR   Line : 1818, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   END; ,                                                                     
+   ^ Verbo desconocido o función indefinida  ;                                
+                                                                              
+ERROR   Line : 1825, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   I = $POS(L_COMMAND,'/'); ,                                                 
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1826, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   WHILE I > 0 DO BEGIN ,                                                     
+   ^ Verbo ilegal  ;                                                          
+                                                                              
+ERROR   Line : 1831, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      ELSE ,                                                                  
+      ^ Verbo ilegal  ;                                                       
+                                                                              
+ERROR   Line : 1835, Column : 7                                               
+SS   GLOBAL-SUB :                                                             
+      I = $POS(L_COMMAND,'/'); ,                                              
+      ^ Verbo ilegal  ;                                                       
+                                                                              
+ERROR   Line : 1836, Column : 4                                               
+SS   GLOBAL-SUB :                                                             
+   END; ,                                                                     
+   ^ Verbo desconocido o función indefinida  ;                                
+                                                                              
+ERROR   Line : 1841, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+IF P_EXE THEN COMMAND($TRIM(L_COMMAND,RIGHT)); ,                              
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1843, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+P_COMMAND = L_COMMAND; ,                                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1844, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB; ,                                                                     
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1845, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB ,                                                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1848, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_ALMCOD LIKE(NAME=ALMCOD); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1849, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM P_CNTCOD LIKE(NAME=CNTCOD); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1850, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_UBIPICDIN LIKE(NAME=UBIPICDIN); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1851, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_UBIPIC LIKE(NAME=UBIPIC); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1852, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_PICCOMPAR LIKE(NAME=PICCOMPAR); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1853, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_ZONPICCOD LIKE(NAME=ZONPICCOD); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1854, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_CANPICMIN LIKE(NAME=CANPICMIN); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1855, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_CANPICMAX LIKE(NAME=CANPICMAX); ,                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1856, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_STOREA LIKE(NAME=CANUNI); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1857, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_STOREP LIKE(NAME=CANUNI); ,                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1858, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_CANREP LIKE(NAME=CAN); ,                                               
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1859, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_STOREA2 FORMAT(TYPE=INT,LENGTH=9,SUBTYPE=NUMERIC,NULL=YES); ,          
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1860, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+PARM L_STOREP2 FORMAT(TYPE=INT,LENGTH=9,SUBTYPE=NUMERIC,NULL=YES); ,          
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1906, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_UBIPICDIN = ''; ,                                                           
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1907, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_UBIPIC = 0; ,                                                               
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1908, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_PICCOMPAR = ''; ,                                                           
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1909, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_ZONPICCOD = 0; ,                                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1910, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_CANPICMIN = 0; ,                                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1911, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_CANPICMAX = 0; ,                                                            
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1912, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+EXEC SQL ,                                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1921, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_STOREA2 = 0; ,                                                              
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1922, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+EXEC SQL ,                                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1930, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+IF $NULL(L_STOREA2) THEN ,                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1932, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ELSE ,                                                                        
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1935, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_STOREP2 = 0; ,                                                              
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1936, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+EXEC SQL ,                                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1946, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+IF $NULL(L_STOREP2) THEN ,                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1948, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ELSE ,                                                                        
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1955, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+L_CANREP = 0; ,                                                               
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1956, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+EXEC SQL ,                                                                    
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1964, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB; ,                                                                     
+^ Verbo ilegal  ;                                                             
+                                                                              
+ERROR   Line : 1965, Column : 1                                               
+SS   GLOBAL-SUB :                                                             
+ENDSUB ,                                                                      
+^ Verbo ilegal  ;                                                             
+                                                                              
+(*     Section successfuly compiled  : GLOBAL-AT                            *)
+                                                                              
+(*     Section successfuly compiled  : FINISH                               *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACC-ASG-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACC-ATR-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACC-ATR-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACC-BOR-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACC-LIB-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACC-REL-ACT                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACCCOL-CRE                     *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACCNDO-PARTIR                  *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACCPICCAO-ORD                  *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACCTRA-CRE                     *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACT-CAN-ALB                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACT-COM-001                    *)
+                                                                              
+WARNING Line : 529359, Column : 33                                            
+SS   LOGIC-ACT-COM-FUS ,                                                      
+SS   LOGIC-ACT-COM-FUS ,                                                      
+SS   LOGIC-ACT-COM-FUS :                                                      
+            PREVEN    = L_PREVEN; ,                                           
+   ;                            ^ Contexto ya definido para el archivo de datos
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACT-COM-FUS                    *)
+                                                                              
+WARNING Line : 529359, Column : 33                                            
+SS   LOGIC-ACT-COMP-FUSION ,                                                  
+SS   LOGIC-ACT-COMP-FUSION ,                                                  
+SS   LOGIC-ACT-COMP-FUSION :                                                  
+            PREVEN    = L_PREVEN; ,                                           
+   ;                            ^ Contexto ya definido para el archivo de datos
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACT-COMP-FUSION                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACT-EXP-CND                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ACT-MOM-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ADA-MSG-ENV                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ADA-MSG-FIL                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ADA-MSG-GEN                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ANU-FUS-SOR                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ARREGLA-GENGIM                 *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ART-ATR-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ART-CAN-UNI                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ART-MNT-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ART-MNT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ART-NPI                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ART-NPR                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ART-PIC                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ART-STO                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ASG-COL-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ASG-DES-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ASG-PIC-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-AT-INI-BUS-001                 *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-BOR-DAT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-BOR-TNE-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CAL-CNT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CAL-DIS-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CAL-PES-FIJ                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CAM-EST-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CAM-EST-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CAR-CNT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CCA-ART-MOD                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CCA-PRV-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CCA-REG-CRE                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CCA-REG-UPD                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CIC-BLO-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CIC-BLO-EXP                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CIE-REP-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-128-EPL                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-128-IPL                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-128-SAT                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-128-UBI                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-128-ZPL                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-ASG-DES                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-ASG-TER                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-ATR                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-ATR-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-ATR-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-ATR-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-ATR-004                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-ATR-007                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-CAP                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-E128-ZPL                   *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-E13-DTM                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-E13-ELT                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-E13-EPL                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-E13-IPL                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-E13-SAT                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-E13-TEC                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-E13-UBI                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-E13-X2P                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-E13-ZPL                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-ETI                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-ETI-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-MNT-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-MOV-ACC-DES                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-MOV-BAJ                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-MOV-CNT-DES                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-MOV-DEV                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-MOV-LEC-DES                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-MOV-LEC-ORI                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-MOV-SUB                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-MUE                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-NEW-REF                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-PIC-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-PRE-OPE                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-PRV-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-RPF-FIN                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-TER-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-TIP-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-TRA-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-TRA-004                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-TRA-006                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-TRA-007                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-TRA-008                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-TRA-009                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CNT-UBI-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-COL-ASG-002                    *)
+                                                                              
+WARNING Line : 182869, Column : 40                                            
+SS   LOGIC-COL-SIG-ACT ,                                                      
+SS   LOGIC-COL-SIG-ACT :                                                      
+                  GESCOLPES = GESCOLPES; ,                                    
+                                       ^ Contexto ya definido para el archivo d
+e datos                                           ;                           
+                                                                              
+(*     Section successfuly compiled  : LOGIC-COL-SIG-ACT                    *)
+                                                                              
+WARNING Line : 16018, Column : 30                                             
+SS   LOGIC-COP-ART-001 :                                                      
+         UNIPAL    = L_UNIPAL; ,                                              
+;                            ^ Contexto ya definido para el archivo de datos  
+                                                                              
+WARNING Line : 16038, Column : 27                                             
+SS   LOGIC-COP-ART-001 :                                                      
+      REMHAB    = L_REMHAB; ,                                                 
+                          ^ Contexto ya definido para el archivo de datos  ;  
+                                                                              
+WARNING Line : 16076, Column : 30                                             
+SS   LOGIC-COP-ART-001 :                                                      
+      TEMPORREF = L_TEMPORREF; ,                                              
+;                            ^ Contexto ya definido para el archivo de datos  
+                                                                              
+(*     Section successfuly compiled  : LOGIC-COP-ART-001                    *)
+                                                                              
+WARNING Line : 16157, Column : 30                                             
+SS   LOGIC-COP-TER-001 :                                                      
+      MUEEXP       = L_MUEEXP; ,                                              
+;                            ^ Contexto ya definido para el archivo de datos  
+                                                                              
+WARNING Line : 16172, Column : 30                                             
+SS   LOGIC-COP-TER-001 :                                                      
+      CATEGORIA = L_CATEGORIA; ,                                              
+;                            ^ Contexto ya definido para el archivo de datos  
+                                                                              
+WARNING Line : 16184, Column : 24                                             
+SS   LOGIC-COP-TER-001 :                                                      
+      HORSAL = L_HORSAL; ,                                                    
+                       ^ Contexto ya definido para el archivo de datos  ;     
+                                                                              
+(*     Section successfuly compiled  : LOGIC-COP-TER-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CRE-CNT-001                    *)
+                                                                              
+WARNING Line : 16361, Column : 34                                             
+SS   LOGIC-CRE-CON-PIC :                                                      
+              CONPICLINSIT = 'PD'; ,                                          
+                                 ^ Contexto ya definido para el archivo de dato
+s                                     ;                                       
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CRE-CON-PIC                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CRE-ETI-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CRE-OEX                        *)
+                                                                              
+WARNING Line : 17631, Column : 31                                             
+SS   LOGIC-CRE-OEX-001 :                                                      
+          MUEEXP    = L_MUEEXP; ,                                             
+ ;                            ^ Contexto ya definido para el archivo de datos 
+                                                                              
+WARNING Line : 17647, Column : 27                                             
+SS   LOGIC-CRE-OEX-001 :                                                      
+           UNITIP = UNITIP; ,                                                 
+                          ^ Contexto ya definido para el archivo de datos  ;  
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CRE-OEX-001                    *)
+                                                                              
+WARNING Line : 17735, Column : 29                                             
+SS   LOGIC-CRE-OEX-002 :                                                      
+          MUEEXP    = MUEEXP; ,                                               
+                            ^ Contexto ya definido para el archivo de datos  ;
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CRE-OEX-002                    *)
+                                                                              
+WARNING Line : 18008, Column : 32                                             
+SS   LOGIC-CRE-OEX-010 :                                                      
+          URGENT       = URGENT; ,                                            
+  ;                            ^ Contexto ya definido para el archivo de datos
+                                                                              
+WARNING Line : 18063, Column : 43                                             
+SS   LOGIC-CRE-OEX-010 :                                                      
+           PESPED    = L_PESO_UNIT * L_UDS; ,                                 
+                                          ^ Contexto ya definido para el archiv
+o de datos                                              ;                     
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CRE-OEX-010                    *)
+                                                                              
+WARNING Line : 18398, Column : 35                                             
+SS   LOGIC-CRE-OEX-011 :                                                      
+          TERTRACOD    = TERTRACOD; ,                                         
+                                  ^ Contexto ya definido para el archivo de dat
+os                                      ;                                     
+                                                                              
+WARNING Line : 18501, Column : 43                                             
+SS   LOGIC-CRE-OEX-011 :                                                      
+           PESPED    = L_PESO_UNIT * L_UDS; ,                                 
+                                          ^ Contexto ya definido para el archiv
+o de datos                                              ;                     
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CRE-OEX-011                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CREA-ARTALM                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CREA-EXPLIN                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CREA-GENPAR                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CREA-TERALM                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-AUM                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-BLO                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-CAD                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-CAR-101                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-EVE-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-EVE-004                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-FAC-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-HUE-PM1                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-HUE-PM2                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-INM                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-MAN-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-MVD-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-MVD-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-MZL-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-NEW-FUN                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-OLA-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-PAI-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-PRD-017                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-RES                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-REU-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-CTR-UBI                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-DBG-INI                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-DES-CNT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-DEV-OEX-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-DEV-RAL-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-DIS-FUN                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-DSG-CIC-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-DSG-PIC-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-DSG-PIC-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-DSG-SEL-001                    *)
+                                                                              
+WARNING Line : 23008, Column : 33                                             
+SS   LOGIC-DUP-MOL-001 :                                                      
+                SITPRO    = 'PD'; ,                                           
+   ;                            ^ Contexto ya definido para el archivo de datos
+                                                                              
+WARNING Line : 23028, Column : 61                                             
+SS   LOGIC-DUP-MOL-001 :                                                      
+                    CNTTIPPEQCAN = ALMESTDETTMP.CNTTIPPEQCAN; ,               
+                                                            ^ Contexto ya defin
+ido para el ar;hivo de datos                                                  
+                                                                              
+WARNING Line : 23035, Column : 49                                             
+SS   LOGIC-DUP-MOL-001 :                                                      
+                    ORDPRE = ALMESTRECTMP.ORDPRE; ,                           
+                                                ^ Contexto ya definido para el 
+archivo de datos                                                    ;         
+                                                                              
+(*     Section successfuly compiled  : LOGIC-DUP-MOL-001                    *)
+                                                                              
+WARNING Line : 23144, Column : 26                                             
+SS   LOGIC-DUP-MOL-002 :                                                      
+         SITPRO    = 'PD'; ,                                                  
+                         ^ Contexto ya definido para el archivo de datos  ;   
+                                                                              
+WARNING Line : 23164, Column : 53                                             
+SS   LOGIC-DUP-MOL-002 :                                                      
+            CNTTIPPEQCAN = ALMESTDETTMP.CNTTIPPEQCAN; ,                       
+                                                    ^ Contexto ya definido para
+ el archivo de datos                                                        ; 
+                                                                              
+WARNING Line : 23171, Column : 41                                             
+SS   LOGIC-DUP-MOL-002 :                                                      
+            ORDPRE = ALMESTRECTMP.ORDPRE; ,                                   
+                                        ^ Contexto ya definido para el archivo 
+de datos                                            ;                         
+                                                                              
+(*     Section successfuly compiled  : LOGIC-DUP-MOL-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EAN-128-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-ALB                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-CNT                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-CNT-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-DUP-001-MON                *)
+                                                                              
+ERROR   Line : 23877, Column : 26                                             
+SS   LOGIC-ENV-DUP-001-TTS :                                                  
+   CALLSUB "OTR-COMMAND" USING "touch $ADAIA_UBI/ETI_ENV." + L_EXT; ,         
+                         ^ Undefined subsection OTR-COMMAND  ;                
+                                                                              
+ERROR   Line : 23889, Column : 26                                             
+SS   LOGIC-ENV-DUP-001-TTS :                                                  
+   CALLSUB "OTR-COMMAND" USING "cambia_caracter.sh $ADAIA_UBI/ETI_ENV." + L_EXT
+ + ,                                                                          
+                         ^ Undefined subsection OTR-COMMAND  ;                
+                                                                              
+ERROR   Line : 23893, Column : 26                                             
+SS   LOGIC-ENV-DUP-001-TTS :                                                  
+   CALLSUB "OTR-COMMAND" USING "imprime $ADAIA_UBI/ETI_ENV." + L_EXT; ,       
+                         ^ Undefined subsection OTR-COMMAND  ;                
+                                                                              
+ERROR   Line : 23896, Column : 26                                             
+SS   LOGIC-ENV-DUP-001-TTS :                                                  
+   CALLSUB "OTR-COMMAND" USING "mv $ADAIA_UBI/ETI_ENV." + L_EXT + " $ADAIA_TMP/
+."; ,                                                                         
+                         ^ Undefined subsection OTR-COMMAND  ;                
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-DUP-001-UBI                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-DUP-001-UBS                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-DUP-002-MON                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-DUP-002-TTS                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-DUP-002-UBI                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-DUP-002-UBS                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-PEL                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-RUT                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-RUT-009                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ENV-RUT-010                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EST-ATR-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EST-INV-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EST-INV-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EST-INV-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EST-MNT-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EST-MNT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EST-MNT-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ETI-PAL-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-ETI-PIC-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EVE-CLS-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EVE-INI-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EVE-RST-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EXE-ACC-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EXP-ACT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EXP-ACT-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EXP-ACT-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EXP-ACT-004                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EXP-ACT-005                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EXP-PRV-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EXP-PRV-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-EXP-REP-012                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FAR-ETI                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FAR-STO                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FAR-STO-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FAR-STO-005                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FEB-BUC-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FEB-CHK-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FEB-CHK-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FEB-CHK-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FEB-CHK-004                    *)
+                                                                              
+WARNING Line : 30556, Column : 26                                             
+SS   LOGIC-FEB-CRE-001 :                                                      
+         SITPRO    = 'PD'; ,                                                  
+                         ^ Contexto ya definido para el archivo de datos  ;   
+                                                                              
+WARNING Line : 30577, Column : 53                                             
+SS   LOGIC-FEB-CRE-001 :                                                      
+            CNTTIPPEQCAN = ALMESTDETTMP.CNTTIPPEQCAN; ,                       
+                                                    ^ Contexto ya definido para
+ el archivo de datos                                                        ; 
+                                                                              
+WARNING Line : 30584, Column : 41                                             
+SS   LOGIC-FEB-CRE-001 :                                                      
+            ORDPRE = ALMESTRECTMP.ORDPRE; ,                                   
+                                        ^ Contexto ya definido para el archivo 
+de datos                                            ;                         
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FEB-CRE-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FEB-MOD-100                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FEB-SEL-101                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FEB-VAL                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FEB-VAL-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FEB-VAL-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FIC-CRE-001                    *)
+                                                                              
+ERROR   Line : 30987, Column : 23                                             
+SS   LOGIC-FIC-MOV-TMP :                                                      
+CALLSUB "OTR-COMMAND" USING 'mv ' + $TRIM(P_FICHERO,RIGHT) + ' $ADAIA_TMP/.'; ,
+                      ^ Undefined subsection OTR-COMMAND  ;                   
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FIN-CNT-001                    *)
+                                                                              
+WARNING Line : 31234, Column : 29                                             
+SS   LOGIC-FMA-FOR-002 :                                                      
+      TRANSVASE  = TRANSVASE; ,                                               
+                            ^ Contexto ya definido para el archivo de datos  ;
+                                                                              
+WARNING Line : 31268, Column : 35                                             
+SS   LOGIC-FMA-FOR-002 :                                                      
+      STOMAXTRA = ARTALM.STOMAXTRA; ,                                         
+                                  ^ Contexto ya definido para el archivo de dat
+os                                      ;                                     
+                                                                              
+WARNING Line : 31280, Column : 33                                             
+SS   LOGIC-FMA-FOR-002 :                                                      
+      ESTRUCT   = ARTPRV.ESTRUCT; ,                                           
+   ;                            ^ Contexto ya definido para el archivo de datos
+                                                                              
+WARNING Line : 31334, Column : 36                                             
+SS   LOGIC-FMA-FOR-002 :                                                      
+         CANENV     = ARTPRE.CANENV; ,                                        
+                                   ^ Contexto ya definido para el archivo de da
+tos                                       ;                                   
+                                                                              
+WARNING Line : 31375, Column : 35                                             
+SS   LOGIC-FMA-FOR-002 :                                                      
+      TEMPORREF = ARTTEX.TEMPORREF; ,                                         
+                                  ^ Contexto ya definido para el archivo de dat
+os                                      ;                                     
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FMA-FOR-002                    *)
+                                                                              
+WARNING Line : 31520, Column : 29                                             
+SS   LOGIC-FMA-FOR-003 :                                                      
+      ARTLOTCTR  = ARTLOTCTR; ,                                               
+                            ^ Contexto ya definido para el archivo de datos  ;
+                                                                              
+WARNING Line : 31551, Column : 28                                             
+SS   LOGIC-FMA-FOR-003 :                                                      
+      STOMAXTRA = STOMAXTRA; ,                                                
+                           ^ Contexto ya definido para el archivo de datos  ; 
+                                                                              
+WARNING Line : 31570, Column : 21                                             
+SS   LOGIC-FMA-FOR-003 :                                                      
+      ALTURA     = 1; ,                                                       
+                    ^ Contexto ya definido para el archivo de datos  ;        
+                                                                              
+WARNING Line : 31582, Column : 33                                             
+SS   LOGIC-FMA-FOR-003 :                                                      
+      ESTRUCT   = ARTPRV.ESTRUCT; ,                                           
+   ;                            ^ Contexto ya definido para el archivo de datos
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FMA-FOR-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FTE-RUT                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FUS-ACT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FUS-ACT-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FUS-ACT-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FUS-ACT-004                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FUS-ACT-005                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-FUS-OEX-001                    *)
+                                                                              
+WARNING Line : 33611, Column : 31                                             
+SS   LOGIC-GAC-AGR-001 :                                                      
+            CANPEN    = CANPEN; ,                                             
+ ;                            ^ Contexto ya definido para el archivo de datos 
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-AGR-001                    *)
+                                                                              
+WARNING Line : 33867, Column : 27                                             
+SS   LOGIC-GAC-ALT-001 :                                                      
+            CANPEN = L_CAN; ,                                                 
+                          ^ Contexto ya definido para el archivo de datos  ;  
+                                                                              
+WARNING Line : 33876, Column : 44                                             
+SS   LOGIC-GAC-ALT-001 :                                                      
+               TXTTIP = EXPORDLINTXT.TXTTIP; ,                                
+                                           ^ Contexto ya definido para el archi
+vo de datos                                               ;                   
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-ALT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-ANU-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-ARR-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-CAR-001                    *)
+                                                                              
+WARNING Line : 34595, Column : 38                                             
+SS   LOGIC-GAC-CAR-002 :                                                      
+   'L_ACCCOD:' + $STR($NVL(L_ACCCOD,0)); ,                                    
+                                     ^ Meaningless use of $NVL; EXPRESSION para
+meter doesn't support NULL                                         ;          
+                                                                              
+WARNING Line : 34597, Column : 49                                             
+SS   LOGIC-GAC-CAR-002 :                                                      
+   'L_RELACIONADA: ' + $STR($NVL(L_RELACIONADA,0)); ,                         
+                                                ^ Meaningless use of $NVL; EXPR
+ESSION para;eter doesn't support NULL                                         
+                                                                              
+WARNING Line : 34792, Column : 39                                             
+SS   LOGIC-GAC-CAR-002 :                                                      
+   'L_ACCCOD: ' + $STR($NVL(L_ACCCOD,0)); ,                                   
+                                      ^ Meaningless use of $NVL; EXPRESSION par
+ameter doesn't support NULL                                          ;        
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-CAR-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-CAR-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-CIC                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-CIC-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-CNT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-COM-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-DIS-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-DIS-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-EXP-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-FAL-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-OEX-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PAL-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PAL-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PAL-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PAL-MUL                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PIC-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PIC-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PIC-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PIC-004                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PIC-005                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PIC-006                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PIC-007                    *)
+                                                                              
+WARNING Line : 42146, Column : 41                                             
+SS   LOGIC-GAC-PIC-DIS :                                                      
+               ANCOPE    = ACCCOL.ANCOPE; ,                                   
+                                        ^ Contexto ya definido para el archivo 
+de datos                                            ;                         
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PIC-DIS                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PIC-MAN                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PRV-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-PRV-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-REA-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-REC-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-REC-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-REP-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-REU-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-REU-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-ROL-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-RPI-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-RUT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-RUT-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-UDS-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GAC-ZON-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-ACC-PIC                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-ETI-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-EXP-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-FRA-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-FRA-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-FRA-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-FRA-REC-001                *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-REP-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-RPA-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-RPA-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-RPA-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-RPA-004                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-RPA-005                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-RPF-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-RPF-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-RPF-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-RPI-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-RPP-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-TAB-DEF                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GEN-TAB-INI                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GENPAR-INI                     *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GES-KIT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GES-KIT-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GES-OEX-FAL                    *)
+                                                                              
+WARNING Line : 61232, Column : 41                                             
+SS   LOGIC-GES-SUS-001 :                                                      
+            PREVEN    = EXPORDLIN.PREVEN; ,                                   
+                                        ^ Contexto ya definido para el archivo 
+de datos                                            ;                         
+                                                                              
+WARNING Line : 61598, Column : 53                                             
+SS   LOGIC-GES-SUS-001 ,                                                      
+SS   LOGIC-GES-SUS-001 :                                                      
+                  PREVEN          = EXPORDLIN.PREVEN; ,                       
+                                                    ^ Contexto ya definido para
+ el archivo de datos                                                        ; 
+                                                                              
+WARNING Line : 61285, Column : 44                                             
+SS   LOGIC-GES-SUS-001 :                                                      
+               PREVEN    = EXPORDLIN.PREVEN; ,                                
+                                           ^ Contexto ya definido para el archi
+vo de datos                                               ;                   
+                                                                              
+WARNING Line : 61598, Column : 53                                             
+SS   LOGIC-GES-SUS-001 ,                                                      
+SS   LOGIC-GES-SUS-001 :                                                      
+                  PREVEN          = EXPORDLIN.PREVEN; ,                       
+                                                    ^ Contexto ya definido para
+ el archivo de datos                                                        ; 
+                                                                              
+WARNING Line : 61359, Column : 59                                             
+SS   LOGIC-GES-SUS-001 :                                                      
+                              PREVEN    = EXPORDLIN.PREVEN; ,                 
+                                                          ^ Contexto ya definid
+o para el ;rchivo de datos                                                    
+                                                                              
+WARNING Line : 61598, Column : 53                                             
+SS   LOGIC-GES-SUS-001 ,                                                      
+SS   LOGIC-GES-SUS-001 :                                                      
+                  PREVEN          = EXPORDLIN.PREVEN; ,                       
+                                                    ^ Contexto ya definido para
+ el archivo de datos                                                        ; 
+                                                                              
+WARNING Line : 61405, Column : 59                                             
+SS   LOGIC-GES-SUS-001 :                                                      
+                              PREVEN    = EXPORDLIN.PREVEN; ,                 
+                                                          ^ Contexto ya definid
+o para el ;rchivo de datos                                                    
+                                                                              
+WARNING Line : 61598, Column : 53                                             
+SS   LOGIC-GES-SUS-001 ,                                                      
+SS   LOGIC-GES-SUS-001 :                                                      
+                  PREVEN          = EXPORDLIN.PREVEN; ,                       
+                                                    ^ Contexto ya definido para
+ el archivo de datos                                                        ; 
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GES-SUS-001                    *)
+                                                                              
+WARNING Line : 62081, Column : 44                                             
+SS   LOGIC-GES-SUS-002 :                                                      
+               PREVEN    = EXPORDLIN.PREVEN; ,                                
+                                           ^ Contexto ya definido para el archi
+vo de datos                                               ;                   
+                                                                              
+WARNING Line : 62414, Column : 53                                             
+SS   LOGIC-GES-SUS-002 ,                                                      
+SS   LOGIC-GES-SUS-002 :                                                      
+                  PREVEN          = EXPORDLIN.PREVEN; ,                       
+                                                    ^ Contexto ya definido para
+ el archivo de datos                                                        ; 
+                                                                              
+WARNING Line : 62133, Column : 47                                             
+SS   LOGIC-GES-SUS-002 :                                                      
+                  PREVEN    = EXPORDLIN.PREVEN; ,                             
+                                              ^ Contexto ya definido para el ar
+chivo de datos                                                  ;             
+                                                                              
+WARNING Line : 62414, Column : 53                                             
+SS   LOGIC-GES-SUS-002 ,                                                      
+SS   LOGIC-GES-SUS-002 :                                                      
+                  PREVEN          = EXPORDLIN.PREVEN; ,                       
+                                                    ^ Contexto ya definido para
+ el archivo de datos                                                        ; 
+                                                                              
+WARNING Line : 62220, Column : 62                                             
+SS   LOGIC-GES-SUS-002 :                                                      
+                                 PREVEN    = EXPORDLIN.PREVEN; ,              
+                                                             ^ Contexto ya defi
+nido para el arc;ivo de datos                                                 
+                                                                              
+WARNING Line : 62414, Column : 53                                             
+SS   LOGIC-GES-SUS-002 ,                                                      
+SS   LOGIC-GES-SUS-002 :                                                      
+                  PREVEN          = EXPORDLIN.PREVEN; ,                       
+                                                    ^ Contexto ya definido para
+ el archivo de datos                                                        ; 
+                                                                              
+(*     Section successfuly compiled  : LOGIC-GES-SUS-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-HELPACCEPT                     *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-HELPBRANCH                     *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-HELPCRITERIA                   *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-HELPFIELD                      *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-HELPMENU                       *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-HELPSCREEN                     *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-HELPSCREEN-2                   *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-HELPSELECTION                  *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-HLP-TAB-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-HLP-TER-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-IMP-BIR-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-IMP-BIR-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INF-ACT                        *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INF-PROD                       *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INI-PM                         *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-ALE-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-ALE-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-ALE-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-ALT-001                    *)
+                                                                              
+WARNING Line : 1067, Column : 54                                              
+SP   LOGIC-INT-ART-001 :                                                      
+                            CANENV    = ARTPRE.CANENV; ,                      
+                                                     ^ Contexto ya definido par
+; el archivo de datos                                                         
+                                                                              
+WARNING Line : 1114, Column : 64                                              
+SP   LOGIC-INT-ART-001 :                                                      
+                             ZONUBICODALT = ARTALM.ZONUBICODALT; ,            
+                                                               ^ Contexto ya de
+finido para el archi;o de datos                                               
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-ART-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-ART-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-ART-004                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-ART-REF                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-AST-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-AST-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-AUB-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-AUB-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-AUB-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-BLO-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-BLO-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-BLO-003                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CAMBIA-FOR                 *)
+                                                                              
+WARNING Line : 71352, Column : 29                                             
+SS   LOGIC-INT-CAMBIAFOR2 :                                                   
+      TRANSVASE  = TRANSVASE; ,                                               
+                            ^ Contexto ya definido para el archivo de datos  ;
+                                                                              
+WARNING Line : 71384, Column : 28                                             
+SS   LOGIC-INT-CAMBIAFOR2 :                                                   
+      STOMAXTRA = STOMAXTRA; ,                                                
+                           ^ Contexto ya definido para el archivo de datos  ; 
+                                                                              
+WARNING Line : 71412, Column : 21                                             
+SS   LOGIC-INT-CAMBIAFOR2 :                                                   
+      ALTURA     = 1; ,                                                       
+                    ^ Contexto ya definido para el archivo de datos  ;        
+                                                                              
+WARNING Line : 71424, Column : 33                                             
+SS   LOGIC-INT-CAMBIAFOR2 :                                                   
+      ESTRUCT   = ARTPRV.ESTRUCT; ,                                           
+   ;                            ^ Contexto ya definido para el archivo de datos
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CAMBIAFOR2                 *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CAS-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CCD-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CCO-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CMV-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CMV-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CNT-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CNT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CRS-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CRS-002                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CST-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-CST-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-DAT-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-EAL-000                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-EAL-001                    *)
+                                                                              
+(*     Section successfuly compiled  : LOGIC-INT-EAL-002                    *)
+                                                                              
+(****************************************************************************)
+(*     Total number of sections      : 382                                  *)
+(*     Total number of errors        : 153                                  *)
+(*     Total number of warnings      : 62                                   *)
+(*     Successfuly compiled sections : 379                                  *)
+(*     Log file ending state         : Ended because of a quit              *)
+(*     Ending Date & Time            : lun sep 26 2016 17:50:22             *)
+(****************************************************************************)

@@ -1,0 +1,1714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique GimÃ©nez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 08/03/2010 (versiÃ³n inicial): Se aÃ±ade el parÃ¡metro pdecAlmCod (cÃ³digo interno almacÃ©n) con 
+* respecto a la versiÃ³n de SpeedWare, ya que desde un informe BIRT no es posible recuperar una 
+* variable global de SpeedWare.
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*       Informe de diferencias en orden expediciÃ³n.
+*
+* PARAMETROS RECIBIDOS:
+*       1. pdecAlmCod                           -> CÃ³digo interno almacÃ©n
+*       1. pdecExpOrdCod                        -> CÃ³digo interno orden expediciÃ³n
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pdecAlmCod" id="6980">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecAlmCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">1</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecExpOrdCod" id="5796">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecExpOrdCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">2697</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strParSustGestion" id="6981">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">N</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="OEX" id="411">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@172.20.10.51:1521:adaiasrv</property>
+            <property name="odaUser">loreagx</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">bG9yZWFneA==</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-DIF-001 02 (Ppal)" id="6003">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDLIN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ART_CLASIF</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">FLAG_ART_SUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ARTREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ARTDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">UNIEXP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">UNIMIN</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">NUMUNI_UNIEXP</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">CANPED</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">CANSER</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">DIF</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">CANPED_ORI</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">OBS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="beforeOpen"><![CDATA[//
+// Inicializar la string de la consulta
+this.queryText = ''
+//
+// *******************************
+// * AÃ±adir los campos al SELECT *
+// * *****************************
+//
+this.queryText = this.queryText + " " + "SELECT   b.EXPORDLIN," +
+                                  " " +         "(CASE" + 
+                                  " " +            "WHEN e.ARTCOD IS NULL" + 
+                                  " " +              "OR e.ARTCOD =  b.ARTCOD" + 
+                                  " " +              "THEN 0" +
+                                  " " +            "ELSE   1" +
+                                  " " +          "END)                              AS ART_CLASIF," +
+                                  " " +         "(CASE" + 
+                                  " " +            "WHEN" + " " + "'" + params["strParSustGestion"].value + "'" + " " + "= 'S'" +
+                                  " " +              "THEN (CASE" +
+                                  " " +                      "WHEN b.EXPORDLINSUSART IS NULL" +
+                                  " " +                        "THEN (CASE" + 
+                                  " " +                                "WHEN (SELECT COUNT(*)" +
+                                  " " +                                      "FROM   EXPORDLIN p" +
+                                  " " +                                      "WHERE  p.EXPORDCOD       = a.EXPORDCOD" +
+                                  " " +                                        "AND  p.EXPORDLINSUSART = b.EXPORDLIN) > 0" +
+                                  " " +                                  "THEN '(*)'" +
+                                  " " +                                "ELSE   NULL" +
+                                  " " +                              "END)" +  
+                                  " " +                      "ELSE   '(*)'" +
+                                  " " +                    "END)" + 
+                                  " " +            "ELSE   NULL" + 
+                                      " " +          "END)                              AS FLAG_ART_SUS," +     
+                                  " " +         "(CASE" + 
+                                  " " +            "WHEN e.ARTCOD IS NULL" + 
+                                  " " +              "THEN c.ARTREF" +
+                                  " " +            "ELSE   f.ARTREF" +
+                                  " " +          "END)                              AS ARTREF," +
+                                  " " +         "(CASE" + 
+                                  " " +            "WHEN e.ARTCOD IS NULL" +
+                                  " " +              "THEN c.ARTDES" +
+                                  " " +            "ELSE   f.ARTDES" +
+                                  " " +          "END)                              AS ARTDES," +  
+                                  " " +         "(CASE" + 
+                                  " " +            "WHEN e.ARTCOD IS NULL" + 
+                                  " " +              "THEN c.UNIEXP" +
+                                  " " +            "ELSE   f.UNIEXP" +
+                                  " " +          "END)                              AS UNIEXP, " +
+                                  " " +         "(CASE" + 
+                                  " " +            "WHEN e.ARTCOD IS NULL" +
+                                  " " +              "THEN c.UNIMIN" +
+                                  " " +            "ELSE   f.UNIMIN" +
+                                  " " +          "END)                              AS UNIMIN," +  
+                                  " " +         "(CASE" + 
+                                  " " +            "WHEN e.ARTCOD IS NULL" + 
+                                  " " +              "THEN d.NUMUNI" +
+                                  " " +            "ELSE   g.NUMUNI" +
+                                  " " +          "END)                              AS NUMUNI_UNIEXP," +
+                                  " " +         "(CASE" +
+                                  " " +            "WHEN e.ARTCOD IS NULL" +
+                                  " " +              "OR e.ARTCOD =  b.ARTCOD" + 
+                                  " " +              "THEN b.CANPED" +
+                                  " " +            "ELSE   0" +
+                                  " " +          "END)                              AS CANPED," +
+                                  " " +          "COALESCE(e.CANSER,0)              AS CANSER," +
+                                  " " +         "(CASE" + 
+                                  " " +            "WHEN e.ARTCOD IS NULL" +
+                                  " " +              "OR e.ARTCOD =  b.ARTCOD" +
+                                  " " +              "THEN (b.CANPED - COALESCE(e.CANSER, 0))" +
+                                  " " +            "ELSE   0" +
+                                  " " +          "END)                              AS DIF," +
+                                  " " +         "(SELECT SUM(r.CANPED)" +
+                                  " " +          "FROM   EXPORDCAB q" +
+                                  " " +                   "INNER JOIN EXPORDLIN r" +
+                                  " " +                      "ON r.EXPORDCOD = q.EXPORDCOD" +
+                                  " " +          "WHERE  q.EXPORDPRIREF = a.EXPORDPRIREF" +
+                                  " " +            "AND  r.ARTCOD       = b.ARTCOD) AS CANPED_ORI," +
+                                  " " +         "b.OBS"   
+//
+// ****************************
+// * AÃ±adir el FROM al SELECT *
+// * **************************
+//       
+this.queryText = this.queryText + " " + "FROM     EXPORDCAB a" +
+                                  " " +            "INNER JOIN EXPORDLIN b" +
+                                  " " +               "ON b.EXPORDCOD = a.EXPORDCOD" +
+                                  " " +            "LEFT OUTER JOIN ART c" +
+                                  " " +               "ON c.ARTCOD    = b.ARTCOD" +
+                                  " " +            "LEFT OUTER JOIN ARTPRE d" +
+                                  " " +               "ON d.ARTCOD    = b.ARTCOD" +
+                                  " " +              "AND d.UNITIP    = c.UNIEXP" +     
+                                  " " +            "LEFT OUTER JOIN EXPLIN e" +
+                                  " " +               "ON e.EXPORDCOD = a.EXPORDCOD" +
+                                  " " +              "AND e.EXPORDLIN = b.EXPORDLIN" + 
+                                  " " +            "LEFT OUTER JOIN ART f" +
+                                  " " +               "ON f.ARTCOD    = e.ARTCOD" +
+                                  " " +            "LEFT OUTER JOIN ARTPRE g" +
+                                  " " +               "ON g.ARTCOD    = e.ARTCOD" +
+                                  " " +              "AND g.UNITIP    = f.UNIEXP"
+//
+// *****************************
+// * AÃ±adir el WHERE al SELECT *
+// * ***************************
+//               
+this.queryText = this.queryText + " " + "WHERE    a.EXPORDCOD =" + " " + params["pdecExpOrdCod"].value +
+                                  " " +   "AND   (b.CANPED <> COALESCE((SELECT SUM(s.CANSER)" +
+                                  " " +                                "FROM   EXPLIN s" +
+                                  " " +                                "WHERE  s.EXPORDCOD = a.EXPORDCOD" +
+                                  " " +                                  "AND  s.EXPORDLIN = b.EXPORDLIN),0)" +
+                                  " " +                   "OR" +
+                                  " " +         "(SELECT COUNT(*)" +
+                                  " " +          "FROM   EXPORDLIN t" +
+                                  " " +          "WHERE  t.EXPORDCOD =  a.EXPORDCOD" +
+                                  " " +            "AND  t.EXPORDLIN =  b.EXPORDLIN" +
+                                  " " +            "AND  t.ARTCOD    <> b.ARTCOD) > 0)"
+//
+// ********************************
+// * AÃ±adir el ORDER BY al SELECT *
+// * ******************************
+//  
+this.queryText = this.queryText + " " + "ORDER BY b.EXPORDLIN," +
+                                  " " +          "(CASE" + 
+                                  " " +             "WHEN e.ARTCOD IS NULL" +
+                                  " " +               "OR e.ARTCOD =  b.ARTCOD" +
+                                  " " +               "THEN 0" +
+                                  " " +             "ELSE   1" +
+                                  " " +           "END)"]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDLIN</property>
+                    <property name="nativeName">EXPORDLIN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ART_CLASIF</property>
+                    <property name="nativeName">ART_CLASIF</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">FLAG_ART_SUS</property>
+                    <property name="nativeName">FLAG_ART_SUS</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ARTREF</property>
+                    <property name="nativeName">ARTREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ARTDES</property>
+                    <property name="nativeName">ARTDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">UNIEXP</property>
+                    <property name="nativeName">UNIEXP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">UNIMIN</property>
+                    <property name="nativeName">UNIMIN</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">NUMUNI_UNIEXP</property>
+                    <property name="nativeName">NUMUNI_UNIEXP</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">CANPED</property>
+                    <property name="nativeName">CANPED</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">CANSER</property>
+                    <property name="nativeName">CANSER</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">DIF</property>
+                    <property name="nativeName">DIF</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">CANPED_ORI</property>
+                    <property name="nativeName">CANPED_ORI</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">OBS</property>
+                    <property name="nativeName">OBS</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">// Consulta definida en evento beforeOpen</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-DIF-001 03 (Cab)" id="6166">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FECORD</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">MOMEXP</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">TERREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">TERDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ESTREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecExpOrdCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDREF</property>
+                    <property name="nativeName">EXPORDREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FECORD</property>
+                    <property name="nativeName">FECORD</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">MOMEXP</property>
+                    <property name="nativeName">MOMEXP</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">TERREF</property>
+                    <property name="nativeName">TERREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">TERDES</property>
+                    <property name="nativeName">TERDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ESTREF</property>
+                    <property name="nativeName">ESTREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.EXPORDREF,
+         a.FECORD,
+         a.MOMEXP,         
+         b.TERREF,
+         b.TERDES,
+         c.ESTREF 
+FROM     EXPORDCAB a
+           LEFT OUTER JOIN TER b
+              ON b.TERCOD = a.TERCOD
+           LEFT OUTER JOIN ALMEST c
+              ON c.ESTCOD = a.MUEEXP   
+WHERE    a.EXPORDCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-DIF-001 01 (Par)" id="6979">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">VALALF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="onFetch"><![CDATA[//
+// Guardar el valor del parÃ¡metro SUST-GESTION para 
+// utilizarlo en el conjunto de datos OEX-DIF-001 02 (Ppal)
+params["strParSustGestion"].value = BirtStr.trimRight( dataSetRow["VALALF"] )]]></method>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p2</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p3</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">VALALF</property>
+                    <property name="nativeName">VALALF</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.VALALF
+FROM     GENPAR a
+WHERE    a.GENPARCAT = 'EXPEDICION'       
+  AND    a.GENPARCOD = 'SUST-GESTION'
+  AND    a.ALMCOD    = (CASE
+                          WHEN (SELECT COUNT(*)
+                                FROM   GENPAR t
+                                WHERE  t.GENPARCAT = a.GENPARCAT
+                                  AND  t.GENPARCOD = a.GENPARCOD
+                                  AND  t.ALMCOD    = ?) > 0
+                            THEN ?                           
+                          WHEN ? &lt;> 1
+                            THEN 1
+                          ELSE   NULL
+                        END)</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-DIF-001 04 (Cab2)" id="6992">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="InformeDeDiferenciasEnOrdenExpedicion"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="6993">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">OEX-DIF-001 04 (Cab2)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(OEX-DIF-001)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="3563">
+            <property name="marginTop">0pt</property>
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">60%</property>
+            <column id="3564">
+                <property name="width">50mm</property>
+            </column>
+            <column id="3565">
+                <property name="width">30mm</property>
+            </column>
+            <column id="5726">
+                <property name="width">60mm</property>
+            </column>
+            <column id="3566">
+                <property name="width">50mm</property>
+            </column>
+            <column id="5823">
+                <property name="width">30mm</property>
+            </column>
+            <column id="5829">
+                <property name="width">30mm</property>
+            </column>
+            <row id="3567">
+                <property name="height">0.312in</property>
+                <cell id="3568"/>
+                <cell id="3569"/>
+                <cell id="5721"/>
+                <cell id="3570"/>
+                <cell id="5819"/>
+                <cell id="5825"/>
+            </row>
+            <row id="6366">
+                <cell id="6367">
+                    <label id="6373">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Muelle"></text-property>
+                    </label>
+                </cell>
+                <cell id="6368">
+                    <data id="6374">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">OEX-DIF-001 03 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ESTREF</property>
+                                <property name="displayName">ESTREF</property>
+                                <expression name="expression">dataSetRow["ESTREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ESTREF</property>
+                    </data>
+                </cell>
+                <cell id="6369">
+                    <label id="6375">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="MomentoExpedicion"></text-property>
+                    </label>
+                </cell>
+                <cell id="6370">
+                    <data id="6376">
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="dateTimeFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">dd/MM/yyyy HH:mm:ss</property>
+                        </structure>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">OEX-DIF-001 03 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">MOMEXP</property>
+                                <property name="displayName">MOMEXP</property>
+                                <expression name="expression">dataSetRow["MOMEXP"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">MOMEXP</property>
+                    </data>
+                </cell>
+                <cell id="6371"/>
+                <cell id="6372"/>
+            </row>
+            <row id="5225">
+                <cell id="5226">
+                    <label id="5444">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="OrdenExpedicion"></text-property>
+                    </label>
+                </cell>
+                <cell id="5227">
+                    <data id="6167">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">OEX-DIF-001 03 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">EXPORDREF</property>
+                                <property name="displayName">EXPORDREF</property>
+                                <expression name="expression">dataSetRow["EXPORDREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">EXPORDREF</property>
+                    </data>
+                </cell>
+                <cell id="5722">
+                    <label id="6165">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="FechaOrden"></text-property>
+                    </label>
+                </cell>
+                <cell id="5518">
+                    <data id="6175">
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="dateTimeFormat">
+                            <property name="category">Medium Date</property>
+                            <property name="pattern">Medium Date</property>
+                        </structure>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">OEX-DIF-001 03 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FECORD</property>
+                                <property name="displayName">FECORD</property>
+                                <expression name="expression">dataSetRow["FECORD"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">FECORD</property>
+                    </data>
+                </cell>
+                <cell id="5820"/>
+                <cell id="5826"/>
+            </row>
+            <row id="5439">
+                <cell id="5440">
+                    <label id="5445">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Destinatario"></text-property>
+                    </label>
+                </cell>
+                <cell id="5441">
+                    <data id="6168">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">OEX-DIF-001 03 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TERREF</property>
+                                <property name="displayName">TERREF</property>
+                                <expression name="expression">dataSetRow["TERREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">TERREF</property>
+                    </data>
+                </cell>
+                <cell id="5723">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <data id="6169">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">OEX-DIF-001 03 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TERDES</property>
+                                <property name="displayName">TERDES</property>
+                                <expression name="expression">dataSetRow["TERDES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">TERDES</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <table id="6982">
+            <property name="width">0%</property>
+            <property name="dataSet">OEX-DIF-001 01 (Par)</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">VALALF</property>
+                    <property name="displayName">VALALF</property>
+                    <expression name="expression">dataSetRow["VALALF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="6991"/>
+            <detail>
+                <row id="6986">
+                    <cell id="6987"/>
+                </row>
+            </detail>
+        </table>
+        <table id="6180">
+            <property name="marginTop">0pt</property>
+            <property name="width">95%</property>
+            <property name="dataSet">OEX-DIF-001 02 (Ppal)</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">EXPORDLIN</property>
+                    <property name="displayName">EXPORDLIN</property>
+                    <expression name="expression">dataSetRow["EXPORDLIN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ART_CLASIF</property>
+                    <property name="displayName">ART_CLASIF</property>
+                    <expression name="expression">dataSetRow["ART_CLASIF"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">FLAG_ART_SUS</property>
+                    <property name="displayName">FLAG_ART_SUS</property>
+                    <expression name="expression">dataSetRow["FLAG_ART_SUS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTREF</property>
+                    <property name="displayName">ARTREF</property>
+                    <expression name="expression">dataSetRow["ARTREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTDES</property>
+                    <property name="displayName">ARTDES</property>
+                    <expression name="expression">dataSetRow["ARTDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UNIEXP</property>
+                    <property name="displayName">UNIEXP</property>
+                    <expression name="expression">dataSetRow["UNIEXP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NUMUNI_UNIEXP</property>
+                    <property name="displayName">NUMUNI_UNIEXP</property>
+                    <expression name="expression">dataSetRow["NUMUNI_UNIEXP"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CANPED</property>
+                    <property name="displayName">CANPED</property>
+                    <expression name="expression">dataSetRow["CANPED"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CANSER</property>
+                    <property name="displayName">CANSER</property>
+                    <expression name="expression">dataSetRow["CANSER"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decCanPed_UniExp</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIEXP"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIEXP"] != 0 )
+{
+        var x = ( dataSetRow["CANPED"] )
+        if ( x &lt; 0 )
+        {
+                var y = -1
+        }
+        else
+        {
+                var y = 1
+        }
+        BirtMath.roundDown( ( ( x * y ) / dataSetRow["NUMUNI_UNIEXP"] ), 0 ) * y
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decCanPed_UniMin</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIEXP"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIEXP"] != 0 )
+{
+        var x = ( dataSetRow["CANPED"] )
+        if ( x &lt; 0 )
+        {
+                var y = -1
+        }
+        else
+        {
+                var y = 1
+        }
+        BirtMath.mod( ( x * y ), dataSetRow["NUMUNI_UNIEXP"] ) * y
+}
+else
+{
+        dataSetRow["CANPED"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UNIMIN</property>
+                    <property name="displayName">UNIMIN</property>
+                    <expression name="expression">dataSetRow["UNIMIN"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">decCanSer_UniExp</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIEXP"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIEXP"] != 0 )
+{
+        var x = ( dataSetRow["CANSER"] )
+        if ( x &lt; 0 )
+        {
+                var y = -1
+        }
+        else
+        {
+                var y = 1
+        }
+        BirtMath.roundDown( ( ( x * y ) / dataSetRow["NUMUNI_UNIEXP"] ), 0 ) * y
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decCanSer_UniMin</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIEXP"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIEXP"] != 0 )
+{
+        var x = ( dataSetRow["CANSER"] )
+        if ( x &lt; 0 )
+        {
+                var y = -1
+        }
+        else
+        {
+                var y = 1
+        }
+        BirtMath.mod( ( x * y ), dataSetRow["NUMUNI_UNIEXP"] ) * y
+}
+else
+{
+        dataSetRow["CANSER"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decDifCan_UniExp</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIEXP"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIEXP"] != 0 )
+{
+        var x = ( dataSetRow["DIF"] )
+        if ( x &lt; 0 )
+        {
+                var y = -1
+        }
+        else
+        {
+                var y = 1
+        }
+        BirtMath.roundDown( ( ( x * y ) / dataSetRow["NUMUNI_UNIEXP"] ), 0 ) * y
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decDifCan_UniMin</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIEXP"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIEXP"] != 0 )
+{
+        var x = ( dataSetRow["DIF"] )
+        if ( x &lt; 0 )
+        {
+                var y = -1
+        }
+        else
+        {
+                var y = 1
+        }
+        BirtMath.mod( ( x * y ), dataSetRow["NUMUNI_UNIEXP"] ) * y
+}
+else
+{
+        dataSetRow["DIF"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decCanPed_Ori_UniExp</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIEXP"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIEXP"] != 0 )
+{
+        var x = ( dataSetRow["CANPED_ORI"] )
+        if ( x &lt; 0 )
+        {
+                var y = -1
+        }
+        else
+        {
+                var y = 1
+        }
+        BirtMath.roundDown( ( ( x * y ) / dataSetRow["NUMUNI_UNIEXP"] ), 0 ) * y
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decCanPed_Ori_UniMin</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIEXP"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIEXP"] != 0 )
+{
+        var x = ( dataSetRow["CANPED_ORI"] )
+        if ( x &lt; 0 )
+        {
+                var y = -1
+        }
+        else
+        {
+                var y = 1
+        }
+        BirtMath.mod( ( x * y ), dataSetRow["NUMUNI_UNIEXP"] ) * y
+}
+else
+{
+        dataSetRow["CANPED_ORI"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">OBS</property>
+                    <property name="displayName">OBS</property>
+                    <expression name="expression">dataSetRow["OBS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="6239">
+                <property name="width">15mm</property>
+            </column>
+            <column id="6241">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6242">
+                <property name="width">28mm</property>
+            </column>
+            <column id="6243">
+                <property name="width">50mm</property>
+            </column>
+            <column id="6244">
+                <property name="width">10mm</property>
+            </column>
+            <column id="6245">
+                <property name="width">9mm</property>
+            </column>
+            <column id="6246">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6247">
+                <property name="width">3mm</property>
+            </column>
+            <column id="6248">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6249">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6302">
+                <property name="width">9mm</property>
+            </column>
+            <column id="6297">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6292">
+                <property name="width">3mm</property>
+            </column>
+            <column id="6287">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6282">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6277">
+                <property name="width">9mm</property>
+            </column>
+            <column id="6272">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6267">
+                <property name="width">3mm</property>
+            </column>
+            <column id="6348">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6343">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6338">
+                <property name="width">9mm</property>
+            </column>
+            <column id="6333">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6359">
+                <property name="width">3mm</property>
+            </column>
+            <column id="6328">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6323">
+                <property name="width">6mm</property>
+            </column>
+            <column id="6381">
+                <property name="width">35mm</property>
+            </column>
+            <header>
+                <row id="6250">
+                    <property name="height">0.312in</property>
+                    <cell id="6251"/>
+                    <cell id="6253"/>
+                    <cell id="6254"/>
+                    <cell id="6255"/>
+                    <cell id="6256"/>
+                    <cell id="6257"/>
+                    <cell id="6258"/>
+                    <cell id="6259"/>
+                    <cell id="6260"/>
+                    <cell id="6261"/>
+                    <cell id="6298"/>
+                    <cell id="6293"/>
+                    <cell id="6288"/>
+                    <cell id="6283"/>
+                    <cell id="6278"/>
+                    <cell id="6273"/>
+                    <cell id="6268"/>
+                    <cell id="6263"/>
+                    <cell id="6344"/>
+                    <cell id="6339"/>
+                    <cell id="6334"/>
+                    <cell id="6329"/>
+                    <cell id="6355"/>
+                    <cell id="6324"/>
+                    <cell id="6319"/>
+                    <cell id="6377"/>
+                </row>
+                <row id="6498">
+                    <cell id="6499"/>
+                    <cell id="6500">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <property name="textAlign">left</property>
+                        <text id="6469">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#004000</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[(*) = ArtÃ­culo sustituido]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="6503"/>
+                    <cell id="6504"/>
+                    <cell id="6505"/>
+                    <cell id="6506"/>
+                    <cell id="6507"/>
+                    <cell id="6508"/>
+                    <cell id="6509"/>
+                    <cell id="6510"/>
+                    <cell id="6511"/>
+                    <cell id="6512"/>
+                    <cell id="6513"/>
+                    <cell id="6514"/>
+                    <cell id="6515"/>
+                    <cell id="6516"/>
+                    <cell id="6517"/>
+                    <cell id="6518"/>
+                    <cell id="6519"/>
+                    <cell id="6520"/>
+                    <cell id="6521"/>
+                    <cell id="6522"/>
+                    <cell id="6523"/>
+                    <cell id="6524"/>
+                </row>
+                <row id="6526">
+                    <property name="height">0.2in</property>
+                    <cell id="6527"/>
+                    <cell id="6528">
+                        <property name="textAlign">left</property>
+                    </cell>
+                    <cell id="6529">
+                        <property name="textAlign">left</property>
+                    </cell>
+                    <cell id="6530">
+                        <property name="textAlign">left</property>
+                    </cell>
+                    <cell id="6531"/>
+                    <cell id="6532"/>
+                    <cell id="6533"/>
+                    <cell id="6534"/>
+                    <cell id="6535"/>
+                    <cell id="6536"/>
+                    <cell id="6537"/>
+                    <cell id="6538"/>
+                    <cell id="6539"/>
+                    <cell id="6540"/>
+                    <cell id="6541"/>
+                    <cell id="6542"/>
+                    <cell id="6543"/>
+                    <cell id="6544"/>
+                    <cell id="6545"/>
+                    <cell id="6546"/>
+                    <cell id="6547"/>
+                    <cell id="6548"/>
+                    <cell id="6549"/>
+                    <cell id="6550"/>
+                    <cell id="6551"/>
+                    <cell id="6552"/>
+                </row>
+                <row id="6181">
+                    <property name="verticalAlign">bottom</property>
+                    <cell id="6182">
+                        <label id="6303">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <text-property name="text" key="Linea"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6186">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                    <cell id="6385">
+                        <label id="6304">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <text-property name="text" key="Articulo"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6190">
+                        <label id="6305">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <text-property name="text" key="Descripcion"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6192">
+                        <label id="6307">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <text-property name="text" key="Uds1UdExp"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6194">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <label id="6308">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <text-property name="text" key="CantidadPedida"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6299">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <label id="6318">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <text-property name="text" key="CantidadServida"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6274">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <label id="6354">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <text-property name="text" key="Diferencia"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6335">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <label id="6365">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <text-property name="text" key="CtdOrigPedida"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6378">
+                        <label id="6382">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="whiteSpace">normal</property>
+                            <text-property name="text" key="Observaciones"></text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="6204">
+                    <cell id="6205">
+                        <data id="6206">
+                            <property name="marginTop">0pt</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">EXPORDLIN</property>
+                        </data>
+                    </cell>
+                    <cell id="6209">
+                        <data id="6210">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">FLAG_ART_SUS</property>
+                        </data>
+                    </cell>
+                    <cell id="6211">
+                        <data id="6212">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ARTREF</property>
+                        </data>
+                    </cell>
+                    <cell id="6213">
+                        <data id="6214">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ARTDES</property>
+                        </data>
+                    </cell>
+                    <cell id="6215">
+                        <data id="6218">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">NUMUNI_UNIEXP</property>
+                        </data>
+                    </cell>
+                    <cell id="6217">
+                        <data id="6309">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">decCanPed_UniExp</property>
+                        </data>
+                    </cell>
+                    <cell id="6219">
+                        <data id="6216">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">UNIEXP</property>
+                        </data>
+                    </cell>
+                    <cell id="6221">
+                        <label id="6262">
+                            <text-property name="text" key="+"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6223">
+                        <data id="6310">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">decCanPed_UniMin</property>
+                        </data>
+                    </cell>
+                    <cell id="6225">
+                        <data id="6312">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">UNIMIN</property>
+                        </data>
+                    </cell>
+                    <cell id="6300">
+                        <data id="6313">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">decCanSer_UniExp</property>
+                        </data>
+                    </cell>
+                    <cell id="6295">
+                        <data id="6316">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">UNIEXP</property>
+                        </data>
+                    </cell>
+                    <cell id="6290">
+                        <label id="6315">
+                            <text-property name="text" key="+"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="6285">
+                        <data id="6314">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">decCanSer_UniMin</property>
+                        </data>
+                    </cell>
+                    <cell id="6280">
+                        <data id="6317">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">UNIMIN</property>
+                        </data>
+                    </cell>
+                    <cell id="6275">
+                        <data id="6352">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">decDifCan_UniExp</property>
+                        </data>
+                    </cell>
+                    <cell id="6270">
+                        <data id="6349">
+                   file /home/oracle/diag/rdbms/adaiasrv/adaiasrv/trace/adaiasrv_ora_17012.trc
+Oracle Database 11g Release 11.2.0.1.0 - 64bit Production
+ORACLE_HOME = /home/oracle/product/11.2/db_home1
+System name:	HP-UX
+Node name:	sermad06
+Release:	B.11.31
+Version:	U
+Machine:	ia64
+Instance name: adaiasrv
+Redo thread mounted by this instance: 1
+Oracle process number: 0
+Unix process pid: 17012, image: oracle@sermad06
+
+
+*** 2014-11-11 17:47:04.084
+Ioctl ASYNC_CONFIG error, errno = 1
+Ioctl ASYNC_CONFIG error, errno = 1
+Trace file /home/oracle/diag/rdbms/adaiasrv/adaiasrv/trace/adaiasrv_ora_17012.trc
+Oracle Database 11g Release 11.2.0.1.0 - 64bit Production
+ORACLE_HOME = /home/oracle/product/11.2/db_home1
+System name:	HP-UX
+Node name:	sermad06
+Release:	B.11.31
+Version:	U
+Machine:	ia64
+Instance name: adaiasrv
+Redo thread mounted by this instance: 1
+Oracle process number: 0
+Unix process pid: 17012, image: oracle@sermad06
+
+
+*** 2014-12-06 16:30:19.170
+Ioctl ASYNC_CONFIG error, errno = 1
+Ioctl ASYNC_CONFIG error, errno = 1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ÿxr9xrÿÿÿ€€ÿÿxr9€ÿÿ ÿ                 €,3Ã:1168846         Â8NOFSPÁÃ:1xŒxŒ		PD   SOK  xr9xr9€    €€€ÂZ€168846                 ÿÿ                    ÿxr9xrÿÿÿ€€ÿÿxr9€ÿÿ ÿ                 €,3Ã:2168849         Â8NOFSPÁÃ:2xŒxŒ		PD   SOK  xr9xr9€    €€€ÂZ€168849                 ÿÿ                    ÿxr9xrÿÿÿ€€ÿÿxr9€ÿÿ ÿ                 €,3Ã:3168850         Â8NOFSPÁÃ:3xŒxŒ		PD   SOK  xr9xr9€    €€€ÂZ€168850                 ÿÿ                    ÿxr9xrÿÿÿ€€ÿÿxr9€ÿÿ ÿ                 €,3Ã:4168852         Â8NOFSPÁÃ:4xŒxŒ		PD   SOK  xr9xr9€    €€€ÂZ€168852                 ÿÿ                    ÿxr9xrÿÿÿ€€ÿÿxr9€ÿÿ ÿ                 €,3Ã:5168854         Â8NOFSPÁÃ:5xŒxŒ		PD   SOK  xr9xr9€    €€€ÂZ€168854                 ÿÿ                    ÿxr9xrÿÿÿ€€ÿÿxr9€ÿÿ ÿ                 €,3Ã:6168856         Â8NOFSPÁÃ:6xŒxŒ		PD   SOK  xr9xr9€    €€€ÂZ€168856                 ÿÿ                    ÿxr9xrÿÿÿ€€ÿÿxr9€ÿÿ ÿ                 €,3Ã:7168857         Â8NOFSPÁÃ:7xŒxŒ		PD   SOK  xr9xr9€    €€€ÂZ€168857                 ÿÿ                    ÿxr9xrÿÿÿ€€ÿÿxr9€ÿÿ ÿ                 €,3Ã"167761         Â8NOFSPÁÃ"xŒxŒ		PD   SOK  xr!xr!€    €€€ÂZ€167761                 ÿÿ                    ÿxr!xrÿÿÿ€€ÿÿxr!€ÿÿ ÿ                 €,3Ã"167764         Â8NOFSPÁÃ"xŒxŒ		PD   SOK  xr!xr!€    €€€ÂZ€167764                 ÿÿ                    ÿxr!xrÿÿÿ€€ÿÿxr!€ÿ¢  5†å¶\úü  Ëµ  
+  	7Õ\úü  ä 2 5†å€ 
+  5œ À&ëv+#     \áá                                  ÿÿ Bv44   v—Êë	M
+x©Ýý/_Š»ïDe™ºîCd¢°¾ÌÚèö .<JXft‚¥ž¬ºÈÖäò *8FTbp~Œš¨¶ÄÒàîü
+%53AO]ky‡•£±¿ÍÛé÷!C/=KYguƒþ(6D‘Ÿ­»É×åó+9GUcR`qn|…“Q›©Š˜¦´ÂÐdr€Ž1·ÅÓáïýœª¸ÆÔâð¯½ËÙç'5CQ_m{‰—¥³ÁÏÝëù#1?M[iw…“_¡¯½mËÙçõô,:H{V¡³Á-;IWe‰s«ÏÝëù¹ÇÕãñÿ)7ES?ao}‹™§µÃÑßíûM	[%3@N\jx†”¢°¾ÌÚèö .<JXft‚ž¬ºÈÖäò *8FTbp~Œš¨¶ÄÒàiîü
+&#4BwÒÝèóþ	*5"-8CNYdŽ™¤¯ºÅÐÛæñü(3>IT_ju€ªµŸ¢­¸ÃÎÙäïú
+„
+
+7
+,	¾	É	Ô	ß	ê	õ
+ 
+
+
+!	˜£®¹ÄÏÚåðû'2=HS^à0;FQ\gr}ˆ“ž(3>I, *ÄJRHÁÃ*^Âd1   OK  Á,
+06        Â
+7458      €    xq	xq	ÿ€€         €                €                €      €      €                  €                      €               €€€€                (                                        €, *ÄJRIÁÃ*^Â1   OK  Á,
+06        Â
+7458      €    xq	xqxq€€TRABVALI ÃWJ01MR04081       €                €      €      Ä6-T2700015344837     €                  VALI€               €Ã8;€Â9b50067           (SCREEN-RFT-VAL-002-P                    €, *ÄJRJÁÃ*^Â1   OK  Á,
+06        Â
+7458      €    xqxqÿ€€         €                €                €      €      €                  €                      €               €€€€                (                                        €, *ÄJRKÁÃ*^Â1   OK  Á,
+06        Â
+7458      €    xqxqÿ€€TRABVALIValida Contenedor€                €                €      €      €                  €                  GEST€               €€€€                (SCREEN-RFT-VAL-002-P                    Á, *ÄJRLÁÃ*^Â1   EXITÁ,
+06        Â
+7458      €    xqxqÿ€€TRABVALI
+Fin Camion€                €                €      €      €                  €                  GEST€               €Ã8;€Â9b50067           (SCREEN-RFT-VAL-002-P                    Á, *ÄJRMÁÃ*^Â1   OK  Á,
+06        Â
+7458      €    xqxq
+ÿ€€GESTMENU
+Menu Radio€                €                €      €      €                  €                  GEST€               €€€€                (LOGIC-RFL-MEN-001                       Á, *ÄJR_ÁÃ*^Â1   OK  Á,
+06        Â
+7458      €    xq
+xqÿ€€TRABVAINInicia Validacion€                €                €      €      €                  €                  GEST€               €€€€                (SCREEN-RFT-VAL-001-P                    €, *ÄJR`ÁÃ*^Â1   OK  Á,
+06        Â
+7458  

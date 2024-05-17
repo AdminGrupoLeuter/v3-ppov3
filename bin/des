@@ -1,0 +1,1 @@
+$SPW_HOME/$SPW_DSG_VERSION/designer -T$SPW_TERM	-Z $1 $2 $3 $4

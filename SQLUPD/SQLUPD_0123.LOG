@@ -1,0 +1,34 @@
+SQL> SET TIMING ON
+SQL> 
+SQL> -----------------------------------INICIO MODIFICACIONES
+SQL> 
+SQL> create or replace PROCEDURE SP_NEXTVAL
+  2  (
+  3    VAL OUT NUMBER
+  4  , SEQUENCENAME IN VARCHAR2
+  5  ) AS
+  6  BEGIN
+  7  	execute immediate 'select '||sequenceName||'.nextval from dual' into val;
+  8  	EXCEPTION WHEN OTHERS THEN
+  9  	   VAL := 0;
+ 10  END SP_NEXTVAL;
+ 11  /
+
+Procedimiento creado.
+
+Transcurrido: 00:00:00.06
+SQL> 
+SQL> -----------------------------------FIN MODIFICACIONES
+SQL> 
+SQL> UPDATE VERSIONES SET VERSION='0123', MOMENTO=SYSDATE WHERE SOFCOD='BD';
+
+1 fila actualizada.
+
+Transcurrido: 00:00:00.00
+SQL> COMMIT;
+
+ConfirmaciÆn terminada.
+
+Transcurrido: 00:00:00.00
+SQL> 
+SQL> SPOOL OFF;

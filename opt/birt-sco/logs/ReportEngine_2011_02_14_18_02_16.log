@@ -1,0 +1,2468 @@
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.api.impl.ReportEngine <init>
+FINA: ReportEngine created. EngineConfig: EngineConfig: org.eclipse.birt.report.engine.api.EngineConfig.scriptObjects={PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+, webapplication.projectclasspath=};maxRowsPerQuery=-1;BIRT_HOME=;logLevel=ALL;PLATFORM_CONTEXT=org.eclipse.birt.core.framework.PlatformServletContext@19ed7e;org.eclipse.birt.report.engine.api.EngineConfig.emitterConfigs={html=org.eclipse.birt.report.engine.api.HTMLRenderOption@3727c5};logDest=/opt/hpws/tomcat/webapps/birt-adaia3/logs; 
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINA: Start load extension point: org.eclipse.birt.report.engine.reportitemGeneration
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadGenerationExtensionDefns
+FINA: Load generation extension: Chart
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINA: Start load extension point: org.eclipse.birt.report.engine.reportitemPresentation
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadPresentationExtensionDefns
+FINA: Load prsentation extension: Chart
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINA: Start load extension point: org.eclipse.birt.report.engine.reportitemQuery
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadQueryExtensionDefns
+FINA: Load query extension: Chart
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINA: Start load extension point: org.eclipse.birt.report.engine.emitters
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINA: Load html emitter org.eclipse.birt.report.engine.emitter.html
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINA: Load pdf emitter org.eclipse.birt.report.engine.emitter.pdf
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINA: Load postscript emitter org.eclipse.birt.report.engine.emitter.postscript
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINA: Load ppt emitter org.eclipse.birt.report.engine.emitter.ppt
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINA: Load xls emitter org.eclipse.birt.report.engine.emitter.prototype.excel
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINA: Load doc emitter org.eclipse.birt.report.engine.emitter.word
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINA: Start load extension point: org.eclipse.birt.report.engine.reportEventHandler
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINA: Start load extension point: org.eclipse.birt.report.engine.reportItemPreparation
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINA: Start load extension point: org.eclipse.birt.report.engine.dataExtraction
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadDataExtractionExtensions
+FINA: Load data extraction extension: org.eclipse.birt.report.engine.dataextraction.csv
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINA: Start load extension point: org.eclipse.birt.report.engine.extendedItemFactory
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+FINA: Load extendedItem extension: Crosstab
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+FINA: Load extendedItem extension: CrosstabCell
+14-feb-2011 18:02:16 org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+FINA: Load extendedItem extension: AggregationCell
+14-feb-2011 18:02:57 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDocument
+FINA: ReportEngine.openReportDocument: systemId=/opt/hpws/tomcat/webapps/birt-adaia3/test.rptdesign, file=/opt/hpws/tomcat/webapps/birt-adaia3/documents/BIRTDOC2B36703F9B44FAE48434185C0E2D48EE/20110214_180257_756/test.rptdocument, options={resourceFolder=/opt/hpws/tomcat/webapps/birt-adaia3, semanticCheck=false} 
+14-feb-2011 18:02:58 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDesign
+FINA: ReportEngine.openReportDesign: name=file:/opt/hpws/tomcat/webapps/birt-adaia3/test.rptdesign, designStream=java.io.FileInputStream@5facbd, options={3} 
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice eq
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice eq
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice asc
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice eq
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice DataSet
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice hide
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice any
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice if-realized
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice hyperlink
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice inner
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice eq
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto layout
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice ltr
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice NoChange
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice static
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice simple
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice single
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice normal
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice normal
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice normal
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice scroll
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 0.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 0.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice repeat
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 0.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice normal
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice block
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 0.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 0.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 0.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 0.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 1.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 1.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 1.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 1.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 1.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 1.25
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 1.0
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 1.25
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 0.5
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 0.5
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with default unit 0.5
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice asc
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice NoChange
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice NoChange
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice NoChange
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice NoChange
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice size-to-image
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice horizontal
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice sum
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice decimal
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice asc
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice eq
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice DataSet
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice asc
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice NoChange
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice normal
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice normal
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice normal
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice scroll
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0%
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0%
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice repeat
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0em
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice normal
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice block
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0pt
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0pt
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0pt
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0pt
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto layout
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice ltr
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice sum
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice decimal
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice asc
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice asc
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice NoChange
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1in
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1.25in
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1in
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1.25in
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.5in
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.5in
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice NoChange
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice static
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice simple
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice NoChange
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice NoChange
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice asc
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice eq
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice DataSet
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice size-to-image
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:58 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice single
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.5pt
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice horizontal
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice inner
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice eq
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice eq
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice DataSet
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice hyperlink
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice eq
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice any
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice if-realized
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice hide
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice asc
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice eq
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice horizontal
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice over then down
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateInputString
+FINA: Return internal name of the choice solid
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateInputString
+FINA: return dimension with user-defined unit 1pt
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ColorPropertyType validateValue
+FINA: the validated color value 13421772
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateInputString
+FINA: Return internal name of the choice solid
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateInputString
+FINA: return dimension with user-defined unit 1pt
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ColorPropertyType validateValue
+FINA: the validated color value 13421772
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateInputString
+FINA: Return internal name of the choice solid
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateInputString
+FINA: return dimension with user-defined unit 1pt
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ColorPropertyType validateValue
+FINA: the validated color value 13421772
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateInputString
+FINA: Return internal name of the choice solid
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateInputString
+FINA: return dimension with user-defined unit 1pt
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ColorPropertyType validateValue
+FINA: the validated color value 13421772
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateInputString
+FINA: Return internal name of the choice solid
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateInputString
+FINA: return dimension with user-defined unit 1pt
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ColorPropertyType validateValue
+FINA: the validated color value 13421772
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateInputString
+FINA: Return internal name of the choice solid
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateInputString
+FINA: return dimension with user-defined unit 1pt
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ColorPropertyType validateValue
+FINA: the validated color value 13421772
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateInputString
+FINA: Return internal name of the choice solid
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateInputString
+FINA: return dimension with user-defined unit 1pt
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ColorPropertyType validateValue
+FINA: the validated color value 13421772
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateInputString
+FINA: Return internal name of the choice solid
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateInputString
+FINA: return dimension with user-defined unit 1pt
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ColorPropertyType validateValue
+FINA: the validated color value 13421772
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice asc
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice after
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice none
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice asc
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice after
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice horizontal
+14-feb-2011 18:02:59 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice over then down
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice in
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice text-box
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice bold
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice center
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice right
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice page-number
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1.354in
+14-feb-2011 18:03:00 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 5.083in
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@b7cee4 
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@b7cee4 
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@b7cee4 
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.core.ApplicationHttpRequest@19576c3;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:03:00 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.core.ApplicationHttpRequest@19576c3;
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDocument
+FINA: ReportEngine.openReportDocument: systemId=/opt/hpws/tomcat/webapps/birt-adaia3/test.rptdesign, file=/opt/hpws/tomcat/webapps/birt-adaia3/documents/BIRTDOC2B36703F9B44FAE48434185C0E2D48EE/20110214_180257_756/test.rptdocument, options={resourceFolder=/opt/hpws/tomcat/webapps/birt-adaia3, semanticCheck=false} 
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDesign
+FINA: ReportEngine.openReportDesign: name=file:/opt/hpws/tomcat/webapps/birt-adaia3/test.rptdesign, designStream=java.io.FileInputStream@e776f7, options={3} 
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice in
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice text-box
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice bold
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice center
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice right
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice page-number
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1.354in
+14-feb-2011 18:03:01 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 5.083in
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@16d4e3e 
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@16d4e3e 
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.ReportEngine createRunTask
+FINA: ReportEngine.createRunTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@16d4e3e 
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setParameterValue
+FINA: EngineTask.setParameterValue: sample=my parameter [java.lang.String]
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:03:01 org.eclipse.birt.report.engine.api.impl.EngineTask loggerParamters
+FINA: Running the report with paramters: sample:my parameter
+
+14-feb-2011 18:03:02 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDocument
+FINA: ReportEngine.openReportDocument: systemId=/opt/hpws/tomcat/webapps/birt-adaia3/test.rptdesign, file=/opt/hpws/tomcat/webapps/birt-adaia3/documents/BIRTDOC2B36703F9B44FAE48434185C0E2D48EE/20110214_180257_756/test.rptdocument, options={resourceFolder=/opt/hpws/tomcat/webapps/birt-adaia3, semanticCheck=false} 
+14-feb-2011 18:03:02 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDocument
+FINA: ReportEngine.openReportDocument: systemId=/opt/hpws/tomcat/webapps/birt-adaia3/test.rptdesign, file=/opt/hpws/tomcat/webapps/birt-adaia3/documents/BIRTDOC2B36703F9B44FAE48434185C0E2D48EE/20110214_180257_756/test.rptdocument, options={resourceFolder=/opt/hpws/tomcat/webapps/birt-adaia3, semanticCheck=false} 
+14-feb-2011 18:03:02 org.eclipse.birt.report.engine.api.impl.ReportEngine createRenderTask
+FINA: ReportEngine.createRenderTask: reportDocument=org.eclipse.birt.report.engine.api.impl.ReportDocumentReader@1ca5b68 
+14-feb-2011 18:03:02 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:03:02 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDesign
+FINA: ReportEngine.openReportDesign: name=/opt/hpws/tomcat/webapps/birt-adaia3/test.rptdesign, designStream=org.eclipse.birt.core.archive.compound.ArchiveEntryInputStream@309ee1, options={3} 
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice in
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice text-box
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice bold
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice center
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice right
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice page-number
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1.354in
+14-feb-2011 18:03:02 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 5.083in
+14-feb-2011 18:03:02 org.eclipse.birt.report.engine.api.impl.EngineTask setParameterValue
+FINA: EngineTask.setParameterValue: sample=my parameter [java.lang.String]
+14-feb-2011 18:03:02 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:03:02 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDocument
+FINA: ReportEngine.openReportDocument: systemId=/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, file=/opt/hpws/tomcat/webapps/birt-adaia3/documents/BIRTDOC2B36703F9B44FAE48434185C0E2D48EE/20110214_180321_072/testconexion.rptdocument, options={resourceFolder=/opt/hpws/tomcat/webapps/birt-adaia3, semanticCheck=false} 
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDesign
+FINA: ReportEngine.openReportDesign: name=file:/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, designStream=java.io.FileInputStream@1f61bcf, options={3} 
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice in
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice ltr
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: ADAIA
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 10pt
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 6.520833333333333in
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: Parametros
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1.1979166666666667in
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:21 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@fa0094 
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@fa0094 
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.core.ApplicationHttpRequest@13c339f;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:03:21 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.core.ApplicationHttpRequest@13c339f;
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDocument
+FINA: ReportEngine.openReportDocument: systemId=/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, file=/opt/hpws/tomcat/webapps/birt-adaia3/documents/BIRTDOC2B36703F9B44FAE48434185C0E2D48EE/20110214_180321_072/testconexion.rptdocument, options={resourceFolder=/opt/hpws/tomcat/webapps/birt-adaia3, semanticCheck=false} 
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDesign
+FINA: ReportEngine.openReportDesign: name=file:/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, designStream=java.io.FileInputStream@1641c0, options={3} 
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice in
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice ltr
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: ADAIA
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 10pt
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 6.520833333333333in
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: Parametros
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1.1979166666666667in
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:03:22 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@a06824 
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.ReportEngine createRunTask
+FINA: ReportEngine.createRunTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@a06824 
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@13abee1;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:03:22 org.eclipse.birt.report.engine.api.impl.EngineTask loggerParamters
+FINA: Running the report with paramters: 
+14-feb-2011 18:03:23 org.eclipse.birt.report.engine.api.impl.RunTask doRun
+GRAVE: Error happened while running the report.
+java.lang.NoSuchMethodError: oracle.i18n.text.converter.CharacterConverterOGS.getInstance(I)Loracle/sql/converter/CharacterConverters;
+	at oracle.sql.converter.CharacterConverterFactoryOGS.make(CharacterConverterFactoryOGS.java:48)
+	at oracle.sql.CharacterSetWithConverter.getInstance(CharacterSetWithConverter.java:92)
+	at oracle.sql.CharacterSetFactoryThin.make(CharacterSetFactoryThin.java:123)
+	at oracle.sql.CharacterSet.make(CharacterSet.java:440)
+	at oracle.jdbc.driver.DBConversion.<init>(DBConversion.java:145)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:878)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:268)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager$WrappedDriver.connect(JDBCDriverManager.java:1082)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:154)
+	at org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager.doConnect(JDBCDriverManager.java:218)
+	at org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager.getConnection(JDBCDriverManager.java:179)
+	at org.eclipse.birt.report.data.oda.jdbc.Connection.connectByUrl(Connection.java:220)
+	at org.eclipse.birt.report.data.oda.jdbc.Connection.open(Connection.java:151)
+	at org.eclipse.datatools.connectivity.oda.consumer.helper.OdaConnection.open(OdaConnection.java:235)
+	at org.eclipse.birt.data.engine.odaconsumer.ConnectionManager.openConnection(ConnectionManager.java:157)
+	at org.eclipse.birt.data.engine.executor.DataSource.newConnection(DataSource.java:236)
+	at org.eclipse.birt.data.engine.executor.DataSource.open(DataSource.java:223)
+	at org.eclipse.birt.data.engine.impl.DataSourceRuntime.openOdiDataSource(DataSourceRuntime.java:209)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.openDataSource(QueryExecutor.java:390)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.prepareExecution(QueryExecutor.java:309)
+	at org.eclipse.birt.data.engine.impl.PreparedQuery.doPrepare(PreparedQuery.java:498)
+	at org.eclipse.birt.data.engine.impl.PreparedDataSourceQuery.produceQueryResults(PreparedDataSourceQuery.java:189)
+	at org.eclipse.birt.data.engine.impl.PreparedDataSourceQuery.execute(PreparedDataSourceQuery.java:177)
+	at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery.execute(PreparedOdaDSQuery.java:143)
+	at org.eclipse.birt.report.data.adapter.impl.DataRequestSessionImpl.execute(DataRequestSessionImpl.java:482)
+	at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:115)
+	at org.eclipse.birt.report.engine.data.dte.DataGenerationEngine.doExecuteQuery(DataGenerationEngine.java:79)
+	at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:253)
+	at org.eclipse.birt.report.engine.executor.ExecutionContext.executeQuery(ExecutionContext.java:1755)
+	at org.eclipse.birt.report.engine.executor.QueryItemExecutor.executeQuery(QueryItemExecutor.java:77)
+	at org.eclipse.birt.report.engine.executor.TableItemExecutor.execute(TableItemExecutor.java:62)
+	at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportItemExecutor.execute(WrappedReportItemExecutor.java:45)
+	at org.eclipse.birt.report.engine.internal.executor.emitter.ReportItemEmitterExecutor.execute(ReportItemEmitterExecutor.java:45)
+	at org.eclipse.birt.report.engine.internal.executor.dup.SuppressDuplicateItemExecutor.execute(SuppressDuplicateItemExecutor.java:42)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:63)
+	at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout(HTMLPageLM.java:90)
+	at org.eclipse.birt.report.engine.layout.html.HTMLReportLayoutEngine.layout(HTMLReportLayoutEngine.java:101)
+	at org.eclipse.birt.report.engine.presentation.ReportDocumentBuilder.build(ReportDocumentBuilder.java:211)
+	at org.eclipse.birt.report.engine.api.impl.RunTask.doRun(RunTask.java:237)
+	at org.eclipse.birt.report.engine.api.impl.RunTask.run(RunTask.java:90)
+	at org.eclipse.birt.report.service.ReportEngineService.runReport(ReportEngineService.java:1246)
+	at org.eclipse.birt.report.service.BirtViewerReportService.runReport(BirtViewerReportService.java:155)
+	at org.eclipse.birt.report.service.actionhandler.BirtRunReportActionHandler.__execute(BirtRunReportActionHandler.java:81)
+	at org.eclipse.birt.report.service.actionhandler.BirtGetPageActionHandler.__checkDocumentExists(BirtGetPageActionHandler.java:58)
+	at org.eclipse.birt.report.service.actionhandler.AbstractGetPageActionHandler.prepareParameters(AbstractGetPageActionHandler.java:119)
+	at org.eclipse.birt.report.service.actionhandler.AbstractGetPageActionHandler.__execute(AbstractGetPageActionHandler.java:104)
+	at org.eclipse.birt.report.service.actionhandler.AbstractBaseActionHandler.execute(AbstractBaseActionHandler.java:90)
+	at org.eclipse.birt.report.soapengine.processor.AbstractBaseDocumentProcessor.__executeAction(AbstractBaseDocumentProcessor.java:47)
+	at org.eclipse.birt.report.soapengine.processor.AbstractBaseComponentProcessor.executeAction(AbstractBaseComponentProcessor.java:143)
+	at org.eclipse.birt.report.soapengine.processor.BirtDocumentProcessor.handleGetPage(BirtDocumentProcessor.java:87)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.birt.report.soapengine.processor.AbstractBaseComponentProcessor.process(AbstractBaseComponentProcessor.java:112)
+	at org.eclipse.birt.report.soapengine.endpoint.BirtSoapBindingImpl.getUpdatedObjects(BirtSoapBindingImpl.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.axis.providers.java.RPCProvider.invokeMethod(RPCProvider.java:397)
+	at org.apache.axis.providers.java.RPCProvider.processMessage(RPCProvider.java:186)
+	at org.apache.axis.providers.java.JavaProvider.invoke(JavaProvider.java:323)
+	at org.apache.axis.strategies.InvocationStrategy.visit(InvocationStrategy.java:32)
+	at org.apache.axis.SimpleChain.doVisiting(SimpleChain.java:118)
+	at org.apache.axis.SimpleChain.invoke(SimpleChain.java:83)
+	at org.apache.axis.handlers.soap.SOAPService.invoke(SOAPService.java:454)
+	at org.apache.axis.server.AxisServer.invoke(AxisServer.java:281)
+	at org.apache.axis.transport.http.AxisServlet.doPost(AxisServlet.java:699)
+	at org.eclipse.birt.report.servlet.BirtSoapMessageDispatcherServlet.doPost(BirtSoapMessageDispatcherServlet.java:265)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+	at org.apache.axis.transport.http.AxisServletBase.service(AxisServletBase.java:327)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.eclipse.birt.report.servlet.BirtSoapMessageDispatcherServlet.service(BirtSoapMessageDispatcherServlet.java:122)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.eclipse.birt.report.filter.ViewerFilter.doFilter(ViewerFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDocument
+FINA: ReportEngine.openReportDocument: systemId=/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, file=/opt/hpws/tomcat/webapps/birt-adaia3/documents/BIRTDOC2B36703F9B44FAE48434185C0E2D48EE/20110214_180430_804/testconexion.rptdocument, options={resourceFolder=/opt/hpws/tomcat/webapps/birt-adaia3, semanticCheck=false} 
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDesign
+FINA: ReportEngine.openReportDesign: name=file:/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, designStream=java.io.FileInputStream@50ed02, options={3} 
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice in
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice ltr
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: ADAIA
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 10pt
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 6.520833333333333in
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: Parametros
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1.1979166666666667in
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:30 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@ad4264 
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@e1dfb1;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@e1dfb1;
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@ad4264 
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.core.ApplicationHttpRequest@72c950;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:04:30 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.core.ApplicationHttpRequest@72c950;
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDocument
+FINA: ReportEngine.openReportDocument: systemId=/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, file=/opt/hpws/tomcat/webapps/birt-adaia3/documents/BIRTDOC2B36703F9B44FAE48434185C0E2D48EE/20110214_180430_804/testconexion.rptdocument, options={resourceFolder=/opt/hpws/tomcat/webapps/birt-adaia3, semanticCheck=false} 
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDesign
+FINA: ReportEngine.openReportDesign: name=file:/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, designStream=java.io.FileInputStream@e7c832, options={3} 
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice in
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice ltr
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: ADAIA
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 10pt
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 6.520833333333333in
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: Parametros
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1.1979166666666667in
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:04:32 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@952527 
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@1ba614a;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@1ba614a;
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.ReportEngine createRunTask
+FINA: ReportEngine.createRunTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@952527 
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@1ba614a;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:04:32 org.eclipse.birt.report.engine.api.impl.EngineTask loggerParamters
+FINA: Running the report with paramters: 
+14-feb-2011 18:04:33 org.eclipse.birt.report.engine.api.impl.RunTask doRun
+GRAVE: Error happened while running the report.
+java.lang.NoSuchMethodError: oracle.i18n.text.converter.CharacterConverterOGS.getInstance(I)Loracle/sql/converter/CharacterConverters;
+	at oracle.sql.converter.CharacterConverterFactoryOGS.make(CharacterConverterFactoryOGS.java:48)
+	at oracle.sql.CharacterSetWithConverter.getInstance(CharacterSetWithConverter.java:92)
+	at oracle.sql.CharacterSetFactoryThin.make(CharacterSetFactoryThin.java:123)
+	at oracle.sql.CharacterSet.make(CharacterSet.java:440)
+	at oracle.jdbc.driver.DBConversion.<init>(DBConversion.java:145)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:878)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:268)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager$WrappedDriver.connect(JDBCDriverManager.java:1082)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:154)
+	at org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager.doConnect(JDBCDriverManager.java:218)
+	at org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager.getConnection(JDBCDriverManager.java:179)
+	at org.eclipse.birt.report.data.oda.jdbc.Connection.connectByUrl(Connection.java:220)
+	at org.eclipse.birt.report.data.oda.jdbc.Connection.open(Connection.java:151)
+	at org.eclipse.datatools.connectivity.oda.consumer.helper.OdaConnection.open(OdaConnection.java:235)
+	at org.eclipse.birt.data.engine.odaconsumer.ConnectionManager.openConnection(ConnectionManager.java:157)
+	at org.eclipse.birt.data.engine.executor.DataSource.newConnection(DataSource.java:236)
+	at org.eclipse.birt.data.engine.executor.DataSource.open(DataSource.java:223)
+	at org.eclipse.birt.data.engine.impl.DataSourceRuntime.openOdiDataSource(DataSourceRuntime.java:209)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.openDataSource(QueryExecutor.java:390)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.prepareExecution(QueryExecutor.java:309)
+	at org.eclipse.birt.data.engine.impl.PreparedQuery.doPrepare(PreparedQuery.java:498)
+	at org.eclipse.birt.data.engine.impl.PreparedDataSourceQuery.produceQueryResults(PreparedDataSourceQuery.java:189)
+	at org.eclipse.birt.data.engine.impl.PreparedDataSourceQuery.execute(PreparedDataSourceQuery.java:177)
+	at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery.execute(PreparedOdaDSQuery.java:143)
+	at org.eclipse.birt.report.data.adapter.impl.DataRequestSessionImpl.execute(DataRequestSessionImpl.java:482)
+	at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:115)
+	at org.eclipse.birt.report.engine.data.dte.DataGenerationEngine.doExecuteQuery(DataGenerationEngine.java:79)
+	at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:253)
+	at org.eclipse.birt.report.engine.executor.ExecutionContext.executeQuery(ExecutionContext.java:1755)
+	at org.eclipse.birt.report.engine.executor.QueryItemExecutor.executeQuery(QueryItemExecutor.java:77)
+	at org.eclipse.birt.report.engine.executor.TableItemExecutor.execute(TableItemExecutor.java:62)
+	at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportItemExecutor.execute(WrappedReportItemExecutor.java:45)
+	at org.eclipse.birt.report.engine.internal.executor.emitter.ReportItemEmitterExecutor.execute(ReportItemEmitterExecutor.java:45)
+	at org.eclipse.birt.report.engine.internal.executor.dup.SuppressDuplicateItemExecutor.execute(SuppressDuplicateItemExecutor.java:42)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:63)
+	at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout(HTMLPageLM.java:90)
+	at org.eclipse.birt.report.engine.layout.html.HTMLReportLayoutEngine.layout(HTMLReportLayoutEngine.java:101)
+	at org.eclipse.birt.report.engine.presentation.ReportDocumentBuilder.build(ReportDocumentBuilder.java:211)
+	at org.eclipse.birt.report.engine.api.impl.RunTask.doRun(RunTask.java:237)
+	at org.eclipse.birt.report.engine.api.impl.RunTask.run(RunTask.java:90)
+	at org.eclipse.birt.report.service.ReportEngineService.runReport(ReportEngineService.java:1246)
+	at org.eclipse.birt.report.service.BirtViewerReportService.runReport(BirtViewerReportService.java:155)
+	at org.eclipse.birt.report.service.actionhandler.BirtRunReportActionHandler.__execute(BirtRunReportActionHandler.java:81)
+	at org.eclipse.birt.report.service.actionhandler.BirtGetPageActionHandler.__checkDocumentExists(BirtGetPageActionHandler.java:58)
+	at org.eclipse.birt.report.service.actionhandler.AbstractGetPageActionHandler.prepareParameters(AbstractGetPageActionHandler.java:119)
+	at org.eclipse.birt.report.service.actionhandler.AbstractGetPageActionHandler.__execute(AbstractGetPageActionHandler.java:104)
+	at org.eclipse.birt.report.service.actionhandler.AbstractBaseActionHandler.execute(AbstractBaseActionHandler.java:90)
+	at org.eclipse.birt.report.soapengine.processor.AbstractBaseDocumentProcessor.__executeAction(AbstractBaseDocumentProcessor.java:47)
+	at org.eclipse.birt.report.soapengine.processor.AbstractBaseComponentProcessor.executeAction(AbstractBaseComponentProcessor.java:143)
+	at org.eclipse.birt.report.soapengine.processor.BirtDocumentProcessor.handleGetPage(BirtDocumentProcessor.java:87)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.birt.report.soapengine.processor.AbstractBaseComponentProcessor.process(AbstractBaseComponentProcessor.java:112)
+	at org.eclipse.birt.report.soapengine.endpoint.BirtSoapBindingImpl.getUpdatedObjects(BirtSoapBindingImpl.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.axis.providers.java.RPCProvider.invokeMethod(RPCProvider.java:397)
+	at org.apache.axis.providers.java.RPCProvider.processMessage(RPCProvider.java:186)
+	at org.apache.axis.providers.java.JavaProvider.invoke(JavaProvider.java:323)
+	at org.apache.axis.strategies.InvocationStrategy.visit(InvocationStrategy.java:32)
+	at org.apache.axis.SimpleChain.doVisiting(SimpleChain.java:118)
+	at org.apache.axis.SimpleChain.invoke(SimpleChain.java:83)
+	at org.apache.axis.handlers.soap.SOAPService.invoke(SOAPService.java:454)
+	at org.apache.axis.server.AxisServer.invoke(AxisServer.java:281)
+	at org.apache.axis.transport.http.AxisServlet.doPost(AxisServlet.java:699)
+	at org.eclipse.birt.report.servlet.BirtSoapMessageDispatcherServlet.doPost(BirtSoapMessageDispatcherServlet.java:265)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+	at org.apache.axis.transport.http.AxisServletBase.service(AxisServletBase.java:327)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.eclipse.birt.report.servlet.BirtSoapMessageDispatcherServlet.service(BirtSoapMessageDispatcherServlet.java:122)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.eclipse.birt.report.filter.ViewerFilter.doFilter(ViewerFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDocument
+FINA: ReportEngine.openReportDocument: systemId=/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, file=/opt/hpws/tomcat/webapps/birt-adaia3/documents/BIRTDOC2B36703F9B44FAE48434185C0E2D48EE/20110214_180529_136/testconexion.rptdocument, options={resourceFolder=/opt/hpws/tomcat/webapps/birt-adaia3, semanticCheck=false} 
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDesign
+FINA: ReportEngine.openReportDesign: name=file:/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, designStream=java.io.FileInputStream@b950d1, options={3} 
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice in
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice ltr
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: ADAIA
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 10pt
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 6.520833333333333in
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: Parametros
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1.1979166666666667in
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:29 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@110b205 
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@1ba614a;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@1ba614a;
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@110b205 
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.core.ApplicationHttpRequest@ad8dbc;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:05:29 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.core.ApplicationHttpRequest@ad8dbc;
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDocument
+FINA: ReportEngine.openReportDocument: systemId=/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, file=/opt/hpws/tomcat/webapps/birt-adaia3/documents/BIRTDOC2B36703F9B44FAE48434185C0E2D48EE/20110214_180529_136/testconexion.rptdocument, options={resourceFolder=/opt/hpws/tomcat/webapps/birt-adaia3, semanticCheck=false} 
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.ReportEngine openReportDesign
+FINA: ReportEngine.openReportDesign: name=file:/opt/hpws/tomcat/webapps/birt-adaia3/testconexion.rptdesign, designStream=java.io.FileInputStream@748417, options={3} 
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice in
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice ltr
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: ADAIA
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 10pt
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 13421772
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1pt
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 0.25in
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 6.520833333333333in
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 24pt
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice auto
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice html
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 100%
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ElementRefPropertyType validateValue
+FINA: Validate the value of the element reference property as a string: Parametros
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice string
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.DimensionPropertyType validateXml
+FINA: return dimension value with user defined unit 1.1979166666666667in
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ColorPropertyType validateXml
+FINA: The validated color property value 0
+14-feb-2011 18:05:31 org.eclipse.birt.report.model.metadata.ChoicePropertyType validateXml
+FINA: return internal name for choice solid
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.ReportEngine createGetParameterDefinitionTask
+FINA: ReportEngine.createGetParameterDefinitionTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@19f31de 
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@832226;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@832226;
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.ReportEngine createRunTask
+FINA: ReportEngine.createRunTask: reportRunnable=org.eclipse.birt.report.engine.api.impl.ReportRunnable@19f31de 
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;webapplication.projectclasspath=;
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.EngineTask setLocale
+FINA: EngineTask.setLocale: locale=español (España)
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.EngineTask setAppContext
+FINA: EngineTask.setAppContext: context=PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@a46701
+;CHART_RESOLUTION=null;org.eclipse.birt.data.engine.dataset.cache.option=false;org.eclipse.birt.data.engine.cube.inmemory.size=0;webapplication.projectclasspath=;BIRT_VIEWER_HTTPSERVET_REQUEST=org.apache.catalina.connector.RequestFacade@832226;birt.viewer.resource.path=/opt/hpws/tomcat/webapps/birt-adaia3;
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.EngineTask loggerParamters
+FINA: Running the report with paramters: 
+14-feb-2011 18:05:31 org.eclipse.birt.report.engine.api.impl.RunTask doRun
+GRAVE: Error happened while running the report.
+java.lang.NoSuchMethodError: oracle.i18n.text.converter.CharacterConverterOGS.getInstance(I)Loracle/sql/converter/CharacterConverters;
+	at oracle.sql.converter.CharacterConverterFactoryOGS.make(CharacterConverterFactoryOGS.java:48)
+	at oracle.sql.CharacterSetWithConverter.getInstance(CharacterSetWithConverter.java:92)
+	at oracle.sql.CharacterSetFactoryThin.make(CharacterSetFactoryThin.java:123)
+	at oracle.sql.CharacterSet.make(CharacterSet.java:440)
+	at oracle.jdbc.driver.DBConversion.<init>(DBConversion.java:145)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:878)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:268)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager$WrappedDriver.connect(JDBCDriverManager.java:1082)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:154)
+	at org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager.doConnect(JDBCDriverManager.java:218)
+	at org.eclipse.birt.report.data.oda.jdbc.JDBCDriverManager.getConnection(JDBCDriverManager.java:179)
+	at org.eclipse.birt.report.data.oda.jdbc.Connection.connectByUrl(Connection.java:220)
+	at org.eclipse.birt.report.data.oda.jdbc.Connection.open(Connection.java:151)
+	at org.eclipse.datatools.connectivity.oda.consumer.helper.OdaConnection.open(OdaConnection.java:235)
+	at org.eclipse.birt.data.engine.odaconsumer.ConnectionManager.openConnection(ConnectionManager.java:157)
+	at org.eclipse.birt.data.engine.executor.DataSource.newConnection(DataSource.java:236)
+	at org.eclipse.birt.data.engine.executor.DataSource.open(DataSource.java:223)
+	at org.eclipse.birt.data.engine.impl.DataSourceRuntime.openOdiDataSource(DataSourceRuntime.java:209)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.openDataSource(QueryExecutor.java:390)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.prepareExecution(QueryExecutor.java:309)
+	at org.eclipse.birt.data.engine.impl.PreparedQuery.doPrepare(PreparedQuery.java:498)
+	at org.eclipse.birt.data.engine.impl.PreparedDataSourceQuery.produceQueryResults(PreparedDataSourceQuery.java:189)
+	at org.eclipse.birt.data.engine.impl.PreparedDataSourceQuery.execute(PreparedDataSourceQuery.java:177)
+	at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery.execute(PreparedOdaDSQuery.java:143)
+	at org.eclipse.birt.report.data.adapter.impl.DataRequestSessionImpl.execute(DataRequestSessionImpl.java:482)
+	at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:115)
+	at org.eclipse.birt.report.engine.data.dte.DataGenerationEngine.doExecuteQuery(DataGenerationEngine.java:79)
+	at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:253)
+	at org.eclipse.birt.report.engine.executor.ExecutionContext.executeQuery(ExecutionContext.java:1755)
+	at org.eclipse.birt.report.engine.executor.QueryItemExecutor.executeQuery(QueryItemExecutor.java:77)
+	at org.eclipse.birt.report.engine.executor.TableItemExecutor.execute(TableItemExecutor.java:62)
+	at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportItemExecutor.execute(WrappedReportItemExecutor.java:45)
+	at org.eclipse.birt.report.engine.internal.executor.emitter.ReportItemEmitterExecutor.execute(ReportItemEmitterExecutor.java:45)
+	at org.eclipse.birt.report.engine.internal.executor.dup.SuppressDuplicateItemExecutor.execute(SuppressDuplicateItemExecutor.java:42)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:63)
+	at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout(HTMLPageLM.java:90)
+	at org.eclipse.birt.report.engine.layout.html.HTMLReportLayoutEngine.layout(HTMLReportLayoutEngine.java:101)
+	at org.eclipse.birt.report.engine.presentation.ReportDocumentBuilder.build(ReportDocumentBuilder.java:211)
+	at org.eclipse.birt.report.engine.api.impl.RunTask.doRun(RunTask.java:237)
+	at org.eclipse.birt.report.engine.api.impl.RunTask.run(RunTask.java:90)
+	at org.eclipse.birt.report.service.ReportEngineService.runReport(ReportEngineService.java:1246)
+	at org.eclipse.birt.report.service.BirtViewerReportService.runReport(BirtViewerReportService.java:155)
+	at org.eclipse.birt.report.service.actionhandler.BirtRunReportActionHandler.__execute(BirtRunReportActionHandler.java:81)
+	at org.eclipse.birt.report.service.actionhandler.BirtGetPageActionHandler.__checkDocumentExists(BirtGetPageActionHandler.java:58)
+	at org.eclipse.birt.report.service.actionhandler.AbstractGetPageActionHandler.prepareParameters(AbstractGetPageActionHandler.java:119)
+	at org.eclipse.birt.report.service.actionhandler.AbstractGetPageActionHandler.__execute(AbstractGetPageActionHandler.java:104)
+	at org.eclipse.birt.report.service.actionhandler.AbstractBaseActionHandler.execute(AbstractBaseActionHandler.java:90)
+	at org.eclipse.birt.report.soapengine.processor.AbstractBaseDocumentProcessor.__executeAction(AbstractBaseDocumentProcessor.java:47)
+	at org.eclipse.birt.report.soapengine.processor.AbstractBaseComponentProcessor.executeAction(AbstractBaseComponentProcessor.java:143)
+	at org.eclipse.birt.report.soapengine.processor.BirtDocumentProcessor.handleGetPage(BirtDocumentProcessor.java:87)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.birt.report.soapengine.processor.AbstractBaseComponentProcessor.process(AbstractBaseComponentProcessor.java:112)
+	at org.eclipse.birt.report.soapengine.endpoint.BirtSoapBindingImpl.getUpdatedObjects(BirtSoapBindingImpl.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.axis.providers.java.RPCProvider.invokeMethod(RPCProvider.java:397)
+	at org.apache.axis.providers.java.RPCProvider.processMessage(RPCProvider.java:186)
+	at org.apache.axis.providers.java.JavaProvider.invoke(JavaProvider.java:323)
+	at org.apache.axis.strategies.InvocationStrategy.visit(InvocationStrategy.java:32)
+	at org.apache.axis.SimpleChain.doVisiting(SimpleChain.java:118)
+	at org.apache.axis.SimpleChain.invoke(SimpleChain.java:83)
+	at org.apache.axis.handlers.soap.SOAPService.invoke(SOAPService.java:454)
+	at org.apache.axis.server.AxisServer.invoke(AxisServer.java:281)
+	at org.apache.axis.transport.http.AxisServlet.doPost(AxisServlet.java:699)
+	at org.eclipse.birt.report.servlet.BirtSoapMessageDispatcherServlet.doPost(BirtSoapMessageDispatcherServlet.java:265)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+	at org.apache.axis.transport.http.AxisServletBase.service(AxisServletBase.java:327)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.eclipse.birt.report.servlet.BirtSoapMessageDispatcherServlet.service(BirtSoapMessageDispatcherServlet.java:122)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.eclipse.birt.report.filter.ViewerFilter.doFilter(ViewerFilter.java:68)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)

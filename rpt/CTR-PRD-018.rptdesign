@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Giménez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 18/02/2010 (versión inicial) 
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*       Informe de dedicación detallado por almacén.
+*
+* PARAMETROS RECIBIDOS:
+*       1. pdecAlmCod                   -> Código interno almacén
+*       2. pstrFecMovDesde      -> Fecha movimiento desde
+*       3. pstrFecMovHasta              -> Fecha movimiento hasta
+*          4. pstrFraHorCod             -> Turno (todos si en blanco)
+*       5. pstrRecOpeRef                -> Operario (todos si en blanco)
+*       6. pdecPikTpo                   -> Tiempo picking
+*          7. pdecValTpo                        -> Tiempo validaciones
+*          8. pdecUbiTpo                        -> Tiempo ubicaciones
+*          9. pdecRepTpo                        -> Tiempo reposiciones
+*     10. pdecExpTpo                    -> Tiempo expediciones
+*        11. pdecSesTpo                 -> Tiempo sesión
+*        12. pdecPalTpo                 -> Tiempo pallets
+*        13. pdecPrdTpo                 -> Tiempo productividad
+*        14. pdecOtrTpo                 -> Tiempo otros
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pdecAlmCod" id="1579">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecAlmCod"></text-property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">1</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrFecMovDesde" id="1625">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrFecMovDesde"></text-property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">20/05/2011</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrFecMovHasta" id="1626">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrFecMovHasta"></text-property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">26/05/2011</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrFraHorCod" id="1863">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrFraHorCod"></text-property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrRecOpeRef" id="2172">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrRecOpeRef"></text-property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecPikTpo" id="2831">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="TiempoPiking"></text-property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">1,1</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Fixed</property>
+                <property name="pattern">#,##0.00</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecValTpo" id="2832">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="TiempoValid"></text-property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">2,2</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Fixed</property>
+                <property name="pattern">#,##0.00</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecUbiTpo" id="2833">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="TiempoUbic"></text-property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">3,3</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Fixed</property>
+                <property name="pattern">#,##0.00</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecRepTpo" id="2834">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="TiempoRepos"></text-property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">4,4</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Fixed</property>
+                <property name="pattern">#,##0.00</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecExpTpo" id="2835">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="TiempoExped"></text-property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">5,5</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Fixed</property>
+                <property name="pattern">#,##0.00</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecSesTpo" id="2837">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="TiempoSesion"></text-property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">6,6</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Fixed</property>
+                <property name="pattern">#,##0.00</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecPalTpo" id="2836">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="TiempoPall"></text-property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">7,7</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Fixed</property>
+                <property name="pattern">#,##0.00</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecPrdTpo" id="2838">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="TiempoProd"></text-property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">8,8</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Fixed</property>
+                <property name="pattern">#,##0.00</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecOtrTpo" id="2839">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="TiempoOtr"></text-property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">9,9</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Fixed</property>
+                <property name="pattern">#,##0.00</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="CTR" id="411">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@172.20.10.56:1521:adaiasrv</property>
+            <property name="odaUser">mil</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">bWls</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="CTR-PRD-018 01 (Alm)" id="1709">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ALMREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ALMDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CTR</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ALMREF</property>
+                    <property name="nativeName">ALMREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ALMDES</property>
+                    <property name="nativeName">ALMDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.ALMREF,
+         a.ALMDES
+FROM     ALM a
+WHERE    a.ALMCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="CTR-PRD-018 02 (Cab)" id="2886">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CTR</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">portrait</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date</property>
+                        </structure>
+                        <structure>
+                            <property name="name">Hora</property>
+                            <property name="displayName">Hora</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">Long Date</property>
+                                    <property name="pattern">Long Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="2881">
+                        <cell id="2882"/>
+                        <cell id="2883"/>
+                        <cell id="2884">
+                            <data id="2885">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">Long Time</property>
+                                    <property name="pattern">Long Time</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Hora</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="InformeDeDedicacionDetalladoPorAlmacen"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="2887">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">CTR-PRD-018 02 (Cab)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(CTR-PRD-018)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="1864">
+            <property name="width">40%</property>
+            <column id="1865">
+                <property name="width">40mm</property>
+            </column>
+            <column id="1866">
+                <property name="width">40mm</property>
+            </column>
+            <column id="1896">
+                <property name="width">10mm</property>
+            </column>
+            <column id="2205">
+                <property name="width">40mm</property>
+            </column>
+            <row id="1868">
+                <property name="height">0.312in</property>
+                <cell id="1869"/>
+                <cell id="1870"/>
+                <cell id="1892"/>
+                <cell id="2200"/>
+            </row>
+            <row id="1872">
+                <cell id="1873">
+                    <label id="1884">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Almacen"></text-property>
+                    </label>
+                </cell>
+                <cell id="1874">
+                    <data id="1889">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">CTR-PRD-018 01 (Alm)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ALMREF</property>
+                                <property name="displayName">ALMREF</property>
+                                <expression name="expression">dataSetRow["ALMREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ALMREF</property>
+                    </data>
+                </cell>
+                <cell id="2785"/>
+                <cell id="2786">
+                    <data id="1890">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">CTR-PRD-018 01 (Alm)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ALMDES</property>
+                                <property name="displayName">ALMDES</property>
+                                <expression name="expression">dataSetRow["ALMDES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ALMDES</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1876">
+                <cell id="1877">
+                    <label id="1885">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="De"></text-property>
+                    </label>
+                </cell>
+                <cell id="1878">
+                    <data id="2206">
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">auto</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrFecMovDesde</property>
+                                <expression name="expression">params["pstrFecMovDesde"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrFecMovDesde</property>
+                    </data>
+                </cell>
+                <cell id="1894">
+                    <label id="1897">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text" key="a"></text-property>
+                    </label>
+                </cell>
+                <cell id="2202">
+                    <data id="2208">
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">auto</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrFecMovHasta</property>
+                                <expression name="expression">params["pstrFecMovHasta"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrFecMovHasta</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1880">
+                <cell id="1881">
+                    <label id="1886">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Turno"></text-property>
+                    </label>
+                </cell>
+                <cell id="1882">
+                    <data id="1891">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="mapRules">
+                            <structure>
+                                <expression name="testExpr">if ( params["pstrFraHorCod"].value != null
+            &amp;&amp;
+     BirtStr.trimRight( params["pstrFraHorCod"].value ) != '' )
+{
+        false
+}
+else
+{
+        true
+}</expression>
+                                <property name="operator">is-true</property>
+                                <text-property name="display" key="Todos">Todos</text-property>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrFraHorCod</property>
+                                <expression name="expression">params["pstrFraHorCod"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrFraHorCod</property>
+                    </data>
+                </cell>
+                <cell id="1895"/>
+                <cell id="2203"/>
+            </row>
+            <row id="2167">
+                <cell id="2168">
+                    <label id="2174">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Operario"></text-property>
+                    </label>
+                </cell>
+                <cell id="2169">
+                    <data id="2173">
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">auto</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="mapRules">
+                            <structure>
+                                <expression name="testExpr">if ( params["pstrRecOpeRef"].value != null
+            &amp;&amp;
+     BirtStr.trimRight( params["pstrRecOpeRef"].value ) != '' )
+{
+        false
+}
+else
+{
+        true
+}</expression>
+                                <property name="operator">is-true</property>
+                                <text-property name="display" key="Todos">Todos</text-property>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrRecOpeRef</property>
+                                <expression name="expression">params["pstrRecOpeRef"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrRecOpeRef</property>
+                    </data>
+                </cell>
+                <cell id="2170"/>
+                <cell id="2204"/>
+            </row>
+        </grid>
+        <grid id="2787">
+            <property name="width">60%</property>
+            <column id="2788">
+                <property name="width">30mm</property>
+            </column>
+            <column id="2789">
+                <property name="width">20mm</property>
+            </column>
+            <column id="2790">
+                <property name="width">20mm</property>
+            </column>
+            <column id="2791">
+                <property name="width">20mm</property>
+            </column>
+            <column id="2792">
+                <property name="width">20mm</property>
+            </column>
+            <column id="2793">
+                <property name="width">20mm</property>
+            </column>
+            <column id="2794">
+                <property name="width">25mm</property>
+            </column>
+            <column id="2795">
+                <property name="width">20mm</property>
+            </column>
+            <column id="2796">
+                <property name="width">20mm</property>
+            </column>
+            <row id="2871">
+                <property name="height">0.312in</property>
+                <cell id="2872"/>
+                <cell id="2873"/>
+                <cell id="2874"/>
+                <cell id="2875"/>
+                <cell id="2876"/>
+                <cell id="2877"/>
+                <cell id="2878"/>
+                <cell id="2879"/>
+                <cell id="2880"/>
+            </row>
+            <row id="2849">
+                <cell id="2850"/>
+                <cell id="2851"/>
+                <cell id="2852">
+                    <text id="2869">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">left</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[...]]></text-property>
+                    </text>
+                </cell>
+                <cell id="2853">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="2868">
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text" key="Pallets"></text-property>
+                    </label>
+                </cell>
+                <cell id="2855">
+                    <text id="2870">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[...]]></text-property>
+                    </text>
+                </cell>
+                <cell id="2856"/>
+                <cell id="2857"/>
+                <cell id="2858"/>
+            </row>
+            <row id="2798">
+                <property name="verticalAlign">bottom</property>
+                <cell id="2799">
+                    <label id="2859">
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="marginTop">0pt</property>
+                        <text-property name="text" key="Picking"></text-property>
+                    </label>
+                </cell>
+                <cell id="2800">
+                    <label id="2860">
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <text-property name="text" key="Validac"></text-property>
+                    </label>
+                </cell>
+                <cell id="2801">
+                    <label id="2861">
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <text-property name="text" key="Ubic"></text-property>
+                    </label>
+                </cell>
+                <cell id="2802">
+                    <label id="2862">
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <text-property name="text" key="Reposic"></text-property>
+                    </label>
+                </cell>
+                <cell id="2803">
+                    <label id="2863">
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <text-property name="text" key="Expedic"></text-property>
+                    </label>
+                </cell>
+                <cell id="2804">
+                    <label id="2864">
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <text-property name="text" key="Subtotal"></text-property>
+                    </label>
+                </cell>
+                <cell id="2805">
+                    <label id="2865">
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <text-property name="text" key="Productiv"></text-property>
+                    </label>
+                </cell>
+                <cell id="2806">
+                    <label id="2866">
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <text-property name="text" key="Sesion"></text-property>
+                    </label>
+                </cell>
+                <cell id="2807">
+                    <label id="2867">
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <text-property name="text" key="Otros"></text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="2809">
+                <cell id="2810">
+                    <data id="2840">
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">0pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pdecPikTpo</property>
+                                <expression name="expression">params["pdecPikTpo"].value</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pdecPikTpo</property>
+                    </data>
+                </cell>
+                <cell id="2811">
+                    <data id="2841">
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pdecValTpo</property>
+                                <expression name="expression">params["pdecValTpo"].value</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pdecValTpo</property>
+                    </data>
+                </cell>
+                <cell id="2812">
+                    <data id="2842">
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pdecUbiTpo</property>
+                                <expression name="expression">params["pdecUbiTpo"].value</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pdecUbiTpo</property>
+                    </data>
+                </cell>
+                <cell id="2813">
+                    <data id="2843">
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pdecRepTpo</property>
+                                <expression name="expression">params["pdecRepTpo"].value</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pdecRepTpo</property>
+                    </data>
+                </cell>
+                <cell id="2814">
+                    <data id="2844">
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pdecExpTpo</property>
+                                <expression name="expression">params["pdecExpTpo"].value</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pdecExpTpo</property>
+                    </data>
+                </cell>
+                <cell id="2815">
+                    <data id="2845">
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pdecPalTpo</property>
+                                <expression name="expression">params["pdecPalTpo"].value</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pdecPalTpo</property>
+                    </data>
+                </cell>
+                <cell id="2816">
+                    <data id="2846">
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pdecPrdTpo</property>
+                                <expression name="expression">params["pdecPrdTpo"].value</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pdecPrdTpo</property>
+                    </data>
+                </cell>
+                <cell id="2817">
+                    <data id="2847">
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pdecSesTpo</property>
+                                <expression name="expression">params["pdecSesTpo"].value</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pdecSesTpo</property>
+                    </data>
+                </cell>
+                <cell id="2818">
+                    <data id="2848">
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pdecOtrTpo</property>
+                                <expression name="expression">params["pdecOtrTpo"].value</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pdecOtrTpo</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="2820">
+                <property name="height">0.312in</property>
+                <cell id="2821"/>
+                <cell id="2822"/>
+                <cell id="2823"/>
+                <cell id="2824"/>
+                <cell id="2825"/>
+                <cell id="2826"/>
+                <cell id="2827"/>
+                <cell id="2828"/>
+                <cell id="2829"/>
+            </row>
+        </grid>
+    </body>
+</report>

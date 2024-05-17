@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Giménez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 04/02/2010 (versión inicial) 
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*      Informe de historial de pesaje de un contenedor.
+*
+* PARAMETROS RECIBIDOS:
+*       1. pdecCntCod           -> Código interno contenedor.
+*       2. pstrMomPes                   -> Momento de pesaje.
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pdecCntCod" id="2040">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecCntCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">1062234</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrMomPes" id="2060">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrMomPes"></text-property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="CNT" id="411">
+            <property name="odaDriverClass">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+            <property name="odaURL">jdbc:sqlserver://172.20.10.65\ADAIASRV:1433</property>
+            <property name="odaUser">bra</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YnJh</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="CNT-CAP-002 01 (Ppal)" id="412">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">MOMPES</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ARTREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ARTDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">PESFIN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">TIPPES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">RECOPEREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">RECOPEDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CNT</property>
+            <method name="beforeOpen"><![CDATA[//
+// Si está informado el parámetro momento pesaje ==>
+//   Convertir parametro fecha-hora pesaje a formato sqlServer
+//
+var strMomPes = ''
+if ( params["pstrMomPes"].value != null
+            &amp;&amp;
+     BirtStr.trimRight( params["pstrMomPes"].value ) != '' )
+{ 
+	strMomPes = params["pstrMomPes"].value.substr(6,4) + 
+                       "-" +
+                params["pstrMomPes"].value.substr(3,2) +
+                       "-" +
+                params["pstrMomPes"].value.substr(0,2) +
+                       " " + 
+                params["pstrMomPes"].value.substr(11,8)
+}
+//
+// Inicializar el string de la consulta 
+this.queryText = ''
+//
+// *********************************
+// * Añadir los campos al SELECT 1 *
+// *********************************
+//
+this.queryText = this.queryText + " " + "(SELECT   a.MOMPES," +
+                                  " " +           "c.ARTREF," +
+                                  " " +           "c.ARTDES," +
+                                  " " +          "(a.PESFIN * 1000) AS PESFIN," + 
+                                  " " +          "(CASE" + 
+                                  " " +             "WHEN a.PESMOD = 'BAS'" +
+                                  " " +               "THEN 'Báscula'" +
+                                  " " +             "WHEN a.PESMOD = 'DOR'" +
+                                  " " +               "THEN 'Contenedor'" +
+                                  " " +             "WHEN a.PESMOD = 'UNI'" + 
+                                  " " +               "THEN 'Unidades'" +
+                                  " " +             "WHEN a.PESMOD = 'NDO'" +
+                                  " " +               "THEN 'Artículos'" +
+                                  " " +             "WHEN a.PESMOD = 'DORF'" +
+                                  " " +               "THEN 'Contenedor(F)'" +
+                                  " " +             "WHEN a.PESMOD = 'UNIF'" +
+                                  " " +               "THEN 'Unidades  (F)'" +
+                                  " " +             "WHEN a.PESMOD = 'NDOF'" + 
+                                  " " +               "THEN 'Artículos (F)'" +
+                                  " " +             "ELSE   NULL" + 
+                                  " " +           "END)             AS TIPPES," +
+                                  " " +           "d.RECOPEREF," +
+                                  " " +           "d.RECOPEDES"
+//
+// ******************************
+// * Añadir el FROM al SELECT 1 *
+// ******************************
+//
+this.queryText = this.queryText + " " +  "FROM     CNTNDOHISPES a" +
+                                  " " +             "INNER JOIN CNTNDO b" +
+                                  " " +                "ON b.CNTEXTCOD = a.CNTCOD" +
+                                  " " +             "LEFT OUTER JOIN ART c" +
+                                  " " +                "ON c.ARTCOD    = b.ARTCOD" +
+                                  " " +             "LEFT OUTER JOIN RECOPE d" +
+                                  " " +                "ON d.RECOPECOD = a.RECOPECOD"
+//
+// *******************************
+// * Añadir el WHERE al SELECT 1 *
+// *******************************
+//
+this.queryText = this.queryText + " " +  "WHERE    a.CNTCOD =" + " " + params["pdecCntCod"].value
+                                  " " +    "AND   (a.NDOCOD = b.NDOCOD AND a.NDOCOD <> 0)"
+//
+// Si está informado el parámetro momento pesaje ==>
+//   filtrar por dicho campo
+if ( params["pstrMomPes"].value != null
+            &amp;&amp;
+     BirtStr.trimRight( params["pstrMomPes"].value ) != '' )
+{
+	this.queryText = this.queryText + " " +    "AND    a.MOMPES =" + " " + "'" + strMomPes + "'"
+}
+this.queryText = this.queryText + ")"
+//
+// ************************************
+// * Añadir el UNION de los 2 SELECTs *
+// ************************************
+//                                
+this.queryText = this.queryText +    "UNION"
+//
+// *********************************
+// * Añadir los campos al SELECT 2 *
+// *********************************
+//
+this.queryText = this.queryText + " " + "(SELECT   a.MOMPES," +
+                                  " " +           "NULL             AS ARTREF," +
+                                  " " +           "NULL             AS ARTDES," +
+                                  " " +           "a.PESFIN," +
+                                  " " +          "(CASE" + 
+                                  " " +             "WHEN a.PESMOD = 'BAS'" +
+                                  " " +               "THEN 'Báscula'" +
+                                  " " +             "WHEN a.PESMOD = 'DOR'" +
+                                  " " +               "THEN 'Contenedor'" +
+                                  " " +             "WHEN a.PESMOD = 'UNI'" + 
+                                  " " +               "THEN 'Unidades'" +
+                                  " " +             "WHEN a.PESMOD = 'NDO'" +
+                                  " " +               "THEN 'Artículos'" +
+                                  " " +             "WHEN a.PESMOD = 'DORF'" +
+                                  " " +               "THEN 'Contenedor(F)'" +
+                                  " " +             "WHEN a.PESMOD = 'UNIF'" +
+                                  " " +               "THEN 'Unidades  (F)'" +
+                                  " " +             "WHEN a.PESMOD = 'NDOF'" + 
+                                  " " +               "THEN 'Artículos (F)'" +
+                                  " " +             "ELSE   NULL" + 
+                                  " " +           "END)             AS TIPPES," +
+                                  " " +           "d.RECOPEREF," +
+                                  " " +           "d.RECOPEDES"
+//
+// ******************************
+// * Añadir el FROM al SELECT 2 *
+// ******************************
+//
+this.queryText = this.queryText + " " +  "FROM     CNTNDOHISPES a" +
+                                  " " +             "LEFT OUTER JOIN RECOPE d" +
+                                  " " +                "ON d.RECOPECOD = a.RECOPECOD"
+//
+// *******************************
+// * Añadir el WHERE al SELECT 2 *
+// *******************************
+//
+this.queryText = this.queryText + " " +  "WHERE    a.CNTCOD =" + " " + params["pdecCntCod"].value
+                                  " " +    "AND    a.NDOCOD = 0"
+//
+// Si está informado el parámetro momento pesaje ==>
+//   filtrar por dicho campo
+if ( params["pstrMomPes"].value != null
+            &amp;&amp;
+     BirtStr.trimRight( params["pstrMomPes"].value ) != '' )
+{
+	this.queryText = this.queryText + " " +    "AND    a.MOMPES =" + " " + "'" + strMomPes + "'"
+}
+this.queryText = this.queryText + ")"
+//
+// ************************************
+// * Añadir el ORDER BY a los SELECTs *
+// ************************************
+//
+this.queryText = this.queryText + " " + "ORDER BY 1 DESC"]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">MOMPES</property>
+                    <property name="nativeName">MOMPES</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ARTREF</property>
+                    <property name="nativeName">ARTREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ARTDES</property>
+                    <property name="nativeName">ARTDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">PESFIN</property>
+                    <property name="nativeName">PESFIN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">TIPPES</property>
+                    <property name="nativeName">TIPPES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">RECOPEREF</property>
+                    <property name="nativeName">RECOPEREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">RECOPEDES</property>
+                    <property name="nativeName">RECOPEDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">// Consulta definida en evento beforeOpen</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="CNT-CAP-002 02 (CntDor)" id="1709">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CNTDORREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CNT</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecCntCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CNTDORREF</property>
+                    <property name="nativeName">CNTDORREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.CNTDORREF
+FROM     CNTDOR a
+WHERE    a.CNTCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="CNT-CAP-002 03 (cab)" id="2070">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CNT</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1
+</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="borderTopStyle">none</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="InformeDeHistorialDePesajeDeUnContenedor">InformeDeEntradasDeAlmacen</text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="2071">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">CNT-CAP-002 03 (cab)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(CNT-CAP-002)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="1710">
+            <property name="marginTop">0pt</property>
+            <property name="textAlign">center</property>
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">30%</property>
+            <column id="1711">
+                <property name="width">40mm</property>
+            </column>
+            <column id="1712">
+                <property name="width">40mm</property>
+            </column>
+            <row id="2057">
+                <property name="height">0.3125in</property>
+                <property name="textAlign">left</property>
+                <cell id="2058"/>
+                <cell id="2059"/>
+            </row>
+            <row id="1721">
+                <property name="textAlign">left</property>
+                <cell id="1722">
+                    <label id="1730">
+                        <property name="fontWeight">bold</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Contenedor"></text-property>
+                    </label>
+                </cell>
+                <cell id="1723">
+                    <data id="2033">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="dataSet">CNT-CAP-002 02 (CntDor)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CNTDORREF</property>
+                                <property name="displayName">CNTDORREF</property>
+                                <expression name="expression">dataSetRow["CNTDORREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">CNTDORREF</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <table id="1629">
+            <property name="marginTop">0pt</property>
+            <property name="canShrink">false</property>
+            <property name="width">90%</property>
+            <property name="dataSet">CNT-CAP-002 01 (Ppal)</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">ARTREF</property>
+                    <property name="displayName">ARTREF</property>
+                    <expression name="expression">dataSetRow["ARTREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTDES</property>
+                    <property name="displayName">ARTDES</property>
+                    <expression name="expression">dataSetRow["ARTDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">MOMPES</property>
+                    <property name="displayName">MOMPES</property>
+                    <expression name="expression">dataSetRow["MOMPES"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">PESFIN</property>
+                    <property name="displayName">PESFIN</property>
+                    <expression name="expression">dataSetRow["PESFIN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TIPPES</property>
+                    <property name="displayName">TIPPES</property>
+                    <expression name="expression">dataSetRow["TIPPES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RECOPEREF</property>
+                    <property name="displayName">RECOPEREF</property>
+                    <expression name="expression">dataSetRow["RECOPEREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RECOPEDES</property>
+                    <property name="displayName">RECOPEDES</property>
+                    <expression name="expression">dataSetRow["RECOPEDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">totPesFin</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["PESFIN"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">SELECT</property>
+                    <expression name="expression">reportContext.getPersistentGlobalVariable("select")</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="1663">
+                <property name="width">46mm</property>
+            </column>
+            <column id="1665">
+                <property name="width">35mm</property>
+            </column>
+            <column id="1953">
+                <property name="width">70mm</property>
+            </column>
+            <column id="1666">
+                <property name="width">20mm</property>
+            </column>
+            <column id="1667">
+                <property name="width">30mm</property>
+            </column>
+            <column id="1668">
+                <property name="width">30mm</property>
+            </column>
+            <column id="1983">
+                <property name="width">30mm</property>
+            </column>
+            <header>
+                <row id="2041">
+                    <property name="height">0.3125in</property>
+                    <cell id="2042"/>
+                    <cell id="2043">
+                        <property name="paddingLeft">4pt</property>
+                        <property name="paddingRight">1pt</property>
+                    </cell>
+                    <cell id="2044"/>
+                    <cell id="2045">
+                        <property name="paddingRight">6pt</property>
+                    </cell>
+                    <cell id="2046"/>
+                    <cell id="2047"/>
+                    <cell id="2048"/>
+                </row>
+                <row id="1998">
+                    <property name="verticalAlign">bottom</property>
+                    <cell id="1999">
+                        <label id="2026">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="MomentoPesaje"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2000">
+                        <property name="paddingLeft">4pt</property>
+                        <property name="paddingRight">1pt</property>
+                        <label id="2027">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Articulo"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2001">
+                        <label id="2028">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Descripcion"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2002">
+                        <property name="paddingRight">6pt</property>
+                        <label id="2029">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Peso"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2003">
+                        <label id="2030">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="TipoPesaje"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2004">
+                        <label id="2031">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Operario"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2005">
+                        <label id="2032">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Nombre"></text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="1786">
+                    <cell id="1787">
+                        <data id="2008">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd/MM/yyyy HH:mm:ss</property>
+                            </structure>
+                            <property name="resultSetColumn">MOMPES</property>
+                        </data>
+                    </cell>
+                    <cell id="1788">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <property name="paddingLeft">4pt</property>
+                        <property name="paddingRight">1pt</property>
+                        <data id="2015">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ARTREF</property>
+                        </data>
+                    </cell>
+                    <cell id="2013">
+                        <data id="2017">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ARTDES</property>
+                        </data>
+                    </cell>
+                    <cell id="1789">
+                        <property name="paddingRight">6pt</property>
+                        <data id="2019">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0.000</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">PESFIN</property>
+                        </data>
+                    </cell>
+                    <cell id="1790">
+                        <data id="2021">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">TIPPES</property>
+                        </data>
+                    </cell>
+                    <cell id="1791">
+                        <data id="2023">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">RECOPEREF</property>
+                        </data>
+                    </cell>
+                    <cell id="1980">
+                        <data id="2025">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">RECOPEDES</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="2061">
+                    <property name="height">0.312in</property>
+                    <cell id="2062"/>
+                    <cell id="2063">
+                        <property name="paddingLeft">4pt</property>
+                        <property name="paddingRight">1pt</property>
+                    </cell>
+                    <cell id="2064"/>
+                    <cell id="2065">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#800000</property>
+                        <property name="paddingRight">6pt</property>
+                        <property name="textAlign">right</property>
+                    </cell>
+                    <cell id="2066"/>
+                    <cell id="2067"/>
+                    <cell id="2068"/>
+                </row>
+                <row id="1652">
+                    <cell id="1653"/>
+                    <cell id="1655">
+                        <property name="paddingLeft">4pt</property>
+                        <property name="paddingRight">1pt</property>
+                    </cell>
+                    <cell id="1952">
+                        <label id="2069">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="TotalGeneral"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="1656">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#800000</property>
+                        <property name="paddingRight">6pt</property>
+                        <property name="textAlign">right</property>
+                        <data id="2035">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0.000</property>
+                            </structure>
+                            <property name="resultSetColumn">totPesFin</property>
+                        </data>
+                    </cell>
+                    <cell id="1657"/>
+                    <cell id="1658"/>
+                    <cell id="1982"/>
+                </row>
+                <row id="2049">
+                    <property name="height">0.312in</property>
+                    <cell id="2050"/>
+                    <cell id="2051">
+                        <property name="paddingLeft">4pt</property>
+                        <property name="paddingRight">1pt</property>
+                    </cell>
+                    <cell id="2052"/>
+                    <cell id="2053">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#800000</property>
+                        <property name="paddingRight">6pt</property>
+                        <property name="textAlign">right</property>
+                    </cell>
+                    <cell id="2054"/>
+                    <cell id="2055"/>
+                    <cell id="2056"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

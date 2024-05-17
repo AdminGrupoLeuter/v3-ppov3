@@ -1,0 +1,32 @@
+SQL> SET TIMING ON
+SQL> 
+SQL> -----------------------------------INICIO MODIFICACIONES
+SQL> 
+SQL> --Adaia Slotting (AdaiaRankingLogistico)
+SQL> ALTER TABLE ALMZONPIC
+  2  ADD (ABCLOG VARCHAR2(1) );
+
+Table altered.
+
+Elapsed: 00:00:00.78
+SQL> COMMENT ON COLUMN ALMZONPIC.ABCLOG IS 'Clasificacion logistica para zona de picking';
+
+Comment created.
+
+Elapsed: 00:00:00.04
+SQL> 
+SQL> 
+SQL>  -----------------------------------FIN MODIFICACIONES
+SQL> 
+SQL> UPDATE VERSIONES SET VERSION='0127', MOMENTO=SYSDATE WHERE SOFCOD='BD';
+
+1 row updated.
+
+Elapsed: 00:00:00.03
+SQL> COMMIT;
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+SQL> 
+SQL> SPOOL OFF;

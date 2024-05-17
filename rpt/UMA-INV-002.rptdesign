@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Giménez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 26/02/2010 (versión inicial): Se añade el parámetro pdecAlmCod (código interno almacén) con 
+* respecto a la versión de SpeedWare, ya que desde un informe BIRT no es posible recuperar una 
+* variable global de SpeedWare.
+***********************************************************************************
+* FM 06/10/2011: Se mejora el formateo.</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*       Informe de ubicaciones a inventariar.
+*
+* PARAMETROS RECIBIDOS:
+*       1. pdecAlmCod                           -> Código interno almacén
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pdecAlmCod" id="5776">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecAlmCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">3</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="UMA" id="411">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.145.41.50:1525:CFGADA3P</property>
+            <property name="odaUser">cfnwij</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">dGVtcG9yYWw=</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="UMA-INV-002 01 (Ppal)" id="1709">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ARTREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ARTDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CNTDORREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">UNIALM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">NUMUNI_UNIALM</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">UNIMIN</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">CANUNI</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">UBITIP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">ULTENT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">MOMREC</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">MOTIVO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">RECCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="needsCache">false</property>
+            <property name="dataSource">UMA</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ARTREF</property>
+                    <property name="nativeName">ARTREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ARTDES</property>
+                    <property name="nativeName">ARTDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CNTDORREF</property>
+                    <property name="nativeName">CNTDORREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">UNIALM</property>
+                    <property name="nativeName">UNIALM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">NUMUNI_UNIALM</property>
+                    <property name="nativeName">NUMUNI_UNIALM</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">UNIMIN</property>
+                    <property name="nativeName">UNIMIN</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">CANUNI</property>
+                    <property name="nativeName">CANUNI</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">UBITIP</property>
+                    <property name="nativeName">UBITIP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">ULTENT</property>
+                    <property name="nativeName">ULTENT</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">MOMREC</property>
+                    <property name="nativeName">MOMREC</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">MOTIVO</property>
+                    <property name="nativeName">MOTIVO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">RECCOD</property>
+                    <property name="nativeName">RECCOD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   d.ARTREF,
+         d.ARTDES,        
+         c.CNTDORREF,
+         d.UNIALM,         
+         e.NUMUNI AS NUMUNI_UNIALM,
+         d.UNIMIN, 
+         b.CANUNI,
+         a.UBITIP,
+         a.ULTENT,
+         b.MOMREC,
+         a.MOTIVO,
+         b.RECCOD         
+FROM     ALMUBI a
+           INNER JOIN CNTNDO b
+              ON b.CNTEXTCOD = a.CNTCOD
+           LEFT OUTER JOIN CNTDOR c
+              ON c.CNTCOD    = a.CNTCOD
+           LEFT OUTER JOIN ART d
+              ON d.ARTCOD    = b.ARTCOD
+           LEFT OUTER JOIN ARTPRE e
+              ON e.ARTCOD    = b.ARTCOD
+             AND e.UNITIP    = d.UNIALM            
+WHERE    a.ALMCOD = ?
+  AND    a.UBITIP = 'FA'
+ORDER BY d.ARTREF</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="UMA-INV-002 02 (Cab)" id="5989">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">UMA</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1
+</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">Custom</property>
+                                    <property name="pattern">dd/mm/YYYY HH:mm:ss</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="InformeDeUbicacionesAInventariar"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="5990">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">UMA-INV-002 02 (Cab)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(UMA-INV-002)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="ppal" id="5793">
+            <property name="fontSize">8pt</property>
+            <property name="dataSet">UMA-INV-002 01 (Ppal)</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">CNTDORREF</property>
+                    <property name="displayName">CNTDORREF</property>
+                    <expression name="expression">dataSetRow["CNTDORREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CANUNI</property>
+                    <property name="displayName">CANUNI</property>
+                    <expression name="expression">dataSetRow["CANUNI"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UNIALM</property>
+                    <property name="displayName">UNIALM</property>
+                    <expression name="expression">dataSetRow["UNIALM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NUMUNI_UNIALM</property>
+                    <property name="displayName">NUMUNI_UNIALM</property>
+                    <expression name="expression">dataSetRow["NUMUNI_UNIALM"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UNIMIN</property>
+                    <property name="displayName">UNIMIN</property>
+                    <expression name="expression">dataSetRow["UNIMIN"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UBITIP</property>
+                    <property name="displayName">UBITIP</property>
+                    <expression name="expression">dataSetRow["UBITIP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">decCanUni_UniAlm</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIALM"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIALM"] != 0 )
+{
+        var x = ( dataSetRow["CANUNI"] )
+        if ( x &lt; 0 )
+        {
+                var y = -1
+        }
+        else
+        {
+                var y = 1
+        }
+        BirtMath.roundDown( ( ( x * y ) / dataSetRow["NUMUNI_UNIALM"] ), 0 ) * y
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decCanUni_UniMin</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIALM"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIALM"] != 0 )
+{
+        var x = ( dataSetRow["CANUNI"] )
+        if ( x &lt; 0 )
+        {
+                var y = -1
+        }
+        else
+        {
+                var y = 1
+        }
+        BirtMath.mod( ( x * y ), dataSetRow["NUMUNI_UNIALM"] )  * y
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTREF</property>
+                    <property name="displayName">ARTREF</property>
+                    <expression name="expression">dataSetRow["ARTREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTDES</property>
+                    <property name="displayName">ARTDES</property>
+                    <expression name="expression">dataSetRow["ARTDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ULTENT</property>
+                    <property name="displayName">ULTENT</property>
+                    <expression name="expression">dataSetRow["ULTENT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">MOMREC</property>
+                    <property name="displayName">MOMREC</property>
+                    <expression name="expression">dataSetRow["MOMREC"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">MOTIVO</property>
+                    <property name="displayName">MOTIVO</property>
+                    <expression name="expression">dataSetRow["MOTIVO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RECCOD</property>
+                    <property name="displayName">RECCOD</property>
+                    <expression name="expression">dataSetRow["RECCOD"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">strCAN</property>
+                    <property name="displayName">strCAN</property>
+                    <expression name="expression">row["decCanUni_UniAlm"] + BirtStr.trimRight(row["UNIALM"]) + "+" + 
+row["decCanUni_UniMin"] + BirtStr.trimRight(row["UNIMIN"])</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">0</property>
+            <column id="5955">
+                <property name="width">20mm</property>
+            </column>
+            <column id="5960"/>
+            <column id="5857">
+                <property name="width">35mm</property>
+            </column>
+            <column id="5995">
+                <property name="width">25mm</property>
+            </column>
+            <column id="5974">
+                <property name="width">9mm</property>
+            </column>
+            <column id="5863">
+                <property name="width">35mm</property>
+            </column>
+            <column id="5864">
+                <property name="width">35mm</property>
+            </column>
+            <column id="5868">
+                <property name="width">22mm</property>
+            </column>
+            <column id="5985">
+                <property name="width">15mm</property>
+            </column>
+            <header>
+                <row id="5869">
+                    <property name="height">0.312in</property>
+                    <cell id="5951"/>
+                    <cell id="5956"/>
+                    <cell id="5870"/>
+                    <cell id="5991"/>
+                    <cell id="5970"/>
+                    <cell id="5876"/>
+                    <cell id="5877"/>
+                    <cell id="5881"/>
+                    <cell id="5981"/>
+                </row>
+                <row id="5794">
+                    <property name="verticalAlign">bottom</property>
+                    <cell id="5952">
+                        <label id="5894">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">0pt</property>
+                            <text-property name="text" key="Articulo"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5957">
+                        <label id="5895">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">0pt</property>
+                            <text-property name="text" key="Descripcion"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5795">
+                        <label id="5888">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <text-property name="text" key="Contenedor"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5992">
+                        <label id="5996">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">0pt</property>
+                            <text-property name="text" key="Cantidad"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5971">
+                        <label id="5893">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">0pt</property>
+                            <text-property name="text" key="TipoUbic"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5807">
+                        <label id="5891">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">0pt</property>
+                            <text-property name="text" key="Desaparece"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5809">
+                        <label id="5892">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">0pt</property>
+                            <text-property name="text" key="Entra"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5817">
+                        <label id="5896">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">0pt</property>
+                            <text-property name="text" key="UltUbicacion"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5982">
+                        <label id="5986">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">0pt</property>
+                            <text-property name="text" key="Recep"></text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="5819">
+                    <cell id="5953">
+                        <data id="5967">
+                            <property name="marginTop">0pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ARTREF</property>
+                        </data>
+                    </cell>
+                    <cell id="5958">
+                        <data id="5969">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ARTDES</property>
+                        </data>
+                    </cell>
+                    <cell id="5820">
+                        <data id="5821">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">CNTDORREF</property>
+                        </data>
+                    </cell>
+                    <cell id="5993">
+                        <data id="5997">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">strCAN</property>
+                        </data>
+                    </cell>
+                    <cell id="5972">
+                        <data id="5837">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="resultSetColumn">UBITIP</property>
+                        </data>
+                    </cell>
+                    <cell id="5832">
+                        <data id="5976">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd/MM/yyyy HH:mm:ss</property>
+                            </structure>
+                            <property name="resultSetColumn">ULTENT</property>
+                        </data>
+                    </cell>
+                    <cell id="5834">
+                        <data id="5978">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd/MM/yyyy HH:mm:ss</property>
+                            </structure>
+                            <property name="resultSetColumn">MOMREC</property>
+                        </data>
+                    </cell>
+                    <cell id="5842">
+                        <data id="5980">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">MOTIVO</property>
+                        </data>
+                    </cell>
+                    <cell id="5983">
+                        <data id="5988">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">RECCOD</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="5844">
+                    <property name="height">0.312in</property>
+                    <cell id="5954"/>
+                    <cell id="5959"/>
+                    <cell id="5845"/>
+                    <cell id="5994"/>
+                    <cell id="5973"/>
+                    <cell id="5851"/>
+                    <cell id="5852"/>
+                    <cell id="5856"/>
+                    <cell id="5984"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

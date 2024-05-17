@@ -1,0 +1,16 @@
+#cd $ADAIA_HOME/bin
+  echo 
+  echo "Estoy situado en la carpeta "`pwd`
+  echo "Voy a buscar el patr∆n de busqueda $1"
+  echo "Lo voy a sustituir por $2"
+  echo
+  echo "CTRL+C para abortar"
+  read
+for fichero in *
+do
+  cp $fichero $fichero.rem
+  ex $fichero <<!
+g/$1/s//$2/g
+wq!
+!
+done

@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_20090202 Build &lt;2.3.2.v20090218-0730></property>
+    <property name="units">in</property>
+    <text-property name="title">UMA-ETI-002</text-property>
+    <property name="comments">i31987, CEA: En el caso de los muelles y moladas se imprime en cuanto se pone la estanteria . independientemente de la posicion y la altura</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pAlmRef" id="412">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">01</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pEstCod1" id="413">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">3</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pHueCod1" id="414">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">000</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pNivel1" id="415">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">0</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pNivel2" id="463">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">9</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pHueCod2" id="464">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">999</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pEstCod2" id="465">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">3</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pUbiIzq" id="596">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">''</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pUbiDch" id="597">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">''</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="OEX" id="411">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@172.20.10.56:1521:adaiasrv</property>
+            <property name="odaUser">aldv3</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YWxkdjM=</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="UbicacionesPares" id="416">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ALMUBIALI</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">EAN</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">VOZ</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="beforeOpen"><![CDATA[this.queryText = this.queryText + " OR TRIM(AP.ALMUBIREF) IN (" + params["pUbiDch"].value + ") ) " +
+			                      " AND ( " +
+			                      	" AE.ESTTIP IN ('ALNO', 'INNO') OR " +
+			                      	" ALMUBIALI = (SELECT MIN(ALMUBIALI) FROM ALMPRV WHERE ESTDES = AP.ESTDES AND ALMREF = AP.ALMREF) " +
+			                      " ) ";
+
+this.queryText = "SELECT * FROM (" + this.queryText + ") WHERE MOD(RN, 2) = 0";
+this.queryText = this.queryText + " ORDER BY ALMUBIALI ";]]></method>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">pAlmRef</property>
+                    <property name="paramName">pAlmRef</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pEstCod1</property>
+                    <property name="paramName">pEstCod1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pEstCod2</property>
+                    <property name="paramName">pEstCod2</property>
+                    <property name="dataType">string</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pHueCod1</property>
+                    <property name="paramName">pHueCod1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pHueCod2</property>
+                    <property name="paramName">pHueCod2</property>
+                    <property name="dataType">string</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pNivel1</property>
+                    <property name="paramName">pNivel1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pNivel2</property>
+                    <property name="paramName">pNivel2</property>
+                    <property name="dataType">string</property>
+                    <property name="position">7</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RN</property>
+                    <property name="nativeName">RN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ALMUBIALI</property>
+                    <property name="nativeName">ALMUBIALI</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">EAN</property>
+                    <property name="nativeName">EAN</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">VOZ</property>
+                    <property name="nativeName">VOZ</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT 
+  ROWNUM RN,
+  AP.ALMUBIALI,  
+  CASE
+    WHEN AB.UBITIP = 'CM' THEN EAN13(TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP2.VALALF)*10000000000)))
+    ELSE EAN13(TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP.VALALF)*10000000000)))
+  END EAN,  
+  SUBSTR
+  (
+    CASE
+      WHEN AB.UBITIP = 'CM' THEN 
+        TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP2.VALALF)*10000000000)) || 
+        DEAN13(TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP2.VALALF)*10000000000)))
+      ELSE 
+        TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP.VALALF)*10000000000)) || 
+        DEAN13(TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP.VALALF)*10000000000)))
+    END    
+    ,
+    12,
+    2
+  ) VOZ
+FROM ALMPRV AP
+INNER JOIN ALM
+  ON AP.ALMREF = ALM.ALMREF
+INNER JOIN ALMEST AE
+  ON ALM.ALMCOD = AE.ALMCOD AND AP.ESTDES = AE.ESTDES
+LEFT JOIN GENPAR GP
+  ON ALM.ALMCOD = GP.ALMCOD AND GP.GENPARCOD = 'SSCC-UBICACION'
+LEFT JOIN GENPAR GP2
+  ON ALM.ALMCOD = GP2.ALMCOD AND GP2.GENPARCOD = 'SSCC-DRIVEIN'
+LEFT JOIN ALMUBI AB
+  ON AP.ALMUBICOD = AB.ALMUBICOD
+WHERE 
+  
+  AP.ALMREF = ? 
+  AND
+  (
+  	(
+  		AE.ESTCOD >= ? AND AE.ESTCOD &lt;= ?
+	  	AND (
+	  	     AE.ESTTIP NOT IN ('ALNO', 'INNO')
+	  		 OR (
+	  		 	 TRIM(AP.HUEREF) >= ? AND TRIM(AP.HUEREF) &lt;= ?
+  		         AND NIVREF >= ? AND NIVREF &lt;= ?
+  		         )
+  		     )
+	 )
+</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="UbicacionesImpares" id="417">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ALMUBIALI</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">EAN</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">VOZ</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="beforeOpen"><![CDATA[this.queryText = this.queryText + " OR TRIM(AP.ALMUBIREF) IN (" + params["pUbiIzq"].value + ") ) " +
+			                      " AND ( " +
+			                      	" AE.ESTTIP IN ('ALNO', 'INNO') OR " +
+			                      	" ALMUBIALI = (SELECT MIN(ALMUBIALI) FROM ALMPRV WHERE ESTDES = AP.ESTDES AND ALMREF = AP.ALMREF) " +
+			                      " ) ";
+
+this.queryText = "SELECT * FROM (" + this.queryText + ") WHERE MOD(RN, 2) = 1";
+this.queryText = this.queryText + " ORDER BY ALMUBIALI ";]]></method>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">pAlmref</property>
+                    <property name="paramName">pAlmRef</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pEstCod1</property>
+                    <property name="paramName">pEstCod1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pEstCod2</property>
+                    <property name="paramName">pEstCod2</property>
+                    <property name="dataType">string</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pHueCod1</property>
+                    <property name="paramName">pHueCod1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pHueCod2</property>
+                    <property name="paramName">pHueCod2</property>
+                    <property name="dataType">string</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pNivel1</property>
+                    <property name="paramName">pNivel1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">pNivel2</property>
+                    <property name="paramName">pNivel2</property>
+                    <property name="dataType">string</property>
+                    <property name="position">7</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RN</property>
+                    <property name="nativeName">RN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ALMUBIALI</property>
+                    <property name="nativeName">ALMUBIALI</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">EAN</property>
+                    <property name="nativeName">EAN</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">VOZ</property>
+                    <property name="nativeName">VOZ</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT 
+  ROWNUM RN,
+  AP.ALMUBIALI,  
+  CASE
+    WHEN AB.UBITIP = 'CM' THEN EAN13(TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP2.VALALF)*10000000000)))
+    ELSE EAN13(TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP.VALALF)*10000000000)))
+  END EAN,  
+  SUBSTR
+  (
+    CASE
+      WHEN AB.UBITIP = 'CM' THEN 
+        TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP2.VALALF)*10000000000)) || 
+        DEAN13(TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP2.VALALF)*10000000000)))
+      ELSE 
+        TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP.VALALF)*10000000000)) || 
+        DEAN13(TO_CHAR(AP.ALMUBICOD + (TO_NUMBER(GP.VALALF)*10000000000)))
+    END    
+    ,
+    12,
+    2
+  ) VOZ
+FROM ALMPRV AP
+INNER JOIN ALM
+  ON AP.ALMREF = ALM.ALMREF
+INNER JOIN ALMEST AE
+  ON ALM.ALMCOD = AE.ALMCOD AND AP.ESTDES = AE.ESTDES
+LEFT JOIN GENPAR GP
+  ON ALM.ALMCOD = GP.ALMCOD AND GP.GENPARCOD = 'SSCC-UBICACION'
+LEFT JOIN GENPAR GP2
+  ON ALM.ALMCOD = GP2.ALMCOD AND GP2.GENPARCOD = 'SSCC-DRIVEIN'
+LEFT JOIN ALMUBI AB
+  ON AP.ALMUBICOD = AB.ALMUBICOD
+WHERE 
+  AP.ALMREF = ? 
+  AND
+  (
+  	(
+  		AE.ESTCOD >= ? AND AE.ESTCOD &lt;= ?
+	  	AND (
+	  	     AE.ESTTIP NOT IN ('ALNO', 'INNO')
+	  		 OR (
+	  		 	 TRIM(AP.HUEREF) >= ? AND TRIM(AP.HUEREF) &lt;= ?
+  		         AND NIVREF >= ? AND NIVREF &lt;= ?
+  		         )
+  		     )
+	 )
+
+</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="topMargin">1mm</property>
+            <property name="leftMargin">2mm</property>
+            <property name="bottomMargin">0mm</property>
+            <property name="rightMargin">2mm</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="538">
+            <property name="height">2.90625in</property>
+            <property name="width">7.989583333333333in</property>
+            <column id="539">
+                <property name="width">95mm</property>
+            </column>
+            <column id="540">
+                <property name="width">95mm</property>
+            </column>
+            <row id="541">
+                <cell id="542">
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <table id="546">
+                        <property name="height">2.28125in</property>
+                        <property name="width">3.9166666666666665in</property>
+                        <property name="dataSet">UbicacionesImpares</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ALMUBIALI</property>
+                                <property name="displayName">ALMUBIALI</property>
+                                <expression name="expression">BirtStr.trim(dataSetRow["ALMUBIALI"]) + "   (" + BirtStr.trim(dataSetRow["VOZ"]) + ")"</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EAN</property>
+                                <property name="displayName">EAN</property>
+                                <expression name="expression">dataSetRow["EAN"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VOZ</property>
+                                <property name="displayName">VOZ</property>
+                                <expression name="expression">dataSetRow["VOZ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="pageBreakInterval">4</property>
+                        <column id="551">
+                            <property name="width">2.6666666666666665in</property>
+                        </column>
+                        <detail>
+                            <row id="598">
+                                <property name="height">10mm</property>
+                                <cell id="599">
+                                    <property name="paddingTop">0pt</property>
+                                    <property name="paddingLeft">0pt</property>
+                                    <property name="paddingBottom">0pt</property>
+                                    <property name="paddingRight">0pt</property>
+                                </cell>
+                            </row>
+                            <row id="547">
+                                <property name="height">16mm</property>
+                                <cell id="548">
+                                    <property name="paddingTop">0pt</property>
+                                    <property name="paddingLeft">0pt</property>
+                                    <property name="paddingBottom">0pt</property>
+                                    <property name="paddingRight">0pt</property>
+                                    <data id="560">
+                                        <property name="fontSize">30pt</property>
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">0pt</property>
+                                        <property name="paddingBottom">0pt</property>
+                                        <property name="paddingRight">0pt</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">ALMUBIALI</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="566">
+                                <property name="height">40mm</property>
+                                <cell id="567">
+                                    <property name="colSpan">1</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="paddingTop">0pt</property>
+                                    <property name="paddingLeft">0pt</property>
+                                    <property name="paddingBottom">0pt</property>
+                                    <property name="paddingRight">0pt</property>
+                                    <data id="568">
+                                        <property name="fontFamily">"Code EAN13"</property>
+                                        <property name="fontSize">78pt</property>
+                                        <property name="fontWeight">normal</property>
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">0pt</property>
+                                        <property name="paddingBottom">0pt</property>
+                                        <property name="paddingRight">0pt</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">EAN</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="590">
+                                <property name="height">6.5mm</property>
+                                <cell id="591">
+                                    <property name="paddingTop">0pt</property>
+                                    <property name="paddingLeft">0pt</property>
+                                    <property name="paddingBottom">0pt</property>
+                                    <property name="paddingRight">0pt</property>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+                <cell id="543">
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">5mm</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0mm</property>
+                    <table id="516">
+                        <property name="height">2.28125in</property>
+                        <property name="width">3.9375in</property>
+                        <property name="dataSet">UbicacionesPares</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ALMUBIALI</property>
+                                <property name="displayName">ALMUBIALI</property>
+                                <expression name="expression">BirtStr.trim(dataSetRow["ALMUBIALI"]) + "   (" + BirtStr.trim(dataSetRow["VOZ"]) + ")"</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EAN</property>
+                                <property name="displayName">EAN</property>
+                                <expression name="expression">dataSetRow["EAN"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VOZ</property>
+                                <property name="displayName">VOZ</property>
+                                <expression name="expression">dataSetRow["VOZ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="pageBreakInterval">4</property>
+                        <column id="523">
+                            <property name="width">2.667in</property>
+                        </column>
+                        <detail>
+                            <row id="601">
+                                <property name="height">10mm</property>
+                                <cell id="602">
+                                    <property name="paddingTop">0pt</property>
+                                    <property name="paddingLeft">0pt</property>
+                                    <property name="paddingBottom">0pt</property>
+                                    <property name="paddingRight">0pt</property>
+                                </cell>
+                            </row>
+                            <row id="519">
+                                <property name="height">16mm</property>
+                                <cell id="520">
+                                    <property name="paddingTop">0pt</property>
+                                    <property name="paddingLeft">0pt</property>
+                                    <property name="paddingBottom">0pt</property>
+                                    <property name="paddingRight">0pt</property>
+                                    <data id="562">
+                                        <property name="fontSize">30pt</property>
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">0pt</property>
+                                        <property name="paddingBottom">0pt</property>
+                                        <property name="paddingRight">0pt</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">ALMUBIALI</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="564">
+                                <property name="height">40mm</property>
+                                <cell id="565">
+                                    <property name="colSpan">1</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="paddingTop">0pt</property>
+                                    <property name="paddingLeft">1pt</property>
+                                    <property name="paddingBottom">0pt</property>
+                                    <property name="paddingRight">1pt</property>
+                                    <data id="569">
+                                        <property name="fontFamily">"Code EAN13"</property>
+                                        <property name="fontSize">78pt</property>
+                                        <property name="paddingTop">0pt</property>
+                                        <property name="paddingLeft">0pt</property>
+                                        <property name="paddingBottom">0pt</property>
+                                        <property name="paddingRight">0pt</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">EAN</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="593">
+                                <property name="height">6.5mm</property>
+                                <cell id="594">
+                                    <property name="paddingTop">0pt</property>
+                                    <property name="paddingLeft">0pt</property>
+                                    <property name="paddingBottom">0pt</property>
+                                    <property name="paddingRight">0pt</property>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

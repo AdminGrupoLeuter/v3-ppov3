@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Giménez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 24/02/2010 (versión inicial) 
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*       Informe de inventario rotativo.
+*
+* PARAMETROS RECIBIDOS:
+*       1. pstrFecMovDesde              -> Fecha movimiento desde
+*       2. pstrFecMovHasta                      -> Fecha movimiento hasta
+*       3. pstrHorMovDesde              -> Hora movimiento desde
+*       4. pstrHorMovHasta                      -> Hora movimiento hasta
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pstrFecMovDesde" id="4998">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrFecMovDesde"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">01/01/0001</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrFecMovHasta" id="5135">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrFecMovHasta"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">31/12/9999</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrHorMovDesde" id="5223">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrHorMovDesde"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">00:00:00</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrHorMovHasta" id="5224">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrHorMovHasta"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">23:59:59</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="INV" id="411">
+            <property name="odaDriverClass">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+            <property name="odaURL">jdbc:sqlserver://172.20.10.65\ADAIASRV:1433</property>
+            <property name="odaUser">bra</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YnJh</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="INV-ROT-003 01 (Ppal)" id="1709">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ALMUBIREF</property>
+                    <property name="displayName">ALMUBIREF</property>
+                </structure>
+                <structure>
+                    <property name="columnName">ARTREF</property>
+                    <property name="displayName">ARTREF</property>
+                </structure>
+                <structure>
+                    <property name="columnName">ARTDES</property>
+                    <property name="displayName">ARTDES</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CANUNI</property>
+                    <property name="displayName">CANUNI</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CANUBI</property>
+                    <property name="displayName">CANUBI</property>
+                </structure>
+                <structure>
+                    <property name="columnName">RECOPEREF</property>
+                    <property name="displayName">RECOPEREF</property>
+                </structure>
+                <structure>
+                    <property name="columnName">RECOPEDES</property>
+                    <property name="displayName">RECOPEDES</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ALMUBIREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ARTREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ARTDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CANUNI</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">CANUBI</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">RECOPEREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">RECOPEDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="needsCache">false</property>
+            <property name="dataSource">INV</property>
+            <method name="beforeOpen"><![CDATA[//
+// *****************************
+// * Añadir el WHERE al SELECT *
+// *****************************
+//
+// Convertir parametro fecha-hora movto. desde a formato sqlServer
+var strFecHorMovDesde = params["pstrFecMovDesde"].value.substr(6,4) + 
+                               "-" +
+                        params["pstrFecMovDesde"].value.substr(3,2) +
+                               "-" +
+                        params["pstrFecMovDesde"].value.substr(0,2) +
+                               " " + 
+                        params["pstrHorMovDesde"].value.substr(0,8)
+//
+// Convertir parametro fecha-hora movto. hasta a formato sqlServer      
+var strFecHorMovHasta = params["pstrFecMovHasta"].value.substr(6,4) + 
+                               "-" +
+                        params["pstrFecMovHasta"].value.substr(3,2) +
+                               "-" +
+                        params["pstrFecMovHasta"].value.substr(0,2) +
+                               " " + 
+                        params["pstrHorMovHasta"].value.substr(0,8)
+//
+this.queryText = this.queryText + " " + "WHERE    a.INVTIP = 'INVR'" +
+                                  " " +   "AND    a.MOMINV BETWEEN" +
+                                  " " +          "'" + strFecHorMovDesde + "'" +
+                                  " " +                       "AND" +
+                                  " " +          "'" + strFecHorMovHasta + "'" +
+                                  " " +   "AND    a.INVSIT = 'PROC'"
+//
+// ********************************
+// * Añadir el ORDER BY al SELECT *
+// ********************************
+//
+this.queryText = this.queryText + " " + "ORDER BY a.ALMUBICOD," + 
+                                  " " +          "c.ARTREF"]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ALMUBIREF</property>
+                    <property name="nativeName">ALMUBIREF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ARTREF</property>
+                    <property name="nativeName">ARTREF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ARTDES</property>
+                    <property name="nativeName">ARTDES</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CANUNI</property>
+                    <property name="nativeName">CANUNI</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">CANUBI</property>
+                    <property name="nativeName">CANUBI</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">RECOPEREF</property>
+                    <property name="nativeName">RECOPEREF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">RECOPEDES</property>
+                    <property name="nativeName">RECOPEDES</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   d.ALMUBIREF,
+         c.ARTREF,
+         c.ARTDES,
+         a.CANUNI,                   
+         a.CANUBI,                    
+         b.RECOPEREF,
+         b.RECOPEDES         
+FROM     INVNTR a  
+           LEFT OUTER JOIN RECOPE b
+              ON b.RECOPECOD = a.RECOPECOD
+           LEFT OUTER JOIN ART c
+              ON c.ARTCOD    = a.ARTCOD
+           LEFT OUTER JOIN ALMPRV d
+              ON d.ALMUBICOD = a.ALMUBICOD</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="INV-ROT-003 02 (Cab)" id="5401">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">INV</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="InformeDeInventarioRotativo"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="5402">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">INV-ROT-003 02 (Cab)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(INV-ROT-003)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="3563">
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">20%</property>
+            <column id="3564">
+                <property name="width">10mm</property>
+            </column>
+            <column id="3565">
+                <property name="width">50mm</property>
+            </column>
+            <column id="3566">
+                <property name="width">10mm</property>
+            </column>
+            <column id="5148">
+                <property name="width">50mm</property>
+            </column>
+            <row id="3567">
+                <property name="height">0.312in</property>
+                <cell id="3568"/>
+                <cell id="3569"/>
+                <cell id="3570"/>
+                <cell id="5144"/>
+            </row>
+            <row id="3571">
+                <cell id="3572">
+                    <label id="3583">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="De"></text-property>
+                    </label>
+                </cell>
+                <cell id="3573">
+                    <data id="5230">
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrFecMovDesde</property>
+                                <expression name="expression">params["pstrFecMovDesde"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrFecMovDesde</property>
+                    </data>
+                </cell>
+                <cell id="3574">
+                    <label id="5151">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <text-property name="text" key="a"></text-property>
+                    </label>
+                </cell>
+                <cell id="5145">
+                    <data id="5231">
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrFecMovHasta</property>
+                                <expression name="expression">params["pstrFecMovHasta"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrFecMovHasta</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="5225">
+                <cell id="5226"/>
+                <cell id="5227">
+                    <data id="5232">
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrHorMovDesde</property>
+                                <expression name="expression">params["pstrHorMovDesde"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrHorMovDesde</property>
+                    </data>
+                </cell>
+                <cell id="5228"/>
+                <cell id="5229">
+                    <data id="5233">
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrHorMovHasta</property>
+                                <expression name="expression">params["pstrHorMovHasta"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrHorMovHasta</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <table id="5234">
+            <property name="width">90%</property>
+            <property name="dataSet">INV-ROT-003 01 (Ppal)</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">ALMUBIREF</property>
+                    <property name="displayName">ALMUBIREF</property>
+                    <expression name="expression">dataSetRow["ALMUBIREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTREF</property>
+                    <property name="displayName">ARTREF</property>
+                    <expression name="expression">dataSetRow["ARTREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTDES</property>
+                    <property name="displayName">ARTDES</property>
+                    <expression name="expression">dataSetRow["ARTDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CANUNI</property>
+                    <property name="displayName">CANUNI</property>
+                    <expression name="expression">dataSetRow["CANUNI"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CANUBI</property>
+                    <property name="displayName">CANUBI</property>
+                    <expression name="expression">dataSetRow["CANUBI"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">RECOPEREF</property>
+                    <property name="displayName">RECOPEREF</property>
+                    <expression name="expression">dataSetRow["RECOPEREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RECOPEDES</property>
+                    <property name="displayName">RECOPEDES</property>
+                    <expression name="expression">dataSetRow["RECOPEDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">decDifTeoRea</property>
+                    <expression name="expression">( dataSetRow["CANUNI"] - dataSetRow["CANUBI"] )</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">dec%ExaUbi</property>
+                    <expression name="expression">if ( dataSetRow["CANUNI"] != 0 )
+{
+        ( ( dataSetRow["CANUBI"] / dataSetRow["CANUNI"] ) * 100 )  / 100
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">totCnt_UbiInv</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["ALMUBIREF"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totCnt_UbiCtdErr</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["ALMUBIREF"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">row["decDifTeoRea"] != 0</expression>
+                </structure>
+                <structure>
+                    <property name="name">tot%ExaGlo</property>
+                    <expression name="expression">if ( row["totCnt_UbiInv"] != 0 )
+{
+        ( ( row["totCnt_UbiCtdErr"] / row["totCnt_UbiInv"] ) * 100 ) / 100
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="5283">
+                <property name="width">28mm</property>
+            </column>
+            <column id="5284">
+                <property name="width">30mm</property>
+            </column>
+            <column id="5285">
+                <property name="width">80mm</property>
+            </column>
+            <column id="5286">
+                <property name="width">20mm</property>
+            </column>
+            <column id="5287">
+                <property name="width">20mm</property>
+            </column>
+            <column id="5288">
+                <property name="width">24mm</property>
+            </column>
+            <column id="5289">
+                <property name="width">22mm</property>
+            </column>
+            <column id="5290">
+                <property name="width">20mm</property>
+            </column>
+            <column id="5291">
+                <property name="width">20mm</property>
+            </column>
+            <header>
+                <row id="5292">
+                    <property name="height">0.312in</property>
+                    <cell id="5293"/>
+                    <cell id="5294"/>
+                    <cell id="5295"/>
+                    <cell id="5296"/>
+                    <cell id="5297"/>
+                    <cell id="5298"/>
+                    <cell id="5299"/>
+                    <cell id="5300"/>
+                    <cell id="5301"/>
+                </row>
+                <row id="5235">
+                    <property name="verticalAlign">bottom</property>
+                    <cell id="5236">
+                        <label id="5302">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Ubicacion"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5238">
+                        <label id="5303">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Articulo"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5240">
+                        <label id="5304">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Descripcion"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5242">
+                        <label id="5305">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="CantidadTeorica"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5244">
+                        <label id="5306">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="CantidadReal"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5246">
+                        <label id="5307">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Diferencia"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5248">
+                        <label id="5308">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="%Exactitud"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5250">
+                        <label id="5309">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Operario"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5252">
+                        <label id="5310">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Nombre"></text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="5254">
+                    <cell id="5255">
+                        <data id="5256">
+                            <property name="marginTop">0pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ALMUBIREF</property>
+                        </data>
+                    </cell>
+                    <cell id="5257">
+                        <data id="5258">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ARTREF</property>
+                        </data>
+                    </cell>
+                    <cell id="5259">
+                        <data id="5260">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ARTDES</property>
+                        </data>
+                    </cell>
+                    <cell id="5261">
+                        <data id="5262">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">CANUNI</property>
+                        </data>
+                    </cell>
+                    <cell id="5263">
+                        <data id="5264">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">CANUBI</property>
+                        </data>
+                    </cell>
+                    <cell id="5265">
+                        <data id="5311">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">decDifTeoRea</property>
+                        </data>
+                    </cell>
+                    <cell id="5267">
+                        <data id="5312">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">#,##0.00%</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">dec%ExaUbi</property>
+                        </data>
+                    </cell>
+                    <cell id="5269">
+                        <data id="5270">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">RECOPEREF</property>
+                        </data>
+                    </cell>
+                    <cell id="5271">
+                        <data id="5272">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">RECOPEDES</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="5313">
+                    <property name="height">0.312in</property>
+                    <cell id="5314"/>
+                    <cell id="5315"/>
+                    <cell id="5316"/>
+                    <cell id="5317"/>
+                    <cell id="5318"/>
+                    <cell id="5319"/>
+                    <cell id="5320"/>
+                    <cell id="5321"/>
+                    <cell id="5322"/>
+                </row>
+                <row id="5343">
+                    <cell id="5344">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                    <cell id="5370">
+                        <data id="5377">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#800000</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="marginRight">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totCnt_UbiInv</property>
+                        </data>
+                    </cell>
+                    <cell id="5371">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <label id="5353">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#800000</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text" key="UbicacionesInventariadas"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5394"/>
+                    <cell id="5395"/>
+                    <cell id="5396"/>
+                </row>
+                <row id="5333">
+                    <cell id="5360">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                    <cell id="5372">
+                        <data id="5378">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#800000</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="marginRight">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totCnt_UbiCtdErr</property>
+                        </data>
+                    </cell>
+                    <cell id="5373">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <label id="5354">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#800000</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text" key="UbicacionesConCantidadErronea"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5390"/>
+                    <cell id="5391"/>
+                    <cell id="5392"/>
+                </row>
+                <row id="5323">
+                    <cell id="5365">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                    <cell id="5374">
+                        <data id="5379">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#800000</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="marginRight">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Percent</property>
+                                <property name="pattern">#,##0.00%</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">tot%ExaGlo</property>
+                        </data>
+                    </cell>
+                    <cell id="5375">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <label id="5355">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#800000</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text" key="ExactitudGlobal"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5398"/>
+                    <cell id="5399"/>
+                    <cell id="5400"/>
+                </row>
+                <row id="5273">
+                    <property name="height">0.312in</property>
+                    <cell id="5274"/>
+                    <cell id="5275"/>
+                    <cell id="5276"/>
+                    <cell id="5277"/>
+                    <cell id="5278"/>
+                    <cell id="5279"/>
+                    <cell id="5280"/>
+                    <cell id="5281"/>
+                    <cell id="5282"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

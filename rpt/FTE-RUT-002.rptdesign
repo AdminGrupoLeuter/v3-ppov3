@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Giménez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 24/02/2010 (versión inicial) 
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*       Informe de ruta.
+*
+* PARAMETROS RECIBIDOS:
+*       1. pdecTerRutCod                -> Código interno ruta
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pdecTerRutCod" id="4998">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecTerRutCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">44</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="FTE" id="411">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@172.20.10.51:1521:adaiasrv</property>
+            <property name="odaUser">demomgr</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">ZGVtb21ncg==</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="FTE-RUT-002 01 (Ppal)" id="1709">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">NUMORD1</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TERREF1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TERDES1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">TERORI1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">NUMORD2</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">TERREF2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">TERDES2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">TERORI2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="needsCache">false</property>
+            <property name="dataSource">FTE</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecTerRutCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">NUMORD1</property>
+                    <property name="nativeName">NUMORD1</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TERREF1</property>
+                    <property name="nativeName">TERREF1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TERDES1</property>
+                    <property name="nativeName">TERDES1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">TERORI1</property>
+                    <property name="nativeName">TERORI1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">NUMORD2</property>
+                    <property name="nativeName">NUMORD2</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">TERREF2</property>
+                    <property name="nativeName">TERREF2</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">TERDES2</property>
+                    <property name="nativeName">TERDES2</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">TERORI2</property>
+                    <property name="nativeName">TERORI2</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.NUMORD AS NUMORD1,
+         b.TERREF AS TERREF1,
+         b.TERDES AS TERDES1,
+         b.TERORI AS TERORI1,
+         c.NUMORD AS NUMORD2,
+         d.TERREF AS TERREF2,
+         d.TERDES AS TERDES2,
+         d.TERORI AS TERORI2
+FROM     TRATERRUT a
+           LEFT OUTER JOIN TER b
+              ON b.TERCOD    = a.TERCOD
+           LEFT OUTER JOIN TRATERRUT c
+              ON c.TERRUTCOD = a.TERCOD 
+           LEFT OUTER JOIN TER d
+              ON d.TERCOD    = c.TERCOD                       
+WHERE    a.TERRUTCOD = ? 
+ORDER BY a.NUMORD,
+         c.NUMORD</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="FTE-RUT-002 02 (Cab)" id="3588">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RUTTERREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">RUTTERDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">RUTTERORI</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">GENTABDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">FTE</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecTerRutCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RUTTERREF</property>
+                    <property name="nativeName">RUTTERREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">RUTTERDES</property>
+                    <property name="nativeName">RUTTERDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">RUTTERORI</property>
+                    <property name="nativeName">RUTTERORI</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">GENTABDES</property>
+                    <property name="nativeName">GENTABDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.TERREF    AS RUTTERREF,
+         a.TERDES    AS RUTTERDES,
+         a.TERORI    AS RUTTERORI, 
+         b.GENTABDES 
+FROM     TER a
+           LEFT OUTER JOIN GENTAB b
+              ON b.GENTABCOD = 'TORI'
+             AND b.GENTABREG = a.TERORI
+WHERE    a.TERCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="FTE-RUT-002 03 (Cab)" id="5135">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">FTE</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">portrait</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="InformeDeRuta"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="5136">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">FTE-RUT-002 03 (Cab)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(FTE-RUT-002)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="3563">
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">50%</property>
+            <column id="3564">
+                <property name="width">30mm</property>
+            </column>
+            <column id="3565">
+                <property name="width">40mm</property>
+            </column>
+            <column id="3566">
+                <property name="width">40mm</property>
+            </column>
+            <row id="3567">
+                <property name="height">0.312in</property>
+                <cell id="3568"/>
+                <cell id="3569"/>
+                <cell id="3570"/>
+            </row>
+            <row id="3571">
+                <cell id="3572">
+                    <label id="3583">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Ruta"></text-property>
+                    </label>
+                </cell>
+                <cell id="3573">
+                    <data id="5001">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">FTE-RUT-002 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">RUTTERREF</property>
+                                <property name="displayName">RUTTERREF</property>
+                                <expression name="expression">dataSetRow["RUTTERREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">RUTTERREF</property>
+                    </data>
+                </cell>
+                <cell id="3574">
+                    <data id="5002">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">FTE-RUT-002 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">RUTTERDES</property>
+                                <property name="displayName">RUTTERDES</property>
+                                <expression name="expression">dataSetRow["RUTTERDES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">RUTTERDES</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="3575">
+                <cell id="3576">
+                    <label id="3584">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Tipo"></text-property>
+                    </label>
+                </cell>
+                <cell id="3577">
+                    <data id="5003">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">FTE-RUT-002 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">RUTTERORI</property>
+                                <property name="displayName">RUTTERORI</property>
+                                <expression name="expression">dataSetRow["RUTTERORI"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">RUTTERORI</property>
+                    </data>
+                </cell>
+                <cell id="3578">
+                    <data id="5004">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">FTE-RUT-002 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">GENTABDES</property>
+                                <property name="displayName">GENTABDES</property>
+                                <expression name="expression">dataSetRow["GENTABDES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">GENTABDES</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <table id="5005">
+            <property name="width">50%</property>
+            <property name="dataSet">FTE-RUT-002 01 (Ppal)</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">NUMORD1</property>
+                    <property name="displayName">NUMORD1</property>
+                    <expression name="expression">dataSetRow["NUMORD1"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TERREF1</property>
+                    <property name="displayName">TERREF1</property>
+                    <expression name="expression">dataSetRow["TERREF1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TERDES1</property>
+                    <property name="displayName">TERDES1</property>
+                    <expression name="expression">dataSetRow["TERDES1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TERORI1</property>
+                    <property name="displayName">TERORI1</property>
+                    <expression name="expression">dataSetRow["TERORI1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NUMORD2</property>
+                    <property name="displayName">NUMORD2</property>
+                    <expression name="expression">dataSetRow["NUMORD2"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TERREF2</property>
+                    <property name="displayName">TERREF2</property>
+                    <expression name="expression">dataSetRow["TERREF2"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TERDES2</property>
+                    <property name="displayName">TERDES2</property>
+                    <expression name="expression">dataSetRow["TERDES2"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TERORI2</property>
+                    <property name="displayName">TERORI2</property>
+                    <expression name="expression">dataSetRow["TERORI2"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="5049">
+                <property name="width">20mm</property>
+            </column>
+            <column id="5050">
+                <property name="width">50mm</property>
+            </column>
+            <column id="5051">
+                <property name="width">70mm</property>
+            </column>
+            <column id="5052">
+                <property name="width">50mm</property>
+            </column>
+            <header>
+                <row id="5057">
+                    <property name="height">0.312in</property>
+                    <cell id="5058"/>
+                    <cell id="5059"/>
+                    <cell id="5060"/>
+                    <cell id="5061"/>
+                </row>
+                <row id="5006">
+                    <property name="verticalAlign">bottom</property>
+                    <cell id="5007">
+                        <label id="5111">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <text-property name="text" key="Orden"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5009">
+                        <label id="5112">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Destinatario"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5011">
+                        <label id="5113">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Nombre"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="5013">
+                        <label id="5114">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Tipo"></text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="5085">
+                <property name="groupName">NUMORD1</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr">row["NUMORD1"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue">row["NUMORD1"]</expression>
+                </structure>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <property name="pageBreakInside">auto</property>
+                <header>
+                    <row id="5124">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">if ( row["NUMORD2"] != null 
+            ||
+     row["TERREF2"] != null
+            ||
+     row["TERDES2"] != null
+            ||
+     row["TERORI2"] != null )
+{
+        false
+}
+else
+{
+        true
+}</expression>
+                            </structure>
+                        </list-property>
+                        <cell id="5125">
+                            <label id="5129">
+                                <property name="borderBottomColor">#800000</property>
+                                <property name="borderBottomStyle">dotted</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="marginTop">0pt</property>
+                            </label>
+                        </cell>
+                        <cell id="5126">
+                            <label id="5130">
+                                <property name="borderBottomColor">#800000</property>
+                                <property name="borderBottomStyle">dotted</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                            </label>
+                        </cell>
+                        <cell id="5127">
+                            <label id="5133">
+                                <property name="borderBottomColor">#800000</property>
+                                <property name="borderBottomStyle">dotted</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                            </label>
+                        </cell>
+                        <cell id="5128">
+                            <label id="5134">
+                                <property name="borderBottomColor">#800000</property>
+                                <property name="borderBottomStyle">dotted</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="5086">
+                        <cell id="5087">
+                            <data id="5104">
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginRight">4pt</property>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">NUMORD1</property>
+                            </data>
+                        </cell>
+                        <cell id="5088">
+                            <data id="5106">
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="resultSetColumn">TERREF1</property>
+                            </data>
+                        </cell>
+                        <cell id="5089">
+                            <data id="5108">
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="resultSetColumn">TERDES1</property>
+                            </data>
+                        </cell>
+                        <cell id="5090">
+                            <data id="5110">
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">center</property>
+                                <property name="resultSetColumn">TERORI1</property>
+                            </data>
+                        </cell>
+                    </row>
+                </header>
+                <footer>
+                    <row id="5095">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">if ( row["NUMORD2"] != null 
+            ||
+     row["TERREF2"] != null
+            ||
+     row["TERDES2"] != null
+            ||
+     row["TERORI2"] != null )
+{
+        false
+}
+else
+{
+        true
+}</expression>
+                            </structure>
+                        </list-property>
+                        <cell id="5096">
+                            <label id="5120">
+                                <property name="borderTopColor">#800000</property>
+                                <property name="borderTopStyle">dotted</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="marginTop">0pt</property>
+                            </label>
+                        </cell>
+                        <cell id="5097">
+                            <label id="5121">
+                                <property name="borderTopColor">#800000</property>
+                                <property name="borderTopStyle">dotted</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                            </label>
+                        </cell>
+                        <cell id="5098">
+                            <label id="5122">
+                                <property name="borderTopColor">#800000</property>
+                                <property name="borderTopStyle">dotted</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                            </label>
+                        </cell>
+                        <cell id="5099">
+                            <label id="5123">
+                                <property name="borderTopColor">#800000</property>
+                                <property name="borderTopStyle">dotted</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                            </label>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="5023">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr">if ( row["NUMORD2"] != null 
+            ||
+     row["TERREF2"] != null
+            ||
+     row["TERDES2"] != null
+            ||
+     row["TERORI2"] != null )
+{
+        false
+}
+else
+{
+        true
+}</expression>
+                        </structure>
+                    </list-property>
+                    <cell id="5024">
+                        <data id="5033">
+                            <property name="marginRight">4pt</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">NUMORD2</property>
+                        </data>
+                    </cell>
+                    <cell id="5026">
+                        <data id="5035">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">TERREF2</property>
+                        </data>
+                    </cell>
+                    <cell id="5028">
+                        <data id="5037">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">TERDES2</property>
+                        </data>
+                    </cell>
+                    <cell id="5030">
+                        <data id="5039">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">TERORI2</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="5040">
+                    <property name="height">0.312in</property>
+                    <cell id="5041"/>
+                    <cell id="5042"/>
+                    <cell id="5043"/>
+                    <cell id="5044"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

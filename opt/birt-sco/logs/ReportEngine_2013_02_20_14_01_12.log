@@ -1,0 +1,50 @@
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.api.impl.ReportEngine <init>
+FINE: ReportEngine created. EngineConfig: EngineConfig: org.eclipse.birt.report.engine.api.EngineConfig.scriptObjects={PARENT_CLASSLOADER=WebappClassLoader
+  context: /birt-adaia3
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@166a22b
+, webapplication.projectclasspath=};maxRowsPerQuery=-1;BIRT_HOME=;logLevel=ALL;PLATFORM_CONTEXT=org.eclipse.birt.core.framework.PlatformServletContext@9c2192;org.eclipse.birt.report.engine.api.EngineConfig.emitterConfigs={html=org.eclipse.birt.report.engine.api.HTMLRenderOption@6030f9};logDest=/opt/hpws/tomcat/webapps/birt-adaia3/logs; 
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.reportitemGeneration
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadGenerationExtensionDefns
+FINE: Load generation extension: Chart
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.reportitemPresentation
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadPresentationExtensionDefns
+FINE: Load prsentation extension: Chart
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.reportitemQuery
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadQueryExtensionDefns
+FINE: Load query extension: Chart
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.emitters
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load html emitter org.eclipse.birt.report.engine.emitter.html
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load pdf emitter org.eclipse.birt.report.engine.emitter.pdf
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load postscript emitter org.eclipse.birt.report.engine.emitter.postscript
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load ppt emitter org.eclipse.birt.report.engine.emitter.ppt
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load xls emitter org.eclipse.birt.report.engine.emitter.prototype.excel
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadEmitterExtensionDefns
+FINE: Load doc emitter org.eclipse.birt.report.engine.emitter.word
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.reportEventHandler
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.reportItemPreparation
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.dataExtraction
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadDataExtractionExtensions
+FINE: Load data extraction extension: org.eclipse.birt.report.engine.dataextraction.csv
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager getExtensions
+FINE: Start load extension point: org.eclipse.birt.report.engine.extendedItemFactory
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+FINE: Load extendedItem extension: Crosstab
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+FINE: Load extendedItem extension: CrosstabCell
+Feb 20, 2013 2:01:12 PM org.eclipse.birt.report.engine.extension.internal.ExtensionManager loadExtendedItems
+FINE: Load extendedItem extension: AggregationCell

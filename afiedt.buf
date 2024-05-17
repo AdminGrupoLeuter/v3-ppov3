@@ -1,0 +1,3 @@
+select artcod, canped, canpedred, canpal, canpic, canpen
+from expordlin where expordcod = 136
+/

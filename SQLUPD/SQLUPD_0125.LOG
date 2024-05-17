@@ -1,0 +1,37 @@
+SQL> SET ECHO ON
+SQL> SET TIMING ON
+SQL> 
+SQL> -----------------------------------INICIO MODIFICACIONES
+SQL> 
+SQL> --PDU09c2
+SQL> ALTER TABLE ARTALM
+  2  ADD (PRVCAMCOM VARCHAR2(160 BYTE) );
+ADD (PRVCAMCOM VARCHAR2(160 BYTE) )
+     *
+ERROR at line 2:
+ORA-01430: column being added already exists in table 
+
+
+Elapsed: 00:00:00.04
+SQL> COMMENT ON COLUMN ARTALM.PRVCAMCOM IS 'r0725: Campo Comodin de uso privado';
+
+Comment created.
+
+Elapsed: 00:00:00.00
+SQL> 
+SQL> 
+SQL> 
+SQL>  -----------------------------------FIN MODIFICACIONES
+SQL> 
+SQL> UPDATE VERSIONES SET VERSION='0125', MOMENTO=SYSDATE WHERE SOFCOD='BD';
+
+1 row updated.
+
+Elapsed: 00:00:00.01
+SQL> COMMIT;
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+SQL> 
+SQL> SPOOL OFF;

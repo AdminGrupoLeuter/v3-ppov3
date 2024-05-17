@@ -1,0 +1,12 @@
+set echo off;
+set termout on;
+set feedback on;
+set heading on;
+set pagesize 250 ;
+set linesize 80;
+set pause off;
+set wrap off;
+set echo off;
+set trimspool on;
+alter session set nls_date_format='DD/MM/YYYY HH24:MI:SS';
+show user;

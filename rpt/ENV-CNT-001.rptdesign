@@ -1,0 +1,1476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Gim√©nez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 15/03/2010 (versi√≥n inicial) 
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*       Contenedores pendientes de cargar en ruta.
+*
+* PARAMETROS RECIBIDOS:
+*       1. pdecEnvCod                   -> C√≥digo env√≠o
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pdecEnvCod" id="5796">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecEnvCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">451</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSel01" id="6982">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSel02" id="6984">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSel03" id="6985">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSel04" id="6986">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSel05" id="6987">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSel06" id="7001">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSel07" id="6988">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSel08" id="6989">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSel09" id="6990">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSel10" id="6998">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSelG1" id="7000">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strLisExpOrdCodSelG2" id="7183">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="ENV" id="411">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@172.20.10.51:1521:adaiasrv</property>
+            <property name="odaUser">loreagx</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">bG9yZWFneA==</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 01 (LisExpOrd)" id="6003">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <method name="beforeOpen"><![CDATA[//
+// Inicializar lista SELECT 01 que contendr√° los EXPORDCODs
+// con alg√∫n contenedor en los env√≠os. 
+// Se utilizar√° como filtro para los conjuntos de datos:
+//           - ENV-CNT-001 02 (Fus)
+//           - ENV-CNT-001 07 (NoFus)
+//           - ENV-CNT-001 11 (Ppal)
+params["strLisExpOrdCodSel01"].value = "-1"]]></method>
+            <method name="onFetch"><![CDATA[//
+// A√±adir EXPORDCOD a lista SELECT 01
+params["strLisExpOrdCodSel01"].value = params["strLisExpOrdCodSel01"].value + "," + 
+                                       dataSetRow["EXPORDCOD"]]]></method>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecEnvCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p2</property>
+                    <property name="paramName">pdecEnvCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDCOD</property>
+                    <property name="nativeName">EXPORDCOD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">(SELECT   b.EXPORDCOD         
+ FROM     ENVLINCNT a
+            INNER JOIN CNTNDO b
+               ON b.CNTEXTCOD = a.CNTCOD
+ WHERE    a.ENVCOD = ?
+ GROUP BY b.EXPORDCOD)
+    UNION
+(SELECT   a.EXPORDCOD
+ FROM     ENVEXP a
+ WHERE    a.ENVCOD = ?
+ GROUP BY a.EXPORDCOD)</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 02 (Fus)" id="6981">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">EXPORDCOD</property>
+                    <property name="displayName">EXPORDCOD</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <method name="beforeOpen"><![CDATA[//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.EXPORDCOD    IN (" + params["strLisExpOrdCodSel01"].value + ")" +
+                                  " " +   "AND    a.EXPORDTIPAGR =  'FUS'"
+//
+// Inicializar lista SELECT 02 que contendr√° los EXPORDCODs
+// de la lista SELECT 01 que son fusiones.
+// Se utilizar√° como filtro para los conjuntos de datos:
+//           - ENV-CNT-001 03 
+//           - ENV-CNT-001 11 (Ppal)
+params["strLisExpOrdCodSel02"].value = "-1"]]></method>
+            <method name="onFetch"><![CDATA[//
+// A√±adir EXPORDCOD a lista SELECT 01
+params["strLisExpOrdCodSel02"].value = params["strLisExpOrdCodSel02"].value + "," + 
+                                       dataSetRow["EXPORDCOD"]]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDCOD</property>
+                    <property name="nativeName">EXPORDCOD</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.EXPORDCOD
+FROM     EXPORDCAB a</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 03" id="6983">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">EXPORDCOD</property>
+                    <property name="displayName">EXPORDCOD</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <method name="beforeOpen"><![CDATA[//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.EXPORDPRI    IN (" + params["strLisExpOrdCodSel02"].value + ")" +
+                                  " " +   "AND    a.EXPORDPRIREF <> ' '"
+//
+// Inicializar lista SELECT 03 que contendr√° los componentes de cada 
+// fusi√≥n de SELECT 02 con pedidos relacionados.
+// Se utilizar√° como filtro para los conjuntos de datos:
+//           - ENV-CNT-001 04
+//           - ENV-CNT-001 11 (Ppal)
+params["strLisExpOrdCodSel03"].value = "-1"]]></method>
+            <method name="onFetch"><![CDATA[//
+// A√±adir EXPORDCOD a lista SELECT 03
+params["strLisExpOrdCodSel03"].value = params["strLisExpOrdCodSel03"].value + "," + 
+                                       dataSetRow["EXPORDCOD"]]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDCOD</property>
+                    <property name="nativeName">EXPORDCOD</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.EXPORDCOD 
+FROM     EXPORDCAB A</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 04" id="6991">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">EXPORDCOD</property>
+                    <property name="displayName">EXPORDCOD</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <method name="beforeOpen"><![CDATA[//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.EXPORDCOD IN (" + params["strLisExpOrdCodSel03"].value + ")" +
+                                  " " +   "AND    b.EXPORDCOD <> a.EXPORDCOD" +
+                                  " " +   "AND    b.ALMCOD    =  a.ALMCOD"
+//
+// Inicializar lista SELECT 04 que contendr√° los pedidos relacionados 
+// con componentes de fusi√≥n de SELECT 03.
+// Se utilizar√° como filtro para los conjuntos de datos:
+//           - ENV-CNT-001 05 
+//           - ENV-CNT-001 11 (Ppal)
+params["strLisExpOrdCodSel04"].value = "-1"]]></method>
+            <method name="onFetch"><![CDATA[//
+// A√±adir EXPORDCOD a lista SELECT 04
+params["strLisExpOrdCodSel04"].value = params["strLisExpOrdCodSel04"].value + "," + 
+                                       dataSetRow["EXPORDCOD"]]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDCOD</property>
+                    <property name="nativeName">EXPORDCOD</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   b.EXPORDCOD   
+FROM     EXPORDCAB a
+           INNER JOIN EXPORDCAB b
+              ON b.EXPORDPRIREF = a.EXPORDPRIREF</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 05" id="6992">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">EXPORDCOD</property>
+                    <property name="displayName">EXPORDCOD</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <method name="beforeOpen"><![CDATA[//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.EXPORDCOD    IN (" + params["strLisExpOrdCodSel04"].value + ")" +
+                                  " " +   "AND    a.EXPORDTIPAGR =  'FUS'" +
+                                  " " +   "AND    b.EXPORDPRIREF <> ' '"
+//
+// Inicializar lista SELECT 05 que contendr√° los EXPORDCODs de SELECT 04 que 
+// a su vez son componentes de fusi√≥n y relacionados con otros pedidos.
+// Se utilizar√° como filtro para los conjuntos de datos:
+//           - ENV-CNT-001 06
+//           - ENV-CNT-001 11 (Ppal)
+params["strLisExpOrdCodSel05"].value = "-1"]]></method>
+            <method name="onFetch"><![CDATA[//
+// A√±adir EXPORDCOD a lista SELECT 05
+params["strLisExpOrdCodSel05"].value = params["strLisExpOrdCodSel05"].value + "," + 
+                                       dataSetRow["EXPORDCOD"]]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDCOD</property>
+                    <property name="nativeName">EXPORDCOD</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   b.EXPORDCOD
+FROM     EXPORDCAB a
+           INNER JOIN EXPORDCAB b
+              ON b.EXPORDPRI = a.EXPORDPRI</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 06" id="6993">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">EXPORDCOD</property>
+                    <property name="displayName">EXPORDCOD</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <method name="beforeOpen"><![CDATA[//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.EXPORDCOD    IN (" + params["strLisExpOrdCodSel05"].value + ")" +
+                                  " " +   "AND    b.EXPORDCOD    <> a.EXPORDCOD" +
+                                  " " +   "AND    b.ALMCOD       =  a.ALMCOD"
+//
+// Inicializar lista SELECT 06 que contendr√° los pedidos relacionados 
+// con componentes de fusi√≥n de SELECT 05.
+// Se utilizar√° como filtro para los conjuntos de datos:
+//           - ENV-CNT-001 11 (Ppal) 
+params["strLisExpOrdCodSel06"].value = "-1"]]></method>
+            <method name="onFetch"><![CDATA[//
+// A√±adir EXPORDCOD a lista SELECT 06
+params["strLisExpOrdCodSel06"].value = params["strLisExpOrdCodSel06"].value + "," + 
+                                       dataSetRow["EXPORDCOD"]]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDCOD</property>
+                    <property name="nativeName">EXPORDCOD</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   b.EXPORDCOD
+FROM     EXPORDCAB a
+           INNER JOIN EXPORDCAB b
+              ON b.EXPORDPRIREF = a.EXPORDPRIREF</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 07 (NoFus)" id="6994">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">EXPORDCOD</property>
+                    <property name="displayName">EXPORDCOD</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <method name="beforeOpen"><![CDATA[//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.EXPORDCOD    IN (" + params["strLisExpOrdCodSel01"].value + ")" +
+                                  " " +   "AND    a.EXPORDPRIREF <> ' '" +
+                                  " " +   "AND    a.EXPORDTIPAGR <> 'FUS'"
+//
+// Inicializar lista SELECT 07 que contendr√° los EXPORDCODs SELECT 01 
+// que no son fusiones y poseen pedidos relacionados.
+// Se utilizar√° como filtro para los conjuntos de datos:
+//           - ENV-CNT-001 08 
+//           - ENV-CNT-001 11 (Ppal) 
+params["strLisExpOrdCodSel07"].value = "-1"]]></method>
+            <method name="onFetch"><![CDATA[//
+// A√±adir EXPORDCOD a lista SELECT 07
+params["strLisExpOrdCodSel07"].value = params["strLisExpOrdCodSel07"].value + "," + 
+                                       dataSetRow["EXPORDCOD"]]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDCOD</property>
+                    <property name="nativeName">EXPORDCOD</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.EXPORDCOD 
+FROM     EXPORDCAB a           </property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 08" id="6995">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">EXPORDCOD</property>
+                    <property name="displayName">EXPORDCOD</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <method name="beforeOpen"><![CDATA[//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.EXPORDCOD    IN (" + params["strLisExpOrdCodSel07"].value + ")" +
+                                  " " +   "AND    b.EXPORDCOD <> a.EXPORDCOD" +
+                                  " " +   "AND    b.ALMCOD    =  a.ALMCOD"
+//
+// Inicializar lista SELECT 08 que contendr√° los pedidos 
+// relacionados con EXPORDCODs de SELECT 07.
+// Se utilizar√° como filtro para los conjuntos de datos:
+//           - ENV-CNT-001 09 
+//           - ENV-CNT-001 11 (Ppal) 
+params["strLisExpOrdCodSel08"].value = "-1"]]></method>
+            <method name="onFetch"><![CDATA[//
+// A√±adir EXPORDCOD a lista SELECT 08
+params["strLisExpOrdCodSel08"].value = params["strLisExpOrdCodSel08"].value + "," + 
+                                       dataSetRow["EXPORDCOD"]]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDCOD</property>
+                    <property name="nativeName">EXPORDCOD</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   b.EXPORDCOD
+FROM     EXPORDCAB a
+           INNER JOIN EXPORDCAB b
+              ON b.EXPORDPRIREF = a.EXPORDPRIREF</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 09" id="6996">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">EXPORDCOD</property>
+                    <property name="displayName">EXPORDCOD</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <method name="beforeOpen"><![CDATA[//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.EXPORDCOD    IN (" + params["strLisExpOrdCodSel08"].value + ")" +
+                                  " " +   "AND    a.EXPORDTIPAGR =  'FUS'" +
+                                  " " +   "AND    b.EXPORDPRIREF <> ' '"
+//
+// Inicializar lista SELECT 09 que contendr√° los EXPORDCODs de SELECT 08 que a su vez 
+// son componentes de fusi√≥n y relacionados con otros pedidos.
+// Se utilizar√° como filtro para los conjuntos de datos:
+//           - ENV-CNT-001 09 
+//           - ENV-CNT-001 11 (Ppal)
+params["strLisExpOrdCodSel09"].value = "-1"]]></method>
+            <method name="onFetch"><![CDATA[//
+// A√±adir EXPORDCOD a lista SELECT 09
+params["strLisExpOrdCodSel09"].value = params["strLisExpOrdCodSel09"].value + "," + 
+                                       dataSetRow["EXPORDCOD"]]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDCOD</property>
+                    <property name="nativeName">EXPORDCOD</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   b.EXPORDCOD
+FROM     EXPORDCAB a
+           INNER JOIN EXPORDCAB b
+              ON b.EXPORDPRI = a.EXPORDPRI</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 10" id="6997">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">EXPORDCOD</property>
+                    <property name="displayName">EXPORDCOD</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <method name="beforeOpen"><![CDATA[//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.EXPORDCOD    IN (" + params["strLisExpOrdCodSel09"].value + ")" +
+                                  " " +   "AND    b.EXPORDCOD    <> a.EXPORDCOD" +
+                                  " " +   "AND    b.ALMCOD       =  a.ALMCOD"
+//
+// Inicializar lista SELECT 10 que contendr√° los pedidos relacionados 
+// con componentes de fusi√≥n de SELECT 09.
+// Se utilizar√° como filtro para los conjuntos de datos:
+//           - ENV-CNT-001 11 (Ppal)
+params["strLisExpOrdCodSel10"].value = "-1"]]></method>
+            <method name="onFetch"><![CDATA[//
+// A√±adir EXPORDCOD a lista SELECT 10
+params["strLisExpOrdCodSel10"].value = params["strLisExpOrdCodSel10"].value + "," + 
+                                       dataSetRow["EXPORDCOD"]]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDCOD</property>
+                    <property name="nativeName">EXPORDCOD</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   b.EXPORDCOD
+FROM     EXPORDCAB a
+           INNER JOIN EXPORDCAB b
+              ON b.EXPORDPRIREF = a.EXPORDPRIREF</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 11 (Ppal)" id="6999">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">EXPORDSIT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CNTDORREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ALMUBIALI</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <method name="beforeOpen"><![CDATA[//
+// Construir lista EXPORDCODs desde listas 
+// SELECT 04, 06, 08 y 10
+// ==> Pedidos a asociados a componentes de fusi√≥n
+params["strLisExpOrdCodSelG1"].value = params["strLisExpOrdCodSel04"].value + "," +
+                                       params["strLisExpOrdCodSel06"].value + "," +
+                                       params["strLisExpOrdCodSel08"].value + "," +
+                                       params["strLisExpOrdCodSel10"].value
+//
+// Construir lista EXPORDCODs desde listas 
+// SELECT 01, 03, 04, 05, 06, 08, 09 y 10 (la 02 y la 07 son filtros de la 01) 
+// ==> Pedidos con contenedores pendientes de cargar en la ruta 
+params["strLisExpOrdCodSelG2"].value = params["strLisExpOrdCodSel01"].value + "," +
+                                                                           params["strLisExpOrdCodSel03"].value + "," + 
+                                       params["strLisExpOrdCodSel04"].value + "," +
+                                       params["strLisExpOrdCodSel05"].value + "," +
+                                       params["strLisExpOrdCodSel06"].value + "," +
+                                       params["strLisExpOrdCodSel08"].value + "," +
+                                       params["strLisExpOrdCodSel09"].value + "," +
+                                       params["strLisExpOrdCodSel10"].value
+//                                      
+// Inicializar la string que contendr√° el query
+this.queryText = ''
+//
+// *********************************
+// * A√±adir los campos al SELECT 1 *
+// *********************************
+//
+this.queryText = this.queryText + " " + "(SELECT   a.EXPORDREF," +
+                                  " " +           "a.EXPORDSIT," +
+                                  " " +           "NULL AS CNTDORREF," +
+                                  " " +           "NULL AS ALMUBIALI"
+//
+// ******************************
+// * A√±adir el FROM al SELECT 1 *
+// ******************************
+//
+this.queryText = this.queryText + " " +  "FROM     EXPORDCAB a"
+//
+// *******************************
+// * A√±adir el WHERE al SELECT 1 *
+// *******************************
+//
+this.queryText = this.queryText + " " +  "WHERE    a.EXPORDCOD     IN (" + params["strLisExpOrdCodSelG1"].value + ")" +
+                                  " " +    "AND    a.EXPORDSIT NOT IN ('PR','CE')"
+//
+// **********************************
+// * A√±adir el GROUP BY al SELECT 1 *
+// **********************************
+//                                
+this.queryText = this.queryText + " " +  "GROUP BY a.EXPORDREF," +
+                                  " " +           "a.EXPORDSIT)"   
+//
+// ***************************************
+// * A√±adir el UNION entre los 2 SELECTs *
+// ***************************************
+//                                
+this.queryText = this.queryText + " " +     "UNION"
+//
+// *********************************
+// * A√±adir los campos al SELECT 2 *
+// *********************************
+//
+this.queryText = this.queryText + " " + "(SELECT   a.EXPORDREF," +
+                                  " " +           "a.EXPORDSIT," +
+                                  " " +           "c.CNTDORREF," +
+                                  " " +           "e.ALMUBIALI"
+//
+// ******************************
+// * A√±adir el FROM al SELECT 2 *
+// ******************************
+//
+this.queryText = this.queryText + " " +  "FROM     EXPORDCAB a" +
+                                  " " +             "INNER JOIN CNTNDO b" +
+                                  " " +                "ON b.EXPORDCOD = a.EXPORDCOD" +
+                                  " " +             "LEFT OUTER JOIN CNTDOR c" +
+                                  " " +                "ON c.CNTCOD    = b.CNTEXTCOD" +
+                                  " " +             "LEFT OUTER JOIN ALMUBI d" +
+                                  " " +                "ON d.CNTCOD    = b.CNTEXTCOD" + 
+                                  " " +             "LEFT OUTER JOIN ALMPRV e" +
+                                  " " +                "ON e.ALMUBICOD = d.ALMUBICOD" 
+//
+// *******************************
+// * A√±adir el WHERE al SELECT 2 *
+// *******************************
+//
+this.queryText = this.queryText + " " +  "WHERE    a.EXPORDCOD     IN (" + params["strLisExpOrdCodSelG2"].value + ")" +
+                                  " " +    "AND    b.CNTEXTCOD NOT IN (SELECT p.CNTCOD" +
+                                  " " +                               "FROM   ENVLINCNT p" +
+                                  " " +                               "WHERE  p.CNTCOD = b.CNTEXTCOD)"
+//
+// **********************************
+// * A√±adir el GROUP BY al SELECT 2 *
+// **********************************
+//                                
+this.queryText = this.queryText + " " +  "GROUP BY a.EXPORDREF," +
+                                  " " +           "a.EXPORDSIT," +   
+                                  " " +           "c.CNTDORREF," + 
+                                  " " +           "e.ALMUBIALI)" 
+//
+// ********************************
+// * A√±adir el ORDER BY al SELECT *
+// ********************************
+//   
+this.queryText = this.queryText + " " + "ORDER BY 1," +
+                                  " " +          "3"]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDREF</property>
+                    <property name="nativeName">EXPORDREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">EXPORDSIT</property>
+                    <property name="nativeName">EXPORDSIT</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CNTDORREF</property>
+                    <property name="nativeName">CNTDORREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ALMUBIALI</property>
+                    <property name="nativeName">ALMUBIALI</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">// Consulta definida en el evento beforeOpen</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 12 (Cab)" id="7139">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">MOMENV</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ENVSIT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CAMMAT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">REMMAT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">PRECNT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecEnvCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">MOMENV</property>
+                    <property name="nativeName">MOMENV</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ENVSIT</property>
+                    <property name="nativeName">ENVSIT</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CAMMAT</property>
+                    <property name="nativeName">CAMMAT</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">REMMAT</property>
+                    <property name="nativeName">REMMAT</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">PRECNT</property>
+                    <property name="nativeName">PRECNT</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.MOMENV,
+         a.ENVSIT,
+         b.CAMMAT AS CAMMAT,
+         c.CAMMAT AS REMMAT, 
+         a.PRECNT
+FROM     ENVCAB a
+           LEFT OUTER JOIN VARCAM b
+              ON b.CAMCOD = a.CAMCOD
+           LEFT OUTER JOIN VARCAM c
+              ON c.CAMCOD = a.REMOLQCOD
+WHERE    a.ENVCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ENV-CNT-001 13 (Cab)" id="7184">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ENV</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">portrait</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="ContenedoresPendientesDeCargarEnRuta"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="7185">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">ENV-CNT-001 13 (Cab)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(ENV-CNT-001)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="3563">
+            <property name="marginTop">0pt</property>
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">50%</property>
+            <column id="3564">
+                <property name="width">40mm</property>
+            </column>
+            <column id="3565">
+                <property name="width">50mm</property>
+            </column>
+            <column id="6377">
+                <property name="width">30mm</property>
+            </column>
+            <column id="6371">
+                <property name="width">30mm</property>
+            </column>
+            <column id="6389">
+                <property name="width">20mm</property>
+            </column>
+            <column id="7150">
+                <property name="width">30mm</property>
+            </column>
+            <row id="3567">
+                <property name="height">0.312in</property>
+                <cell id="3568"/>
+                <cell id="3569"/>
+                <cell id="6372"/>
+                <cell id="6366"/>
+                <cell id="6384"/>
+                <cell id="7145"/>
+            </row>
+            <row id="5225">
+                <cell id="5226">
+                    <label id="5444">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Envio"></text-property>
+                    </label>
+                </cell>
+                <cell id="5227">
+                    <data id="7140">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pdecEnvCod</property>
+                                <expression name="expression">params["pdecEnvCod"].value</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pdecEnvCod</property>
+                    </data>
+                </cell>
+                <cell id="6373"/>
+                <cell id="6367"/>
+                <cell id="6385"/>
+                <cell id="7146"/>
+            </row>
+            <row id="6357">
+                <cell id="6358">
+                    <label id="6496">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="MomentoEnvio"></text-property>
+                    </label>
+                </cell>
+                <cell id="6359">
+                    <data id="7141">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="dateTimeFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">dd/MM/yyyy HH:mm:ss</property>
+                        </structure>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">ENV-CNT-001 12 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">MOMENV</property>
+                                <property name="displayName">MOMENV</property>
+                                <expression name="expression">dataSetRow["MOMENV"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">MOMENV</property>
+                    </data>
+                </cell>
+                <cell id="6374">
+                    <label id="6508">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Estado"></text-property>
+                    </label>
+                </cell>
+                <cell id="6368">
+                    <data id="7142">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">ENV-CNT-001 12 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ENVSIT</property>
+                                <property name="displayName">ENVSIT</property>
+                                <expression name="expression">dataSetRow["ENVSIT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ENVSIT</property>
+                    </data>
+                </cell>
+                <cell id="6386"/>
+                <cell id="7147"/>
+            </row>
+            <row id="6363">
+                <cell id="6364">
+                    <label id="6497">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Matricula"></text-property>
+                    </label>
+                </cell>
+                <cell id="6“8µJ[<N≠ç›ïV{eêﬁﬁŒ≈rÎ6^ÿ}Ï}c˚òÃÊ6j:n√B´Ét¢∆h)´¬ÄÕW‘ÿÑ]Ω©e8„µç›C9âÅ8Eﬂ‰ZFYN¬Õó≈j≥1ì˝Î%ÁKè vN+˚z÷ù∂º9≤√¨ÁU˜˚ë$πH£f˝}‰K~MªÆ%	’Ïeµ£≠˛ø£ÁÔØuÛaﬂ—(›Ù+øñ˜√•ÛñúŒt~)6∆ø3CÉ[eF/®Ï®ö¯ê¢S≤®55QcÅ∆¡˙/∂Õ]∂‡ƒ◊B⁄Ö„”":Íﬁ˘Oùl{NË†M,<Lb	˘¨c˛NkªÂïÏ*∞:Êè|æ˛OïW–çè°Ê·Tàèa®?xOJŸ.œs!ÌîYÜ”Eˇ¥«»˙k.∆(ÎÏº°ÿ“Új≠fœ=Ò¯v|˜êL…Ô›Aåª:;©dH\wπ/|«n2Ô:[;”w⁄˛˘	1π¬ˆ;»›Ö$‚Ô·Û÷ŒÙA?ÿA'Ï ?Ä¿ïÉø1s4’#˜Qc2}NIıÃ!ô`ñ@í# Äw˛Sæ]∆¨áµ·°é˜]ºD…éãÊ•7Ón á€Ô!ô¡Óˆ}*F∂EÔJKƒ‹¢5`0‡=Ô°{‚º´F‹◊m.:'m[ô™wöë÷)vòÍM≠‘;¥Ã∫ˆº«ˆΩ€;∑te›7w0dBGïƒJµs≥ÆÓëqsE"<›[N‰ïò§B≥@i9Y¨≠*e…∆yÚö`|1‹∆ÔWVœ“l6à®N≠õJ$fÇBP
+n™ﬂÆ◊gí–ßÄ·‰]û∏cåJΩ€!‘¡©Å∫0|Ê–Ö‚zó1Çõk ¸áÍ@|ñﬂ∏q∫ü9˛wéÛ1kóá}+Œ¥¯ÊÆÑÄú8ì3àÛ	ü‰vﬁ*Tæ’Íøœ¢Ìøz:Õˇ*ı¨rß\]òp¯8˜LöÄ¨∏´&
+°>@Å]N˛)Ôãk≥,¶√âé˜≠®Ûp¯uÌ¨“πr˝^zæ∑R,œ¯ﬁj!ˇoﬂõÁzÒß#'“+◊[ÎÚwõkj˚ªÂ¯HC,~EΩFÒô8>|Qes˜íãŒ"y≤|Ûzπˆ˙F±ÜYã?≠≥Ò∏≥m.6Y\™ÃnŸ^˜Ê˝êr°»orFÁøµπ©áô≠˝ÖX¸µπªµ≠ú≠T2v!˘ÙeäcØÈ\r∏/nj†‘c%RÎ•Œª™”Õ31V(KÒ Çäe÷ºû¨VËò≠Ω¶≈õ¸˘;àY§{·∫ fz6ëÇa´5Y/bü1Ù`ÇÜ‹®:l≠6öµJ–,ÂÉ
+Bçl±ZR.ö‘≥©fÛ÷≥‹t˜JJ√åÔ•ûô^LΩí6±”–3TmÉ˙F±` -ﬂílf’≥\/√À]Yß˜≤˚Ìz˚{y˜ ”îHô~£x%>dCÉá›√Å#âÈ•ûxé©˜^∏wÕΩ˙ïˇ5y”D™YÉ’XobôÁΩË_ÂÓı!Ø3!û(Ë«óZë◊ªÚ Ô?ÿ‡ˆ¡Å.@dÖ$"ﬁa„ôö GaΩ’∆(päı`[*’Eå«:~ÃpÕ~œˆzH⁄˛2ìBßlCÜ?¥˛∂Ì©4µòﬂ&ÚìÓï·}Z”Á†n-!éÃÈÁƒæ4«{scä&/’9Ç˙j5oÁ`CcΩ/5y(ó^+ ôÎÂÈôlµêã¸S°]ÆÅo2ùSkä¸»:gxgFäö„6˙‘Fôöi‰Cløﬂ⁄›S*i2JDöè$riD'Ëyè,8ïŸ¢!F¬XxªzE.r◊ÏvÀOõö€≤ﬁ'1ı\.pŒ‰ñ>;$Gt‰Ã»@^√#~8q†yfÜéƒ[Ÿ∫Ù5ØÙ‰1í¶T-(QÄá´€!s,ï,À(´˜pı§±XÛ4}ÿ§„MK√·:≥éƒ4±áë4ËÛ˙dﬂã´Løåóo"§°*B'§ï’Ë¡|	sèÆÒÁ^>±öüVˇ«¥wé¨jΩ1∫~£û[{zÃ˘œL_Ä∏{÷	®oN“·M]¡pÊÇØŸÑH*Ùv«@9ù“ÌﬂY\…|t‘hê¥ÔÔÊgUú‡≥PòTÎ?÷è5ÄÑw6∞ZgÜ?dÒ=„3SË,®ı7Oä'è-®3Ê&√ˆcÅØcÏä∞x√åKa⁄÷s2ãpg#¿ø8Ù„X´®˚”⁄úHª=∑T”ñD°§øÛC⁄s}oelˇæ…¶–5d”òx˝qmìƒ‚»’´ÊJª-!ı¡„∞nÿŸRIıÂñˇ1«\∂≈@ ÉI}/≥5W≤/19€9í˜1‘C_Q«∞¯ﬁõ6Øb}ÒÏ∂ˇ«ûìaè®Vr∏©Âñ>·MEj∆ΩH7â%•˜y’∆jùÌ¯µû«ÑÔ,>≤ãXëﬁñ¡<.÷GüáÊWÛ¨Û=m,øœË^Íã}ï¶Û˘‡’§Ëˇvx∆+öïS”ÆE<ﬁÎÃÙÖú˛0åÉ;c(Ü‘∏ì¿”ZŒG≈Â6æ•pÔ◊|EÎòë≥fLÿwƒ∑§üd≈<U1üãòzúXU€AG‡˝	ﬂ˜¸˝ûKÿ7û—´fmaﬂÃ‡∏ˇØ(Œ¸È˜#«4>Àá¯ê—‚é∏œ°¨ÎCª(€Ñ§’ÑU±ÙÎ]¨›ì`∂|~9\6ó¶VµÍ∏´ÊÌ*:\´:Íj,∆ãót˝˝lè‚Ä·Z’∑∑s·ÿ≥{¿⁄Ú%1†√¥J∂ú•ó«ïÌQ—|«’hÀ[†5ˆ;38÷¥í=Yvé	sÅ˝B±∆ﬂû≈”ÍVøàÆÖ)ØKø≠W•ﬁU” fŸ⁄‹ägÖÔU;bì=∏‘“4èb…·–ñ^¡3UŸÄú´ã7 ˆ’W˛TÜÚ:·∆SßÌ∆é¬|ΩR©úˇ3…Œ
+Ÿ+¿m¥Ñ+‹……ﬂYWós-…ƒ∞ÿ»t£ﬁ®5ä´…¨„¶é∞k[Ï[ƒ±Í_^|LéµÉ™É1˚˘¡h?_3ÿm÷ßØO∂À‰c¥?m≤·f>hÖˇ÷·ø€0g\Ì˛+"§î	¢T%âD:®èÈÇÃyyí¶ø˚Ë9%ﬂ‘˛¯Û|¥uÆ‡ŒQ~©ìC˝%∂øÚºä=˜∑Wœ0lhÜ≈mumüÕ[}H{fêØ∞yØAÌn[-âã¿πº~WÔX@\Õ…Dj|’æ4ÒﬁF∆ˆL µ£˘~ÄuKÛYÊˆ˝É›Ø‚KçqÏéÈÕpœ‰©u]è›>íz[ÏÈ≤*›PÜüÜÆQÿõÅp¨„|O[,?„4Ñ>√o(Î*oÕUÇ∑ÍµF≤5«œ!Ì·ÌáHu$»ﬂ? YVªñµO™øèëóˇ09I˜ëTêÑy˝ÊŒÓ}_Îç¬J˚¿{[nÎjh» ˙Î√mÑ5 W«ØÕ˚0å ¡¨àzwnÅn?ÈH À{:ØáDq\Ù@OØ¡i¬v¯;.è:©FõìÒ¨\f¸.+õm_ãLS#ö´ÉYTG‚¬è©ØSÙ∏„í÷≈3ª°&†ëÙü≥Ó‰Ê•gÊz‰Eçà@ÏG˘√—K`üËsË˙ƒ`.∞—¨∂"?5}{•„KÀËj¸Z°ÑeS≤l èj W˝Ù4Ÿºˇ,r6äA{‹(Æñ ˙nıÜ≤¶#¶.Æ≠7G ‘F≥≥Ãx]ó¥¢Ü°”Æ?vT¥‘üÈ¿7ùËΩoïLOªï‹v€u˚ﬁ
+¸1üÜÎ¯Ô˛Ùöb»Úè±˚M”|çﬁv˚wE;Bj?aæŒI4ÏŒ—¨y[∫›å“˜7o©u%Ï.ƒE¨µ2vÀ„ìúhÿb»Ùõ_e9¸2Nz≥ƒxfÜùçj˜ﬁÙ™·m€{ÍA[·Oﬂ’mùGÙïÃüÑ>ﬂË˚tﬂ{ãU˘‹Ëô∫ˆ"êG>'&˝¿tÏπ”ßH…:íÉßGﬂ¨—;ç{Æíã¸Ω”kˆ9%Ò¿_´∂Ì9€Tz‹ˇè·}Ê|_&æ æ¶¡ñ¨Ëq≈%‡}D8®Æ?i´ˇ•‘‰Q…;¬|ù˘
+iªÀÑ’Í∞#<%õ1ÈÔ†ÃöQΩÊ$Ò¸≠ò7gûè˛çN/”ljvj˝·¨¯Æ©7Ù|z?19˙3+˙*3-ósë_–y:Yp∫s“ˆÖX∏´œø∆t4a»ü˚Å¡Îñé|JsÑäŸ√ÔHG„Áwëç‡@¶d\áY›–π”ßjAÔaÔ™“W»h2{∆ÙπôÏŒΩ;j?éj∏#Ô5Ï!áBH¨Ÿıf=ˆ?(¥¬ììCÀ:6#&„≠ÂjIŒK®&ÓúÍéı_‘àDIöù[;[ÿQx˘Vˇcä!DÀÓ‹ö¬Iﬁ_í˙†˘´Z¶Ü/qhÚ[Úµçj”`D‰ÉEv&®_^0 æéM˝ëoMﬁ£}éúùÙ]π$¶˙ßÅ7à¡/2|õ˜sßﬁz:"®ZOª∏åΩ	“}√7çæ±/≈>≥≈ﬁŒû—‹SãY÷Á@=víyﬂıFŒ´—~ÙÚÔB˝‘∞ﬁ´‹TnÄqêõ Ámíº¡˛ß#µs˙k?¡5˘ 1º£YfWZŒmWö\∆0Ô±vBƒƒö:G}˙¸¸%Ì≈ë&À…hù•Ù|ÁÛ‚ÁÏF5˘gS≥≈j®ÅÚ◊7HêÆ_bvHeï≤	Áòã?X]0˘
+p!∑¬”km∫ Ù8 ‚
+%çÔœ f˜ˆÓÊC@πˆ∞C⁄^C¯a˙Uô-b∆ΩÿiãÄ∫Öò°„≤V˙›ÍÖ˘¬Å˝Xµª^»»\‰âœÙ¯Ç”¿øQ-©/ı–i˘/¬.ûlÎ„â$çÒ,Î«! N/HsﬁzÈÖ≤å¸ñd~ﬂìô∂àHÀÃo6ÖroX€∆˝––˚zÅ©=ìg’h≈~R≤æeªNÄ|‡xwùhXŸu<ˇhd'∆Ùû7}¬Eì˘0◊ƒºèÿ#‚ﬁ{pßC2>∏K˝' ≤∏3ìlõÉ¬Ù¡-π˝M/ÆÃù.µAyÜe≥‹[ázÕÎÂMäÂñ˜øÏ]›oc«uâ"%äZiªªN∂âèˆ√µ‘•]Ø≈µÕª$µKá"eííwù"-—:í®R+∑Œ”ˆ#y(P4ë /6p?É @˚íº∏NQ†NÙ•/€∆‚ mR£Möû3sÊ„Ró˙"wÅ ¿÷ÍÍﬁ93gfŒ9sÊÃÔ\T˜˘#g”I'âáL,ŸÈp_UùÕ•≠„«}q]Ò®1gë¬á[áÓã˚‘ç¿8/"˛‚!πã‚>’ÛGﬁäìú8(w»ˇø$-YKﬂhqŒ†0ÊÆ†˚˚?ªk‚zDN⁄óºÏD	7ÿ˙∏*#πÚ¿†éÕqˇèîÕæ`Õ'ï«ÓXcü–◊∫`8˜}O¨°Ê∫ ∫ o‰Ø…ãâFõ`À~]êá}K“é]U∫ cÏ˚Ò˘~]ŒZw'çúüÅ=DuÏÅÑ\jÀkz}’r¸§.P~oFÁÛ›◊QNëˇd≈[LºÁ{$√?c€3£r¸°ﬁ~øÜ÷ Ù‘Tÿ·Ò‡1k≠(¸Ò∏—”∂l„yó. Fó|Ô⁄g §PwÃÊCÚh∫‡Åäo^6∫ ZÅﬁ !<t¡“òá•ûw’9Ò¥Ö„˝4†|dﬁ∫‡¡ó¸2{Á.¸öËÇ´ºÁG$ŒZ{Ø	Ö=ªb‚ı˙π•Fi√õh¢RºÁ?çÌ·äMâ\®Ñõfœ…,{…
+⁄|Y˘·N∏G¨Õy1¸Ó”z?®uÅ…Ì≠Ü√Òû™˚à±®∆‡U?º˝b„«/2¶¡Omºdt±:^õ\ùÛã;Wiˆ˚§eS f–€—:lƒÎïÌJ˝Ì2ÏÃ∑©˛x|omNü"ÿÍˆVm≥˙∆:∆ä˚:útçèroÏ05¥K‚:g*øÏåœéº"É∑K=ü“ˆÅ˛n±,c•Óøx—|w+/ŒÃÒ;)`Á–ŸŒ•œ±œ2øﬁœL]à5≈ÇOgE'„H4¸ªQ#ëÜF“’Ä)Z≥q^âœP˛:~LZÿõñË—ZÊ°ZX”
+±ﬂ´ÔúåúÙìqﬂ≥«§ULÂ59ı´¢÷˚—f)Ù–¯≠ TFMé	¡¬?c	q'üç–öuëÎ¥èÛx n˚Ë)◊¢ «ﬁù∂AXËﬁy›jì µ®ãÂ£!π–kaØÎ`Yåø∏ˆäÌ”!Ïî?xﬁùÔ√^cœïz8ÈÅΩG~◊ó’ΩnùSçrﬂ}ø±`∞W¶&ù]n~.»π¡–∂«!ú»¬óxÔÔƒ\xWÔÈÉˆNœõJvoº‰∫oy”â˚øo«;)^¡ºb¢*iU
+_Ä[Únû]úC_q)ÔÑªô6ƒ£‚
+Ê~§cÿnêT’OQ∞Úxü Á(ÓCÉ≠rÔS“\x*Ö˜ì©<øyW≈RÄ≠ƒb‹ü.Z}PÁ¢îÁì5‰(O›Y0 Ö√ØFì‡Àw©Óà±—&…∑∆Ê0ˆ√™±1¸clî¨•(Ø,⁄à≈æMÒWöv}Í∞â.¨ïœw"- t4	OXﬂ¯Hˇ;ˆ∞_ÔﬂuWıDƒ\ r"œ†Zuˆ7ÅÔ§≠6É=9pM∆Ja]Åî†Ô,›—b±T$Ó˚áΩü˙{ œ©tùÓ9§~É˝vœ«
+3m‚2^‰r¸˚#+°ÑˇÑy!lbÅY+˘'ˇcß„=ãÊÏKcÉb€≈ﬁwL…&-ˆE¬Ô.ﬂ“uh¨\Ny‰ÆJlzÌ=«u—Mq^=ï®∆’Xﬁ2∆DÀ&ücıô∞È≈yxå˘æû5∏⁄≤rÉ7bpµπ‘oò‹‡jÀ∫V\∏PW˚‚KË√skÉ´ÌS∑,\ze'Li\mm	ã˘ÖD…?K6§Øj‰“s£ ¶πDv—34á"∂]$c|5µ\b˛ÄÆCŒ•!ëèV—∞∆€˙>VÂ=è(wõ1sid≈[ŸYQq@˙¨r‹Ã•óa≈B∏◊PÎJ/*∞h„=	“ªß-‹:ïC=∂ÎYcòÛcÚS·˙ñ∑≈$Å∂î|ï≤ﬁï9¡ åbjŒ!vW∆éÿÌÎé˚K/ÚRˇ,≈*ã≥Ö≠Î8¯bäÈé;ûu‘Y∑/'„y/òæ„mp¨æÛ Ï+¸JJW®úOÉÁ°èwTˇÂ˜Ùç^K,√[ﬁÔ‚W`z”4œ,ú'=Æ>—≈e‹+dóG.ƒJ2%ˇwä∫-z~Ã™ÿ<ÚµˇÅ¬;-ÒÄC7Ñ?a¡πãÕRcK.$JæqÉq'0pÇC™=0œØùÁ≠´Å™ÙAﬂ‹xâ|‹©CÓ∑´ú£+Qìœ]ùe≠π®ˇyÖn›∆@Nñ¸ÔF‹˚)GØqËÈÆ+çÈ'9'Ç$3Ñœ¯3^4∆π÷1Hi?§+_iH˙–∫˝∂üí£) ˇ ÷ìÃ.eÎ¿qM*&Ó≤¡s<è[ïâÍfuµ*+\(ıóÛÒ˛˜UÒ%/æP∫¶í˛ˆ	˘Ñ§nhR¥_¬áJZ9ôx‡˚Ó/≈Ü
+– Æ=’s´…¢ΩPËÎJœføßr˙^Ük|ô¯°rFDe^W©L;íÇ˝@s=H∏èC®èÁ‡9'?Lcõ;‘Ø˜M:éÚrπ‰õ+[>ñkTo≈‰Ñ&w,:SÔTp…˜.≠ë`ŒË·K1#Àça˛}Eˇ[`ú¬è‘|ëP8'∫UŒ‚ óπÇÁÒ¬K™k 6õ–≤}ﬂ#3?¡&È}dˆ´‚.cêÏ»Ù°MdV0;Ë≈}Œ]ãgxâW~wµ≤]}ªÏ·G}⁄ÿóE»∆‚òx˚5Ê‰ûby+ﬂûÇñ∆0Ó[Á÷º Ÿ>àc¡Y∑åÌvõ∫ó◊„>e_˜¶•>>rÂÍbíˆâ*óÜæC¬lJõééÖT˛{\˚-Ñ8˙∫3z‹ƒº¬}âà˝@4CÚ≠Zªª⁄fº'K≤Øk√åı≈≤∫' ∫}_‘∂ì∞ÖÇAwØ)áñAàpÀ∫nx?#≤¢‘5ctNÈÇEcóÖeldÔSYÚﬂié≤pÜÚXùyˆ˝
+FX≈ÅŸ÷˘ÔƒD€ª–∆ÖÒ8ç1Â”Qºß9=`<Nô<€b<Œåj{x‚=ŒM∑I∂œå¶˝.{yˇx8IêÙÕ˘IKúV˛í	\˘“‰ÛgÈèÈÂ7–˚iÛçøñ.ﬁ.]¸,b[Í˘®ÁáÒ[Ëû´éGÆªÚü[säè$0—I∫-CÒb´\?‹|sQ~0ûœÈ1R##È®˝‰-π∂Ü¸scﬁ–ûtÒ)¬V`mÕÎ}ó~Xë(ä¯‡ÇäZù·{œiîi‚å<Ê‰„}ˇî∂ˆÙQÉç¯wWcÔŒq.Em√Ü˛˜WÕº˜Î&]˝RBˆk?XÆ\à∑Û)t›N‰H©(•˘ª±Öd∫‘˜Õåﬁüõq›g√4Œ˙k1Œÿê=ﬂl8#∫ÎJ»Ix”që√Q∞D˙&„˛˜âÓ¿3~ìzMÏü'ÉåÈ)ø≠Ê…®:Ïÿ?Oí0Onq´ùÍ‡}ÔŒ∑UÉÛ$t2:ûTﬁè¢{ñ‚ÆÌL.ü&¥ÜDx2˚« ˆø$◊¸P±XÅΩP&aœ+@d∞5á’|ƒ±@ùóÄ˘%È»®xºWadÑ^∑∆%,Ì∏?nxG›S8-bT”óˆı¡¨ÒıDı]ùf~ï˝^Wz´æxü“¡ÇÒ©Ã–	Ô “!>ï"˜ˇå¸’œ.À|»A–}œÕÉLÒìMDÀZE∞?‹®ZÎdﬁ ÚöÏsw*	Tl9ÉµQÍπJ%"∞‚—π78?)y§Œ|Ys°bÀ’›ío&ûønŒØ&ì^Ÿ.˘"ã˚µå%kI˜]-(À÷uﬂX˚[Ø„ ˚]˛VÂJw95ŒO∆qäØ<3a¸≠ò∑öì]ÿòˇgÄ⁄›1˛÷GÊ*:Õ¬∫¶y"bÎîQÎ7>Y9‘õtè˙[±/±•ﬂó+Ãw©bÈÒOÎ¨@æ ¨drÓ|{•söó⁄ﬂz)&.üÃ;7õ˙[1nC«MÏ˝~üÂ◊¯ŸCi„oæôNÂã9œfÿÿ ûŸ˘∏ˇ_UbŒ√ŸÊ≠`Ï*—¶áÒ¬¯£é’ëˆ˝à’x®Úñplåôt7[08Óµ˚€Ó!≈ ˘c÷∫ëbñùÀŸ±30W˙P'åíMÚåﬁk√%ü:«eyπ◊ú1wc˛§xÚΩ∂:˜z÷1Á†a≠öÏµ3Òû™sÂÇ‘Ö¡(Êíœ>u
+∑îM°gBl•ê.ı(ø™Ø!ßÃêå3Íf*œ1⁄Ø≥WL‚±…µ[€LÌ^uUÄ"≠ó7e{æ≤U´ﬂÁkµMÓª≤*"a∑%0$% xßÃk´;[eä ôåáí„ñ<!Z’D¿m4¢œmTÍ´eÅIgkeäﬂ÷I‹Œ"0_B*ÆÏ¥u˜ñcÆäO·s∫∑Fc1Tîx}ËﬂY¨¨UÎ|µ^±Wïu6´ÜcU(õ‹•”DúÀ¨§Û{*? ú\#}1.3á¡®#NËdúÏÎŒJ2ó@yJÁ∂Æg1îôÅø$π?h˚1û)˘æ-cR∫˚	ßÕóík(Ä±)YWh7%#∞Å˘%ˇ∑7·¯‡ùﬂ	Å∏∆¸6π†ÒSÖe4A|!ıü=˝`ﬂC2∫wÃ:+Á
+£ó∞«àÉEKOŒ•ÔãÚùØ“º®πˆ„rá˚+7zsº±$‘–‘Â§∫Ó∆2Aú#⁄ﬂíÌö}}‘ËÁ©}˘<F¿J¡ædP/gñúU˜sÏvË‹X
+ßØi√zú≥ÍÚ¿ªËù∂˛Æb}a?8ö°y7Û[≈ISÓÓI]LÕ·9üŒÚ≈|ÓVﬁYpx√˛HÏ4˜+¸ïÆl˜ˇHZw8Û«ª‚ÅáWX◊Léuï@ıÆ]k1À}'Ï!´å±¡E'ÒYµ1dºÎÔ«ﬁ	≥°ÜãÁ√ºÎßcX◊¨ªÆ.U◊;†a`î≈≈T!áræããw÷;£àI.#&‡){wå7÷)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ù“)ø.•ã˛?√{å]¸b€∞ª∫¶(Ó]_…an√\V\Oı*Òoc]˚>\yT}¯œﬁÊó«SŸÂq's≥…áó^;ÏCO™·7<?4)Tö5ı“øˆ·xæ‡ı·ÂÔ7˝ï•¬ü˚V”©ÃA˛“˚√˘Ã8	|®«ﬂœûÇ˛tÔ√_˝ÍˇÎ¡?Ü†
+g˝çrΩºÈB˜ü„	ôôC?aÉGıPwFXÖ±Ó\ñΩ…Xﬂ÷Íxumß^c˜ÛΩQ^g_ÄF9?¯¯øæÇ≠´‚/?¸ÛèˇÊ¥˜kåù.Øï´Â®È´yàªˆ√7À´€eﬁ&PËÈ;ı≤Î°hB„õıÌrΩ^-ªÆî∑ oïÎDK=\€(√ãõµÜáUx”Mh•ob“Â/πz4iÂÕ{µ˘öı≠uÎ{ıp„≠zm≠^Ω∑ÉO’√≠Ú"¨‘]üõ5åˇ˚ﬂ{r¸≠◊ﬂq5v◊ã˝ª^ÏﬂıbˇÆ˚wΩÿøÎ≈˛]/ˆÔz±◊ã˝ª^ÏﬂıbˇÆ˚wΩÿøÎ≈˛]/ˆÔ6≤ﬂzËfÚûì˜ºòºÁ≈‰=/&Ôy0Ÿ=˛œ˝5  ˇ˜Xèz››ÿ=/ˆÔy±œã˝{^ÏﬂÛbˇû˚˜ºÿøÁ≈˛=/ˆÔy±œã˝_áácN&cÒî˚?.çesŸT†ØˇÕœN…üw·Á›TÅ1— ƒ@ﬂØb„üèÀ_∫·øóAÈ«Ñ.ÕÒÖnˇ÷™ˇ^ˆàu˝˛⁄aZ_]d›_eg°À+EÍEm~{;÷ÌÛwCçxﬂLÁÜ•˚ftIö≈Ÿw˝;∆˙Ô∫/ƒ;n”Ó;n¡¶˜Ât_N–….-,;EG˛v0ùËIÈ$≤Eã¶WjFÁ◊‚˛çs∑ˇ!Éˆá7G’-Ò?ZØ;ÃBN%„]•·∂÷/y∑íL-Á26ÔˆÒók6{G@Bê(6Iõ⁄H8\Dø≠ı´∂#~íi;^`n”¯iL89~–Û‰!ˆg∞-ÌG<hˇQø˚NXHÌ.|ãÍÎN◊aØ®√ùÃY÷Åºa„dÊ·UÇù≥€ì∏Ì‰u{Œπ˙!PL∫Ô∏Á!A‡∫◊˘˚^ÔÃ∏ﬁ±ÍÔ‰≤Û„…ÂDìd
+≥Øœª ∂ßﬂè*√\|Ω¬Nπ¡ÒŸp©Î[cçuã˘ÃxjwôèÅø¢-∞“ ‘b.Om! Œ€≤Vâ∆"hŒ«DC¨)Nî\pÓË5eû»5Eı˘’9búìÈyzØ˝Î_'cmıñùè_…BÁ?lÃ{öéyèΩ¶(õ©s¥^∑Ï€Â$VØ∆¡<9D∂%ÿPSCv˚ÁùL—…Z≤ÕÊ›Äùºôu=ÿØ˚ÖLòO'nßÚˆ¡ˇ∫◊˙mÁÆ{≠7»?å÷'–w=Ìz–ö,≥^†≥îJ‰¿“y$∆~; xöÚ“•'^Y*”Ûû2^»E¯áêãÌóÒ23µöèî≥˙‡∫ÔÄ≈›¨Ó≥u[∂∞¸≠mu/•2ôî^GÖ∂Ÿ`0˜≤π◊,˘”ﬁv/:≈§¥mhú÷‹≤˛^\X<¯Ôy«ÛÔ†Î2+Ø
+]◊~õÔUP"†
+-õOfr:¥˛æÓ√m¶”ô‹›âL™à˛@÷›øﬂ˝áÈôl∫fBäúñÅÊIªÏ;J]nˆíòìπM˙A¶±Í∆î6≠◊ﬂb›∑“Öb>«€·}vè∞Ú)ô	ƒI:ñΩ‡$ÌZ_ß\¿˙∂∂œ∆µ¡ÍÉÊ¢Å	H1'K2óçmsÌu1ü…9EımüáÌ*ÙÅÆg∂_∆N∂Í≤È°Ëm=DmnJOÃY	ë©Ê,ag∂…^3i‘z6O⁄∞û–Í∏]÷¸≤÷îıNAµ„‰˚:XŒπeΩ∑Õ8àÀŸ˙˙Î
+¡ÎîÒÂZW˝n€™xßh€V	ﬂOÏ˙óùº&i27^œeak¸–s«û.›lﬂÿ∏Ë$≤Eõé|⁄∂9 kº™YÕ3Û‰P€π´È¯t5– ÓX4⁄œ/Yc#ø⁄F'd+,«∫.î4~⁄ËX;K¯Y˙)·x?˚Å°YÄN@Kñ>=:∆R≤∆≥ÖbDdäﬂ\+◊·˜Õö˛mé±åÖ≥<ÙaNcÈô˛=ÕN}~~
+Ëq><<Ãi å¥ùlÜπêÀ Ú#O¶n¶x1ó¿Gié „`+Åuî∫ﬁO‰”òÿ´ z3<ÙÂ∏8ó4Ù.úc¨ÎΩ8˚b+´˜w÷k⁄}æUÆã4"ôgŸ n~î˛%xËëçπGÙÆ|Nç!–[,◊ÀLß~Tæ5ßó„°è	õiCorXÂc¸ƒN`∆QL‡ﬁ=˝£º°œ7·ß,”∞zõ<Ùc +|*q Ω(“£SÄì”€Ê°üÓ‚ ?êﬁ—√”Äì”Kô˘‚[?êﬁ,“sùúÑ^Ëôâñ|aÏ,‚¯/Iz… €;ïı˚≠œó:˝|mˇzü›\´M¨÷´ıÆázÌ¨àÚ6__á-Ã“±%˙·πü€4ÙÜıÅü=?Ì}'§«≠ıŒ§Ûw^†ËNÿπc“õ°˛•öô¥ïﬁÏÑ
+ji•ËÒ#—ªJ¸Lœ∑BÔË˝ª6Å	cÖ£zjjÊÒ˜Ô˘	éÂ\Í–ãXm[Ë]ü‡K7oè'Úπ'CÔ§óüwö«2µìﬁÙîÏ_1µdËMÀ˘I!Wèü^Tˆ4Óì°ÚÂñìxrÙ@æ§≥≈q‰È‘Ù‘„ßwU“ªô…=ô˛]≥˙˜$Ë=?a≈y<˛ı>}]Í#ïÈ‰ÑÙö»kŒT—Ù^êÚ¥N\é°¢ _l4ÏËyìØnﬁGìÈÕ
+ÓW o¨ó[¥Ã=øˇ&LÒ≥UCo¶∫Y)oFÄ¨Ï_¶≤äQZ≠“Ô = ˝1∏vò}&SH¥DoÏ¡- orˇ0˚å<<z3*ü¡ì°Ús¸d¨ÒÙN≥√Ï3ì7ÊƒÙ∂xËóG¢wMÙØÖŒìﬁÛÇﬁb>’Ω£Û‰'ût/=zh/¡˙À`n˙wùá˛uÔ(ÛszZ—kaIåÖ?…C?qéD/:°≤"97ãwN6q∆¬Î<Ùo’#—Éı^Lµ"\xÉ~p—[ﬂÿy£:±V%z©mÿ\∑.±«¬U˙≠áÅç√‰u{ÂÁŸπC˜”bæ¥‡Ä9Ω∂ÀÎCËÕ∂E~ùﬁ’vÎ€CË…˝4lß[¢Î·?véD‰µIà◊
+=µ˛lz^ñ+pË9´2œOÎöG>*ìºÆz[µÌ/EXˇíp∫÷ “õ‡°èÓSﬁûºeæ úﬁÛú§mΩÇe_[˛yÃe™ OG«∆€W∆¬ø…C?ß‹P¡à°ùñ˘ø{o` ‚
+JOÈÛøWŸ¨‘ÀÎ'Óﬂå˜y@D%ØÔW¯˘AyΩıæZ€®âOÚ∞‡,wÔ∫õ”Ÿ≤ıØUÔ’úc]–ƒcé˜6yôØVÍır˝‡\RDØrzõ;ï∫†˜vyΩ∫&Û¸`˙¨ÚΩ˙ŒVñﬂﬁycµ∂˘÷ŒÊ}ÒûÃ]Y´—≠ì#˜èãz∑+¸ÂM¢∂V„£51®0≠*Po¯éÖÀ@oıpzlè ƒ…ÌÍΩù*‡o÷Í«“¿«øD˘ˇŸª∂Á6ÆÛI-ô±§±Uè;âÌcŸ0@ë–Öí…^ ∑  mÈ!“XR´ ªÃ.¿äÓKˇÄv¶˝˙‘ˇ!ÔŒÙµ/zØ;ÆS€u≠6ìáN’Ô˚ŒŸ∏g±¬k¶;πPº‡€sŒw˘}◊”ﬂ÷ÈÍ/Ã¬u˘1övpÀT64úüÎÿ”◊∫∫Ôí0Ú«æÀ≈°ß¿∂È´tóYOÔÎÁ23∫ﬂåmmÿÒ.Ì¡É°÷1È ∫⁄6¸¯∫;ÏËVé”ãw~pv{¶≈∫∫=Ä7Á≈Ø· UºWM{K2Ã,˚’F“K›Vr‚IŒèa:H™√ÅŸW∞Pp~Ω˚÷3˝Œ’¬U=T-\w®ız~>"ˇ·ÎxÚ`Ï√´ÙÍl†ıa±¿ˇ&|÷`ÿ: lkˆÒl8˜4óHÈ}ïÿ>ÜXOÉ?K¿"{8Ñ„√;ΩP∫¯ª£Zª($∏Ñéﬂ[¸ç´„ﬁKè“ãy~KòD&ô”;Ññ!éﬂQ?&çÉÈ¨ Ÿı≈÷g`$4££v5CÁ∫ôÔêD‚1vLæÃ%ŸO¬`¿ß∞é•q!44ºÿºKmÅxŸ Åé1áõIw'\∑É§±]b@ò/r‰mÒj√DÚábÈ†0è¬£	¯Û7-e˛Åz¿,î"€8‘P÷≤L#Ê≈uiél†“1"˚Ç62ﬂÛËqÈëÖ Í©Ï‚èÆäJmO£NDXº£R-∑‡ øìh}?¿¥‡Ù∏‹OJ∫Ø¡Û;Ê√ü⁄#PX]@S∆g>z/˙Ó€ÊRœhYÜ¯˙6ÿ”“èçÁ˜ô)Ú”æ|Ò€Ÿ‘iÁûœ©ÆØˆ°=ÆkùÍË€æK7!Ê/Æ\ø~=Ó˙¸ÒâéúûìÇ%ÂßFü)V_h (å“√|¿{"^ íﬁÅ÷á∏§£wIÓÄ^Q)+l+?◊¡Ù©l_≥Ïà““gøÒÎ”LNœÈ}Î+Ä¶:≠Á¬Ô!!ˇË;qÍÈz8Ω©ÚK	¸±Õ1¸R≈{3ß‚êe“6ˇç∏G˝µà˝ƒßTUÿ ≈Âkx3gûï›cdÎñ¶[ÿÌÉúﬂóé~Ÿã†ß†ªbÿ&"yÄòäÀ
+¶]ÌÌ2˝ÄÀ‡ÁÄ·¯5ÎÎvﬂd"ûıç£?ªÙ∞/Ø≥Œíäﬁ"Ça "†ª·;Û«¯sˇ˝âA*˚±°!
+ÂàUÿøõ>ˇÔÕz‹up‡Qñ·’æñπ›”∞,Ä!w…‡WˆÜ¯¸÷a◊xÄŸ∞4óﬁ9QœWã†◊3=∑Õ˜9u¯ó‚ 2	õ·ˆË? ¿m·+ÇSä/∆≈&ìV`?≈= ß
+ÙÀâû6®Ö–ﬁ‡’u∂G÷ı,x†ˆ∞Ø]ì0BGÅ+p}Wÿ¸SqWı±ÊzCÇ.ék‰≠◊3–ÔôÀ˘w˛Ly˛—È∑"ËÒœÑµÈ£oM˚π∂æÊNp'Ñ,ÀzŸ‹æã˚∫œg†_⁄1¯sö˙•S◊/´‚Êﬂ<ÖÌÀ+Ô‚ók ~–ûﬁ˘ïnÏ≤E•R(H|˘LzÏª‡œ”JΩ*/k=ÙÈ∂Æô•ëºq∏<;0;ø‚∫†Á≈g8Ω5/æeﬂY∞	áî†ÍÅæ•ø¸W„p}›˜∆/-∞∑‚æıü‹åÊ•¡V.]\…„˘≠¿˘Ìv¡ã ›h
+LJWòì7ﬂΩ©¶C◊W˝"ÏÌâ(}V˙√¬c°∏qnî&Õ5¿¥yÄÙ°¯:ÌgX|{€œ◊@Ê∆Ë3±üÕÀ_ıÌÁæÕ∂º8öfÔiT∂<v??c1¯˜S›’æu˚~:¢¸ ‡RÂ.À 4º J`ç‡÷ØzÔßÁÆÏÏÁª^=Ùiøx˚π|˘‚Úä£_∫{À´±%œŸœ4õˇBÏÁÒ≤|?[#∫¬Ôî1Q‘À≥Kπ˙œièπ6@„å.™Ko‰A¯Á#ÙY m˜LP_XWõE§Äq4«u∞‰]xõKÅıÅΩ˝üç⁄£W@üâ¸ÌπRÙ˘ï∂¸Á7—CÚÔ≈ÒÚ êÖjì]{ ,ÔØÆ’ç.|_3∫¯•û1Z~Óü‡πsy¯Û≤ÔÓy	=‡Äﬂ∫ˆÄö-≤<÷Çü∏34(¸B≠Ÿ&âÍ˙◊W|-“è$˚9’Û˚πê˜‘≠±ˆa˘*˙≥t~˚ìŸá|x"©œå}å∞P‹V|∂õ‹A miªÄw±'à{ÜçàÉ∆_ŒF˘GÇ¬xá+&àƒËùê»˚Tœœ_Ôvnº}_Òùüeªª£€`u˘∆€˜l,{r~ÇX|‘ë8'å¸r◊E~∏4BØ·[üƒ_ôÍ~`}/ùóÈ3&ç˜¨\∆˝çØ›2È[æı˝$qº'lÑe4=‰ó-°œ÷«{|AÉòÙ œZOOÔiyê–pcÛñŸs"Ÿ‰Â‚˜msÍLzïÕ?π»È˝ÖÈØx^%pËæFYQ0Ç©™∑µ⁄àß? ü/^˜ú6#y©7ìw¥∑ûæÊ·sÃ“1õ¬„˛ïëk˝@›÷,ÅF~˘\ÿ£‘\ƒ~bØZ ∏‘˛ûŸÒQÏ©∆«òÜÎyyû~iy¯ÏG≥–ü7<<?w'z?ã’0W ⁄X	2È*‡›Òd|Zò∑Ò%!TH`º«0öˆ8´D˛ÌÔ/à˙	øLu?€1Ïë<\ª{%	<Ã§ﬂzoˇvCJO¢>◊76brÈ°}ÿã'$ÍsKÔP≤8¶ˆDzÌÒxû…’'y1∆P€˜’•0ˇ¸.øÎíEzû?/âO»_W£9êî¶ëQ«P:©!Ω&¯Ô≈Ò¡–q4ëe"õæx|P¯õsWg ÄÁøÒ¨sÀì»√ıdÚÄÚw~å}ê CCIXlN˘áﬂâı˝8±<$Öú_æ∏9V˛‰p¬FŒ44Ú≠_Tx¥ƒ“’Ìû∆hÒ®KÔ¶goﬂHÃüÅôzÙπBÊzÓÃXÅîY&}‰¡ÒWr3‡OêáßÔŒ-%ÂOo%rÁπºÁf»ü:ÿ?ÅœŒÈI˘GÒ∂p8A|zXØaå•'·œí π<mÄPXV70îãp™1|ái
+û?|ˆï®7=k$ÂOK„‡Ç/‘ -4¥JÅò[Q¬˜Û_E¯ô1˘∆√è´£±$ÖœÕ^‹«0e:–*(™∑h}fº+}∞ ≠ês§Õ?)‡ºØ˜u¬RúË≥˛ â{IÈ¡∂îFÇ¢ûw“›§ÙZhY¿∏<ŒÑNı–Ä”ÎoÎ<´ ÀVD.ƒ•WâÅÁCõ‰∂Í¯aîıÎÈˇ‹x©≈kA9Ω<ß¿üg∑í“+‘kÌfΩ¬¸]1Ï*P;‰˝f“w=</ãÔNUŒyÒ≥yêŸ˜ºHƒ◊üû?}¶ùTﬁ©&–eúﬁe8?%ΩPºõÔÓÂWY<(±ÚaÓUÉı≠/5GE%ì~¸˜ÏX</—üEMÔ(á‹√4πK#Y??=ÙoÖ˝{)1b/ı:¸óÛßSm†â:NΩERÉ¿ÿRπ<ƒ¿ÛíGı)/¨ípw’	VﬁœäáÁ_ûE<ˆÛ;ßﬂIûˇãüûà;ÆÅ¸€?:Ù‰ıy@è>—ìIoÇ~…àxè‹?í √æΩXhÆ/_	ÆÜ“SA˛~9•Œ@pæÕè'µ∑•jπ] Ò9î$A»í$P•¶÷sËÅ?˝üé=9¸ËVÏsSﬂ—,⁄f€-
+Ô*†¶|„y£5„¯¸Bb|}=±< Ωß-NÔyyæqz¯˙#¿◊π±Á'√◊&ÊpbGCê^éÕÈ‰´‰˙ZV>(ê
+–ÏS¡%nê˙™1D†kRÑüû{~≤¯†Ù·jﬂ÷§ê–b ˘r|&‚Ûs«f¿ü[@ÔŒ§˙⁄/«Áœ;l˛«‚Khyk#&èﬁ16ˇÌÚ§¸©LXzøTíÚgÖöbx®ÃÊas{⁄ÆjÒÈvºC	Mæ.˙Í "˛r&1ûßN≤<˘Ü≤Au!ıf	;^8öÈ®6è÷!Ω]¿KñXü‹I7úMâáŒ¨•éÈETk∞¥g·!ÏÅ4¸II˝ŸTÂ¸Wï±Ò•È…ÉÕÊ?ÛÚŒ…ÛUr}}1Q
+0ìﬁáı‚ƒ_¶Ò˚∑Ú¯g∏<|◊p∫U∫⁄æŸäõ˜©ÒàÖÖ†ÿç+ÌÌ´âÒº;_Á2[ƒZsë$LS∑U8uµ∂X_µòèy&™^1ÙÒ◊ÊÚèÃ¥£b„ì⁄€5)√Kπ,g?^º¸|D˝RËÛªz¡xNr†ÔôØ˘AƒwËïΩ˙≥Ûâ„ü2≥«„$!@ıu_≠ä~íY‰ˇÄ?øxÈD>1>ªtq˘r2y«˛ÈÀúﬁÎâ„ü‰´ø¸Â§ÚæïÔX6∏À¥ÌÆÈTÿÇÎÓt*ïÌi`9º¯µè?üìÛgdæä2PpåZh∂Í‰@P?,9=W~'Ú9o»„íGsﬂû>⁄5O5èyÂ˙"îÊ‘õ:ı=QıÛ°œ°Ó¬@+75éŸN®“‡ÎÛÎ≥≈ƒÙ–rZˇ®„3¢vÇ/ﬁ˝ÙZ\ü=iåØ◊úeâ∏2˝¨√€xÆà∑6@ø¨MÍˇQí™!Ωì›å≤˙r¨gG‰%¯l™˙‡g"ûı≤\¶ß_‚˘”””/hﬂÔ	ÛùËó¶Wô:ôTø‹VDCÔÆF© ßëßËÂ5†∆˛cî@Í7¸èß˜ä§æGæ=ºé»oia\›KÏ¿Iyê>˚VË≥Á«#w±õûCxr”÷ÖËÁóô
+ÃƒÖXó√ƒ •L˙ßp~wﬁç®w∏˙‚u˙˛ŸL“H&}÷ÁË≥Yÿ˜9è?_í«ÎdÒ»K¢%æ¸Û—Klﬂ'oôG/y|ﬁó¶uüQÈ´L˙îﬂMüoin‚H»Ü¬f™≠ÔÚˆQóÍÃKàS?˛`9≤®Êá¢ää€_ù¥á; 'TªﬁFÚ∏ï«‘3gi`gy˝,Ë©¨Ø:»ı6ØÃB>ìÔßÃ≠^\YN&E6ˇ'±æó‰ˆOüO8)å÷˜ô†˜™<ﬁ*ã˜‹Æ&ˆMÙ>mé≈◊„À[%LnÁ aõ¶•äÑj†˛%y|>§ËsÄ…bú˘bª<(ÍòN/n˝|Ë#Óª¡ﬁÆ’?\Xã±ü>zoHÏﬂTÂ¡áÁe˝·LnñE˝K≤¯¸Vtˇõ&>€ˇVô‘ˇÛŸá*®ÕK∑’,k
+Y¶:KKáL…˚ß≠I„ÛÎz<raOıº1j1LK¢bcPÁ\~°D„y˘ˆp@W£ã(|M;‘\Ù;bÆó®áÆ{Ò˘‰Úásg˛ydÓLdµH†~^Fo™ÚPÒDÑˇ Øg‡ÒœÀQã
+¨ØÂ£∑>ºÙ\¨zõÒÚ/5è"Ím‰ˆAåD ∑vÖÏÅ”´Ø¶S/ß◊ªƒ◊'|*1~!ÊÂ<6èuæ^Rﬁu¡Îœñƒ˙|Ò˘gQØ8ã_d˙z51≤gœ«Âœ#„yw¨›Må$Y:æ∆≠oﬁê≠o<_^gt˘1˚s.*gJ≠(æ	¥ñY˚vÈ–Ë„Xx~™¸È√Û≤˛i&«◊y1>!>˙¸´˘cR˛¨~êp¯/∑Ô">8I/å?Õıd”j)>¯ggûGu˙s4{ ,¸P§sxº¸€Òı…°è˜±*	Ü§Fk1É√4…˛}Yú°}Wb·˘ÈÒßœÀÌ—Ù¯”áÁ_û"ûÁ'Ìè‚O¥±|^ü€IÌU öıV±^¯yπ∂A	.O&‰œ∞†Íb—%Fiåƒ˙j”HûT£Ò¸T˘≥ÌÒÀôÕ	¸1ØK∆üûo$ÂœRÚzZ¿Ûﬂlé≈g“¸{3¨<≈ìq(Õ_ÀÖÁR9ΩÕXx^¬ü«æ©òË9	bc÷ΩW°ó»§=z2<(€úÆv8◊è√=
+Œe˘$&äbÇ|»˝1mÚ˙y∑/Ów∆°ÎÅ∂kZè)¢]j‡%ïYﬂ~∆√Û°O°^[œa¢ù¨K%göÿ`^9Ïçr˚R></Áœ–áŒ	Sä‘˘€39/…2µ3ÄÁgbèÊbÒãLﬁØ%ñ˜‘Q¸Úû:
+ûy/)V¬¶1o®eøãí~Ù‘‘º⁄È‡¨íÆn—õπÛπ—ª Gë1>è3ÂÇ¡»ÖBiALÇc•èJl–ô∑vÑ¯º“•·|¢π_µÕPç„D{ºø áÁO&¨/¿ê*µ≈∏aPåÇéâ˜¯¸YâºOU˛ O|ﬁé¶«‰ÚóÒœ¯ÚÁ˜Õ¯¯ŸTÌÌW„–ãê?ü[ΩzÈzTØıÁƒËWì≈?—≤L)W∑M”Ô∏µÀ¶3JÀˇNüncÉvñªHTˆŸW≠é øo±⁄íãOùrõë~Xπ~	}ú—ë∂÷ÉΩˆ"≠Ùog8=-Ô@ÿÆ û1a˝,»MΩ´ÑO¯ oúÃ≠áO≠Êx^ƒ[OŒ¢?†
+˛ü2÷_ë˘c+¢,ë¸}›üüû¸Åˇ˛ß“X<?>ûÂîûÊÿÍÍ 9Ω¶œÀ„É”ì??ûOàœ&íøxx>ÙôH˛¸x7°~ôH˛bÙ√NU˛‚·˘ì‰O ê°Îª;C˚œ≥8Ú˜~AÖ≥€1áà‡5Y∆3üü$>4x:<,»Øª ≤’ª/$û}4k8„©7E•]jQÏn(z.xΩ˜–pÚ·©#»üŸ3yÖ'’}µm’´+Á≠Bô9D/È˙F´Ω¡˚#BVìﬁ˜&â„ë(Ñ?Ø ˆ`íı1y<R)∆$îúû§%ühƒi\zr˘„S3˘Ñ—·@√ÉaïÜgñ´ç‹›zÕ≥G„O!ﬂj≈•¯%08Æ”ñL\|∆¯3Ô‘áÃà?K…™óéÃü*ÌÂkﬂ=y¿∆÷ΩB•\™µK‡Oˇï:ÄFª–.7n∞b	õUC¥ò%†˙‰x@êZÓÄ3wtCÔ:uã@y˘ZN$ÃiZä1»]_? ‹ÙL.àtÂ%0NA@ç◊ëé!≤S\UT‡,òF≥å÷RÑ¿¢Œ-BG«É¡ï‡B¿ö≥Z±ﬁ*∑a3m‘<µFπ‡»˛3&Ô+◊Ö?6ëºGƒ?ˇ_ﬁÂÚNEÔñSüu˛∂oñ÷©%\≥p~3l∂àÕ„8gÄÄbê3	e¢ıÖ>áÆ ãsø·ËU›·˙„¸ÌHá”·—éHè#v~·oÃôHœöº_˘∏ Ìàˆ=È∏ﬂ$˙%LﬁA,πˇàjxW•°ÚŒs’–âã˘∫ÿªfô O-∂ïﬂ–årÔŸ„ó´≥Âó*âÁy…>¯‚5¿J“k¿¬ÈEßú_Ëb¢ Ω÷fï™¬
+`úaŒEeÎ=S∞kKáÈ˝Ä¯% ¡]M¿0±ÈIfc£^-›MrüM|z·Ä•è âÁÂ≈†7.¡…mOq‚µª∑ñäKdÏá∂äπ«r´›JB@lΩÌ¸árM|æ∞Ë÷LÏèª,sˆ¸Û~JY¡˜5·‡∆ÊœòÙdâıY|z¿J{˘˙DıQÙ‰¸Ÿ’0ˇé¨®CïœŒÍ˙HÔÛÒy*^Õå’ﬂâ÷∑X,+•XU>J_R9ﬁ|ß⁄¨≠ﬁ=Ó¡f€–ıeÿ¸3—Ù~@¸	–«ÙZé üì›«09˙Ó Í•ï<éZ‘bøX—_”‡£∑·Îöà?Ä÷ÛF∆™Å¡)":O#Rh~àìø=/˜ ©J18õ˙Ò¶{ú¯›uÔ˜Êï¥î‡π æuø„ô5U691Ó˘≈†˜íºèˆ“Â°ú8^~4y∏•4WÆ;í‘pèù1®“H¡Ì`»Y‹ä-ÚG>˛åæü9ÙÒ∑ˆ´8Ù^LÒ¡√◊á˜%ãyÕ/…ÁCGËÒç—±ÅUËl˛â6Ò˙¸Ê’üFñ$?øÔM$ÛÚ≈dzßÄp"yà†âØ„—JJO&IÆZ CΩX˜ıÄ*&!∂Œ·"1oNææ˜û˛ıâOOü¶NqzÇœ;¶±£[}7"Ì±!	ZJ#MÓ¢-∞¥_Aµkæq‚åœgH∂G£Ùhj M‹      <cell id="7134"/>
+                </row>
+                <row id="7103">
+                    <property name="verticalAlign">bottom</property>
+                    <cell id="7104">
+                        <label id="7135">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <text-property name="text" key="OrdenExpedicion"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="7106">
+                        <label id="7136">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Sit"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="7108">
+                        <label id="7137">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Contenedor"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="7110">
+                        <label id="7138">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Ubicacion"></text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="7112">
+                    <cell id="7113">
+                        <data id="7114">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">EXPORDREF</property>
+                        </data>
+                    </cell>
+                    <cell id="7115">
+                        <data id="7116">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">EXPORDSIT</property>
+                        </data>
+                    </cell>
+                    <cell id="7117">
+                        <data id="7118">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">CNTDORREF</property>
+                        </data>
+                    </cell>
+                    <cell id="7119">
+                        <data id="7120">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ALMUBIALI</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="7158">
+                    <property name="height">0.312in</property>
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr">if ( row.__rownum != -1 )
+{
+        true
+}
+else
+{
+        false
+}</expression>
+                        </structure>
+                    </list-property>
+                    <cell id="7159"/>
+                    <cell id="7160"/>
+                    <cell id="7161"/>
+                    <cell id="7162"/>
+                </row>
+                <row id="7153">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr">if ( row.__rownum != -1 )
+{
+        true
+}
+else
+{
+        false
+}</expression>
+                        </structure>
+                    </list-property>
+                    <cell id="7154">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <label id="7163">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#800000</property>
+                            <text-property name="text" key="TodasLasOrdenesDeExpedicionDeLaRutaEstanTerminadasYTodosLosContenedoresEstanCargados"></text-property>
+                        </label>
+                    </cell>
+                </row>
+                <row id="7121">
+                    <property name="height">0.312in</property>
+                    <cell id="7122"/>
+                    <cell id="7123"/>
+                    <cell id="7124"/>
+                    <cell id="7125"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

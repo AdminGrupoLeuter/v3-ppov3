@@ -1,0 +1,104 @@
+#
+# Archivo de comandos para bloquear el trabajo en el directorio de transferencia
+# ------------------------------------------------------------------------------
+#
+# Objeto:
+#    Bloquear en el NT la biblioteca que se le indica, poniendo el flag ZSTOP
+#
+# Sintaxis:
+#    ntlock "Biblioteca NT" "Directorio HP"
+#                                  ^^^^^^^ nombre del directorio de trabajo del HP
+#               ^^^^^^^^^^^^^^^^ Nombre de la biblioteca del AS 400
+#
+# Ejemplo:
+#    ntlock $ADAIA_GES_A_GESTION $ADAIA_A_GESTION
+#                   Transfiere al NT el fichero
+#
+# Requerimientos:
+#    $ADAIA_GES_CPU        con el nombre del NT en adaia
+#    $ADAIA_GES_LOGIN      con el nombre de usuario para hacer el login
+#    $ADAIA_GES_PASSWORD   pues eso!
+#    $2                    Directorio del HP de trabajo
+#    $1                    Biblioteca en el NT de transferencia
+# Valor de Retorno:
+#    0                     Salida exitosa. Directorio lockeado
+#    254,255               Salida fallida. El Directorio ya estaba lockeado
+#    253                   Faltan parÄmetros
+#    251                   No hay conexiÆn al servidor remoto $ADAIA_GES_CPU
+# --------------------------------------------------------------------------------
+# -- EDM - Verificar la cantidad de parametros
+if [ $# -lt 2 ]
+then
+echo --------------------------------------------------------------------------------
+echo Objeto:
+echo =======
+echo    Bloquear en el NT el directorio que se le indica, poniendo el flag ZSTOP
+echo
+echo Sintaxis:
+echo =========
+echo    ntlock "Directorio NT" "Directorio HP"
+echo
+echo Ejemplo:
+echo ========
+echo    ntlock $ADAIA_GES_A_GESTION $ADAIA_A_GESTION
+echo
+echo
+echo
+echo --------------------------------------------------------------------------------
+exit 253
+fi
+# ---------------------------------------------------------
+# -- EDM - Verificar conexion al servidor trayendo el ZSTOP
+touch $2/ZSTOP >/dev/null
+ftp -niv $ADAIA_GES_CPU <<?
+quote user $ADAIA_GES_LOGIN
+quote pass $ADAIA_GES_PASSWORD
+cd $1
+put $2/ZSTOP ZSTOP
+!rm $2/ZSTOP >/dev/null
+get ZSTOP $2/ZSTOP
+quit
+?
+if test -f $2/ZSTOP
+then
+echo "NTlock Conectado a $ADAIA_GES_CPU..."
+else
+echo "NTlock no se pudo conectar a $ADAIA_GES_CPU. Abortando..."
+exit 251
+fi
+# ---------------------------------------------------------
+# -- EDM - Poner el fichero ZSTOP y traer el XSTOP e YSTOP
+rm $2/XSTOP >/dev/null
+rm $2/YSTOP >/dev/null
+touch $2/ZSTOP
+ftp -niv $ADAIA_GES_CPU <<?
+quote user $ADAIA_GES_LOGIN
+quote pass $ADAIA_GES_PASSWORD
+cd $1
+get XSTOP $2/XSTOP
+get YSTOP $2/YSTOP
+quit
+?
+# ---------------------------------------------------------
+# -- EDM - Testear si existen el XSTOP o YSTOP
+if test -f $2/XSTOP OR test -f $2/YSTOP
+then
+echo "Biblioteca ocupada. Abortando..."
+rm $2/XSTOP >/dev/null
+rm $2/YSTOP >/dev/null
+# ---------------------------------------------------------
+# -- EDM - Borrar flag de trabajo ZSTOP
+ftp -niv $ADAIA_GES_CPU <<?
+quote user $ADAIA_GES_LOGIN
+quote pass $ADAIA_GES_PASSWORD
+cd $1
+delete ZSTOP
+quit
+?
+rm $2/ZSTOP >/dev/null
+exit 255
+# ---------------------------------------------------------
+# -- EDM - Verificar conexion
+else
+echo Directorio $1 bloqueado
+fi

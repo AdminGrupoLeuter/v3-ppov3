@@ -1,0 +1,2332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Gim√©nez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 22/03/2010 (versi√≥n inicial): Se a√±ade el par√°metro pdecAlmCod (c√≥digo interno almac√©n) con 
+* respecto a la versi√≥n de SpeedWare, ya que desde un informe BIRT no es posible recuperar una 
+* variable global de SpeedWare.
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*       Informe de falta de stock previo a expedici√≥n.
+* 
+* PARAMETROS RECIBIDOS:
+*       1. pdecAlmCod                           -> C√≥digo interno almac√©n
+*       2. pdecExpOrdCod                     -> C√≥digo interno orden expedici√≥n principal (si a 0 = todas)
+*       3. pdecTerProCod                      -> C√≥digo interno propietario (si a 0 = todos) 
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pdecAlmCod" id="8561">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecAlmCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">1</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecExpOrdCod" id="5796">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecExpOrdCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">13491</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecTerProCod" id="7954">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecTerProCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">0</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decAlmCod" id="7962">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decTerCod" id="7956">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strAgrTarTer" id="7960">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decCntSop" id="7957">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strCamForExp" id="7958">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strInfInsKit" id="7959">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decArtCodAct" id="7963">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decStkDis_UniExp" id="8249">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decStkDis_UniMin" id="8251">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decCanFal_UniExp" id="8333">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decCanFal_UniMin" id="8334">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decArtPadCodAct" id="8553">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decStkDisArtPad_UniExp" id="8536">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decStkDisArtPad_UniMin" id="8537">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decStkDisArtHij_UniExp" id="8540">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decStkDisArtHij_UniMin" id="8542">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strParGestionSoportes" id="8557">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">N</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strParCambiaFormExpe" id="8558">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">N</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strParUdsCliRep" id="8559">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strParInformInsufKit" id="8560">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">N</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strQryStk" id="8602">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="OEX" id="411">
+            <property name="odaDriverClass">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+            <property name="odaURL">jdbc:sqlserver://172.20.10.65\ADAIASRV:1433</property>
+            <property name="odaUser">bra</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YnJh</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 05 (ParStk)" id="6003">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ALMCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TERCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">AGRTARTER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CNT_SOP</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">CAM_FOR_EXP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">INF_INS_KIT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="beforeOpen"><![CDATA[//                                      
+// Inicializar la string que contendr√° el query
+this.queryText = ''
+//
+// *******************************
+// * A√±adir los campos al SELECT *
+// *******************************
+//
+var strDetTerCod = "(CASE" +
+              " " +   "WHEN" + " " + params["pdecTerProCod"].value + " " + "<> 0" +
+              " " +     "THEN" + " " + params["pdecTerProCod"].value +
+              " " +   "WHEN" + " " + params["pdecExpOrdCod"].value + " " + "<> 0 AND b.EXPORDTIPAGR <> 'OLA'" +
+              " " +     "THEN b.TERCOD" +
+              " " +   "ELSE   0" +
+              " " + "END)"
+//
+this.queryText = this.queryText + " " + "SELECT   DISTINCT" +
+                                  " " +          "b.ALMCOD," +  
+                                  " " +           strDetTerCod + " " +                                   "AS TERCOD," +
+                                  " " +         "(SELECT r.AGRTARTER" +
+                                  " " +          "FROM   TER r" +
+                                  " " +          "WHERE  r.TERCOD =" + " " + strDetTerCod + ")            AS AGRTARTER," +   
+                                  " " +         "(CASE" +
+                                  " " +            "WHEN" + " " + "'" + params["strParGestionSoportes"].value + "'" + " " + "= 'S'" +
+                                  " " +             "AND" + " " + strDetTerCod + " " + "<> 0" +
+                                  " " +              "THEN (SELECT COUNT(*)" +
+                                  " " +                    "FROM   TEREXPTIP p" +
+                                  " " +                    "WHERE  p.TERCOD =" + " " + strDetTerCod + ")" +
+                                  " " +            "ELSE   0" +     
+                                  " " +          "END)                                                    AS CNT_SOP," +
+                                  " " +         "(CASE " + 
+                                  " " +            "WHEN" + " " + strDetTerCod + " " + "<> 0" +
+                                  " " +              "THEN (CASE" +
+                                  " " +                      "WHEN (SELECT q.TERREF" +
+                                  " " +                            "FROM   TER q" +
+                                  " " +                            "WHERE  q.TERCOD =" + " " + strDetTerCod + ")" + " " + "=" +
+                                  " " +                                              "'" + params["strParUdsCliRep"].value + "'" +
+                                  " " +                        "THEN 'N'" +
+                                  " " +                      "ELSE" + " " + "'" + params["strParCambiaFormExpe"].value + "'" +
+                                  " " +                    "END)" +
+                                  " " +            "ELSE" + " " + "'" + params["strParCambiaFormExpe"].value + "'" +
+                                  " " +          "END)                                                    AS CAM_FOR_EXP," +
+                                  " " +         "'" + params["strParInformInsufKit"].value + "'" + " " + "AS INF_INS_KIT"  
+//
+// ****************************
+// * A√±adir el FROM al SELECT *
+// ****************************
+//
+this.queryText = this.queryText + " " + "FROM     EXPORDCAB a" +
+                                  " " +            "LEFT OUTER JOIN EXPORDCAB b" +
+                                  " " +               "ON b.EXPORDCOD = a.EXPORDPRI" 
+//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+// Si est√° informado el par√°metro c√≥digo interno ord. exp. ppal. ==>
+//   filtrar dicho campo en tabla EXPORDCAB   
+if ( params["pdecExpOrdCod"].value != 0 )
+{
+	this.queryText = this.queryText + " " +  "WHERE    a.EXPORDPRI =" + " " + params["pdecExpOrdCod"].value
+}
+//
+// Si est√° informado el par√°metro c√≥digo interno propietario ==>
+//   filtrar dicho campo y las ord. exp. con sit. = pendientes en tabla EXPORDCAB
+if ( params["pdecTerProCod"].value != 0 )
+{
+	if ( params["pdecExpOrdCod"].value == 0 )
+    {
+		this.queryText = this.queryText + " " + "WHERE"
+    }
+    else
+    {
+        this.queryText = this.queryText + " " + "AND"
+    }
+	this.queryText = this.queryText + " " + "(a.TERPROCOD =" + " " + params["pdecTerProCod"].value + " " + "AND" +
+                                      " " +  "a.EXPORDSIT = 'PD')"
+}]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ALMCOD</property>
+                    <property name="nativeName">ALMCOD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TERCOD</property>
+                    <property name="nativeName">TERCOD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">AGRTARTER</property>
+                    <property name="nativeName">AGRTARTER</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CNT_SOP</property>
+                    <property name="nativeName">CNT_SOP</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">CAM_FOR_EXP</property>
+                    <property name="nativeName">CAM_FOR_EXP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">INF_INS_KIT</property>
+                    <property name="nativeName">INF_INS_KIT</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">// Consulta definida en evento beforeOpen</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 10 (Cab1)" id="7727">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TERREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TERDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecExpOrdCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDREF</property>
+                    <property name="nativeName">EXPORDREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TERREF</property>
+                    <property name="nativeName">TERREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TERDES</property>
+                    <property name="nativeName">TERDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.EXPORDREF,
+         b.TERREF, 
+         b.TERDES
+FROM     EXPORDCAB a 
+           LEFT OUTER JOIN TER b
+              ON b.TERCOD = a.TERCOD
+WHERE    a.EXPORDCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 07 (Stk-Acc)" id="7961">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">SUM_CANUNI</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">SUM_CANACC</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="beforeOpen"><![CDATA[//
+// Construir la string de consulta tomando como base la definida en
+// el evento onCreate de la tabla basada en el conjunto de datos OEX-INS-001 05 (ParStk) y
+// reemplaz√°ndole el nombre del par√°metro c√≥digo interno art√≠culo por su valor actual  
+this.queryText = params["strQryStk"].value
+this.queryText = this.queryText.replaceAll("decArtCodAct", params["decArtCodAct"].value)]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">SUM_CANUNI</property>
+                    <property name="nativeName">SUM_CANUNI</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">SUM_CANACC</property>
+                    <property name="nativeName">SUM_CANACC</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">// Consulta definida en evento beforeOpen</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 11 (Cab2)" id="8362">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TERREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TERDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecTerProCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TERREF</property>
+                    <property name="nativeName">TERREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TERDES</property>
+                    <property name="nativeName">TERDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.TERREF, 
+         a.TERDES
+FROM     TER a
+WHERE    a.TERCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 08 (Kit)" id="8371">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ARTPADCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ARTREF_PAD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ARTDES_PAD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ALMUBIREF_PAD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">CANUNI_HIJ</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">NUMUNI_UNIEXP_PAD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">UNIEXP_PAD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">UNIMIN_PAD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="beforeOpen"><![CDATA[//                                      
+// Inicializar la string que contendr√° el query
+this.queryText = ''
+//
+// *******************************
+// * A√±adir los campos al SELECT *
+// *******************************
+//
+this.queryText = this.queryText + " " + "SELECT   a.ARTPADCOD," +        
+                                  " " +          "b.ARTREF    AS ARTREF_PAD," +
+                                  " " +          "b.ARTDES    AS ARTDES_PAD," +
+                                  " " +          "d.ALMUBIREF AS ALMUBIREF_PAD," +
+                                  " " +          "a.CANUNI    AS CANUNI_HIJ," +
+                                  " " +          "e.NUMUNI    AS NUMUNI_UNIEXP_PAD," +
+                                  " " +          "b.UNIEXP    AS UNIEXP_PAD," +
+                                  " " +          "b.UNIMIN    AS UNIMIN_PAD"
+//
+// ****************************
+// * A√±adir el FROM al SELECT *
+// ****************************
+//
+this.queryText = this.queryText + " " + "FROM     ARTKIT a" +
+                                  " " +            "LEFT OUTER JOIN ART b" +
+                                  " " +               "ON b.ARTCOD    = a.ARTPADCOD" +
+                                  " " +            "LEFT OUTER JOIN ARTALM c" +
+                                  " " +               "ON c.ARTCOD    = a.ARTPADCOD" +
+                                  " " +              "AND c.ALMCOD    =" + " " + params["decAlmCod"].value +
+                                  " " +            "LEFT OUTER JOIN ALMPRV d" + 
+                                  " " +               "ON d.ALMUBICOD = c.UBIPIC" +
+                                  " " +            "LEFT OUTER JOIN ARTPRE e" +
+                                  " " +               "ON e.ARTCOD    = a.ARTPADCOD" +
+                                  " " +              "AND e.UNITIP    = b.UNIEXP"
+//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+// Si par√°metro INFORM-INSUF-KIT = 'S' ==>
+if ( params["strInfInsKit"].value == 'S' )
+{
+	this.queryText = this.queryText + " " + "WHERE    a.ARTHIJCOD =" + params["decArtCodAct"].value
+}
+// En el caso contrario ==>
+//   provocar selecci√≥n nula
+else
+{
+	this.queryText = this.queryText + " " + "WHERE    a.ARTHIJCOD = -1"
+}]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ARTPADCOD</property>
+                    <property name="nativeName">ARTPADCOD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ARTREF_PAD</property>
+                    <property name="nativeName">ARTREF_PAD</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ARTDES_PAD</property>
+                    <property name="nativeName">ARTDES_PAD</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ALMUBIREF_PAD</property>
+                    <property name="nativeName">ALMUBIREF_PAD</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">CANUNI_HIJ</property>
+                    <property name="nativeName">CANUNI_HIJ</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">NUMUNI_UNIEXP_PAD</property>
+                    <property name="nativeName">NUMUNI_UNIEXP_PAD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">UNIEXP_PAD</property>
+                    <property name="nativeName">UNIEXP_PAD</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">UNIMIN_PAD</property>
+                    <property name="nativeName">UNIMIN_PAD</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">// Consulta definida en evento beforeOpen</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 06 (Ped)" id="8372">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ARTCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ARTREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ARTDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">UNIEXP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">UNIMIN</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">NUMUNI_UNIEXP</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">ZONPICREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">SUM_CANPED</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="beforeOpen"><![CDATA[//                                      
+// Inicializar la string que contendr√° el query
+this.queryText = ''
+//
+// *******************************
+// * A√±adir los campos al SELECT *
+// *******************************
+//
+this.queryText = this.queryText + " " + "SELECT   d.ARTCOD," +
+                                  " " +          "d.ARTREF," +
+                                  " " +          "d.ARTDES," +
+                                  " " +          "d.UNIEXP," +
+                                  " " +          "d.UNIMIN," +
+                                  " " +          "e.NUMUNI                  AS NUMUNI_UNIEXP," +
+                                  " " +          "g.ZONPICREF," +
+                                  " " +          "COALESCE(SUM(c.CANPED),0) AS SUM_CANPED"
+//
+// ****************************
+// * A√±adir el FROM al SELECT *
+// ****************************
+//
+this.queryText = this.queryText + " " + "FROM     EXPORDCAB a" +
+                                  " " +            "LEFT OUTER JOIN EXPORDCAB b" +
+                                  " " +               "ON b.EXPORDCOD = a.EXPORDPRI" +
+                                  " " +            "INNER JOIN EXPORDLIN c" +
+                                  " " +               "ON c.EXPORDCOD = a.EXPORDCOD" +
+                                  " " +            "LEFT OUTER JOIN ART d" +
+                                  " " +               "ON d.ARTCOD    = c.ARTCOD" +
+                                  " " +            "LEFT OUTER JOIN ARTPRE e" +
+                                  " " +               "ON e.ARTCOD    = c.ARTCOD" +
+                                  " " +              "AND e.UNITIP    = d.UNIEXP" +
+                                  " " +            "LEFT OUTER JOIN ARTALM f" +
+                                  " " +               "ON f.ARTCOD    = c.ARTCOD" +
+                                  " " +              "AND f.ALMCOD    = b.ALMCOD" +
+                                  " " +            "LEFT OUTER JOIN ALMZONPIC g" +
+                                  " " +               "ON g.ZONPICCOD = f.ZONPICCOD"
+//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+// Si est√° informado el par√°metro c√≥digo interno ord. exp. ppal. ==>
+//   filtrar dicho campo en tabla EXPORDCAB
+if ( params["pdecExpOrdCod"].value != 0 )
+{
+	this.queryText = this.queryText + " " + "WHERE    a.EXPORDPRI =" + " " + params["pdecExpOrdCod"].value  
+}
+//
+// Si est√° informado el par√°metro c√≥digo interno propietario ==>
+//   filtrar dicho campo y las ord. exp. con sit. = pendientes en tabla EXPORDCAB
+if ( params["pdecTerProCod"].value != 0 )
+{
+	if ( params["pdecExpOrdCod"].value != 0)
+    {
+		this.queryText = this.queryText + " " +   "AND"         
+    }
+    else
+    {
+        this.queryText = this.queryText + " " + "WHERE"
+    }       
+    this.queryText = this.queryText + " " + "(a.TERPROCOD =" + " " + params["pdecTerProCod"].value + " " + "AND" +
+                                      " " +  "a.EXPORDSIT = 'PD')"
+}
+//
+// ********************************
+// * A√±adir el GROUP BY al SELECT *
+// ********************************
+//
+this.queryText = this.queryText + " " + "GROUP BY d.ARTCOD," +
+                                  " " +          "d.ARTREF," +
+                                  " " +          "d.ARTDES," +
+                                  " " +          "d.UNIEXP," +
+                                  " " +          "d.UNIMIN," +
+                                  " " +          "e.NUMUNI," +
+                                  " " +          "g.ZONPICREF"
+//
+// ********************************
+// * A√±adir el ORDER BY al SELECT *
+// ********************************
+//
+this.queryText = this.queryText + " " + "ORDER BY d.ARTREF"]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ARTCOD</property>
+                    <property name="nativeName">ARTCOD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ARTREF</property>
+                    <property name="nativeName">ARTREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ARTDES</property>
+                    <property name="nativeName">ARTDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">UNIEXP</property>
+                    <property name="nativeName">UNIEXP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">UNIMIN</property>
+                    <property name="nativeName">UNIMIN</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">NUMUNI_UNIEXP</property>
+                    <property name="nativeName">NUMUNI_UNIEXP</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">ZONPICREF</property>
+                    <property name="nativeName">ZONPICREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">SUM_CANPED</property>
+                    <property name="nativeName">SUM_CANPED</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">// Consulta definida en evento beforeOpen</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 09 (Stk-Acc Kit)" id="8551">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">SUM_CANUNI</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">SUM_CANACC</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="beforeOpen"><![CDATA[//
+// Construir la string de consulta tomando como base la definida en
+// el evento onCreate de la tabla basada en el conjunto de datos OEX-INS-001 05 (ParStk) y
+// reemplaz√°ndole el nombre del par√°metro c√≥digo interno art√≠culo por su  valor actual  
+this.queryText = params["strQryStk"].value
+this.queryText = this.queryText.replaceAll("decArtCodAct", params["decArtPadCodAct"].value)]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">SUM_CANUNI</property>
+                    <property name="nativeName">SUM_CANUNI</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">SUM_CANACC</property>
+                    <property name="nativeName">SUM_CANACC</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">// Consulta definida en evento beforeOpen</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 01 (Par1)" id="6979">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">VALALF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="onFetch"><![CDATA[//
+// Guardar el valor del par√°metro GESTION-SOPORTES para 
+// utilizarlo en el conjunto de datos OEX-INS-001 05 (ParStk)
+params["strParGestionSoportes"].value = BirtStr.trimRight( dataSetRow["VALALF"] )]]></method>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p2</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p3</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">VALALF</property>
+                    <property name="nativeName">VALALF</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.VALALF
+FROM     GENPAR a
+WHERE    a.GENPARCAT = 'INSTALACION'       
+  AND    a.GENPARCOD = 'GESTION-SOPORTES'
+  AND    a.ALMCOD    = (CASE
+                          WHEN (SELECT COUNT(*)
+                                FROM   GENPAR t
+                                WHERE  t.GENPARCAT = a.GENPARCAT
+                                  AND  t.GENPARCOD = a.GENPARCOD
+                                  AND  t.ALMCOD    = ?) > 0
+                            THEN ?                           
+                          WHEN ? &lt;> 1
+                            THEN 1
+                          ELSE   NULL
+                        END)</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 02 (Par2)" id="8554">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">VALALF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="onFetch"><![CDATA[//
+// Guardar el valor del par√°metro CAMBIA-FORM-EXPE para 
+// utilizarlo en el conjunto de datos OEX-INS-001 05 (ParStk)
+params["strParCambiaFormExpe"].value = BirtStr.trimRight( dataSetRow["VALALF"] )]]></method>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p2</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p3</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">VALALF</property>
+                    <property name="nativeName">VALALF</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.VALALF
+FROM     GENPAR a
+WHERE    a.GENPARCAT = 'EXPEDICION'       
+  AND    a.GENPARCOD = 'CAMBIA-FORM-EXPE'
+  AND    a.ALMCOD    = (CASE
+                          WHEN (SELECT COUNT(*)
+                                FROM   GENPAR t
+                                WHERE  t.GENPARCAT = a.GENPARCAT
+                                  AND  t.GENPARCOD = a.GENPARCOD
+                                  AND  t.ALMCOD    = ?) > 0
+                            THEN ?                           
+                          WHEN ? &lt;> 1
+                            THEN 1
+                          ELSE   NULL
+                        END)</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 03 (Par3)" id="8555">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">VALALF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="onFetch"><![CDATA[//
+// Guardar el valor del par√°metro UDS-CLI-REP para 
+// utilizarlo en el conjunto de datos OEX-INS-001 05 (ParStk)
+params["strParUdsCliRep"].value = BirtStr.trimRight( dataSetRow["VALALF"] )]]></method>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p2</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p3</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">VALALF</property>
+                    <property name="nativeName">VALALF</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.VALALF
+FROM     GENPAR a
+WHERE    a.GENPARCAT = 'INSTALACION'       
+  AND    a.GENPARCOD = 'UDS-CLI-REP'
+  AND    a.ALMCOD    = (CASE
+                          WHEN (SELECT COUNT(*)
+                                FROM   GENPAR t
+                                WHERE  t.GENPARCAT = a.GENPARCAT
+                                  AND  t.GENPARCOD = a.GENPARCOD
+                                  AND  t.ALMCOD    = ?) > 0
+                            THEN ?                           
+                          WHEN ? &lt;> 1
+                            THEN 1
+                          ELSE   NULL
+                        END)</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 04 (Par4)" id="8556">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">VALALF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="onFetch"><![CDATA[//
+// Guardar el valor del par√°metro INFORM-INSUF-KIT para 
+// utilizarlo en el conjunto de datos OEX-INS-001 05 (ParStk)
+params["strParInformInsufKit"].value = BirtStr.trimRight( dataSetRow["VALALF"] )]]></method>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p2</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p3</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">VALALF</property>
+                    <property name="nativeName">VALALF</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.VALALF
+FROM     GENPAR a
+WHERE    a.GENPARCAT = 'EXPEDICION'       
+  AND    a.GENPARCOD = 'INFORM-INSUF-KIT'
+  AND    a.ALMCOD    = (CASE
+                          WHEN (SELECT COUNT(*)
+                                FROM   GENPAR t
+                                WHERE  t.GENPARCAT = a.GENPARCAT
+                                  AND  t.GENPARCOD = a.GENPARCOD
+                                  AND  t.ALMCOD    = ?) > 0
+                            THEN ?                           
+                          WHEN ? &lt;> 1
+                            THEN 1
+                          ELSE   NULL
+                        END)</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-INS-001 12 (Cab3)" id="8608">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1
+</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date</property>
+                        </structure>
+                        <structure>
+                            <property name="name">Hora</property>
+                            <property name="displayName">Hora</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145">
+                            <property name="fontSize">9pt</property>
+                        </cell>
+                        <cell id="146">
+                            <property name="fontSize">9pt</property>
+                        </cell>
+                        <cell id="147">
+                            <property name="fontSize">9pt</property>
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <property name="fontSize">9pt</property>
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691">
+                            <property name="fontSize">9pt</property>
+                        </cell>
+                        <cell id="1692">
+                            <property name="fontSize">9pt</property>
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">Long Date</property>
+                                    <property name="pattern">Long Date</property>
+                                </structure>
+                                <structure name="numberFo"5568"/>
+                    <cell id="5564"/>
+                    <cell id="5565"/>
+                    <cell id="5619"/>
+                    <cell id="5614"/>
+                    <cell id="5609"/>
+                    <cell id="5604"/>
+                    <cell id="5563"/>
+                    <cell id="5594"/>
+                    <cell id="5821"/>
+                    <cell id="5849"/>
+                    <cell id="5842"/>
+                    <cell id="5835"/>
+                    <cell id="5828"/>
+                    <cell id="5873"/>
+                    <cell id="5866"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            H–†…‰P       H–¢…‰r       H–§…‰∞       H–¶…‰        H–®…‰Ë       H–™…Ân       H–¨…ÂÇ       H–Æ…Â∫       H–∞…Â“       H–≤…Â‚       H–¥…ÂÍ       H–∂…ÊÇ       H–∏…Ê∫       H–∫…Á       H–º…ÁB       H–æ…Ár       H–¿…Áí       H–¬…ÁŒ       H–ƒ…Á‹       H–∆…Ë       H–»…Ë       H– …Ë(       H–Ã…Ë8       H–Œ…ËD       H––…Ën       H–“…Ëû       H–‘…Ë¢       H–÷…Ë∂       H–ÿ…Ë¬       H–⁄…Ë        H–‹…ËÍ       H–ﬁ…Ë˙       H–‡…È       H–‚…È:       H–‰…Èä       H–Ê…È“       H–Ë…È‚       H–Í…È˙       H–Ï…Ír       H–Ó…Íí       H–…Íö       H–Ú…Î       H–Ù…Î"       H–ˆ…Îf       H–¯…Î⁄       H–˙…ÎÚ       H–¸…Ï2       H–˛…Ï>       H— …ÏJ       H—…ÏZ       H—…Ïb       H—…Ïr       H—…Ïö       H—
+…Ï¬       H—…Ï‚       H—…Ì       H—…ÌF       H—…Ìj       H—…Ìû       H—…Ì¢       H—…Ì∫       H—…Ì∆       H—…ÌÚ       H—…Ì˙       H— …Ò"       H—"…Ò2       H—$…Òj       H—&…Òz       H—(…ÒÜ       H—*…ÒÚ       H—,…Ú       H—.…ÚR       H—0…Úb       H—2…Úz       H—4…Úö       H—6…Ú¢       H—8…Û‚       H—:…Ù       H—<…ÙF       H—>…Ù^       H—@…Ùä       H—B…Ùí       H—D…ın       H—F…ız       H—H…ˆ       H—J…ˆ"       H—L…ˆr       H—N…ˆ≤       H—P…ˆ∆       H—R…ˆ⁄       H—T…ˆ‚       H—V…˜       H—X…˜2       H—Z…˜B       H—\…˜r       H—^…˜z       H—`…˜ñ       H—b…˜∫       H—d…˜⁄       H—f…˜Ú       H—h…j       H—j…       H—l…@       H—n…j       H—p…x       H—r…¶       H—t…™       H—v…¨       H—x…˛       H—z…	
+       H—|…	P       H—~…	z       H—Ä…
+*       H—Ç…
+@       H—Ñ…
+H       H—Ü…
+r       H—à…
+†       H—ä…        H—å…0       H—é…        H—ê…J       H—í…b       H—î…n       H—ñ…ä       H—ò…ò       H—ö…§       H—ú…™                   ¢  5ÜÊì\˙˙  AE  
+  	7’\˙˙  ‰2 5ÜÂÅ 
+  5ú …√v* †   \··                                  ˇˇ @;˚˚   ≈Dw™›<gàªÁb;gë≈¸
+%\ôùÆø–·Ú%6GXizãú≠æœ‡Ò$5FWhyäõ¨ΩŒﬂ#4EVgxâö´ºÕﬁÔ  #3CS”„Û√0@P`pÄê†∞¿–‡  Éì£≥√”csÉì£≥√”„Û#3CScsÉì£≥CScs0@P`pÄê†∞¿–‡  0@P`pÄê†∞¿–‡  0@P`pÄê†∞¿–‡  0@P`pÄê†∞¿–‡  0@P`pÄê†∞¿–‡  0@P`pÄê†∞¿–‡  0@P`pÄê†∞¿–‡  0@P`pÄê†∞¿–‡  0@/?O_oèüˇÆæŒﬁÓj{åù&7HY‚Û—çûØ¿„Ù'8IZk|                                                                                                                                                                                                                                                                                                                                                                           ,UBMA¡,$√¡ÄÄÄÄÄÄN        ¡
+N CÄÄÄ¡Ä N ,*ƒ"9¡√, *ƒHP?¡√H¬U1   OK  ¬
+02        ¬
+5578      Ä    xq'xqˇÄÄGESTMENU
+Menu RadioÄ                Ä                Ä      Ä      Ä                  Ä                  GESTÄ               ÄÄÄÄ                (LOGIC-RFL-MEN-001                       ¡, *ƒHPB¡√ ¡Q1   OK  ¡^
+20        ¬
+2002      Ä    xqxq	ˇÄÄGESTMENU
+Menu RadioÄ                Ä                Ä      Ä      Ä                  Ä                  GESTÄ               ÄÄÄÄ                (LOGIC-RFL-MEN-001                       ¡, *ƒHPC¡√ ¡R1   OK  ¡^
+20        ¬
+2002      Ä    xq	xqˇÄÄTRABCCNTDeshace ConsolidacionÄ                Ä                Ä      Ä      Ä                  Ä                  GESTÄ               ÄÄÄÄ                (LOGIC-RFL-CCO-005                       Ä, *ƒHPH¡√H¬V1   OK  ¬
+02        ¬
+5578      Ä    xqxq&xqÄÄTRABORIG √a%0119167         √^0123491         ¬19    ¬23    ƒ5?62700015262537     Ä                  RE  Ä               ÄÄÄÄ                (LOGIC-RFL-TRA-002                       Ä, *ƒHPI¡√ ¡S1   INTA¡^
+20        ¬
+2002      Ä    xqxq17ˇÄÄGESTMENU
+Menu RadioÄ                Ä                Ä      Ä      Ä                  Ä                  GESTÄ               ÄÄÄÄ                (LOGIC-RFL-MEN-001                       Ä, *ƒHPS¡√H¬W1   OK  ¬
+02        ¬
+5578      Ä    xq&xqxqÄÄTRABDEST √a%0119167         √^0123491         ¬19    ¬23    ƒ5?62700015262537     Ä                  RE  Ä               ÄÄÄÄ                (LOGIC-RFL-TRA-002                       Ä, *ƒHP`¡√H¬X1   OK  ¬
+02        ¬
+5578      Ä    xqxqxq2ÄÄTRABDEST √^0123491         √0123377         ¬23    ¬23    ƒ5?62700015262537     Ä                  UB  Ä               Ä√($¡¬?M50761           (LOGIC-RFL-TRA-002                       Ä, *ƒHQ¡√H¬Y1   OK  ¬
+02        ¬
+5578      Ä    xqxqˇÄÄGESTMENU
+Menu RadioÄ                Ä                Ä      Ä      Ä                  Ä                  GESTÄ               ÄÄÄÄ                (LOGIC-RFL-MEN-001                       ¡, *ƒH/¡√J¡1   OK  ¬M
+09        ¬=
+7461      Ä    xq,xq,ˇÄÄGESTMENU
+Menu RadioÄ                Ä                Ä      Ä      Ä                  Ä                  GESTÄ               ÄÄÄÄ                (LOGIC-RFL-MEN-001                       ¡, *ƒH/¡√J¡1   OK  ¬M
+09        ¬=
+7461      Ä    xq,xq,'ˇÄÄTRABPICI Ä                Ä                Ä      Ä      Ä             ¢  5ÑÒ—ÈK  ¬†  
+ ! 	7”Èœ  ‰2 5ÑÓÉ 
+ 	 '’ «2Ñv:  -                                        -ˇˇ l"∂∂   -"ºVã%¿Zı	ê
++
+∆a˝ò4–l£?€wÆJÂÄ∏SÓâ$¿[˜í. fû9ÈÄéú™∏∆‘‚˛(6DR`n|äò¶¥¬–ﬁÏ˙$2@N\jxÜî¢∞æÃ⁄Ëˆ .<JXftÇêû¨∫»÷‰Ú *8FTbp~åö®∂ƒ“‡Ó¸
+&4BP^lzàñ§≤¿Œ‹Í¯"0>LZhvÑí†Æº ÿÊÙ,:HVdrÄéú™∏∆‘‚˛(6DR`n|äò¶¥¬–ﬁÏ˙$2@N\jxÜî¢∞æÃ⁄Ëˆ .<JXftÇêû¨∫»÷‰Ú *8FTbp~åö®∂ƒ“‡Ó¸
+&4Bbp~åö®∂ƒ“‡Ó¸
+&4BP^lzàñ§≤¿Œ‹Í¯"0>LZhvÑí†Æº ÿÊÙ,:HVdrÄéú™∏∆‘‚˛(6DR`n|äò¶¥¬–ﬁÏ˙$2@N\jxÜî¢∞æÃ⁄Ëˆ .<JXftÇêû¨∫»÷‰Ú *8FTbp~åö®∂ƒ“‡Ó¸
+&4B‘†íX<J.äò ËˆÃ⁄∏∆úvÑ÷‰n|™ÄéZh	~	å	F	T	*	8Çêû¨∫»∞æÊÙ ÿÆºî¢Üj	b	ptxL0>$2@N\		˙`DRÚ	 fÏ–ﬁ6(rVd:H"¥¬¶˛,‚  :¨ ≠ Æ Ø √F5Çf÷ ,ƒ4EƒU/¡xr0/√38001115        ¬QÄ1406162312          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4FƒU/¡xr0/√:38001096        ¬Ä1406162315          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4GƒU/¡xr0/√^K38001098        ¬Ä1406162320          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4HƒU/¡xr0/√=38001126        √Ä1406162322          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4IƒU/¡xr0/√1838001001        ¬Ä1406162336          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4JƒU/¡xr0/√8X36000653        √3Ä1406162006          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4KƒU/¡xr0/√238001053        √Ä1406162338          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4LƒU/¡xr0/√E38001128        √)Ä1406162324          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4MƒU/¡xr0/√M38001137        √)Ä1406162326          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4NƒU/¡xr0/√1P38001027        √=Ä1406162331          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4OƒU/¡xr0/√238001068        √QÄ1406162328          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4PƒU/¡xr0/√@38001134        √Ä1406162334          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4WƒU/¡xr1 √935000305        =PQfÄ1312191210          2013/12/19          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4XƒU/¡xr1 √M35003080        =YfÄ1307300149          2013/07/30          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4YƒU/¡xr1 √T633000511        =4;fÄ1308291454          2013/08/29          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ZƒU/¡xr1 √F33102465        =\=fÄ1403201207          2014/03/20          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4[ƒU/¡xr1 √C38001131        <dQfÄ1406162238          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4\ƒU/¡xr1 √8T36000657        <c3fÄ1406162008          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4]ƒU/¡xr1 √L38001118        =QfÄ1406162234          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4^ƒU/¡xr1 √L38001138        <d=fÄ1406162241          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4_ƒU/¡xr1 √<38001123        <d=fÄ1406162248          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4`ƒU/¡xr1 √K38001139        <d=fÄ1406162243          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4aƒU/¡xr1 √(38001111        =)fÄ1406162245          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4bƒU/¡xr1 √F38001127        <dQfÄ1406162250          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4cƒU/¡xr1 √A38001133        <d=fÄ1406162254          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4dƒU/¡xr1 √38001149        =fÄ1406162252          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √N38001136        <d=fÄ1406162303          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √238001056        <dfÄ1406162306          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √1]38001042        <dQfÄ1406162309          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √238001064        =)fÄ1406162341          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √38001115        =fÄ1406162312          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √:38001096        =QfÄ1406162315          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √^K38001098        =QfÄ1406162320          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √=38001126        <dQfÄ1406162322          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4	ƒU/¡xr1 √1838001001        =QfÄ1406162336          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4
+ƒU/¡xr1 √8X36000653        <c3fÄ1406162006          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √238001053        <cfÄ1406162338          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √E38001128        <d=fÄ1406162324          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √M38001137        <d=fÄ1406162326          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √1P38001027        <d)fÄ1406162331          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √238001068        <dfÄ1406162328          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √@38001134        <dQfÄ1406162334          2014/06/16          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ4ƒU/¡xr1 √935000305        ¬Ä1312191210          2013/12/19          ƒ?42700016251196     √RS0117021         CPYL    Ä,ƒ>&ƒXX¡xr(√26951902        <cBQfÄ1406201911          2014/06/20          ƒB#B2700016534657     √_!01MR06061       MANU    ÄˇMovimiento Manual,ƒ>&ƒXX¡xr(√26951902        √$Ä1406201911          2014/06/20          ƒB#B2700016534657     √c01TR14011       MANU    ÄˇMovimiento ManualK>all</property>
+                                <expression name="valueExpr">if ( params["pdecTerProCod"].value != 0 )
+ {
+        false
+ }
+ else
+ {
+        true
+ }</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TERDES</property>
+                                <property name="displayName">TERDES</property>
+                                <expression name="expression">dataSetRow["TERDES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">TERDES</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <table id="8562">
+            <property name="width">0%</property>
+            <property name="dataSet">OEX-INS-001 01 (Par1)</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">VALALF</property>
+                    <property name="displayName">VALALF</property>
+                    <expression name="expression">dataSetRow["VALALF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="8571"/>
+            <detail>
+                <row id="8566">
+                    <cell id="8567">
+                        <property name="fontSize">9pt</property>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <table id="8572">
+            <property name="width">0%</property>
+            <property name="dataSet">OEX-INS-001 02 (Par2)</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">VALALF</property>
+                    <property name="displayName">VALALF</property>
+                    <expression name="expression">dataSetRow["VALALF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="8581"/>
+            <detail>
+                <row id="8576">
+                    <cell id="8577">
+                        <property name="fontSize">9pt</property>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <table id="8582">
+            <property name="width">0%</property>
+            <property name="dataSet">OEX-INS-001 03 (Par3)</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">VALALF</property>
+                    <property name="displayName">VALALF</property>
+                    <expression name="expression">dataSetRow["VALALF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="8591"/>
+            <detail>
+                <row id="8586">
+                    <cell id="8587">
+                        <property name="fontSize">9pt</property>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <table id="8592">
+            <property name="width">0%</property>
+            <property name="dataSet">OEX-INS-001 04 (Par4)</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">VALALF</property>
+                    <property name="displayName">VALALF</property>
+                    <expression name="expression">dataSetRow["VALALF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="8601"/>
+            <detail>
+                <row id="8596">
+                    <cell id="8597">
+                        <property name="fontSize">9pt</property>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <table id="8126">
+            <property name="width">1%</property>
+            <property name="dataSet">OEX-INS-001 05 (ParStk)</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">ALMCOD</property>
+                    <property name="displayName">ALMCOD</property>
+                    <expression name="expression">dataSetRow["ALMCOD"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TERCOD</property>
+                    <property name="displayName">TERCOD</property>
+                    <expression name="expression">dataSetRow["TERCOD"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">AGRTARTER</property>
+                    <property name="displayName">AGRTARTER</property>
+                    <expression name="expression">dataSetRow["AGRTARTER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CNT_SOP</property>
+                    <property name="displayName">CNT_SOP</property>
+                    <expression name="expression">dataSetRow["CNT_SOP"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CAM_FOR_EXP</property>
+                    <property name="displayName">CAM_FOR_EXP</property>
+                    <expression name="expression">dataSetRow["CAM_FOR_EXP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">INF_INS_KIT</property>
+                    <property name="displayName">INF_INS_KIT</property>
+                    <expression name="expression">dataSetRow["INF_INS_KIT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="8160"/>
+            <detail>
+                <row id="8140">
+                    <method name="onCreate"><![CDATA[//
+// Guardar en par√°metros todos los campos seleccionados
+// del conjunto de datos OEX-INS-001 05 (ParStk) para utilizarlos
+// en la construcci√≥n del resto de conjuntos de datos
+params["decAlmCod"].value    = row["ALMCOD"]
+params["decTerCod"].value    = row["TERCOD"]
+params["strAgrTarTer"].value = row["AGRTARTER"]
+params["decCntSop"].value    = row["CNT_SOP"]
+params["strCamForExp"].value = BirtStr.trimRight( row["CAM_FOR_EXP"] )
+params["strInfInsKit"].value = BirtStr.trimRight( row["INF_INS_KIT"] )
+//
+// ***************************************************************************************************
+// * CONSTRUCCION STRING DE LA CONSULTA DEL STOCK DISPONIBLE (Stock Ok - Acc.picking) x ARTICULO     *
+// * QUE SE UTILIZARA EN LOS CONJUNTOS DE DATOS OEX-INS-001 07 (Stk-Acc) Y OEX-INS-001 09 (Stk-Acc ) *
+// ***************************************************************************************************
+//                                     
+// Inicializar la string de la consulta
+params["strQryStk"].value = ''
+//
+// ----------------------------------------
+// * Extracci√≥n del stock Ok del art√≠culo *
+// ----------------------------------------
+//
+// Construir fecha sistema en formato DD/MM/YYYY
+var decDia = new Date().getDate()
+if ( decDia < 10 )
+{
+	var strDia = '0' + decDia
+}
+else
+{
+	var strDia = decDia.toString()
+}
+var decMes = new Date().getMonth() + 1
+if ( decMes < 10 )
+{
+	var strMes = '0' + decMes
+}
+else
+{
+	var strMes = decMes.toString()
+}
+var strAny = new Date().getFullYear().toString()
+var strFecSys = strDia +
+                   "/" + 
+                strMes +
+                   "/" + 
+                strAny
+//
+// Subconsulta para determinar la vida √∫til m√≠nima y 
+// m√°xima del art√≠culo permitida para la expedici√≥n
+var strDiaMinCadExp = "(CASE" +
+                 " " +   "WHEN (SELECT 1" + 
+                 " " +         "FROM   AGRTARREL p" +  
+                 " " +         "WHERE  p.AGRTARTER =" + " " + "'" + params["strAgrTarTer"].value + "'" +                                           
+                 " " +           "AND  p.AGRTARART = a.AGRTARART" +                                           
+                 " " +           "AND  p.AGRTARREL = 'EXP') = 1" +
+                 " " +     "THEN (SELECT q.DIAMINCADEXP" + 
+                 " " +           "FROM   AGRTARREL q" + 
+                 " " +           "WHERE  q.AGRTARTER =" + " " + "'" + params["strAgrTarTer"].value + "'" +                                          
+                 " " +             "AND  q.AGRTARART = a.AGRTARART" +                                           
+                 " " +             "AND  q.AGRTARREL = 'EXP')" +
+                 " " +   "ELSE   a.DIAMINCADEXP" +
+                 " " + "END)" 
+var strDiaMaxCadExp = "0"
+//
+// Si par√°metro GESTION-SOPORTES = 'S' y 
+// el tercero posee alg√∫n soporte relacionado ==>
+if ( params["decCntSop"].value > 0 )
+{           
+	params["strQryStk"].value = 
+            params["strQryStk"].value + " " + "(SELECT   COALESCE(SUM(b.CANUNI),0) AS SUM_CANUNI," +
+                                        " " +           "0                         AS SUM_CANACC" +        
+                                        " " +  "FROM     ART a" +
+                                        " " +             "INNER JOIN CNTNDO b" +
+                                        " " +                "ON b.ARTCOD = a.ARTCOD" +
+                                        " " +             "INNER JOIN ALMUBI c" +
+                                        " " +                "ON c.CNTCOD = b.CNTEXTCOD" +
+                                        " " +             "INNER JOIN CNTDOR d" +
+                                        " " +                "ON d.CNTCOD = b.CNTEXTCOD" +
+                                        " " +             "INNER JOIN DIM e" +
+                                        " " +                "ON e.DIMCOD = d.DIM" +                        
+                                        " " +  "WHERE    b.EXPORDCOD =  0" +
+                                        " " +    "AND    b.EXPORDLIN =  0" +
+                                        " " +    "AND    c.ALMCOD    =" + " " + params["decAlmCod"].value +
+                                        " " +    "AND    c.UBIEST    =  'LL'" +
+                                        " " +    "AND  ((b.NDOSIT    IN ('OK','ASPI') AND c.UBITIP IN ('RE','CM','PR')" + 
+                                        " " +                                        "AND e.CNTEXPTIP IN" + 
+                                        " " +                                           "(SELECT t.CNTEXPTIP" +
+                                        " " +                                            "FROM   TEREXPTIP u" +
+                                        " " +                                            "WHERE  t.TERCOD =" + 
+                                        " " +                                                    params["decTerCod"].value + "))" + " " + "OR" +  
+                                        " " +                                            "c.UBITIP IN ('PI'))" +
+                                        " " +    "AND  ((a.ROTTIP    =  'FC'          AND b.FECCAD -" + " " + strDiaMinCadExp + " " + ">" + 
+                                        " " +                                            "dbo.LTR_TO_DATE('" + strFecSys + 
+                                        " " +                                                             "00:00:00'," + 
+                                        " " +                                                            "'DD/MM/YYYY HH24:MI:SS'))        OR" +
+                                        " " +           "a.ROTTIP    <> 'FC')" +
+                                        " " +    "AND  ((a.ROTTIP    =  'FC'          AND" + " " + strDiaMaxCadExp + " " + "<> 0" +
+                                        " " +                                        "AND b.FECCAD -" + " " + strDiaMaxCadExp + " " + "<=" +
+                                        " " +                                            "dbo.LTR_TO_DATE('" + strFecSys + 
+                                        " " +                                                             "00:00:00'," + 
+                                        " " +                                                            "'DD/MM/YYYY HH24:MI:SS'))        OR" +
+                                        " " +           "a.ROTTIP    <> 'FC'                                                               OR" +
+                                        " " +            strDiaMaxCadExp + " " + "=  0)"  
+//         
+}
+// En el caso contrario ==> 
+else
+{
+	params["strQryStk"].value = 
+            params["strQryStk"].value + " " + "(SELECT   COALESCE(SUM(b.CANUNI),0) AS SUM_CANUNI," +
+                                        " " +           "0                         AS SUM_CANACC" + 
+                                        " " +  "FROM     ART a" +
+                                        " " +             "INNER JOIN CNTNDO b" +
+                                        " " +                "ON b.ARTCOD = a.ARTCOD" +
+                                        " " +             "INNER JOIN ALMUBI c" +
+                                        " " +                "ON c.CNTCOD = b.CNTEXTCOD" +                  
+                                        " " +  "WHERE    b.EXPORDCOD =  0" +
+                                        " " +    "AND    b.EXPORDLIN =  0" +
+                                        " " +    "AND    c.ALMCOD    =" + " " + params["decAlmCod"].value +
+                                        " " +    "AND    c.UBIEST    =  'LL'" +
+                                        " " +    "AND  ((b.NDOSIT    IN ('OK','ASPI') AND c.UBITIP IN ('RE','CM','PR'))                    OR" +
+                                        " " +                                            "c.UBITIP IN ('PI'))" +
+                                        " " +    "AND  ((a.ROTTIP    =  'FC'          AND b.FECCAD -" + " " + strDiaMinCadExp + " " + ">" + 
+                                        " " +                                            "dbo.LTR_TO_DATE('" + strFecSys + 
+                                        " " +                                                             "00:00:00'," + 
+                                        " " +                                                            "'DD/¢  5ÑR•Ë  Z∫  
+  	;	ÁÍe  ‰ 2 5ÑRÄ 
+  2/ ∆~[v `  ÁÍv 
+ 	 '’ ∆ê‚v B               Ä   B®r	     5ÑRµ5ÑVy '’Pœ`O^m|ãö©∏«÷ÂÙ!0?N]l{äô®∑∆’‰Û />M\kzâòß∂≈‘„Ú.=L[jyàó¶µƒ”‚Ò -<KZixáñ•¥√“·ˇ,;JYhwÜï§≥¬—‡Ô˛+:IXgvÖî£≤¡–ﬂÓ˝*9HWfuÑì¢±¿œﬁÌ¸)8GVetÉí°∞øŒ›Ï˚
+(7FUdsÇë†ØæÕ‹Î˙	'6ETcåõrÅêü™π»◊ÆΩÃ€Í˘&5DSbqrÅÄèû≠ÊıºÀ⁄È¯"1@≠ºÀ⁄È¯%%4CRapéù¨ª ŸË˜$3BQ`o~ç$3BQ`o~çú´∫…ÿÁˆqÄèûDSbêüÆΩÃ€Í˘&5#2AP_n}4CRapéù¨ª ŸË˜ú´∫…ÿÁˆ#2A§≥¬—‡Ô˛/>M\kzâòß∂≈‘„Ú.=L[jyàó¶µƒ”‚Ò -<KZi’‰Û xáñ•¥√“(7FUdsÇë†ØæÕ‹Î˙	'6ETcrÅêüÆΩÃ€Í˘&5DSbqÄèû≠ºÀ⁄È¯%4CRapéù¨ª ŸË˜$3BQ`o~çú´∫…ÿÁˆ#2Aí†Æ ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå   ƒ95Ñzå ! ƒ95Ñzå " ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{   ƒ95Ñzå   ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå 	 ƒ95Ñzå 
+ ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñzå  ƒ95Ñ{{ ! ƒ95Ñ{{ " ƒ95Ñ{{ # ƒ95Ñ{{ $ ƒ95Ñ{{ % ƒ95Ñ{{ & ƒ95Ñ{{ ' ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{ 	 ƒ95Ñ{{ 
+ ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{[ & ƒ95Ñ{[ ' ƒ95Ñ{[ ( ƒ95Ñ{k   ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k 	 ƒ95Ñ{k 
+ ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k  ƒ95Ñ{k   ƒ95Ñ{k ! ƒ95Ñ{k " ƒ95Ñ{k # ƒ95Ñ{k $ ƒ95Ñ{k % ƒ95Ñ{k & ƒ95Ñ{k ' ƒ95Ñ{{   ƒ95Ñ{{  ƒ95Ñ{{  ƒ95Ñ{[  ƒ95Ñ{[  ƒ95Ñ{[  ƒ95Ñ{[  ƒ95Ñ{[  ƒ95Ñ{[  ƒ95Ñ{[  ƒ95Ñ{[  ƒ95Ñ{[  ƒ95Ñ{[  ƒ95Ñ{[   ƒ95Ñ{[ ! ƒ95Ñ{[ " ƒ95Ñ{[ # ƒ95Ñ{[ $ ƒ95Ñ{[ % ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9'5Ñ{K  ƒ9>5Ñá€ 	 ƒ9D5Ñá€ 
+ ƒ9c5ÑÉº  ƒ9c5ÑÉº   ƒ9c5ÑÉº ! ƒ9c5ÑÉº " ƒ9c5ÑÉº # ƒ9c5ÑÉº $ ƒ9c5ÑÉº % ƒ9c5ÑÉº & ƒ9c5ÑÉº ' ƒ9c5ÑÉÃ   ƒ9c5ÑÉÃ  ƒ9c5ÑÉÃ  ƒ9c5ÑÉú  ƒ9c5ÑÉú   ƒ9c5ÑÉú ! ƒ9c5ÑÉú  ƒ9c5ÑÉú  ƒ9c5ÑÉú  ƒ9c5ÑÉú  ƒ9_5ÑÉ†  ƒ9_5ÑÉ†   ƒ9_5ÑÉ† ! ƒ9_5ÑÉ† " ƒ9_5ÑÉ† # ƒ9_5ÑÉ† $ ƒ9_5ÑÉ† % ƒ9_5ÑÉ† & ƒ9_5ÑÉ† ' ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG   ƒ9c5ÑÜG ! ƒ9c5ÑÜG " ƒ9c5ÑÜG # ƒ9c5ÑÜG $ ƒ9b5ÑÜ7 & ƒ9b5ÑÜ7 ' ƒ9b5ÑÜ7 ( ƒ9b5ÑÜG   ƒ9b5ÑÜG  ƒ9b5ÑÜG  ƒ9b5ÑÜG  ƒ9b5ÑÜG  ƒ9b5ÑÜG  ƒ9b5ÑÜG  ƒ9b5ÑÜG  ƒ9b5ÑÜG  ƒ9b5ÑÜG 	 ƒ9b5ÑÜG 
+ ƒ9b5ÑÜG  ƒ9b5ÑÜG  ƒ9b5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9c5ÑÜG  ƒ9-5ÑÖê  ƒ9-5ÑÖê  ƒ925ÑÖê  ƒ925ÑÖê  ƒ935ÑÖê  ƒ935ÑÖê  ƒ9H5ÑÖê  ƒ9H5ÑÖê  ƒ95ÑÖê  ƒ95ÑÖê  ƒ9_5Ñz≤  ƒ9_5Ñz≤  ƒ9_5Ñz≤ ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz® ƒ9'5Ñz®  ƒ9'5Ñz® !ƒ9'5Ñz® "ƒ9'5Ñz® #ƒ9'5Ñz® $ƒ9'5Ñz® %ƒ9'5Ñz® &ƒ9'5Ñz® 'ƒ9'5Ñz® (ƒ9'5Ñz® )ƒ9'5Ñz® *ƒ9'5Ñz® +ƒ9'5Ñz® ,ƒ9'5Ñz® -ƒ9'5Ñz∏  ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ 	ƒ9'5Ñz∏ 
+ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñz∏ ƒ9'5Ñ{+ ƒ9'5Ñ{+ ƒ9'5Ñ{+ ƒ9'5Ñ{+ ƒ9'5Ñ{+ ƒ9'5Ñ{+  ƒ9'5Ñ{+ !ƒ9'5Ñ{+ "ƒ9'5Ñ{+ #ƒ9'5Ñ{+ $ƒ9'5Ñ{+ %ƒ9'5Ñ{+ &ƒ9'5Ñ{+ 'ƒ9'5Ñ{+ (ƒ9'5Ñ{+ )ƒ9'5Ñ{;  ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; 	ƒ9'5Ñ{; 
+ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{; ƒ9'5Ñ{;  ƒ9'5Ñ{; !ƒ9'5Ñ{; "ƒ9'5Ñ{; #ƒ9'5Ñ{; $ƒ9'5Ñ{; %ƒ9'5Ñ{; &ƒ9'5Ñ{; 'ƒ9'5Ñ{; (ƒ9'5Ñ{; )ƒ9'5Ñ{; *ƒ9'5Ñ{; +ƒ9'5Ñ{; ,ƒ9'5Ñ{; -ƒ9'5Ñ{K  ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K 	ƒ9'5Ñ{K 
+ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K ƒ9'5Ñ{K  ƒ9'5Ñ{K !ƒ9'5Ñ{K "ƒ9'5Ñ{K #ƒ9'5Ñ{K $ƒ9'5Ñ{K %ƒ9'5Ñ{K &ƒ9'5Ñ{K 'ƒ9'5Ñ{K (ƒ9'5Ñ{K )ƒ9'5Ñ{K *ƒ9'5Ñ{K +ƒ9'5Ñ{K ,ƒ9'5Ñ{K -ƒ9'5Ñ{[  ƒ9'5Ñ{[ ƒ9'5Ñ{[ ƒ9*5Ñ\¬  ƒ9*5Ñ\¬ ƒ9,5Ñv) #ƒ9,5Ñv) $ƒ905Ñ\¬ ƒ905Ñ\¬ ƒ905Ñ\¬ ƒ905Ñ\¬ ƒ985Ñf  !ƒ995ÑZ· !ƒ9;5Ñv) %ƒ9;5Ñv) &ƒ9;5Ñv) 'ƒ9;5Ñv) (ƒ9;5Ñv9  ƒ9;5Ñv9 ƒ9;5Ñv9 ƒ9;5Ñv9 ƒ9<5Ñ]Á ƒ9<5Ñ]Á ƒ9=5Ñ]Á ƒ9=5Ñ]Á ƒ9F5ÑZ· "ƒ9F5ÑZ· #ƒ9F5ÑZ· $ƒ9F5ÑZ· %ƒ9L5Ñlí ƒ9M5Ñlí ƒ9P5Ñlí ƒ9S5Ñlí ƒ9\5Ñlí ƒ9]5Ñv9 	ƒ9]5Ñv9 
+ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c 	ƒ9b5Ñ{c 
+ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ9b5Ñ{c ƒ95Ñ{[ ƒ95Ñ{[ ƒ95Ñ{[ ƒ95Ñ{[ ƒ95Ñ{[ ƒ95Ñ{[ ƒ95Ñ{[ 	ƒ95Ñ{[ 
+ƒ95Ñ{[ ƒ95Ñ{[ ƒ95Ñ{[ ƒ95Ñ{[ 5É5œ ƒ5/5É5œ ƒ5/5É5œ ƒ5/5É5œ 	ƒ5/5É5œ ÄÄ¢  5ÑR¶Ë(  ∫è  	  	;	ÁÌ;  ‰2 5ÑRÄ 
+  2B ∆Ëv ¿   ÁÌ; 
+ 	 '’ ∆êQv.  Ô                Ä    ÔOM    5ÑV-5ÑS¨ GàPX«÷ÂÙ!0?N]l{äô®∑∆’‰Û />M\kzâòß∂≈‘„Ú.=L[jyàó¶µƒ”‚Ò -<KZixáñ•¥√“·ˇ,;JYhwÜï§≥¬—‡Ô˛+:IXgvÖî£≤¡–ﬂÓ˝*9HWfuÑì¢±¿œﬁÌ¸)8GVetÉí°∞øŒ›Ï˚
+(7FUdsÇë†ØæÕ‹Î˙	'6ETcrÅêüÆΩÃ€Í˘&5DSbqÄ∏O^èûm|≠ºãöÀ⁄È¯%4CRapéù¨ª ŸË˜$3BQ`o~çú´∫…ÿÁˆ#2A©ÄˇˇÄ¡ˇ¡ÄÄÄÄÄÄˇˇ0l 	¡¡¡ÄDEP_METRIC_GUID¡¡Äˇˇ¡ˇˇ¡ÄÄÄÄÄÄl 	¡¡¬9ÄDEP_TARGET_TYPE¡¬9Äˇˇ¡ˇˇ¡Ä¡/¡ÄÄ¬9l 	¡¡¡ÄMETRIC_GUID¡¡Äˇˇ¡ˇˇ¡ÄÄÄÄÄÄl 	¡¡¡	ÄTYPE_META_VER¡¡	Äˇˇ¡ˇˇ¡Ä¡/¡ÄÄ¡	l 	¡¡¬9ÄTARGET_TYPE¡¬9Äˇˇ¡ˇˇ¡Ä¡/¡ÄÄ¬9l ¡¡¬9ÄHOST_URL¡¬9ÄˇˇÄ¡ˇ¡Ä¡/¡ÄÄ¬9ˇˇNULL
+l ¡
+¡
+¬ÄCLIENT_DATA¡¬ÄˇˇÄ¡ˇ¡
+Ä¡/¡ÄÄ¬ˇˇNULLl ¡	¡	¬ÄVALUE¡¬ÄˇˇÄ¡ˇ¡	Ä¡/¡ÄÄ¬ˇˇNULLl ¡¡¬ÄNAME¡¬ÄˇˇÄ¡ˇ¡Ä¡/¡ÄÄ¬ˇˇNULLl ¡¡¡ÄIS_TOTAL¡¡ÄˇˇÄ¡ˇ¡Ä¡/¡ÄÄ¡ˇˇ'Y'l ¡¡¡!ÄACTION¡¡!ÄˇˇÄ¡ˇ¡Ä¡/¡ÄÄ¡!ˇˇNULLl ¡¡¬ÄMODULE¡¬ÄˇˇÄ¡ˇ¡Ä¡/¡ÄÄ¬ˇˇNULLl ¡¡¡ÄDURATION¡¡Ä¡
+ÄÄ¡ˇ¡ÄÄÄÄÄÄˇˇ0l ¡¡¡ÄTIME¡¡ÄˇˇÄ¡ˇ¡ÄÄÄÄÄÄˇˇSYSDATEl ¡¡¬ÄJOB_NAME¡¬Äˇˇ¡ˇˇ¡Ä¡/¡ÄÄ¬l ¡
+¡
+¬9ÄEMD_URL¡¬9ÄˇˇÄ¡ˇ¡
+Ä¡/¡ÄÄ¬9ˇˇNULL
+l ¡	¡	¬9ÄHOST_URL¡¬9ÄˇˇÄ¡ˇ¡	Ä¡/¡ÄÄ¬9ˇˇNULLl ¡¡¬ÄCLIENT_DATA¡¬ÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¬l ¡¡¡ÄFACILITY¡¡ÄˇˇÄ¡ˇ¡Ä¡/¡ÄÄ¡ˇˇ'MGMT'l ¡¡¬1Ä	ERROR_MSG¡¬1ÄˇˇÄ¡ˇ¡Ä¡/¡ÄÄ¬1ˇˇ' 'l ¡¡¡Ä	LOG_LEVEL¡¡ÄˇˇÄ¡ˇ¡Ä¡/¡ÄÄ¡ˇˇ'DEBUG'l ¡¡¡Ä
+ERROR_CODE¡¡ÄˇˇÄ¡ˇ¡ÄÄÄÄÄÄˇˇ0l ¡¡¡Ä
+OCCUR_DATE¡¡ÄˇˇÄ¡ˇ¡ÄÄÄÄÄÄˇˇSYSDATEl ¡¡¬ÄMODULE_NAME¡¬Äˇˇ¡ˇˇ¡Ä¡/¡ÄÄ¬l ¡¡¡Ä
+IS_DBMSJOB¡¡ÄˇˇÄ¡ˇ¡Ä¡/¡ÄÄ¡ˇˇ'N'
+l ¡¡¬ÄDBMS_JOBNAME¡¬ÄˇˇÄ¡ˇ¡Ä¡/¡ÄÄ¬ˇˇNULLl ¡¡¬ÄDISPLAY_NAME¡¬ÄˇˇÄ¡ˇ¡Ä¡/¡ÄÄ¬ˇˇNULLl ¡¡¬ÄJOB_NAME¡¬Äˇˇ¡ˇˇ¡Ä¡/¡ÄÄ¬l ¡¡¬9ÄDEFAULT_VALUE¡¬9ÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¬9l ¡¡¡AÄNLSID¡¡AÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¡Al ¡¡¡AÄID¡¡AÄˇˇ¡ˇˇ¡Ä¡/¡ÄÄ¡Al ¡¡¡ÄJOB_TYPE_ID¡¡Äˇˇ¡ˇˇ¡ÄÄÄÄÄÄl ¡¡¡ÄPARAM_ORDER¡¡Ä¡Ä¡ˇˇ¡ÄÄÄÄÄÄl ¡¡¬9ÄOPTION_TEXT_DEFAULT¡¬9ÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¬9l ¡¡¡AÄOPTION_TEXT_NLSID¡¡AÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¡Al ¡¡¡!ÄOPTION_VALUE¡¡!ÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¡!l ¡¡¡Ä
+IS_DEFAULT¡¡Ä¡ÄÄˇˇ¡ÄÄÄÄÄÄl ¡¡¡AÄPARAMETER_NAME¡¡AÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¡Al ¡¡¡ÄJOB_TYPE_ID¡¡ÄˇˇÄˇˇ¡ÄÄÄÄÄÄl ¡¡¡ÄPARAM_ORDER¡¡Ä¡Ä¡ˇˇ¡ÄÄÄÄÄÄl ¡¡¡AÄDEFAULT_NLSID¡¡AÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¡Al ¡¡¬)ÄDEFAULT_TEXT¡¬)ÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¬)l ¡¡¡Ä	NUM_LINES¡¡Ä¡ÄÄˇˇ¡ÄÄÄÄÄÄl ¡
+¡
+¡ÄDISPLAY_MODE¡¡Ä¡ÄÄˇˇ¡
+ÄÄÄÄÄÄl ¡	¡	¬9ÄHINT_DEFAULT¡¬9ÄˇˇÄˇˇ¡	Ä¡/¡ÄÄ¬9l ¡¡¡AÄ
+HINT_NLSID¡¡AÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¡Al ¡¡¬9ÄLABEL_DEFAULT¡¬9ÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¬9l ¡¡¡AÄLABEL_NLSID¡¡AÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¡Al ¡¡¡ÄSHOW_IN_RESULTS¡¡Ä¡ÄÄˇˇ¡ÄÄÄÄÄÄl ¡¡¡ÄSHOW_IN_CREATE¡¡Ä¡ÄÄˇˇ¡ÄÄÄÄÄÄl ¡¡¡AÄPARAMETER_NAME¡¡AÄˇˇ¡ˇˇ¡Ä¡/¡ÄÄ¡Al ¡¡¡ÄJOB_TYPE_ID¡¡Äˇˇ¡ˇˇ¡ÄÄÄÄÄÄl ¡¡¡ÄSHOW_TARGET_PROPERTIES¡¡Ä¡ÄÄ¡ˇ¡ÄÄÄÄÄÄˇˇ1 l ¡¡¬ÄTASK_HELP_TOPIC¡¬ÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¬l ¡¡¬Ä
+HELP_TOPIC¡¬ÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¬l ¡¡¬ÄCLASS¡¬ÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¬l ¡¡¬ÄURI¡¬ÄˇˇÄˇˇ¡Ä¡/¡ÄÄ¬l ¡¡¡ÄJOB_TYPE_ID¡¡Äˇˇ¡ˇˇ¡ÄÄÄÄÄÄl ¡¡¡ÄNOTIFY_STATE¡¡Ä¡Ä¡ˇˇ¡ÄÄÄÄÄÄl ¡¡¡ÄJOB_ID¡¡Äˇˇ¡ˇˇ¡ÄÄÄÄÄÄl  ¡¡¡ÄVIOLATION_GUID¡¡ÄˇˇÄˇˇ¡ÄÄÄÄÄÄl  ¡
+¡
+¡ÄTYPE¡¡ÄˇˇÄˇˇ¡
+ÄÄÄÄÄÄl  ¡	¡	¡ÄSTATUS_BUCKET¡¡Ä¡ÄÄˇˇ ƒ975Ñá®  ƒ975Ñá®  ƒ975Ñá®  ƒ975Ñá®  ƒ975Ñá®  ƒ975Ñá®  ƒ97#5Ñâå  ƒ975ÑÖ† %ƒ96Z5Ñk2 &ƒ96Z5Ñk2 'ƒ96Z5Ñk2 (ƒ96Z5Ñk2 )ƒ96Z5Ñk2 *ƒ96Z5Ñk2 +ƒ96Z5Ñk2 ,ƒ96Z5ÑkA  ƒ96\5Ñk) ƒ96\5Ñk) ƒ96_5ÑkA ƒ96_5ÑkA ƒ96_5ÑkA ƒ96_5ÑkA ƒ96_5ÑkA ƒ96_5ÑkA ƒ96_5ÑkA ƒ96_5ÑkA ƒ96a5Ñk) ƒ96a5Ñk) ƒ96b5Ñk ƒ96b5Ñk ƒ96b5Ñk ƒ96b5Ñk) ƒ96b5Ñk) ƒ96b5Ñk) ƒ96b5Ñk) 	ƒ96b5Ñk) 
+ƒ96b5Ñk) ƒ96b5Ñk) ƒ96b5Ñk) ƒ96b5Ñk) ƒ96c5Ñc #ƒ96c5Ñc $ƒ975ÑkA 	ƒ975ÑkA 
+ƒ975ÑkA ƒ975ÑkA ƒ975ÑkA ƒ975ÑkA ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ ƒ975ÑuÇ  ƒ975ÑuÇ !ƒ975ÑuÇ "ƒ975ÑuÇ #ƒ975ÑuÇ $ƒ975ÑuÇ %ƒ975ÑuÇ &ƒ975ÑuÇ 'ƒ975ÑuÇ (ƒ975ÑuÇ )ƒ975ÑuÇ *ƒ975ÑuÇ +ƒ975ÑuÇ ,ƒ975ÑuÇ -ƒ975ÑuÜ ƒ975ÑuÜ ƒ975ÑuÜ ƒ975ÑuÜ ƒ975ÑuÜ ƒ975ÑuÜ ƒ975ÑuÜ ƒ975ÑuÜ ƒ975ÑuÜ ƒ975ÑuÜ ƒ975ÑuÜ  ƒ975ÑuÜ !ƒ975ÑuÜ "ƒ975ÑuÜ #ƒ975ÑuÜ $ƒ975ÑuÜ %ƒ975ÑuÜ &ƒ975ÑuÜ 'ƒ975ÑuÜ (ƒ975ÑuÜ )ƒ975ÑuÜ *ƒ975ÑuÜ +ƒ975ÑuÜ ,ƒ975ÑuÜ -ƒ975Ñuä ƒ975Ñuä ƒ975Ñuä ƒ975Ñuä ƒ975Ñuä ƒ975Ñuä ƒ975Ñuä ƒ975Ñuä ƒ975Ñuä ƒ975Ñuä ƒ975Ñuä ƒ975Ñuä  ƒ975Ñuä !ƒ975Ñuä "ƒ975Ñuä #ƒ975Ñuä $ƒ975Ñuä %ƒ975Ñuä &ƒ975Ñuä 'ƒ975Ñuä (ƒ975Ñuä )ƒ975Ñuä *ƒ975Ñuä +ƒ975Ñuí  ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí 	ƒ975Ñuí 
+ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuí ƒ975Ñuñ  ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ 	ƒ975Ñuñ 
+ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuñ ƒ975Ñuö  ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö 	ƒ975Ñuö 
+ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñuö ƒ975Ñk ƒ975Ñk ƒ975Ñk ƒ975Ñk ƒ975Ñc %ƒ975Ñc &ƒ975Ñc 'ƒ975Ñc (ƒ975Ñc )ƒ975Ñc *ƒ975Ñ]B !ƒ975Ñ]B "ƒ975Ñ]B #ƒ975Ñ]B $ƒ975Ñ]B %ƒ975Ñ]B &ƒ975Ñ]B 'ƒ975Ñ]B (ƒ975Ñ]B )ƒ975Ñ]B *ƒ975Ñ]B +ƒ975Ñ]B ,ƒ975Ñ]R  ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R 	ƒ975Ñ]R 
+ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñué ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ975Ñ]R ƒ97 5Ñc6 ƒ97 5Ñc6 ¨  	 	 A¬  A¬ √N¨    A¬  A¬ √N¨    A¬   A¬  √N(¢  5ÑRßËç  w˙  
+  	;	Ë?  ‰2 5ÑRÄ 
+  2/ ∆í_v Ä   Ë
+Ä 
+ 	 '’ ∆òQvD “                Ä   “» >    5ÑU
+5Ñé0 &DP#|∫…ÿÁœﬁ~çÌ¸)8ú´˝ˆGVË˜#2AP_n}å	”õ™π»◊Êı"1@O*9HWfuÑì¢±¿˛+:IXgvÖî£≤¡–ﬂÓ
+·
+
+ˇ,;JYhwÜï§≥¬—‡Ô
+á
+ñ
+•
+¥^m|ãö©∏«÷ÂÙ!	‚	Ò$
+ 
+
+
+-0?N]l{äô
+<
+K®∑
+Z
+i∆’‰Û />M\kzâòß∂≈‘„Ú.=L[jyàó		¶µƒ”‚Ò -<KZixáñ•¥√“·ˇ,;JYhwÜï§≥¬—‡Ô
+√
+“
+x˛+:I	X	.	=gv	L	[	jÖî£≤¿	y	à	ó	¶	µ	ƒŒ›Ï˚∂≈
+(73BQ`‘„FUÚâòßö©dsÇë4oCRap†ØæÕéù¨ª ∏«÷ÂÙ!0?N]l{äô®∑∆’‰Û />M\kz™π»◊Êı"1@O^Ÿm|ã3BQ`o~çú´∫…ÿÁ‹Îˆ(7#2AP_$n}åõF˙	'6ETcrÅêüÆΩÃ€Í˘&5DSbqUcÄèû≠ºÀ⁄È¯qÄèû%4≠ºÀ⁄È¯CRapéù¨ª ŸË˜%$3BQ`o˚~çú´
+∫…ÏetÉí°∞øŒ›ÿÁˆ#2A 5ÄÇg 9868-2006      ¡ 5ÄÇg 9869-1402      ¡ 5ÄÇg  ƒ4]T5Ñë≥  ƒ4^5Ñë≥  ƒ4]T5Ñë≥  ƒ4]A5Ñëø ) ƒ4]A5Ñëœ   ƒ4]A5Ñëœ  ƒ4]B5Ñëœ  ƒ4]B5Ñëœ  ƒ4]B5Ñëœ  ƒ4]B5Ñëœ  ƒ4]F5Ñëœ  ƒ4]F5Ñëœ  ƒ4]H5Ñëœ  ƒ4]H5Ñëœ 	 ƒ4]I5Ñëœ 
+ ƒ4]I5Ñëœ  ƒ4]N5Ñëœ  ƒ4]N5Ñëœ  ƒ4]S5Ñëœ  ƒ4]S5Ñëœ  ƒ4]S5Ñëœ  ƒ4]S5Ñëœ  ƒ4]S5Ñëœ  ƒ4]S5Ñëœ  ƒ4]T5Ñëœ  ƒ4]T5Ñëœ  ƒ4]T5Ñëœ  ƒ4]T5Ñëœ  ƒ4]95Ñëø  ƒ4]95Ñëø  ƒ4]95Ñëø  ƒ4]95Ñëø  ƒ4]95Ñëø  ƒ4]:5Ñëø  ƒ4]:5Ñëø  ƒ4]:5Ñëø   ƒ4]:5Ñëø ! ƒ4]:5Ñëø " ƒ4]:5Ñëø # ƒ4]=5Ñëø $ ƒ4]=5Ñëø % ƒ4]?5Ñëø & ƒ4]?5Ñëø ' ƒ4]A5Ñëø ( ƒ4]5ÑÜØ  ƒ4]5ÑÜØ  ƒ4]45ÑÜü $ ƒ4]45ÑÜü % ƒ4]45ÑÜü & ƒ4]45ÑÜü ' ƒ4]45ÑÜü ( ƒ4]45ÑÜü ) ƒ4]45ÑÜü * ƒ4]45ÑÜØ   ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ 	 ƒ4]45ÑÜØ 
+ ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]45ÑÜØ  ƒ4]65ÑÜØ  ƒ4]65ÑÜØ  ƒ4]75ÑÜØ  ƒ4]75ÑÜØ  ƒ4]95ÑÜØ  ƒ4]5ÑÜü  ƒ4]5ÑÜü   ƒ4]5ÑÜü ! ƒ4]5ÑÜü  ƒ4]5ÑÜü  ƒ4]5ÑÜü  ƒ4]5ÑÜü  ƒ4]5ÑÜü  ƒ4\95ÑÜ´  ƒ4\95ÑÜ´  ƒ4\H5ÑÜ´  ƒ4\Q5ÑÜ´  ƒ4\Q5ÑÜ´  ƒ4\U5ÑÜ´  ƒ4\W5ÑÜ´  ƒ4\Y5ÑÜ´  ƒ4]5ÑÜ´  ƒ4]5ÑÜ´  ƒ4]5ÑÜ´  ƒ4]5ÑÜ´  ƒ4]5ÑÜ´  ƒ4]5ÑÜ´  ƒ4\5ÑÜ´  ƒ4\(5ÑÜ´  ƒ4\(5ÑÜ´  ƒ4\,5ÑÜ´  ƒ4\,5ÑÜ´ 	 ƒ4\-5ÑÜ´ 
+ ƒ4\-5ÑÜ´  ƒ4\05ÑÜ´  ƒ4\05ÑÜ´  ƒ4\45ÑÜ´  ƒ4\45ÑÜ´  ƒ4\E5ÑÜ´  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\C5Ñàj  ƒ4\C5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj 	 ƒ4\ 5Ñàj 
+ ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5ÑàZ  ƒ4\ 5ÑàZ   ƒ4\ 5ÑàZ ! ƒ4\ 5ÑàZ " ƒ4\ 5ÑàZ # ƒ4\ 5ÑàZ $ ƒ4\ 5ÑàZ % ƒ4\ 5ÑàZ & ƒ4\ 5ÑàZ ' ƒ4\ 5ÑàZ ( ƒ4\ 5Ñàj   ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4\ 5Ñàj  ƒ4[M5Ñàf  ƒ4[M5Ñàf  ƒ4\5Ñàf  ƒ4\5Ñàf  ƒ4\5Ñàf  ƒ4\5Ñàf  ƒ4\5Ñàf  ƒ4\5Ñàf  ƒ4\5Ñàf  ƒ4\5Ñàf  ƒ4\5Ñàf   ƒ4\5Ñàf ! ƒ4\5Ñàf " ƒ4\5Ñàf # ƒ4[?5ÑàV % ƒ4[?5ÑàV & ƒ4[C5ÑàV ' ƒ4[C5ÑàV ( ƒ4[D5Ñàf   ƒ4[D5Ñàf  ƒ4[J5Ñàf  ƒ4[J5Ñàf  ƒ4[V5Ñàf  ƒ4[V5Ñàf  ƒ4^+5ÑÑ> ( ƒ4^+5ÑÑN   ƒ4^+5ÑÑN  ƒ4^+5ÑÑN  ƒ4^+5ÑÑN  ƒ4^+5ÑÑN  ƒ4^+5ÑÑN  ƒ4^+5ÑÑN  ƒ4^+5ÑÑN  ƒ4^+5ÑÑ> ' ƒ4^%5ÑÜ  ƒ4^)5ÑÜ  ƒ4]>5ÑÜ  ƒ4]Q5ÑÜ  ƒ4]R5ÑÜ  ƒ4]X5ÑÜ  ƒ4^5ÑÜ  ƒ4^5ÑÜ  ƒ4^	5ÑÜ 	 ƒ4^	5ÑÜ 
+ ƒ4^5ÑÜ  ƒ4^5ÑÜ  ƒ4^5ÑÜ  ƒ4^5ÑÜ  ƒ4^5ÑÜ  ƒ4^5ÑÜ  ƒ4^5ÑÜ  ƒ4^5ÑÜ  ƒ4^5ÑÜ  ƒ4^5ÑÜ  ƒ4^5ÑÜ  ƒ4]5ÑÜ   ƒ4]!5ÑÜ ! ƒ4]!5ÑÜ " ƒ4]#5ÑÜ # ƒ4]#5ÑÜ $ ƒ4]*5ÑÜ % ƒ4]*5ÑÜ & ƒ4],5ÑÜ   ƒ4],5ÑÜ  ƒ4].5ÑÜ ' ƒ4].5ÑÜ ( ƒ4]>5ÑÜ  ƒ4[c5ÑÜ  ƒ4[c5ÑÜ  ƒ4[c5ÑÜ  ƒ4[c5ÑÜ  ƒ4\*5ÑÜ  ƒ4]5ÑÜ  ƒ4]5ÑÜ  ƒ4]5ÑÜ  ƒ4]5ÑÜ  ƒ4]5ÑÜ  ƒ4[A5ÑÜ
+ ' ƒ4[A5ÑÜ
+ ( ƒ4[K5ÑÜ   ƒ4[K5ÑÜ ƒ4[<5Ñe• ƒ4[<5Ñe• ƒ4[=5Ñ~ ƒ4[=5Ñ~ ƒ4[R5Ñ~ 	ƒ4[R5Ñ~ 
+ƒ4\5Ñ~ ƒ4\5Ñ~ ƒ4\5Ñ~ ƒ4\5Ñ~ ƒ4\5Ñ]ó  ƒ4\5Ñ]ó ƒ4\
+5Ñb• ƒ4\
+5Ñb• ƒ4\
+5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\5Ñb• ƒ4\%5Ñb• ƒ4\%5Ñb•  ƒ4\%5Ñb• !ƒ4\%5Ñb• "ƒ4\%5Ñb• #ƒ4\%5Ñb• $ƒ4\%5Ñb• %ƒ4\%5Ñb• &ƒ4\%5Ñb• 'ƒ4\%5Ñb• (ƒ4\%5Ñb• )ƒ4\%5Ñb• *ƒ4\%5Ñb• +ƒ4\%5Ñbµ  ƒ4\.5Ñtl ƒ4\.5Ñtl  ƒ4\.5Ñtl !ƒ4\.5Ñtl "ƒ4\/5Ñtl #ƒ4\/5Ñtl $ƒ4\/5Ñtl %ƒ4\/5Ñtl &ƒ4\35Ñ]ó ƒ4\35Ñ]ó ƒ4\65Ñ{‚ ƒ4\65Ñ{‚ ƒ4\65Ñ{‚ ƒ4\65Ñ{‚ ƒ4\65Ñ{‚ ƒ4\65Ñ{‚ ƒ4\65Ñ{‚  ƒ4\65Ñ{‚ !ƒ4\65Ñ{‚ "ƒ4\65Ñ{‚ #ƒ4\65Ñ{‚ $ƒ4\65Ñ{‚ %ƒ4\65Ñ{‚ &ƒ4\65Ñ{‚ 'ƒ4\65Ñ{‚ (ƒ4\65Ñ{Ú  ƒ4\65Ñ{Ú ƒ4\65Ñ{Ú ƒ4\65Ñ{Ú ƒ4\65Ñ{Ú ƒ4\65Ñ{Ú ƒ4\65Ñ{Ú ƒ4\65Ñ{Ú ƒ4\65Ñ{Ú ƒ4\65Ñ{Ú 	ƒ4\65Ñ{Ú 
+ƒ4\65Ñ~ ƒ4\65Ñ~ ƒ4\65Ñ~ ƒ4\65Ñ~ ƒ4\85Ñe• ƒ4\85Ñe• ƒ4\:5ÑX≈ *ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{Ú ƒ4\<5Ñ{ˆ ƒ4\<5Ñ{ˆ ƒ4\<5Ñ{ˆ ƒ4\<5Ñ{ˆ ƒ4\<5Ñ{ˆ ƒ4\<5Ñ{ˆ ƒ4\<5Ñ{ˆ ƒ4\<5Ñ{ˆ  ƒ4\<5Ñ{ˆ !ƒ4\<5Ñ{ˆ "ƒ4\<5Ñ{ˆ #ƒ4\<5Ñ{ˆ $ƒ4\<5Ñ{ˆ %ƒ4\<5Ñ{ˆ &ƒ4\<5Ñ{ˆ 'ƒ4\?5ÑX≈ +ƒ4\A5Ñ]ó ƒ4\A5Ñ]ó ƒ4\B5Ñ|  ƒ4\B5Ñ| ƒ4\B5Ñ| ƒ4\B5Ñ| ƒ4\B5Ñ| ƒ4\B5Ñ| ƒ4\G5Ñ| ƒ4\G5Ñ| ƒ4\G5Ñ| ƒ4\G5Ñ| 	ƒ4\G5Ñ| 
+ƒ4\G5Ñ| ƒ4\L5Ñbµ ƒ4\R5Ñbµ ƒ4\R5Ñbµ ƒ4\[5Ñbµ ƒ4\c5Ñbµ ƒ4\c5Ñbµ ƒ4]5Ñtl 'ƒ4]5Ñtl (ƒ4]5Ñeô ƒ4]5Ñe• ƒ4]5Ñtl )ƒ4]5Ñtl *ƒ4]5Ñeô ƒ4]5Ñeô ƒ4]5Ñtl +ƒ4]5Ñtl ,ƒ4]5Ñeô ƒ4]5Ñeô ƒ4]5Ñt|  ƒ4]5Ñt| ƒ4]5Ñt| ƒ4]5Ñt| ƒ4]$5Ñeô  ƒ4]$5Ñeô !ƒ4]'5Ñl± ƒ4]'5Ñl± ƒ4]K5Ñeô "ƒ4]K5Ñeô #ƒ4]Y5Ñ| ƒ4]Z5Ñ| ƒ4]]5Ñeô $ƒ4]]5Ñeô %ƒ4]^5Ñ{˙ ƒ4]^5Ñ{˙ ƒ4]^5Ñ{˙ ƒ4]^5Ñ{˙ ƒ4]^5Ñ{˙ ƒ4]^5Ñ{˙  ƒ4]_5Ñeô &ƒ4]_5Ñeô 'ƒ4]b5Ñeô (ƒ4]b5Ñeô )ƒ4]d5Ñ{˙ ƒ4]d5Ñ{˙ ƒ4]d5Ñ{˙ ƒ4]d5Ñ| ƒ4]d5Ñ| ƒ4]d5Ñ| ƒ4]d5Ñ| ƒ4]d5Ñ| ƒ4]d5Ñ| ƒ4]d5Ñ| ƒ4]d5Ñ| ƒ4]d5Ñ| ƒ4^5Ñ{˙ ƒ4^5Ñ{˙ ƒ4^5Ñbµ ƒ4^5Ñbµ ƒ4^5Ñbµ 	ƒ4^5Ñbµ 
+ƒ4^5Ñbµ ƒ4^5Ñbµ ƒ4^5Ñbµ ƒ4^5Ñ{˙ !ƒ4^5Ñ{˙ "ƒ4^5Ñe©  ƒ4^5Ñe© ƒ4^5Ñbµ ƒ4^5Ñbµ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^5Ñbπ ƒ4^&5Ñe© ƒ4^&5Ñe© ƒ4^(5Ñe© ƒ4^(5Ñe© ƒ4^*5Ñ]ó ƒ4^*5Ñ]ó ƒ4^05Ñbπ  ƒ4^05Ñbπ !ƒ4^05Ñbπ "ƒ4^05Ñbπ #ƒ4^05Ñbπ $ƒ4^05Ñbπ %ƒ4^05Ñbπ &ƒ4^05Ñbπ '                                        'E  5É˚´5ÄÇ             Äç¢  5ÑR®Ë  ±>    	;	ÁÚI  ‰2 5ÑRÄ 
+  2 ∆ÇTv ‡   ÁÒ´ 
+ 	 '’ ∆öKv& Q                Ä   Q∆ëÀ    5ÑSÁ5ÑV( ‹ΩPÄ∏«÷ÂÙ!0?"1@O^m|ãöN]l{©BQ`o~çú´bq∫äô…ÿÁÄèû≠ºÀ⁄È¯ˆ#2AP_n}åõ™π»◊Êı¨ª ŸË˜$3®∑∆’‰Û />M\kzâòß∂≈‘„Ú.=L[jyàó¶µƒ”‚Ò -<KZixáñ•%4CRap¥√“·ˇ,;JYhwÜï§≥€Í˘ë†¬—‡Ô˛+:IXgvÖØæÕ‹Î˙î£≤¡–ﬂÓ˝	*9HWfuÑì¢±¿œﬁÌ¸)8GVetÉí°∞ø'6Œ›Ï˚
+(7FUdsÇë†ØæÕ‹Î˙	'ET6ETcrÅêcrüÆΩÃ€Í˘&5DÅêSbéù&5DSqÄèû≠ºÀ⁄È¯%4CRapéù¨ª ŸË˜$3BQ`üÆo~çú´∫…ÿÁˆΩÃ#2A	Ã	›	Ó	ˇ
+ù
+!
+2
+C
+T
+eß∏du
+v
+á
+òÜ
+©
+∫
+À…⁄VgxâÎ¸ ö´ºÆÕﬁÔ	 /@I		"	3	D	U	f¨QbsÑï¶∑ΩŒﬂb
+˛»ŸÍ˚Z#4kE'õ.? xr
+5ÅF  xr
+5ÅF!   xr
+5ÅF  xr	
+5ÅF  xr	05ÅF  xr
+5ÅF  xr
+5ÅF  xr
+5ÅF  xr
+5ÅF  xr
+5ÅF  xr5ÅF  xr-5ÅF  xr8:5ÅF.  xr5ÅF.  xr
+5ÅF.  xr&5ÅF.  xr(5ÅF.  xr(*5ÅF.  xr2"5ÅF.  xr65ÅF. 	 xr725ÅF. 
+ xr785ÅF.  xr885ÅF.  xr2 5ÅF.  xr(*5ÅF.  xr5ÅFË  xr5ÅFË  xr5ÅFË  xr /5ÅF¯   xr"5ÅF¯  xr#.5ÅF¯  xr%&5ÅF¯  xr'5ÅF¯  xr&)5ÅF¯  xr:5ÅF¯  xr775ÅFË 
+ xr8.5ÅFË  xr95ÅFË  xr<5ÅFË  xr'5ÅFË  xr	5ÅFË  xr
+75ÅFË  xr5ÅFË  xr5ÅFË  xr95ÅFË  xr*5ÅFË  xr5ÅFË  xr5ÅFË  xr5ÅFË  xr%5ÅFË  xr.5ÅFË  xr/5ÅFË  xr.5ÅFË  xr5ÅFÁ  xr)5ÅFÁ  xr%	5ÅF˜   xr) 5ÅF˜  xr,95ÅF˜  xr.5ÅF˜  xr/5ÅF˜  xr3	5ÅF˜  xr45ÅF˜  xr85ÅFÁ  xr5ÅFó  xr'5ÅFá  xr'5ÅFá  xr(5ÅFá  xr(5ÅFá  xr5ÅFá  xr5ÅFá  xr5ÅFá  xr5ÅFá  xr5ÅFó  xr5ÅFó   xr4*5ÅFá  xr435ÅFá 	 xr445ÅFá  xr445ÅFá 
+ xr725ÅFá  xr735ÅFá  xr735ÅFá  xr:+5ÅFá  xr:35ÅFá  xr:45ÅFá  xr:45ÅFá  xr#5ÅFá  xr+5ÅFá  xr35ÅFá  xr5ÅFá  xr&5ÅFá  xr'5ÅFá  xr8.5ÅFˆ  xr
+;5ÅFÜ  xr"
+5ÅFÜ  xr"5ÅFÜ  xr"5ÅFÜ  xr"'5ÅFÜ  xr".5ÅFÜ  xr"65ÅFÜ  xr"85ÅFÜ  xr"85ÅFÜ  xr*5ÅFÜ  xr*5ÅFÜ  xr**5ÅFÜ   xr*,5ÅFÜ  xr*,5ÅFñ   xr.
+5ÅFñ  xr.5ÅFñ  xr.5ÅFñ  xr15ÅFñ  xr15ÅFñ  xr15ÅFñ  xr8#5ÅF‰  xr:	5ÅF‰  xr55ÅFt  xr245ÅFt  xr55ÅFt  xr.5ÅFt  xr5ÅFt  xr5ÅFt  xr,5ÅFt 	 xr-:5ÅFt 
+ xr0 ƒ0c:5Ñëé ! ƒ0c:5Ñëé " ƒ0cI5Ñëé # ƒ0cI5Ñëé $ ƒ0cJ5Ñëé % ƒ0cJ5Ñëé & ƒ0cM5Ñëé ' ƒ0cM5Ñëé ( ƒ0cX5Ñëû   ƒ0cX5Ñëû  ƒ0c_5Ñëû  ƒ0c_5Ñëû  ƒ0d5Ñëû  ƒ0d5Ñëû  ƒ0d&5Ñëû  ƒ0d&5Ñëû  ƒ0dF5Ñëû  ƒ0dF5Ñëû 	 ƒ15Ñëû 
+ ƒ15Ñëû  ƒ1!5Ñëû  ƒ1!5Ñëû  ƒ0c85Ñëé  ƒ0c85Ñëé  ƒ0c95Ñëé  ƒ0c95Ñëé   ƒ0dL5ÑÇÂ  ƒ0dM5ÑÇÂ  ƒ0dM5ÑÇÂ  ƒ0dN5ÑÇÂ  ƒ0dN5ÑÇÂ  ƒ0bS5ÑÇÂ  ƒ0bS5ÑÇÂ 	 ƒ0b^5ÑÇ’ - ƒ0b^5ÑÇÂ   ƒ0b^5ÑÇÂ  ƒ0b^5ÑÇÂ  ƒ0b^5ÑÇÂ  ƒ0b^5ÑÇÂ  ƒ0b^5ÑÇÂ  ƒ0b^5ÑÇÂ  ƒ0b^5ÑÇÂ  ƒ0c#5ÑÇÂ 
+ ƒ0c#5ÑÇÂ  ƒ0c$5ÑÇÂ  ƒ0c$5ÑÇÂ  ƒ0c%5ÑÇÂ  ƒ0c%5ÑÇÂ  ƒ0c'5ÑÇÂ  ƒ0c'5ÑÇÂ  ƒ0dK5ÑÇÂ  ƒ0dK5ÑÇÂ  ƒ0dL5ÑÇÂ  ƒ0b^5ÑÑ› " ƒ0b^5ÑÑ› # ƒ0b^5ÑÑ› $ ƒ0b^5ÑÑ› % ƒ0b^5ÑÑ› & ƒ0b^5ÑÑ› ' ƒ0b^5ÑÑ› ( ƒ0b^5ÑÑ› ) ƒ0b^5ÑÑ› * ƒ0b^5ÑÑ› + ƒ0bN5ÑÑ› 	 ƒ0bO5ÑÑ› 
+ ƒ0bP5ÑÑ›  ƒ0bP5ÑÑ›  ƒ0bQ5ÑÑ›  ƒ0bQ5ÑÑ›  ƒ0bR5ÑÑ›  ƒ0bR5ÑÑ›  ƒ0bT5ÑÑ›  ƒ0bY5ÑÑ›  ƒ0b[5ÑÑ›  ƒ0b[5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›  ƒ0b^5ÑÑ›   ƒ0b^5ÑÑ› ! ƒ0bM5ÑÑ›   ƒ0b:5ÑÑŸ  ƒ0b>5ÑÑŸ   ƒ0b?5ÑÑŸ ! ƒ0b@5ÑÑŸ " ƒ0bA5ÑÑŸ # ƒ0bB5ÑÑŸ $ ƒ0bC5ÑÑŸ % ƒ0bD5ÑÑŸ & ƒ0bE5ÑÑŸ ' ƒ0bL5ÑÑŸ (ƒ0b65ÑW
+ ƒ0b65ÑW
+ ƒ0b65ÑW
+ ƒ0b65ÑW
+ ƒ0b75ÑV˛ ƒ0b75ÑV˛ ƒ0b75ÑV˛ ƒ0b75ÑV˛ ƒ0b95ÑV˛ ƒ0b95ÑV˛ ƒ0bH5ÑV˛ ƒ0bH5ÑV˛ ƒ0bJ5ÑV˛ ƒ0bJ5ÑV˛  ƒ0bW5ÑV˛ !ƒ0bW5ÑV˛ "ƒ0b`5ÑV˛ #ƒ0b`5ÑV˛ $ƒ0bd5ÑcÏ 	ƒ0bd5ÑcÏ 
+ƒ0c5ÑcÏ ƒ0c5ÑcÏ ƒ0c5ÑcÏ ƒ0c5ÑcÏ ƒ0c5ÑcÏ ƒ0c5ÑcÏ ƒ0c5ÑcÏ ƒ0c5ÑcÏ ƒ0c5ÑcÏ ƒ0c5ÑcÏ ƒ0c5ÑcÏ ƒ0c5ÑcÏ ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# 	ƒ0c5Ñf# 
+ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5ÑV˛ %ƒ0c5ÑV˛ &ƒ0c5ÑV˛ 'ƒ0c5ÑV˛ (ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5Ñf# ƒ0c5ÑV˛ )ƒ0c5ÑW  ƒ0c5ÑW ƒ0c5ÑW ƒ0c5ÑW ƒ0c5ÑW ƒ0c"5ÑW ƒ0c"5ÑW ƒ0c-5Ñ]» ƒ0c-5Ñ]» ƒ0c.5Ñ]» ƒ0c.5Ñ]» ƒ0c/5ÑÖŸ ƒ0c/5ÑÖŸ ƒ0c55Ñj– ƒ0c55Ñj– ƒ0c65ÑÖŸ ƒ0c65ÑÖŸ ƒ0c65ÑÖŸ 	ƒ0c65ÑÖŸ 
+ƒ0c65ÑÖŸ ƒ0c65ÑÖŸ ƒ0c65ÑÖŸ ƒ0c65ÑÖŸ ƒ0c65ÑÖŸ ƒ0c65ÑÖŸ ƒ0c=5ÑW ƒ0c=5ÑW ƒ0c?5Ñj– ƒ0c?5Ñj– ƒ0cB5Ñ\Ä !ƒ0cB5Ñ\Ä "ƒ0cB5Ñ\Ä #ƒ0cB5Ñ\Ä $ƒ0cB5ÑcÏ ƒ0cB5ÑcÏ ƒ0cB5ÑcÏ ƒ0cB5ÑcÏ ƒ0cF5Ñu? ƒ0cF5Ñu? ƒ0cN5Ñ\Ä %ƒ0cN5Ñ\Ä &ƒ0cR5Ñ\Ä 'ƒ0cR5Ñ\Ä (ƒ0cU5Ñu? 	ƒ0cU5Ñu? 
+ƒ0cV5Ñ\Ä )ƒ0cV5Ñ\Ä *ƒ0cW5Ñ\Ä +ƒ0cW5Ñ\Ä ,ƒ0cY5ÑW 	ƒ0cY5ÑW 
+ƒ0c[5Ñf# ƒ0c[5Ñf# ƒ0c]5ÑW ƒ0c]5ÑW ƒ0c^5Ñ\ê  ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê 	ƒ0c^5Ñ\ê 
+ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c^5Ñ\ê ƒ0c`5ÑÖŸ ƒ0c`5ÑÖŸ ƒ0c`5ÑÖŸ ƒ0c`5ÑÖŸ ƒ0cb5Ñu? ƒ0cb5Ñu? ƒ0cd5ÑW ƒ0cd5ÑW ƒ0d5Ñu? ƒ0d5Ñu? ƒ0d5ÑÖŸ ƒ0d5ÑÖŸ ƒ0d5Ñu? ƒ0d5Ñu? ƒ0d5ÑÖŸ ƒ0d5ÑÖŸ ƒ0d5ÑW ƒ0d5ÑW ƒ0d5ÑW ƒ0d5ÑW ƒ0d5Ñbî &ƒ0d5Ñbî 'ƒ0d5ÑÖŸ ƒ0d5ÑÖŸ ƒ0d5ÑÖŸ ƒ0d5ÑÖŸ ƒ0d5ÑÖŸ ƒ0d5ÑÖŸ ƒ0d"5ÑÖŸ ƒ0d"5ÑÖŸ  ƒ0d%5Ñbî (ƒ0d+5ÑÖŸ !ƒ0d+5ÑÖŸ "ƒ0d55ÑÖŸ #ƒ0d55ÑÖŸ $ƒ0d85Ñbî )ƒ0d:5Ñbî *ƒ0d<5Ñbî +ƒ0d>5Ñb§  ƒ0dC5ÑÖŸ %ƒ0dC5ÑÖŸ &ƒ0dE5Ñ\ê ƒ0dE5Ñ\ê ƒ0dJ5Ñ\ê ƒ0dJ5Ñ\ê ƒ0dQ5Ñ\ê ƒ0dQ5Ñ\ê ƒ0dR5ÑÖÕ ƒ0dR5ÑÖÕ ƒ0dV5Ñl  ƒ0dW5Ñl   ƒ0dY5Ñ\ê ƒ0dY5Ñ\ê ƒ0dZ5Ñb§ ƒ0d\5Ñb§ ƒ0db5ÑÖÕ  ƒ0db5ÑÖÕ !ƒ15Ñ\ê ƒ15Ñ\ê ƒ15ÑW ƒ15ÑW ƒ15ÑW ƒ15ÑW ƒ15Ñ\Ñ %ƒ15Ñ\Ñ &ƒ1	5Ñ\Ñ 'ƒ1	5Ñ\Ñ (ƒ1
+5ÑÖÕ "ƒ1
+5ÑÖÕ #ƒ1
+5ÑÖÕ $ƒ1
+5ÑÖÕ %ƒ15Ñu# ƒ15Ñu# ƒ15Ñu# ƒ15Ñu# ƒ15Ñu# ƒ15Ñu# ƒ15Ñu# ƒ15Ñu# ƒ15Ñb§ ƒ15ÑW ƒ15ÑW ƒ15Ñb§ ƒ15ÑW ƒ15ÑWa ƒ15ÑÖÕ &ƒ15ÑÖÕ 'ƒ15ÑÖÕ (ƒ15ÑÖÕ )ƒ1 5Ñb§ ƒ1"5ÑWa ƒ1"5ÑWa ƒ1'5ÑWa ƒ1'5ÑWa                                         úø  5Äﬁu5ÄR¡¡ ˇˇ¬>¬ATze">9pt</property>
+                        <data id="8301">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">UNIEXP</property>
+                        </data>
+                    </cell>
+                    <cell id="8241">
+                        <property name="fontSize">9pt</property>
+                        <label id="8303">
+                            <text-property name="text" key="+"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="8226">
+                        <property name="fontSize">9pt</property>
+                        <data id="8300">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">decStkDis_UniMin</property>
+                                    <expression name="expression">params["decStkDis_UniMin"].value</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">decStkDis_UniMin</property>
+                        </data>
+                    </cell>
+                    <cell id="8231">
+                        <property name="fontSize">9pt</property>
+                        <data id="8302">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">UNIMIN</property>
+                        </data>
+                    </cell>
+                    <cell id="8321">
+                        <property name="fontSize">9pt</property>
+                        <data id="8335">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">is-true</property>
+                                    <property name="color">#FF0000</property>
+                                    <expression name="testExpr">if ( params["decCanFal_UniExp"].value > 0
+            ||
+     params["decCanFal_UniMin"].value > 0 )
+{
+        true
+}
+else
+{
+        false
+}</expression>
+                                </structure>
+                            </list-property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">decCanFal_UniExp</property>
+                                    <expression name="expression">params["decCanFal_UniExp"].value</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">decCanFal_UniExp</property>
+                        </data>
+                    </cell>
+                    <cell id="8326">
+                        <property name="fontSize">9pt</property>
+                        <data id="8329">
+                            <property name="textAlign">left</property>
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">is-true</property>
+                                    <property name="color">#FF0000</property>
+                                    <expression name="testExpr">if ( params["decCanFal_UniExp"].value > 0
+            ||
+     params["decCanFal_UniMin"].value > 0 )
+{
+        true
+}
+else
+{
+        false
+}</expression>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">UNIEXP</property>
+                        </data>
+                    </cell>
+                    <cell id="8316">
+                        <property name="fontSize">9pt</property>
+                        <label id="8330">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">is-true</property>
+                                    <property name="color">#FF0000</property>
+                                    <expression name="testExpr">if ( params["decCanFal_UniExp"].value > 0
+            ||
+     params["decCanFal_UniMin"].value > 0 )
+{
+        true
+}
+else
+{
+        false
+}</expression>
+                                </structure>
+                            </list-property>
+                            <text-property name="text" key="+"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="8311">
+                        <property name="fontSize">9pt</property>
+                        <data id="8336">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">is-true</property>
+                                    <property name="color">#FF0000</property>
+                                    <expression name="testExpr">if ( row["decCanFal_UniExp"] > 0
+            ||
+     row["decCanFal_UniMin"] > 0 )
+{
+        true
+}
+else
+{
+        false
+}if ( params["decCanFal_UniExp"].value > 0
+            ||
+     params["decCanFal_UniMin"].value > 0 )
+{
+        true
+}
+else
+{
+        false
+}</expression>
+                                </structure>
+                            </list-property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">decCanFal_UniMin</property>
+                                    <expression name="expression">params["decCanFal_UniMin"].value</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">decCanFal_UniMin</property>
+                        </data>
+                    </cell>
+                    <cell id="8255">
+                        <property name="fontSize">9pt</property>
+                        <data id="8331">
+                            <property name="textAlign">left</property>
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">is-true</property>
+                                    <property name="color">#FF0000</property>
+                                    <expression name="testExpr">if ( params["decCanFal_UniExp"].value > 0
+            ||
+     params["decCanFal_UniMin"].value > 0 )
+{
+        true
+}
+else
+{
+        false
+}</expression>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">UNIMIN</property>
+                        </data>
+                    </cell>
+                    <cell id="7991">
+                        <property name="fontSize">9pt</property>
+                        <data id="7992">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">ZONPICREF</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="8373">
+                    <cell id="8374">
+                        <property name="fontSize">9pt</property>
+                    </cell>
+                    <cell id="8375">
+                        <property name="colSpan">18</property>
+                        <property name="rowSpan">1</property>
+                        <property name="fontSize">9pt</property>
+                        <table id="8413">
+                            <property name="width">100%</property>
+                            <property name="dataSet">OEX-INS-001 08 (Kit)</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">if ( row.__rownum != -1 )
+{
+        false
+}
+else
+{
+        true
+}</expression>
+                                </structure>
+                            </list-property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">ARTPADCOD</property>
+                                    <property name="displayName">ARTPADCOD</property>
+                                    <expression name="expression">dataSetRow["ARTPADCOD"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">ARTREF_PAD</property>
+                                    <property name="displayName">ARTREF_PAD</property>
+                                    <expression name="expression">dataSetRow["ARTREF_PAD"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">ARTDES_PAD</property>
+                                    <property name="displayName">ARTDES_PAD</property>
+                                    <expression name="expression">dataSetRow["ARTDES_PAD"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">ALMUBIREF_PAD</property>
+                                    <property name="displayName">ALMUBIREF_PAD</property>
+                                    <expression name="expression">dataSetRow["ALMUBIREF_PAD"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">CANUNI_HIJ</property>
+                                    <property name="displayName">CANUNI_HIJ</property>
+                                    <expression name="expression">dataSetRow["CANUNI_HIJ"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">NUMUNI_UNIEXP_PAD</property>
+                                    <property name="displayName">NUMUNI_UNIEXP_PAD</property>
+                                    <expression name="expression">dataSetRow["NUMUNI_UNIEXP_PAD"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">UNIEXP_PAD</property>
+                                    <property name="displayName">UNIEXP_PAD</property>
+                                    <expression name="expression">dataSetRow["UNIEXP_PAD"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">UNIMIN_PAD</property>
+                                    <property name="displayName">UNIMIN_PAD</property>
+                                    <expression name="expression">dataSetRow["UNIMIN_PAD"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                            </list-property>
+                            <column id="8448">
+                                <property name="width">35mm</property>
+                            </column>
+                            <column id="8449">
+                                <property name="width">55mm</property>
+                            </column>
+                            <column id="8450">
+                                <property name="width">35mm</property>
+                            </column>
+                            <column id="8512">
+                                <property name="width">1mm</property>
+                            </column>
+                            <column id="8451">
+                                <property name="width">15mm</property>
+                            </column>
+                            <column id="8452">
+                                <property name="width">8mm</property>
+                            </column>
+                            <column id="8464">
+                                <property name="width">4mm</property>
+                            </column>
+                            <column id="8494">
+                                <property name="width">12mm</property>
+                            </column>
+                            <column id="8489">
+                                <property name="width">8mm</property>
+                            </column>
+                            <column id="8507">
+                                <property name="width">15mm</property>
+                            </column>
+                            <column id="8484">
+                                <property name="width">8mm</property>
+                            </column>
+                            <column id="8479">
+                                <property name="width">4mm</property>
+                            </column>
+                            <column id="8474">
+                                <property name="width">12mm</property>
+                            </column>
+                            <column id="8469">
+                                <property name="width">8mm</property>
+                            </column>
+                            <header>
+                                <row id="8453">
+                                    <property name="height">0.2in</property>
+                                    <cell id="8455"/>
+                                    <cell id="8456"/>
+                                    <cell id="8457"/>
+                                    <cell id="8508"/>
+                                    <cell id="8458"/>
+                                    <cell id="8459"/>
+                                    <cell id="8460"/>
+                                    <cell id="8490"/>
+                                    <cell id="8485"/>
+                                    <cell id="8503"/>
+                                    <cell id="8480"/>
+                                    <cell id="8475"/>
+                      ¢  5É‹„ÊM  #?  
+  	7”ÊK˙  ‰ 2 5É⁄Ç 
+ 	 '’ ≈t˛v  (                                        (ˇˇ b/ÕÕ   (cƒrŒÄ/‹ã=Î
+ç+Õ}+€é=Îä-›ã:ÌúJ˛±/‡öT∑i		‘âPtàñ§≤¿Œ‹Í¯"0>LZhvÑí†Æº ÿÊÙ,:HVdrÄéú™∏∆‘‚˛(6DR`n|äò¶¥¬–ﬁÏ˙$2@N\jxÜî¢∞æÃ⁄Ëˆ .<JXftÇêû¨∫»÷‰Ú *8FTbp~åö®∂ƒ“‡Ó¸
+&4BP^lzàñ§≤¿Œ‹Í¯"0>LZhvÑí†Æº ÿÊÙ,:HVdrÄéú™∏∆‘‚˛(6DR`n|äò¶¥¬–ﬁÏ˙$2@N\jxÜî¢∞æÃ⁄Ëˆ .<JXftÇêû¨∫»÷‰Ú vhZL>0"
+¯
+&
+
+
+	¸	Ó	‡	“úéÄ
+Í
+‹
+Œ
+¿
+≤	ƒ	∂	®	ö	å	~	p	b	T	Fzl^PB4&æ∞¢
+¸Ó‡“ƒ∂®öå~pbTFxj:HVdrÄé,ÙÊ¶òˆË⁄Ãæ∞¢îÜ¶¥¬–ﬁÏ˙$2ÿ ºÆä|n`RD6(˛‚rdVH:,äò"0>LZhvÑí†8* ÚîÜxj\N@2$˙‘∆∏™ÙÊÿ ºÆ†íÑ|`nú™∏∆‘‚˛(6DR‰÷»∫¨ûêÇtfXJ<. ˆË⁄ÃÏﬁ–¬¥	*	8			 Ú‰÷»@N\
+z
+à
+ñ
+§
+4
+B
+P
+^
+,ƒA^ƒ[A)¡xq9√]889173,ƒ_D0ƒc(¡xr7√E40002001        √?Ä1401091643          2014/01/09          ƒ8+2700015542004     √Y01TR02011       RE      ÄˇTraspaso de Mercancia,ƒ_D1ƒc+¡xr√E40002001        <`9fÄ1401091643          2014/01/09          ƒ8+2700015542004     √Y01TR02011       RE      ÄˇMovimiento de cajas a picking,ƒ_D2ƒc+¡xr√E40002001        √-Ä1401091643          2014/01/09          ƒ*IW0127651           √GI0127651         RE      ÄˇMovimiento de cajas a picking,ƒ_D7ƒc,¡xr√E40002001        <`SfÄ1401091643          2014/01/09          ƒ8+2700015542004     √Y01TR02011       UB      ÄˇTraspaso de Mercancia,ƒ_D8ƒc,¡xr√E40002001        √Ä1401091643          2014/01/09          ƒ8+2700015542004     √/V0127655         UB      ÄˇTraspaso de Mercancia,ƒ_D<ƒc-¡xr√431000806        <cfÄ1311111306          2013/11/11          ƒ5M2700015229769     √60123496         RE      ÄˇTraspaso de Mercancia,ƒ_D=ƒc-¡xr√431000806        √Ä1311111306          2013/11/11          ƒ5M2700015229769     √Y01TR02011       RE      ÄˇTraspaso de Mercancia,ƒ_D>ƒc.¡xr√431000806        <dfÄ1311111306          2013/11/11          ƒ5M2700015229769     √Y01TR02011       RE      ÄˇMovimiento de cajas a picking,ƒ_D?ƒc.¡xr√431000806        √Ä1311111306          2013/11/11          ƒ!0123671           √G0123671         RE      ÄˇMovimiento de cajas a picking,ƒ]/Aƒb,\¡xr'√@\85631           =WfÄ447846              2014/01/14          ƒ8C02700015566475     √Y01TR11011       MANU    Äˇ ,ƒ]/Bƒb,\¡xr'√@\85631           ¬Ä447846              2014/01/14          ƒ8C02700015566475     ƒ`Y_                MANU    ÄSAOA ,ƒ]4Hƒb,]¡xr&√E	82134           =[fÄ447842              2014/01/14          ƒ8C`2700015566956     ƒ`Za                MANU    ÄˇMovimiento Manual,ƒ]4Iƒb,]¡xr&√E	82134           ¬TÄ447842              2014/01/14          ƒ8C`2700015566956     √Y01TR11011       MANU    ÄˇMovimiento Manual,ƒ]4Qƒb.7¡xr(√E	82134           =[fÄ447842              2014/01/14          ƒ8C`2700015566956     √Y01TR11011       MANU    Äˇ Movimiento Manual,ƒ]4Rƒb.7¡xr(√E	82134           ¬TÄ447842              2014/01/14          ƒ8C`2700015566956     √^01TRPT0011      MANU    ÄUBA  Movimiento Manual,ƒ]4Vƒb.9¡xr)√E	82134           =[fÄ447842              2014/01/14          ƒ8C`2700015566956     √^01TRPT0011      MANU    ÄˇMovimiento Manual,ƒ]4Wƒb.9¡xr)√E	82134           ¬TÄ447842              2014/01/14          ƒ8C`2700015566956     √Y01TR11011       MANU    ÄˇMovimiento Manual,ƒ]4[ƒb.:¡xr-√E	82134           =[fÄ447842              2014/01/14          ƒ8C`2700015566956     √Y01TR11011       MANU    Äˇ ,ƒ]4\ƒb.:¡xr-√E	82134           ¬TÄ447842              2014/01/14          ƒ8C`2700015566956     ƒ`[                MANU    ÄSAOA ,ƒ]4`ƒb.;¡xr2√<[89041           =cNfÄ447802              2014/01/14          ƒ8C^2700015566932     ƒ`Z\                MANU    ÄˇMovimiento Manual,ƒ]4aƒb.;¡xr2√<[89041           ¬Ä447802              2014/01/14          ƒ8C^2700015566932     √Y01TR11011       MANU    ÄˇMovimiento Manual,ƒ]5ƒb.<¡xr4√<[89041           =cNfÄ447802              2014/01/14          ƒ8C^2700015566932     √Y01TR11011       MANU    Äˇ Movimiento Manual,ƒ]5ƒb.<¡xr4√<[89041           ¬Ä447802              2014/01/14          ƒ8C^2700015566932     √^01TRPT0011      MANU    ÄUBA  Movimiento Manual,ƒ]5ƒb.=¡xr5√<[89041           =cNfÄ447802              2014/01/14          ƒ8C^2700015566932     √^01TRPT0011      MANU    ÄˇMovimiento Manual,ƒ]5ƒb.=¡xr5√<[89041           ¬Ä447802              2014/01/14          ƒ8C^2700015566932     √Y01TR11011       MANU    ÄˇMovimiento Manual,ƒ_D$ƒc&¡xr!√26001117        <dV3fÄ1312052050          2013/12/05          ƒ6X`2700015387957     √Y01TR02011       UB      ÄˇTraspaso de Mercancia,ƒ_D%ƒc&¡xr!√26001117        √3Ä1312052050          2013/12/05          ƒ6X`2700015387957     √aA0119447         UB      ÄˇTraspaso de Mercancia,ƒ_D/ƒc(¡xr7√E40002001        <['fÄ1401091643          2014/01/09          ƒ8+2700015542004     √/V0127655         RE      ÄˇTraspaso de Mercancia,ƒ]/ƒb,>¡xr%√A	86562           =SfÄ447718              2014/01/14          ƒ8C/2700015566468     √Y01TR11011       MANU    Äˇ Movimiento Manual,ƒ]/ƒb,>¡xr%√A	86562           ¬Ä447718              2014/01/14          ƒ8C/2700015566468     √^01TRPT0011      MANU    ÄUBA  Movimiento Manual,ƒ]/
+ƒb,?¡xr%√A	86562           =SfÄ447718              2014/01/14          ƒ8C/2700015566468     √^01TRPT0011      MANU    ÄˇMovimiento Manual,ƒ]/ƒb,?¡xr%√A	86562           ¬Ä447718              2014/01/14          ƒ8C/2700015566468     √Y01TR11011       MANU    ÄˇMovimiento Manual,ƒ]/ƒb,@¡xr%√A	86562           =SfÄ447718              2014/01/14          ƒ8C/2700015566468     √Y01TR11011       MANU    Äˇ Movimiento Manual,ƒ]/ƒb,@¡xr%√A	86562           ¬Ä447718              2014/01/14          ƒ8C/2700015566468     √S
+01MEXP041       MANU    ÄSAOA Movimiento Manual,ƒ]/,ƒb,A¡xr'√@\85631           =WfÄ447846              2014/01/14          ƒ8C02700015566475     ƒ`YW                MANU    ÄˇMovimiento Manual,ƒ]/-ƒb,A¡xr'√@\85631           ¬Ä447846              2014/01/14          ƒ8C02700015566475     √Y01TR11011       MANU    ÄˇMovimiento Manual,ƒ]/1ƒb,Z¡xr'√@\85631           =WfÄ447846              2014/01/14          ƒ8C02700015566475     √Y01TR11011       MANU    Äˇ Movimiento Manual,ƒ]/2ƒb,Z¡xr'√@\85631           ¬Ä447846              2014/01/14          ƒ8C02700015566475     √^01TRPT0011      MANU    ÄUBA  Movimiento Manual,ƒ]/6ƒb,[¡xr'√@\85631           =WfÄ447846              2014/01/14          ƒ8C02700015566475     √^01TRPT0011      MANU    ÄˇMovimiento Manual,ƒ]/7ƒb,[¡xr'√@\85631           ¬Ä447846              2014/01/14          ƒ8C02700015566475     √Y01TR11011       MANU    ÄˇMovimiento ManualM¢  5É‹‰ÊMW         	7”ÊK˙     2 5É⁄Ç 
+ 	 '’ ≈u.v.  .                                        .ˇˇ nó))   .¨G‰Ä∏UÒç(≈a˝ó2Ãi°<Ÿu		Æ
+K
+ÁÉ∫UÒç(ƒ_˙ï0Ãg†=Ÿu∂qJ⁄±iÎΩzBÏ∏êlH·öb&Ùº[$Òæ}M—≠zW8·∞áX*ÚÀîX,˜ø,
+Ì
+Æ
+x
+=	˘	±	p	!˛Õïl%Ìµá[. c¸ŸØàcÛ¬ïm                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ,ƒc<BƒcY(¡xr$√/b01005101        =cfÄ1310041540          2014/11/21          ƒ"L;2700013375581     √d0108542         MANU    Ä,ƒc<CƒcY(¡xr$√/b01005101        ¬Ä1310041540          2014/11/21          ƒ87$2700015554359     √G01TR20011       MANU    Ä,ƒc<_ƒcY0¡xr!8√101024001        <UGfÄ1311200721          2016/08/07          ƒ3#>2700015034615     √30110642         MANU    Ä,ƒc<`ƒcY0¡xr!8√101024001        √^Ä1311200721          2016/08/07          ƒ802700015547290     √0141011         MANU    Ä,ƒc=	ƒcYF¡xr#√101024001        =_3fÄ1311200721          2016/08/07          ƒ7IH2700015472714     √2Y0110312         MANU    Ä,ƒc=
+ƒcYF¡xr#√101024001        ¬3Ä1311200721          2016/08/07          ƒ87$2700015554359     √G01TR20011       MANU    Ä,ƒc=ƒcYN¡xr%√101024001        <UGfÄ1311200721          2016/08/07          ƒ802700015547290     √0141011         MANU    Ä,ƒc=ƒcYN¡xr%√101024001        √^Ä1311200721          2016/08/07          ƒ87$2700015554359     √G01TR20011       MANU    Ä,ƒc=ƒcYQ¡xr&√101026001        <\FfÄ1311210047          2014/07/16          ƒ8K2700015528749     √/'0109414         MANU    Ä,ƒc=ƒcYQ¡xr&√101026001        √
+T Ä1311210047          2014/07/16          ƒ87$2700015554359     √G01TR20011       MANU    Ä,ƒc=4ƒcYS¡xr(√101025501        <cJQfÄ1311251739          2015/09/20          ƒ3OR2700015078817     √60129061         MANU    Ä,ƒc=5ƒcYS¡xr(√101025501        √Ä1311251739          2015/09/20          ƒ87#2700015554342     √H01TR20012       MANU    Ä,ƒc=FƒcYa¡xr(,√101025501        =cUfÄ1310180816          2016/08/27          ƒ3OR2700015078817     √60129061         MANU    Ä,ƒc=GƒcYa¡xr(,√101025501        ¬Ä1310180816          2016/08/27          ƒ87#2700015554342     √H01TR20012       MANU    Ä,ƒc=IƒcYd¡xr(7√101025501        =]IfÄ1311251739          2016/08/27          ƒ3OR2700015078817     √60129061         MANU    Ä,ƒc=JƒcYd¡xr(7√101025501        ¬	Ä1311251739          2016/08/27          ƒ87#2700015554342     √H01TR20012       MANU    Ä,ƒ+!ƒ¡xr3√	C35000059        =\QfÄ1108000917          2011/08/13          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+"ƒ¡xr3√J35000266        =dTfÄ281516              2011/02/10          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+#ƒ¡xr3√;31000910        <afÄ1109000798          2011/09/13          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+$ƒ¡xr3√c26000960        =QUfÄ1109001255          2011/09/21          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+%ƒ¡xr3√
+10413001        <[fÄ1109000535          2013/11/16          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+&ƒ¡xr3√c10381601        =fÄ319325              2012/09/19          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+'ƒ¡xr3√+,10442501        =+fÄ1211200928          2013/05/20          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+(ƒ¡xr3√%R10441501        <VfÄ1206000018          2013/06/01          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+)ƒ¡xr3√L11001020        <b8fÄ1006001235          2010/06/16          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+*ƒ¡xr3√
+	10413401        =XfÄ1109000476          2011/09/08          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ++ƒ¡xr3√a225000330        <bfÄ1110000702          2011/10/13          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+,ƒ¡xr3√C16001893        <bX3fÄ1110000822          2011/10/15          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+-ƒ¡xr3√
+16001235        <cafÄ1111000640          2011/11/14          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+.ƒ¡xr3√88868           =GfÄ323746              2011/10/13          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+/ƒ¡xr3√88868           =GfÄ323741              2011/10/13          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+0ƒ¡xr3√88868           =GfÄ323733              2011/10/13          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒ+1ƒ¡xr3√;80138           >CfÄ315705              2011/08/25          ƒ6]K2700015392746     √,L0107307         OKD2    Ä,ƒc7ƒcWd¡xr2√G46005401        ¬
+ÄDJ46005401          2013/12/28          ƒ8M42700015576511     √U01TRDV0021      TRAS    Ä,ƒc; ƒcXP¡xr.√/T01001701        <d_=fÄ1312240142          2015/04/30          ƒ872700015554076     √01TRDM0031      MANU    Ä,ƒc;!ƒcXP¡xr.√/T01001701        √)Ä1312240142          2015/04/30          ƒ872700015554205     √]I01TRMP0031      MANU    Ä,ƒc<
+ƒcXZ¡xr√0$01012201        <cPFfÄ1312060947          2016/09/11          ƒ5_2700015294002     √6R0130151         MANU    Ä,ƒc<ƒcXZ¡xr√0$01012201        √ Ä1312060947          2016/09/11          ƒ87$2700015554359     √G01TR20011       MANU    Ä,ƒc<ƒcY¡xr8√1.01034701        <UHfÄ1307101053          2016/09/02          ƒ8/<2700015546590     √3B0110363         MANU    Ä,ƒc<ƒcY¡xr8√1.01034701        √QÄ1307101053          2016/09/02          ƒ87$2700015554359     √G01TR20011       MANU    Ä,ƒc<#ƒcY¡xr
+√1.01034701        =cQfÄ1307101053          2016/09/02          ƒ0bO2700014797788     √3a0110673         MANU    Ä,ƒc<$ƒcY¡xr
+√1.01034701        ¬Ä1307101053          2016/09/02          ƒ87$2700015554359     √G01TR20011       MANU    Ä,ƒc<3ƒcY¡xr√/b01005101        <dfÄ1310151637          2014/10/11          ƒ8LW2700015575866     √00109535         MANU    Ä,ƒc<4ƒcY¡xr√/b01005101        √JJÄ1310151637          2014/10/11          ƒ87$2700015554359     √G01TR20011       MANU    Ä,ƒc<6ƒcY&¡xr√/b01005101        =cfÄ1310151637          2014/10/11          ƒ8/<2700015546590     √3B0110363         MANU    Ä,ƒc<7ƒcY&¡xr√/b01005101        ¬QÄ1310151637          2014/10/11          ƒ87$2700015554359     √G01TR20011       MANU    ÄMW¢  5É‹ÂÊM´  l∆  
+  	7”ÊK˙  ‰2 5É⁄Ç 
+ 	 '’ ≈uev&  -                                        -ˇˇ lˆää   -	ú
+7
+‘pßA⁄u¨H‰∂QÎÜ ªUÚé+«d ù9’w∏W˘ˆò7Ÿxπ[˙ÂÙ!0?N]l{äô®∑∆’‰Û />M\kzâòß∂≈‘„Ú.=L[jyàó¶µƒ”‚Ò -<KZixáñ•¥√“·ˇ,;JYhwÜï§wÜ 
+    , 	8à 	8à   ⁄    
+	:  '’ ≠ Æ Ø ƒm[u˚9  5ÄÍ5É3       T_	Ì	ﬁƒ5,,5É5c !ŸË 
+    ö 	8à 	8à   ⁄    
+	9  '’ ≠ Æ Ø ƒm[u˚8  5ÄÍ5É3"      T_˜ƒ5,N5É5c  qÄ 
+    ⁄È¯ 	8à 	8à   ⁄    
+	8  '’ ≠ Æ Ø ƒm[u˚7  5ÄÍ5É3       T_£≤ƒ5,,5É5c * 
+    Ñì¢ 	8à 	8à   ⁄    
+	7  '’ ≠ Æ Ø ƒm[u˚6  5ÄÍ5É3"      T_dsƒ5,N5É5c ‹Î 
+    ETc 	8à 	8à   ⁄    
+	6  '’ ≠ Æ Ø ƒm[u˚5  5ÄÍ5É3       T_¯ƒ5,,5É5c ÃΩ 
+    †Øæ 	8à 	8à   ⁄    
+	5  '’ ≠ Æ Ø ƒm[u˚4  5ÄÍ5É3"      T_’‰ƒ5,N5É5c < 
+    yàó 	8à 	8à   ⁄    
+	4  '’ ≠ Æ Ø ƒm[u˚3  5ÄÍ5É3       T_á3ƒ5,,5É5c o~ 
+    ≥¬— 	8à 	8à   ⁄    
+	3  '’ ≠ Æ Ø ƒm[u˚2  5ÄÍ5É,ƒ%ƒd`	¡xr
+28√Q\87853           ¬YÄDV87853             2014/01/10          ƒ8Nb2700015577976     √0b01TR01021       PICK    ÄPICK ,ƒ'ƒd`
+¡xr
+3√788602           =d&fÄ443813              2013/12/14          ƒ82N2700015549775     √0105011         PICK    Äˇ ,ƒ(ƒd`
+¡xr
+3√788602           ¬@Ä443813              2013/12/14          ƒ8Nb2700015577976     √0b01TR01021       PICK    ÄPICK ,ƒ*ƒd`¡xr
+3√YA89084           =b)fÄ443624              2013/12/13          ƒ82N2700015549775     √0105011         PICK    Äˇ ,ƒ+ƒd`¡xr
+3√YA89084           ¬=Ä443624              2013/12/13          ƒ8Nb2700015577976     √0b01TR01021       PICK    ÄPICK ,ƒ-ƒd`¡xr
+3√C89101           =c#fÄ432169              2013/10/02          ƒ82N2700015549775     √0105011         PICK    Äˇ ,ƒ.ƒd`¡xr
+3√C89101           ¬CÄ432169              2013/10/02          ƒ8Nb2700015577976     √0b01TR01021       PICK    ÄPICK ,ƒ0ƒd`¡xr
+3"√=89581           =[fÄ446647              2014/01/07          ƒ82N2700015549775     √0105011         PICK    Äˇ ,ƒ1ƒd`¡xr
+3"√=89581           ¬QÄ446647              2014/01/07          ƒ8Nb2700015577976     √0b01TR01021       PICK    ÄPICK ,ƒd4Bƒd#¡xr&√001007001        ¬0.Ä1311050532          2014/10/11          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd4Dƒd(¡xr'√0U01020901        <[KfÄ1310071510          2016/01/08          ƒ2+2700014914420     √0108491         MANU    Ä,ƒd4Eƒd(¡xr'√0U01020901        √NÄ1310071510          2016/01/08          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5ƒd*¡xr*2√UE01241301        =C)fÄ1106000843          2014/03/24          ƒ"U2700013384163     √9!0137021         MANU    Ä,ƒd5ƒd*¡xr*2√UE01241301        ¬#=Ä1106000843          2014/03/24          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5ƒd?¡xr+√301069001        >3fÄ1003001586          2014/04/24          ƒ.K\2700014574914     √6I0130061         MANU    Ä,ƒd5ƒd?¡xr+√301069001        ¡3Ä1003001586          2014/04/24          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5!ƒdD¡xr+9√=A01206201        >3fÄ1310142132          2018/09/08          ƒ.K\2700014574914     √6I0130061         MANU    Ä,ƒd5"ƒdD¡xr+9√=A01206201        ¡3Ä1310142132          2018/09/08          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5$ƒdG¡xr,√4U01097001        <ZCGfÄ1310281452          2015/06/11          ƒ8/<2700015546590     √3B0110363         MANU    Ä,ƒd5%ƒdG¡xr,√4U01097001        √#Ä1310281452          2015/06/11          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5*ƒdI¡xr,1√.01251801        =fÄ1306260817          2023/01/30          ƒ0]2700014792127     √1J0109607         MANU    Ä,ƒd5+ƒdI¡xr,1√.01251801        ¬`MÄ1306260817          2023/01/30          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5-ƒdM¡xr-	√(01248001        =QfÄ1209130739          2021/12/31          ƒ5>2700015211610     √0"0109645         MANU    Ä,ƒd5.ƒdM¡xr-	√(01248001        ¬cÄ1209130739          2021/12/31          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd58ƒdO¡xr-.√.01251901        >fÄ1209130749          2022/07/16          ƒ4=?2700015160628     √-0108554         MANU    Ä,ƒd59ƒdO¡xr-.√.01251901        ¡QÄ1209130749          2022/07/16          ƒ872700015554267     √H01TR20012       MANU    Ä,ƒd5;ƒdR¡xr.√.01251901        >3fÄ1302281032          2022/07/16          ƒ4=?2700015160628     √-0108554         MANU    Ä,ƒd5<ƒdR¡xr.√.01251901        ¡3Ä1302281032          2022/07/16          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5>ƒdT¡xr.#√.01251901        >fÄ1209130749          2022/07/16          ƒ872700015554267     √H01TR20012       MANU    Ä,ƒd5?ƒdT¡xr.#√.01251901        ¡QÄ1209130749          2022/07/16          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5DƒdV¡xr/-√:501170301        <Y(.fÄ1307302040          2014/11/21          ƒ6^C2700015393668     √4,0110424         MANU    Ä,ƒd5EƒdV¡xr/-√:501170301        √>8Ä1307302040          2014/11/21          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5GƒdX¡xr0√101025601        <We=fÄ1301241455          2014/06/30          ƒ5`H2700015295719     √.A0109393         MANU    Ä,ƒd5HƒdX¡xr0√101025601        √)Ä1301241455          2014/06/30          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5Oƒd[¡xr0"√4O01096301        <dfÄ1311300128          2016/05/23          ƒ142700014815512     √2 0110461         MANU    Ä,ƒd5Pƒd[¡xr0"√4O01096301        √^WÄ1311300128          2016/05/23          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5Rƒd]¡xr09√:601170401        <S;fÄ1308130516          2015/01/16          ƒ6^C2700015393668     √4,0110424         MANU    Ä,ƒd5Sƒd]¡xr09√:601170401        √+`Ä1308130516          2015/01/16          ƒ872700015554274     √G01TR20011       MANU    Ä,ƒd5[ƒda¡xr1√H01245501        <d&fÄ1311160843          2015/02/05          ƒ"N
+2700013377097     √-10109671         MANU    Ä,ƒƒd`¡xr
+2√A85921           ¬=Ä442448              2013/12/09          ƒ8Nb2700015577976     √0b01TR01021       PICK    ÄPICK ,ƒƒd`¡xr
+2/√A86542           =cfÄ442447              2013/12/05          ƒ82N2700015549775     √0105011         PICK    Äˇ ,ƒƒd`¡xr
+2/√A86542           ¬GÄ442447              2013/12/05          ƒ8Nb2700015577976     √0b01TR01021       PICK    ÄPICK ,ƒ!ƒd`¡xr
+2/√A86542           =^fÄ442476              2013/12/05          ƒ82N2700015549775     √0105011         PICK    Äˇ ,ƒ"ƒd`¡xr
+2/√A86542           ¬QÄ442476              2013/12/05          ƒ8Nb2700015577976     √0b01TR01021       PICK    ÄPICK ,ƒ$ƒd`	¡xr
+28√Q\87853           =cfÄDV87853             2014/01/10          ƒ82N2700015549775     √0105011         PICK    Äˇ M´¢  5É‹ÊÊMÎ  ôÊ      	7”ÊK˙     2 5É⁄Ç 
+ 	 '’ ≈uîv  +                                        +ˇˇ hªSS   +#–-‹ä9ÁêDÙ£S±_ænÕ|µQÏàªXˆì1Œj¢	>	⁄
+u¥QÚ                 8    5Äi   5ÄSÅ5Äi                            	9·   5Äh   5Ä;¯   5ÄAP   5ÄAà   5ÄA»   5ÄAÿ   5ÄAË   5ÄBê   5ÄB¿   5ÄB–   5ÄB   5ÄCê   5ÄC®   5ÄC–   5ÄC¯   5ÄE   5ÄEÄ   Ä5ÄJÄ   Ä5ÄP    Ä5ÄSÄ   Ä                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ,ƒ!ƒa^¡xr+√>017100111        ¡;Ä1401240846          2014/01/24          ƒD.0124451           √^0124451         PICK    Äˇ ,ƒ!ƒad¡xr√G46005401        >@fÄDJ46005401          2013/12/03          ƒ9;42700015658514     √01TR17011       PICK    Äˇ ,ƒ!ƒad¡xr√G46005401        ¡&ÄDJ46005401          2013/12/03          ƒ*N0126701           √HC0126701         PICK    Äˇ ,ƒ!ƒb¡xr9√F41001801        =dXfÄ1401131255          2014/01/13          ƒ9;42700015658514     √01TR17011       PICK    Äˇ ,ƒ!ƒb¡xr9√F41001801        ¬Ä1401131255          2014/01/13          ƒ*IJ0127721           √J40127721         PICK    Äˇ ,ƒ!ƒb¡xr√2:01060601        =.:fÄ1312190715          2015/08/06          ƒ92700015605280     √60129011         MANU    Ä,ƒ!ƒb¡xr√2:01060601        ¬8,Ä1312190715          2015/08/06          ƒ99>2700015656619     √G01TR20011       MANU    Ä,ƒ!#ƒb¡xr√2:01060601        <a)fÄ1312181753          2015/06/09          ƒ92700015605280     √60129011         MANU    Ä,ƒ!$ƒb¡xr√2:01060601        √b=Ä1312181753          2015/06/09          ƒ9F2700015605693     √0143012         MANU    Ä,ƒ!+ƒb¡xr√2:01060601        =.:fÄ1312190715          2015/08/06          ƒ99>2700015656619     √G01TR20011       MANU    Ä,ƒ!,ƒb¡xr√2:01060601        ¬8,Ä1312190715          2015/08/06          ƒ92700015605280     √60129011         MANU    Ä,ƒ!Eƒb¡xr-√^_38000406        ¬Ä1401302319          2014/01/30          ƒ9=)2700015660401     √!01MR01181       ENTR    ÄUB   ,ƒ!Tƒb¡xr√^_38000406        =QfÄ1401302319          2014/01/30          ƒ9=)2700015660401     √!01MR01181       MANU    Äˇ ,ƒ!Uƒb¡xr√^_38000406        ¬Ä1401302319          2014/01/30          ƒ9="2700015660333     √ 01MR01171       MANU    Äˇ ,ƒ!ƒb%¡xr3√^]38000441        ¬Ä1401302324          2014/01/30          ƒ9=*2700015660418     √!01MR01181       ENTR    ÄUB   ,ƒ!ƒb5¡xr√^]38000441        =QfÄ1401302324          2014/01/30          ƒ9=*2700015660418     √!01MR01181       MANU    Äˇ ,ƒ '8ƒP]¡xr,√H210353901        √QÄ1310040956          2018/04/08          ƒ942700015651188     √U01TRDV0021      MANU    ÄSAOT Movimiento Manual,ƒ '9ƒP]¡xr,√c26001070        =c
+fÄ1308170034          2013/08/17          ƒ942700

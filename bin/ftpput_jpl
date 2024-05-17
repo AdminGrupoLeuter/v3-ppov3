@@ -1,0 +1,115 @@
+#
+# modelo de como controlar el ftp. Completar con documentacion
+# JPL 10/7/03
+#
+# PARAMETROS: fichero_origen fichero_destino
+# 1) Envia un fichero con el nombre cambiado 
+# 2) Si ha habido alg«n error se hacen 5 reintentos, sino, contin«a
+# 3) Renombra elfichero enviado con el nombre correcto
+#
+FICHERO=$1
+FICHERO_OK=$2
+
+NUMERO_REINTENTOS=5
+#
+# Fijacion de las respuestas del ftp remoto
+#
+
+# Respuestas AIX oficina
+# REVISAR MENSAJES, PUEDEN CAMBIAR SEGUN LA MAQUINA QUE SEA !!
+# Los mensajes tienen que ser exactos ! (con puntos, comas, ...)
+#
+RESP_SESION_OK="230 User adaia Logged in Successfully"   #Para NT
+RESP_PUT_OK="226 Transfer Complete"                      #Para NT
+RESP_RENAME_OK="200 PORT Command OK"                     #Para NT
+#RESP_SESION_OK="230 User krafft logged in."      #Para SCO
+#RESP_PUT_OK="226 Transfer complete."             #Para SCO
+#RESP_RENAME_OK="250 RNTO command successful."    #Para SCO
+
+
+# Es culpable hasta que no se demuestre su inocencia
+ERROR_SESION=1
+ERROR_PUT=1
+ERROR_RENAME=1
+#
+# seccion ftp put
+#
+
+ll $FICHERO
+
+echo
+echo Inicio envio fichero $FICHERO
+echo ---------------------------------------------------
+
+#####################################################################
+# 1) Enviamos el fichero temporal (sin renombrar), si hay error se hacen
+#    hasta 5 reintentos
+#####################################################################
+CONTADOR=1
+ERROR=1
+while test $ERROR = 1 && test $CONTADOR -lt $NUMERO_REINTENTOS
+do
+   if test $CONTADOR -gt 1
+   then
+      echo "REINTENTO $CONTADOR de envio de $FICHERO"
+   fi
+   ftp -niv $ADAIA_GES_CPU <<? |&
+   quote user $ADAIA_GES_LOGIN
+   quote pass $ADAIA_GES_PASSWORD
+   ascii
+   cd $ADAIA_GES_A_GESTION
+   put $FICHERO
+   quit
+?
+   while
+     read -p respuesta
+   do
+      echo --- $respuesta ---
+      if [ "$respuesta" = "$RESP_SESION_OK" ];then ERROR_SESION=0;fi
+      if [ "$respuesta" = "$RESP_PUT_OK" ];then ERROR_PUT=0;fi
+   done
+   ERROR=$ERROR_PUT
+   CONTADOR=`expr $CONTADOR + 1`
+done
+
+#####################################################################
+# 2) renombramos el fichero
+#
+#####################################################################
+
+#Si no se ha podido enviar el fichero, se deja para la proxima conexion
+if test $ERROR = 0
+then
+   ftp -niv $ADAIA_GES_CPU <<? |&
+   quote user $ADAIA_GES_LOGIN
+   quote pass $ADAIA_GES_PASSWORD
+   ascii
+   cd $ADAIA_GES_A_GESTION
+   rename $FICHERO $FICHERO_OK
+   dir $FICHERO_OK
+   quit
+?
+   while
+     read -p respuesta
+   do
+      echo --- $respuesta ---
+      if [ "$respuesta" = "$RESP_RENAME_OK" ];then ERROR_RENAME=0;fi
+   done
+   if test $ERROR_RENAME = 0
+   then
+      echo $FICHERO_OK traspasado
+   else
+      echo "ERROR: El fichero $FICHERO no se ha podido renombrar por $FICHERO_OK"
+   fi
+   mv $FICHERO $ADAIA_TMP/$FICHERO.datos
+else
+   echo "ERROR: El fichero $FICHERO no se ha podido enviar"
+   echo "El fichero se enviarƒ en los pr∆ximos 5 minutos con otro nombre"
+   cp $FICHERO $ADAIA_TMP
+   mv $FICHERO ..
+fi
+
+date
+echo ---------------------------------------------------
+echo Final  envio fichero $FICHERO
+echo

@@ -1,0 +1,6 @@
+HORA=`date +%y%m%d_%H%M%S | awk '{print $1}'`
+PROCESO=$$
+HORA=$HORA.$PROCESO
+cd $ADAIA_TRASP
+>REPARTO.$HORA
+echo "$1" >>REPARTO.$HORA

@@ -1,0 +1,143 @@
+# Definicion del entorno de ejecucion en ADAIA V2
+# ---------------------------------------------------------------------------
+# Tenemos que establecer en que entorno estamos trabajando a nivel de:
+#    - ADAIA_SO: Sistema Operativo de la maquina del almacen 
+#    - ADAIA_BD: Base de Datos
+#    - ADAIA_MONITOR: Monitor de radio-frecuencia (de leuter, de norand)
+#    - ADAIA_BANDA: Banda estrecha o banda ancha
+#    - ADAIA_GES_SO: Sistema Operativo del ordenador de gestion con el 
+#      que se intercambian ficheros
+# El resto de comandos estan parametrizados en funcion del entorno.
+# --------------------------------------------------------------------------
+     
+     umask 002
+
+     export ADAIA_SO=WINDOWS        #HPUX o AIX o WINDOWS (comando uname)
+     export ADAIA_INTERNACIONAL=NO   #SI o NO
+
+     export ADAIA_BD=ORACLE      #ORACLE, INFORMIX, ALLBASE, ...
+     export ADAIA_MONITOR=NORAND #LEUTER, NORAND, TELXON
+     export ADAIA_BANDA=ANCHA #ESTRECHA, ANCHA
+     export ADAIA_GES_SO=UNIX    #UNIX, AS400
+
+     export LEUTER_HOME=/home/adaia2    #en pruebas es /home/leuter
+     export LEUTER_VERSION=c0000
+     export ADAIA_HOME=/home/ltrbin    #en pruebas es /home/leuter
+     export ADAIA_RFHOME=/home/norand  #en pruebas es /home/adaia2 igual
+     export ADAIA_TMP=$ADAIA_HOME/tmp
+     export ADAIA_TMPOLD=$ADAIA_HOME/tmpold
+     export ADAIA_TRASP=$ADAIA_HOME/tmpint
+     export ADAIA_A_GESTION=$ADAIA_HOME/a_gestion
+     export ADAIA_DE_GESTION=$ADAIA_HOME/de_gestion
+
+     export USUARIO_PRINCIPAL=ltrbin
+     export CLIENTE=ltrbin
+
+#    Para intercambiar ficheros con el ordenador de gestion a traves de FTP
+     export ADAIA_GES_CPU=gestion     
+     export ADAIA_GES_LOGIN=leuter                              
+     export ADAIA_GES_PASSWORD=leon28    
+     export ADAIA_GES_DE_GESTION=a_adaia
+
+     export ADAIA_VERSION=a0000
+
+     export ADAIA_PRINTER_CLASS=HPLASER-132X132V
+     export ADAIA_PRINTER_DEV=laser
+     export ADAIA_PRINTER_SLAVE='$ADAIA_PRINTER_CLASS'
+     export ADAIA_IDIOMA=SPA
+#    export ADAIA_IDIOMA=POR
+
+     case $TERM in
+	 hp2394 )
+	   export ADAIA_TERM=HP70092;;
+         hp | hp2392 )
+           export ADAIA_TERM=HPTERM;;
+         hp2392a | 70094)
+           export ADAIA_TERM=HP70092-39;;
+         hp2394a )
+           export ADAIA_TERM=HP70092-49;;
+         vt21x16 )
+           export PS1=":";
+           export ADAIA_TERM=VT21x16;;
+         vt40x8 )
+           export PS1="=";
+           export ADAIA_TERM=VT40x8;;
+         vt100 | vt200 | vt220 | vt320 )
+           export ADAIA_TERM=VT420-F1;;
+         aixterm )
+           export ADAIA_TERM=AIXTERM;;
+         dtterm )
+           export ADAIA_TERM=CURSESVT;;
+         * )
+           export ADAIA_TERM=HPTERM;;
+     esac
+
+#    Entorno de Speedware
+     export SPW_HOME=/home/Speedware
+     export SPW_4GL_VERSION=spw70500
+     export SPW_DSG_VERSION=des70402
+     export SPW_BIN=$SPW_HOME/$SPW_4GL_VERSION/bin
+     export SPW_LIB=$SPW_HOME/$SPW_4GL_VERSION/lib
+     export SPW_TMP=$ADAIA_HOME/tmpspw
+     export SPW_TERM=$ADAIA_TERM
+     case $ADAIA_SO in
+        AIX )
+           if [ "$ADAIA_BANDA" = "ANCHA" ]
+           then
+              export SPW_SHLIB=$ADAIA_HOME/lib/aix/ancha       
+           else
+              export SPW_SHLIB=$ADAIA_HOME/lib/aix/estrecha    
+       	   fi;;
+	HPUX )
+           if [ "$ADAIA_BANDA" = "ANCHA" ]
+           then
+              export SPW_SHLIB=$ADAIA_HOME/lib/hpux/ancha/libswp.sl       
+           else
+              export SPW_SHLIB=$ADAIA_HOME/lib/hpux/estrecha/libswp.sl    
+       	   fi;;
+     esac
+	   
+     export LIBPATH=$SPW_HOME/$SPW_4GL_VERSION/lib
+
+     export CONFIG='$SPW_BIN/CONFIG'
+     export M4GLMGO='$SPW_BIN/M4GL$ADAIA_IDIOMA'
+     export MULTMGO='$SPW_BIN/MULT$ADAIA_IDIOMA'
+     export MEDIMGO='$SPW_BIN/MEDI$ADAIA_IDIOMA'
+     export MSYSMGO='$SPW_BIN/MSYS$ADAIA_IDIOMA'
+
+#    Entorno de Oracle
+     export ORACLE_BASE=/home/oracle
+     export ORACLE_HOME=$ORACLE_BASE/product/8.0.4
+     export ORACLE_SID=adaiasrv
+     export ORACLE_TNS=adaiasrv
+     export ORACLE_TERM=hp
+     export ORACLE_OWNER=oracle
+     export SHLIB_PATH=$ORACLE_HOME/lib:$SPW_LIB
+     export PATH="$ORACLE_HOME/bin:$PATH"
+
+#    Entorno de Informix
+#     export INFORMIXDIR=/home/informix
+#     export INFORMIXSERVER=adaiasrv     
+#     export ONCONFIG=onconfig
+#     export DBDATE=dmy4/
+#     export PATH="$INFORMIXDIR/bin:$PATH"
+
+     export PATH="$SPW_BIN:$PATH"
+     export PATH="$ADAIA_HOME/bin/local:$ADAIA_HOME/bin:$PATH"
+     export PATH=.:$PATH
+
+     cd $ADAIA_HOME
+
+     echo
+     echo "Version Adaia: $ADAIA_VERSION  Speedware: $SPW_4GL_VERSION  \c"
+     echo "Terminal: $ADAIA_TERM"
+     echo =====================================================================
+     banner "ADAIA V2"
+     echo =====================================================================
+     echo
+
+     if test -r $ADAIA_HOME/STOP 
+     then
+        echo La aplicacion no esta disponible en estos momentos.
+        exit
+     fi

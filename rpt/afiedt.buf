@@ -1,0 +1,2 @@
+select to_char(momfin,'DD/MM/YYYY') Fecha,count(*) from hismovacc group by to_char(momfin,'DD/MM/YYYY') order by 1
+/

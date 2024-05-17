@@ -1,0 +1,1314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">JLM</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pCntcod" id="489">
+            <property name="valueType">static</property>
+            <property name="dataType">integer</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">0</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pExpordcod" id="490">
+            <property name="valueType">static</property>
+            <property name="dataType">integer</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">0</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="ADAIA" id="411">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@172.20.10.51:1521:adaiasrv</property>
+            <property name="odaUser">adaia3</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YWRhaWEz</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-CNT-AMP-002" id="412">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">eCj1</property>
+                    <expression name="expression">BirtMath.roundDown(row["CANPED"]/row["NUMUNI"])</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">eUn1</property>
+                    <expression name="expression">BirtMath.mod(row["CANPED"],row["NUMUNI"])</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">eCj2</property>
+                    <expression name="expression">BirtMath.roundDown(row["CANUNI"]/row["NUMUNI"])</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">eUn2</property>
+                    <expression name="expression">BirtMath.mod(row["CANUNI"],row["NUMUNI"])</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">EXPORDREF</property>
+                    <property name="displayName">EXPORDREF</property>
+                </structure>
+                <structure>
+                    <property name="columnName">TERREF</property>
+                    <property name="displayName">TERREF</property>
+                </structure>
+                <structure>
+                    <property name="columnName">TERDES</property>
+                    <property name="displayName">TERDES</property>
+                </structure>
+                <structure>
+                    <property name="columnName">OBS</property>
+                    <property name="displayName">OBS</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CNTDORREF</property>
+                    <property name="displayName">CNTDORREF</property>
+                </structure>
+                <structure>
+                    <property name="columnName">ARTREF</property>
+                    <property name="displayName">ARTREF</property>
+                </structure>
+                <structure>
+                    <property name="columnName">ARTDES</property>
+                    <property name="displayName">ARTDES</property>
+                </structure>
+                <structure>
+                    <property name="columnName">UNIEXP</property>
+                    <property name="displayName">UNIEXP</property>
+                </structure>
+                <structure>
+                    <property name="columnName">UNIMIN</property>
+                    <property name="displayName">UNIMIN</property>
+                </structure>
+                <structure>
+                    <property name="columnName">NUMUNI</property>
+                    <property name="displayName">NUMUNI</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CANPED</property>
+                    <property name="displayName">CANPED</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CANUNI</property>
+                    <property name="displayName">CANUNI</property>
+                </structure>
+                <structure>
+                    <property name="columnName">PES</property>
+                    <property name="displayName">PES</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CONTENEDOR</property>
+                    <property name="displayName">CONTENEDOR</property>
+                </structure>
+                <structure>
+                    <property name="columnName">RECOPEREF</property>
+                    <property name="displayName">RECOPEREF</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CNTDORCAJ</property>
+                    <property name="displayName">CNTDORCAJ</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TERREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TERDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">OBS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">CNTDORREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ARTREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">ARTDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">UNIEXP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">UNIMIN</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">NUMUNI</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">CANPED</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">CANUNI</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">PES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">CONTENEDOR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">RECOPEREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">CNTDORCAJ</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">eCj1</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">eUn1</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">eCj2</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">eUn2</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="rowFetchLimit">0</property>
+            <property name="dataSource">ADAIA</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pCntcod</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p2</property>
+                    <property name="paramName">pCntcod</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p3</property>
+                    <property name="paramName">pExpordcod</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p4</property>
+                    <property name="paramName">pExpordcod</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p5</property>
+                    <property name="paramName">pCntcod</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p6</property>
+                    <property name="paramName">pCntcod</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p7</property>
+                    <property name="paramName">pExpordcod</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">7</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p8</property>
+                    <property name="paramName">pExpordcod</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">8</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDREF</property>
+                    <property name="nativeName">EXPORDREF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TERREF</property>
+                    <property name="nativeName">TERREF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TERDES</property>
+                    <property name="nativeName">TERDES</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">OBS</property>
+                    <property name="nativeName">OBS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">CNTDORREF</property>
+                    <property name="nativeName">CNTDORREF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ARTREF</property>
+                    <property name="nativeName">ARTREF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">ARTDES</property>
+                    <property name="nativeName">ARTDES</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">UNIEXP</property>
+                    <property name="nativeName">UNIEXP</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">UNIMIN</property>
+                    <property name="nativeName">UNIMIN</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">NUMUNI</property>
+                    <property name="nativeName">NUMUNI</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">CANPED</property>
+                    <property name="nativeName">CANPED</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">CANUNI</property>
+                    <property name="nativeName">CANUNI</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">PES</property>
+                    <property name="nativeName">PES</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">CONTENEDOR</property>
+                    <property name="nativeName">CONTENEDOR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">RECOPEREF</property>
+                    <property name="nativeName">RECOPEREF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">CNTDORCAJ</property>
+                    <property name="nativeName">CNTDORCAJ</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select expordcab.EXPORDREF
+     , ter.TERREF
+     , ter.TERDES
+     , expordcab.OBS
+     , cntdor.CNTDORREF
+     , art.ARTREF
+     , art.ARTDES
+     , art.UNIEXP
+     , art.UNIMIN
+     , artpre.NUMUNI
+     , expordlin.CANPED
+     , cntndo.CANUNI
+     , cntndo.PES
+     , 1 as CONTENEDOR
+     , (select min(recoperef)                                                                             
+          from hismovope, hismovalm
+         where hismovalm.cntcod = cntdor.cntcod
+           and hismovope.hisopecod = hismovalm.hisopecod
+           and hisalmcod = (select max(hisalmcod) from hismovalm a 
+                             where a.cntcod = cntdor.cntcod
+                               and a.acctiptar &lt;> 'VMMA') ) as RECOPEREF                                                   
+      , (select min(cntdorref)
+           from cntdor b
+          where b.cntcod = cntndo.cntcod) as CNTDORCAJ                         
+from cntndo
+   , expordlin
+   , expordcab
+   , cntdor
+   , art
+   , artpre
+   , ter
+where expordlin.expordcod = expordcab.expordcod
+  and cntndo.expordcod = expordlin.expordcod
+  and cntndo.expordlin = expordlin.expordlin
+  and cntndo.cntextcod = cntdor.cntcod
+  and art.artcod = cntndo.artcod
+  and art.artcod = artpre.artcod
+  and art.uniexp = artpre.unitip
+  and ter.tercod = expordcab.tercod
+  and cntndo.cntextcod &lt;> cntndo.cntcod
+  and cntndo.ndosit &lt;> 'ASEX'
+  and (cntdor.cntcod = ? or ? = 0)
+  and (cntndo.expordcod = ? or ? = 0)
+union
+select expordcab.EXPORDREF
+     , ter.TERREF
+     , ter.TERDES
+     , expordcab.OBS
+     , cntdor.CNTDORREF
+     , art.ARTREF
+     , art.ARTDES
+     , art.UNIEXP
+     , art.UNIMIN
+     , artpre.NUMUNI
+     , expordlin.CANPED
+     , cntndo.CANUNI
+     , cntndo.PES
+     , 2 as CONTENEDOR
+     , (select min(recoperef)                                                                             
+          from hismovope, hismovalm
+         where hismovalm.cntcod = cntdor.cntcod
+           and hismovope.hisopecod = hismovalm.hisopecod
+           and hisalmcod = (select max(hisalmcod) from hismovalm a 
+                             where a.cntcod = cntdor.cntcod
+                               and a.acctiptar &lt;> 'VMMA') ) as RECOPEREF                                                   
+     , ' ' as CNTDORCAJ
+from cntndo
+   , expordlin
+   , expordcab
+   , cntdor
+   , art
+   , artpre
+   , ter
+where expordlin.expordcod = expordcab.expordcod
+  and cntndo.expordcod = expordlin.expordcod
+  and cntndo.expordlin = expordlin.expordlin
+  and cntndo.cntextcod = cntdor.cntcod
+  and art.artcod = cntndo.artcod
+  and art.artcod = artpre.artcod
+  and art.uniexp = artpre.unitip
+  and ter.tercod = expordcab.tercod
+  and cntndo.cntextcod = cntndo.cntcod
+  and cntndo.ndosit = 'ASEX'
+  and (cntdor.cntcod = ? or ? = 0)
+  and (cntndo.expordcod = ? or ? = 0)
+order by expordref, cntdorref, cntdorcaj, contenedor, artref</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.25in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="2533">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">7.895833333333333in</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="2534">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="2535">
+                        <property name="width">6.479166666666667in</property>
+                    </column>
+                    <column id="2536">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="2537">
+                        <cell id="2538"/>
+                        <cell id="2539"/>
+                        <cell id="2540">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="2542">
+                        <cell id="2543"/>
+                        <cell id="2545"/>
+                        <cell id="2546">
+                            <data id="2547">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="2548">
+                        <cell id="2549"/>
+                        <cell id="2550">
+                            <label id="2551">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text">Relación de Contenido Pallets Completos</text-property>
+                            </label>
+                        </cell>
+                        <cell id="2552"/>
+                    </row>
+                    <row id="2553">
+                        <cell id="2554"/>
+                        <cell id="2556"/>
+                        <cell id="2557">
+                            <label id="2558">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(OEX-CNT-AMP-002)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="2559">
+                        <property name="width">8.270833333333334in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="2560"/>
+                        <cell id="2561">
+                            <auto-text id="2562">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="2563">
+                            <text id="2564">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="2565">
+                            <auto-text id="2566">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="Tabla0" id="413">
+            <property name="width">100%</property>
+            <property name="dataSet">OEX-CNT-AMP-002</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">CNTDORREF</property>
+                    <property name="displayName">CNTDORREF</property>
+                    <expression name="expression">dataSetRow["CNTDORREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RECOPEREF</property>
+                    <property name="displayName">RECOPEREF</property>
+                    <expression name="expression">dataSetRow["RECOPEREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">EXPORDREF</property>
+                    <property name="displayName">EXPORDREF</property>
+                    <expression name="expression">dataSetRow["EXPORDREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">OBS</property>
+                    <property name="displayName">OBS</property>
+                    <expression name="expression">dataSetRow["OBS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTREF</property>
+                    <property name="displayName">ARTREF</property>
+                    <expression name="expression">dataSetRow["ARTREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CNTDORCAJ</property>
+                    <property name="displayName">CNTDORCAJ</property>
+                    <expression name="expression">dataSetRow["CNTDORCAJ"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CONTENEDOR</property>
+                    <property name="displayName">CONTENEDOR</property>
+                    <expression name="expression">dataSetRow["CONTENEDOR"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">eCj1</property>
+                    <property name="displayName">eCj1</property>
+                    <expression name="expression">dataSetRow["eCj1"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">UNIEXP</property>
+                    <property name="displayName">Ucj</property>
+                    <expression name="expression">dataSetRow["UNIEXP"] + " +"</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">eUn1</property>
+                    <property name="displayName">eUn1</property>
+                    <expression name="expression">dataSetRow["eUn1"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">UNIMIN</property>
+                    <property name="displayName">Uud</property>
+                    <expression name="expression">dataSetRow["UNIMIN"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTDES</property>
+                    <property name="displayName">ARTDES</property>
+                    <expression name="expression">dataSetRow["ARTDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">eCj2</property>
+                    <property name="displayName">eCj2</property>
+                    <expression name="expression">dataSetRow["eCj2"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">eUn2</property>
+                    <property name="displayName">eUn2</property>
+                    <expression name="expression">dataSetRow["eUn2"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">NUMUNI</property>
+                    <property name="displayName">UdCj</property>
+                    <expression name="expression">dataSetRow["NUMUNI"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">PES</property>
+                    <property name="displayName">PES</property>
+                    <expression name="expression">dataSetRow["PES"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Agregación</property>
+                    <property name="displayName">aC1</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">BirtMath.roundDown(dataSetRow["CANUNI"]/dataSetRow["NUMUNI"])</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">Agregación_1</property>
+                    <property name="displayName">aU1</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">BirtMath.mod(dataSetRow["CANUNI"],dataSetRow["NUMUNI"])</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">Agregación_2</property>
+                    <property name="displayName">aP1</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">dataSetRow["PES"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">Agregación_3</property>
+                    <property name="displayName">aCon1</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">dataSetRow["eUn2"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">Agregación_4</property>
+                    <property name="displayName">aUd1</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">BirtMath.mod(dataSetRow["CANUNI"],dataSetRow["NUMUNI"])</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">dataSetRow["CONTENEDOR"] &lt; 2</expression>
+                </structure>
+                <structure>
+                    <property name="name">Enlace de columna</property>
+                    <property name="displayName">dAto1</property>
+                    <expression name="expression">dataSetRow["eCj1"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">eCj3</property>
+                    <property name="displayName">eCj3</property>
+                    <expression name="expression">dataSetRow["eCj1"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">Agregación_5</property>
+                    <property name="displayName">aCj1</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">AVE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">BirtMath.roundDown(dataSetRow["CANUNI"]/dataSetRow["NUMUNI"])</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">Agregación_6</property>
+                    <property name="displayName">aUd1</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">AVE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">BirtMath.mod(dataSetRow["CANUNI"],dataSetRow["NUMUNI"])</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">TERREF</property>
+                    <property name="displayName">TERREF</property>
+                    <expression name="expression">dataSetRow["TERREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TERDES</property>
+                    <property name="displayName">TERDES</property>
+                    <expression name="expression">dataSetRow["TERDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Agregación_7</property>
+                    <property name="displayName">cCnt</property>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>NuevoGrupoTabla2</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">Agregación_8</property>
+                    <property name="displayName">sPes</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>NuevoGrupoTabla2</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">dataSetRow["PES"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+            </list-property>
+            <column id="3530"/>
+            <column id="3537"/>
+            <column id="3544"/>
+            <column id="3551"/>
+            <column id="3568"/>
+            <column id="3561"/>
+            <column id="471"/>
+            <column id="472"/>
+            <column id="473"/>
+            <column id="474"/>
+            <column id="475"/>
+            <column id="476"/>
+            <column id="477">
+                <property name="width">1.34375in</property>
+            </column>
+            <column id="478">
+                <property name="width">0.4895833333333333in</property>
+            </column>
+            <column id="479">
+                <property name="width">0.5208333333333334in</property>
+            </column>
+            <column id="480">
+                <property name="width">0.5104166666666666in</property>
+            </column>
+            <column id="481">
+                <property name="width">0.53125in</property>
+            </column>
+            <column id="482">
+                <property name="width">0.4479166666666667in</property>
+            </column>
+            <column id="483">
+                <property name="width">0.5833333333333334in</property>
+            </column>
+            <column id="484">
+                <property name="width">0.5104166666666666in</property>
+            </column>
+            <column id="485">
+                <property name="width">0.53125in</property>
+            </column>
+            <column id="486">
+                <property name="width">0.5625in</property>
+            </column>
+            <column id="1129">
+                <property name="width">0.3541666666666667in</property>
+            </column>
+            <column id="487"/>
+            <column id="488"/>
+            <header>
+                <row id="414">
+                    <cell id="3524"/>
+                    <cell id="3531"/>
+                    <cell id="3538"/>
+                    <cell id="3545"/>
+                    <cell id="3562"/>
+                    <cell id="3555"/>
+                    <cell id="415"/>
+                    <cell id="416"/>
+                    <cell id="417"/>
+                    <cell id="418"/>
+                    <cell id="419"/>
+                    <cell id="420"/>
+                    <cell id="421"/>
+                    <cell id="422"/>
+                    <cell id="423"/>
+                    <cell id="424"/>
+                    <cell id="425"/>
+                    <cell id="426"/>
+                    <cell id="427"/>
+                    <cell id="428"/>
+                    <cell id="429"/>
+                    <cell id="430"/>
+                    <cell id="1117"/>
+                    <cell id="431"/>
+                    <cell id="432"/>
+                </row>
+            </header>
+            <group id="555">
+                <property name="groupName">NuevoGrupoTabla2</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr">row["EXPORDREF"]</expression>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <property name="pageBreakInside">auto</property>
+                <header>
+                    <row id="556">
+                        <cell id="3525">
+                            <property name="colSpan">6</property>
+                            <property name="rowSpan">1</property>
+                            <text id="613">
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Orden Expedición:]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="557">
+                            <property name="colSpan">7</property>
+                            <property name="rowSpan">1</property>
+                            <data id="616">
+                                <property name="resultSetColumn">EXPORDREF</property>
+                            </data>
+                        </cell>
+                        <cell id="3577">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <text id="3457">
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Destinatario:]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="3578">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <data id="3449">
+                                <property name="resultSetColumn">TERREF</property>
+                            </data>
+                        </cell>
+                        <cell id="3581">
+                            <property name="colSpan">6</property>
+                            <property name="rowSpan">1</property>
+                            <data id="3451">
+                                <property name="resultSetColumn">TERDES</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="618">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <cell id="3526">
+                            <property name="colSpan">6</property>
+                            <property name="rowSpan">1</property>
+                            <text id="3569">
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Contenedor]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="619">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <text id="637">
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Articulo]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="622"/>
+                        <cell id="623"/>
+                        <cell id="624"/>
+                        <cell id="625"/>
+                        <cell id="626">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <text id="1080">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Cantidad Pedida]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="1107">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <text id="1104">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Cantidad Contenedor]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="1114">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <text id="1138">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[U/C]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="1137">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <text id="1133">
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Peso]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </header>
+                <footer>
+                    <row id="3613">
+                        <cell id="3614"/>
+                        <cell id="3615"/>
+                        <cell id="3616"/>
+                        <cell id="3617"/>
+                        <cell id="3618"/>
+                        <cell id="3619"/>
+                        <cell id="3620"/>
+                        <cell id="3621"/>
+                        <cell id="3622"/>
+                        <cell id="3623"/>
+                        <cell id="3624"/>
+                        <cell id="3625"/>
+                        <cell id="3626"/>
+                        <cell id="3627"/>
+                        <cell id="3628"/>
+                        <cell id="3629"/>
+                        <cell id="3630"/>
+                        <cell id="3631"/>
+                        <cell id="3632"/>
+                        <cell id="3633"/>
+                        <cell id="3634"/>
+                        <cell id="3635"/>
+                        <cell id="3636"/>
+                        <cell id="3637"/>
+                        <cell id="3638"/>
+                    </row>
+                    <row id="575">
+                        <cell id="3528">
+                            <property name="colSpan">8</property>
+                            <property name="rowSpan">1</property>
+                            <text id="3608">
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Total Contenedores]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="578">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <data id="3610">
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Agregación_7</property>
+                            </data>
+                        </cell>
+                        <cell id="582"/>
+                        <cell id="583"/>
+                        <cell id="584"/>
+                        <cell id="585"/>
+                        <cell id="586"/>
+                        <cell id="587"/>
+                        <cell id="588"/>
+                        <cell id="589"/>
+                        <cell id="590"/>
+                        <cell id="591"/>
+                        <cell id="1125"/>
+                        <cell id="592"/>
+                        <cell id="593"/>
+                    </row>
+                    <row id="3582">
+                        <cell id="3583">
+                            <property name="colSpan">8</property>
+                            <property name="rowSpan">1</property>
+                            <text id="3609">
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Total Peso Contenedores:]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="3591">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <property name="textAlign">right</property>
+                            <data id="3611">
+                                <property name="resultSetColumn">Agregación_8</property>
+                            </data>
+                        </cell>
+                        <cell id="3595">
+                            <text id="3612">
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Kgs.]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="3596"/>
+                        <cell id="3597"/>
+                        <cell id="3598"/>
+                        <cell id="3599"/>
+                        <cell id="3600"/>
+                        <cell id="3601"/>
+                        <cell id="3602"/>
+                        <cell id="3603"/>
+                        <cell id="3604"/>
+                        <cell id="3605"/>
+                        <cell id="3606"/>
+                        <cell id="3607"/>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="433">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr">row["CONTENEDOR"] &lt; 2</expression>
+                        </structure>
+                    </list-property>
+                    <cell id="3527">
+                        <property name="colSpan">6</property>
+                        <property name="rowSpan">1</property>
+                        <data id="3571">
+                            <property name="resultSetColumn">CNTDORREF</property>
+                        </data>
+                    </cell>
+                    <cell id="434">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <data id="639">
+                            <property name="resultSetColumn">ARTREF</property>
+                        </data>
+                    </cell>
+                    <cell id="437">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <data id="1116">
+                            <property name="resultSetColumn">ARTDES</property>
+                        </data>
+                    </cell>
+                    <cell id="1111">
+                        <data id="1082">
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">eCj1</property>
+                        </data>
+                    </cell>
+                    <cell id="1093">
+                        <data id="1084">
+                            <property name="resultSetColumn">UNIEXP</property>
+                        </data>
+                    </cell>
+                    <cell id="664">
+                        <data id="1086">
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">eUn1</property>
+                        </data>
+                    </cell>
+                    <cell id="665">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <data id="1088">
+                            <property name="resultSetColumn">UNIMIN</property>
+                        </data>
+                    </cell>
+                    <cell id="1078">
+                        <data id="1099">
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">eCj2</property>
+                        </data>
+                    </cell>
+                    <cell id="1079">
+                        <data id="1103">
+                            <property name="resultSetColumn">UNIEXP</property>
+                        </data>
+                    </cell>
+                    <cell id="447">
+                        <data id="1100">
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">eUn2</property>
+                        </data>
+                    </cell>
+                    <cell id="448">
+                        <data id="1102">
+                            <property name="resultSetColumn">UNIMIN</property>
+                        </data>
+                    </cell>
+                    <cell id="449">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <data id="1132">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">NUMUNI</property>
+                        </data>
+                    </cell>
+                    <cell id="1136">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <data id="1135">
+                            <property name="resultSetColumn">PES</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="452">
+                    <cell id="3529"/>
+                    <cell id="3536"/>
+                    <cell id="3543"/>
+                    <cell id="3550"/>
+                    <cell id="3567"/>
+                    <cell id="3560"/>
+                    <cell id="453"/>
+                    <cell id="454"/>
+                    <cell id="455"/>
+                    <cell id="456"/>
+                    <cell id="457"/>
+                    <cell id="458"/>
+                    <cell id="459"/>
+                    <cell id="460"/>
+                    <cell id="461"/>
+                    <cell id="462"/>
+                    <cell id="463"/>
+                    <cell id="464"/>
+                    <cell id="465"/>
+                    <cell id="466"/>
+                    <cell id="467"/>
+                    <cell id="468"/>
+                    <cell id="1128"/>
+                    <cell id="469"/>
+                    <cell id="470"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

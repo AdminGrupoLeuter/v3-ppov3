@@ -1,0 +1,120 @@
+SQL> SET TIMING ON
+SQL> 
+SQL> -----------------------------------INICIO MODIFICACIONES
+SQL> -----------------------------------CREAMOS FUNCION RECURSOUNICO
+SQL> 
+SQL> create or replace FUNCTION RecursoUnico(iEstcod in number, iRecMaqCod in number)
+  2  RETURN NUMBER IS tmpVar NUMBER;
+  3  iEstProPas number;
+  4  cRecUni char(1);
+  5  BEGIN
+  6  	tmpVar := 0;
+  7  	cREcUni := ' ';
+  8  	iEstProPas := 0;
+  9  	if iEstcod <> 0 then
+ 10  	   SELECT RECUNI,ESTPROPAS
+ 11  	     INTO cRecUni,iEstProPas
+ 12  	     FROM ALMEST WHERE
+ 13  	     ESTCOD = iEstcod;
+ 14  	     if cRecUni = 'S' then
+ 15  		 tmpVar :=1;
+ 16  		 seLECT 1
+ 17  		 INTO tmpVar
+ 18  		  FROM ACCTRA,ACCCOL
+ 19  		  WHERE ACCTRA.ACCCOLCOD = ACCCOL.ACCCOLCOD
+ 20  		  AND ACCTIPTAR IN ('RE','UB','EX','EXMP','UBMA','CA')
+ 21  		  AND RECMAQCOD not in (0, iRecMaqCod)
+ 22  		  AND (
+ 23  		      ((ESTORICOD IN (iEstcod,iEstproPas) or ESTDESCOD IN (iEstCod,iEstPropas)) AND iEstProPas<>0)
+ 24  		      OR
+ 25  		      ((ESTORICOD IN (iEstcod) or ESTDESCOD IN (iEstCod)) AND iEstProPas=0)
+ 26  		      );
+ 27  	     end if;
+ 28  	end if;
+ 29  	RETURN tmpVar;
+ 30  	EXCEPTION
+ 31  	  WHEN NO_DATA_FOUND THEN
+ 32  	    RETURN 0;
+ 33  	  WHEN OTHERS THEN
+ 34  	    -- Consider logging the error and then re-raise
+ 35  	    RAISE;
+ 36  END RecursoUnico;
+ 37  /
+
+FunciÆn creada.
+
+Transcurrido: 00:00:00.34
+SQL> 
+SQL> -- ACTUALIZAMOS VISTA W_ACCTRAPRI PARA QUE TOME EN CUENTA LA FUNCION RECURSOUNICO
+SQL> 
+SQL> CREATE OR REPLACE FORCE VIEW W_ACCTRAPRI ("ACCCOD", "ACCCOLCOD", "ANCOPE", "COLEST", "COLPIC", "COLPRI", "COLSIGCOD", "COLTIP", "EXPORDCOD", "MOMINI", "MOVHORPOS", "MOVVER", "NUMCNT", "RECMAQCOD", "RECOPECOD", "RFTTERCOD", "ZONCARCOD", "ZONCOLCOD", "ZONPRECOD", "CNTCODETI", "ACCEST", "ACCORD", "ACCRELCOD", "ACCTIPTAR", "CAN", "CANMOV", "CNTCOD", "CNTDESCOD", "ESTDESCOD", "ESTORICOD", "EXPORDLIN", "MOMCRE", "MOMFIN", "NDOCOD", "PESMOV", "RECCOD", "RECLIN", "UBIDESCOD", "UBIORICOD", "VENCIDO", "ACTRECMAQ", "ACTDIS", "ZONAOK")
+  2  AS
+  3    (SELECT acctra.acccod,
+  4  	 acctra.acccolcod,
+  5  	 acccol.ancope,
+  6  	 acccol.colest,
+  7  	 acccol.colpic,
+  8  	 acccol.colpri,
+  9  	 acccol.colsigcod,
+ 10  	 acccol.coltip,
+ 11  	 acctra.expordcod,
+ 12  	 acctra.momini,
+ 13  	 acccol.movhorpos,
+ 14  	 acccol.movver,
+ 15  	 acccol.numcnt,
+ 16  	 acccol.recmaqcod,
+ 17  	 acccol.recopecod,
+ 18  	 acccol.rfttercod,
+ 19  	 acccol.zoncarcod,
+ 20  	 acccol.zoncolcod,
+ 21  	 acccol.zonprecod,
+ 22  	 acccol.cntcodeti,
+ 23  	 acctra.accest,
+ 24  	 acctra.accord,
+ 25  	 acctra.accrelcod,
+ 26  	 acctra.acctiptar,
+ 27  	 acctra.can,
+ 28  	 acctra.canmov,
+ 29  	 acctra.cntcod,
+ 30  	 acctra.cntdescod,
+ 31  	 acctra.estdescod,
+ 32  	 acctra.estoricod,
+ 33  	 acctra.expordlin,
+ 34  	 acctra.momcre,
+ 35  	 acctra.momfin,
+ 36  	 acctra.ndocod,
+ 37  	 acctra.pesmov,
+ 38  	 acctra.reccod,
+ 39  	 acctra.reclin,
+ 40  	 acctra.ubidescod,
+ 41  	 acctra.ubioricod,
+ 42  	 vencido (acctra.momini) vencido,
+ 43  	 r.recmaqcod actrecmaq,
+ 44  	 distancia (acctra.ubioricod, r.ultubi, acctra.acctiptar) actdis,
+ 45  	 zona_ok (acccol.zoncarcod, acccol.zonprecod, r.recmaqcod) zonaok
+ 46    FROM acctra,
+ 47  	 acccol,
+ 48  	 recmaqope r
+ 49    WHERE (acccol.acccolcod				= acctra.acccolcod)
+ 50    AND recursounico (acctra.estoricod, r.recmaqcod) = 0
+ 51    AND recursounico (acctra.estdescod, r.recmaqcod) = 0
+ 52    ) ;
+
+Vista creada.
+
+Transcurrido: 00:00:00.20
+SQL> 
+SQL> -----------------------------------FIN MODIFICACIONES
+SQL> 
+SQL> UPDATE VERSIONES SET VERSION='0122', MOMENTO=SYSDATE WHERE SOFCOD='BD';
+
+1 fila actualizada.
+
+Transcurrido: 00:00:00.01
+SQL> COMMIT;
+
+ConfirmaciÆn terminada.
+
+Transcurrido: 00:00:00.00
+SQL> 
+SQL> SPOOL OFF;

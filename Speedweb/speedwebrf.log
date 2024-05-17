@@ -1,0 +1,52 @@
+PID 17512; Tue Oct  1 13:38:23 2013; SpeedWeb server 3.04.02 Build 20 July 17, 2009
+PID 17512; Tue Oct  1 13:38:23 2013; Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+PID 17512; Tue Oct  1 13:38:23 2013; For use by authorized licensees only
+PID 17512; Tue Oct  1 13:38:23 2013; Server realm is  : SpeedWeb Application
+PID 17512; Tue Oct  1 13:38:23 2013; Log file location is /home/sco/Speedweb/speedwebrf.log
+PID 17512; Tue Oct  1 13:38:23 2013; Starting server...
+PID 17512; Tue Oct  1 13:38:23 2013; Server is 172.20.10.56
+PID 17512; Tue Oct  1 13:38:23 2013; SSL certificate loaded
+PID 17512; Tue Oct  1 13:38:23 2013; Standard application services
+PID 17512; Tue Oct  1 13:38:23 2013; Support for 10 sessions
+PID 17512; Tue Oct  1 13:38:23 2013; Command channel  : 
+PID 17512; Tue Oct  1 13:38:23 2013; Register port 18206
+PID 17512; Tue Oct  1 13:38:23 2013; Standard channel : 
+PID 17512; Tue Oct  1 13:38:23 2013; Register port 18205
+PID 17512; Tue Oct  1 13:38:23 2013; Secure channel   : 
+PID 17512; Tue Oct  1 13:38:23 2013; Register port 18207
+PID 17512; Tue Oct  1 13:38:23 2013; SWS-API version  : 30402
+PID 4554; Mon Nov 11 10:23:43 2013; SpeedWeb server 3.04.02 Build 20 July 17, 2009
+PID 4554; Mon Nov 11 10:23:43 2013; Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+PID 4554; Mon Nov 11 10:23:43 2013; For use by authorized licensees only
+PID 4554; Mon Nov 11 10:23:43 2013; Server realm is  : SpeedWeb Application
+PID 4554; Mon Nov 11 10:23:43 2013; Log file location is /home/sco/Speedweb/speedwebrf.log
+PID 4554; Mon Nov 11 10:23:43 2013; Starting server...
+PID 4554; Mon Nov 11 10:23:43 2013; Server is 172.20.10.56
+PID 4554; Mon Nov 11 10:23:44 2013; SSL certificate loaded
+PID 4554; Mon Nov 11 10:23:44 2013; Standard application services
+PID 4554; Mon Nov 11 10:23:44 2013; Support for 10 sessions
+PID 4554; Mon Nov 11 10:23:44 2013; Command channel  : 
+PID 4554; Mon Nov 11 10:23:44 2013; Register port 18206
+PID 4554; Mon Nov 11 10:23:44 2013; Standard channel : 
+PID 4554; Mon Nov 11 10:23:44 2013; Register port 18205
+PID 4554; Mon Nov 11 10:23:44 2013; Secure channel   : 
+PID 4554; Mon Nov 11 10:23:44 2013; Register port 18207
+PID 4554; Mon Nov 11 10:23:44 2013; SWS-API version  : 30402
+PID 18233; Thu Jan  9 20:02:59 2014; SpeedWeb server 3.04.02 Build 20 July 17, 2009
+PID 18233; Thu Jan  9 20:02:59 2014; Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+PID 18233; Thu Jan  9 20:02:59 2014; For use by authorized licensees only
+PID 18233; Thu Jan  9 20:02:59 2014; Server realm is  : SpeedWeb Application
+PID 18233; Thu Jan  9 20:02:59 2014; Log file location is /home/sco/Speedweb/speedwebrf.log
+PID 18233; Thu Jan  9 20:02:59 2014; Starting server...
+PID 18233; Thu Jan  9 20:02:59 2014; Server is 172.20.10.56
+PID 18233; Thu Jan  9 20:02:59 2014; SSL certificate loaded
+PID 18233; Thu Jan  9 20:02:59 2014; Standard application services
+PID 18233; Thu Jan  9 20:02:59 2014; Support for 10 sessions
+PID 18233; Thu Jan  9 20:02:59 2014; Command channel  : 
+PID 18233; Thu Jan  9 20:02:59 2014; Register port 18206
+PID 18233; Thu Jan  9 20:02:59 2014; Standard channel : 
+PID 18233; Thu Jan  9 20:02:59 2014; Register port 18205
+PID 18233; Thu Jan  9 20:02:59 2014; Secure channel   : 
+PID 18233; Thu Jan  9 20:02:59 2014; Register port 18207
+PID 18233; Thu Jan  9 20:02:59 2014; SWS-API version  : 30402
+PID 18233; Sat Feb  1 14:18:28 2014; Kill signal

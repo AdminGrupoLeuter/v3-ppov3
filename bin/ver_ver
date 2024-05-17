@@ -1,0 +1,76 @@
+# Descripcion: Muestra informaci∆n sobre la versi∆n actual de Adaia:
+# Versi∆n actual,momento de instalaci∆n, momento de activacion, versi∆n de specs
+#
+#Sintaxis: ver_ver
+##############################################################
+
+#. $ADAIA_HOME/bin/entorno.real >/dev/null 2>&1
+
+#Mostramos la versi∆n activa actual:
+echo
+echo "ADAIA_VERSION: $ADAIA_VERSION"
+ANYO_VERSION=`echo $ADAIA_VERSION|cut -c1`
+MES_VERSION=`echo $ADAIA_VERSION|cut -c2-3`
+DIA_VERSION=`echo $ADAIA_VERSION|cut -c4-5`
+if [ $ADAIA_VERSION != 'a0000' ]
+then
+   case $ANYO_VERSION in
+     'b' )
+     ANYO2=1999;;
+     'c' )
+     ANYO2=2000;;
+     'd' )
+     ANYO2=2001;;
+     'e' )
+     ANYO2=2002;;
+     'f' )
+     ANYO2=2003;;
+     'g' )
+     ANYO2=2004;;
+     'h' )
+     ANYO2=2005;;
+     'i' )
+     ANYO2=2006;;
+   esac
+
+   echo "A∂O: $ANYO2"
+   echo "MES: $MES_VERSION"
+   echo "DIA: $DIA_VERSION"
+fi
+
+
+#Mostramos la fecha de activaci∆n:
+echo
+FECHA=`grep FECHA_ACTIVACION $ADAIA_HOME/bin/entorno.real`
+FECHA=`echo $FECHA | awk -F'=' '{print $2}'`
+echo "Fecha de activaci∆n de la versi∆n $ADAIA_VERSION : $FECHA"
+
+#Mostramos informaci∆n de los specs
+echo
+ADAIAG=`grep "Componente:  00:" $ADAIA_HOME/$ADAIA_VERSION/adaiag | egrep -v "Inicio" | grep v2 |head -1`
+ADAIAG=`echo $ADAIAG | awk -F"adaia2." '{print $2}' | cut -c1-7`
+ADAIAG_RELEASE=`grep "Release Label" $ADAIA_HOME/$ADAIA_VERSION/adaiag | head -1 | cut -c4- | awk -F')' '{print $1}'`
+echo "Versi∆n del spec adaiag = $ADAIAG	$ADAIAG_RELEASE)"
+
+ADAIAS=`grep "Specification file for application" $ADAIA_HOME/$ADAIA_VERSION/adaias | head -1 | cut -c44- | awk -F'*' '{print $1}'`
+ADAIAS=`printf "%s" $ADAIAS`
+ADAIAS2=`grep "Release Label" $ADAIA_HOME/$ADAIA_VERSION/adaias | head -1 | cut -c4- | awk -F')' '{print $1}'`
+echo "Versi∆n del spec adaias = $ADAIAS		$ADAIAS2)"
+
+if test -r $ADAIA_HOME/$ADAIA_VERSION/adaiat*
+then
+   SPECTEST=`ls -t $ADAIA_HOME/$ADAIA_VERSION/adaiat*|head -1`
+   ADAIAT=`grep "Specification file for application" $SPECTEST | head -1 | cut -c44- | awk -F'*' '{print $1}'`
+   ADAIAT=`printf "%s" $ADAIAT`
+   ADAIAT2=`grep "Release Label" $SPECTEST | head -1 | cut -c4- | awk -F')' '{print $1}'`
+   echo "Versi∆n del spec adaiat = $ADAIAT	$ADAIAT2)"
+else
+   echo "No existe ning«n test (adaiat*)"
+fi
+
+#Mostramos los componentes del adaiag
+echo
+echo "Componentes del adaiag:"
+grep "adaia2\." $ADAIA_HOME/$ADAIA_VERSION/adaiag |egrep -v "Inicio|Final" |grep "[0-9]:"
+echo
+

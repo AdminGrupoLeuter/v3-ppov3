@@ -1,0 +1,33 @@
+SQL> SET TIMING ON
+SQL> 
+SQL> -----------------------------------INICIO MODIFICACIONES
+SQL> 
+SQL> --- DIC11i
+SQL> ALTER TABLE CCALIN
+  2  ADD (AJSMTV CHAR(4 BYTE) DEFAULT 'CCAA' NOT NULL);
+
+Tabla modificada.
+
+Transcurrido: 00:00:00.12
+SQL> 
+SQL> COMMENT ON COLUMN CCALIN.AJSMTV IS 'Motivo de ajuste';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> 
+SQL> 
+SQL> -----------------------------------FIN MODIFICACIONES
+SQL> 
+SQL> UPDATE VERSIONES SET VERSION='0120', MOMENTO=SYSDATE WHERE SOFCOD='BD';
+
+1 fila actualizada.
+
+Transcurrido: 00:00:00.00
+SQL> COMMIT;
+
+ConfirmaciÆn terminada.
+
+Transcurrido: 00:00:00.00
+SQL> 
+SQL> SPOOL OFF;

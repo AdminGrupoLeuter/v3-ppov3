@@ -1,0 +1,73 @@
+SQL> SET TIMING ON
+SQL> 
+SQL> -----------------------------------INICIO MODIFICACIONES
+SQL> 
+SQL> -- Trunkamos owner a una longitud fija de 30 pues en diferentes versiones de oracle (12) tiene diferente longitud
+SQL> -- Lo cual trae problemas para la compilacion del catalogo
+SQL> 
+SQL> CREATE OR REPLACE FORCE VIEW w_gencon (wgenconcod,
+  2  						valact,
+  3  						wvalini,
+  4  						wvalfin,
+  5  						valinc,
+  6  						owner)
+  7  AS
+  8  	(SELECT SUBSTR(sequence_name,1,30), last_number, min_value, max_value, increment_by,SUBSTR(sequence_owner,1,30)
+  9  	   FROM all_sequences);
+
+Vista creada.
+
+Transcurrido: 00:00:00.13
+SQL> 
+SQL> --Mantenemos los mismos comentarios
+SQL> COMMENT ON TABLE W_GENCON IS 'V2.8(208): Vista de contadores basada en all_sequences';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.01
+SQL> COMMENT ON COLUMN W_GENCON.WGENCONCOD IS 'V2.8(208): ';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN W_GENCON.VALACT IS 'V2.8(208): Valor Actual';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN W_GENCON.WVALINI IS 'V2.8(208): ';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN W_GENCON.WVALFIN IS 'V2.8(208): ';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.01
+SQL> COMMENT ON COLUMN W_GENCON.VALINC IS 'V2.8(208): Incremento';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> COMMENT ON COLUMN W_GENCON.OWNER IS 'V2.8(208): ';
+
+Comentario creado.
+
+Transcurrido: 00:00:00.00
+SQL> 
+SQL> 
+SQL> -----------------------------------FIN MODIFICACIONES
+SQL> 
+SQL> UPDATE VERSIONES SET VERSION='0121', MOMENTO=SYSDATE WHERE SOFCOD='BD';
+
+1 fila actualizada.
+
+Transcurrido: 00:00:00.00
+SQL> COMMIT;
+
+ConfirmaciÆn terminada.
+
+Transcurrido: 00:00:00.00
+SQL> 
+SQL> SPOOL OFF;

@@ -1,0 +1,1286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Giménez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 23/03/2010 (versión inicial) 
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*       Informe de ubicaciones para picking inverso.
+*
+* PARAMETROS RECIBIDOS:
+*       1. pdecRecCod                   -> Código recepción
+*       2. pdecNumVer              -> Versión ruta recorrido (picking)
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pdecRecCod" id="5796">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecRecCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">9007</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecNumVer" id="6979">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecNumVer"></text-property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">88</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="decSecZonPicCod" id="7122">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="RAL" id="411">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@172.20.10.51:1521:adaiasrv</property>
+            <property name="odaUser">loreagx</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">bG9yZWFneA==</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="RAL-UBI-002 01 (Ppal)" id="6003">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ZONPICCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ZONPICREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ZONPICDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">NUMSEC</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ARTREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ARTDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">UNIREP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">UNIMIN</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">NUMUNI_UNIREP</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">CANREC</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">EXI_RUT_REC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">RAL</property>
+            <method name="beforeOpen"><![CDATA[//                                      
+// Inicializar la string de la consulta
+this.queryText = ''
+//
+// *******************************
+// * Añadir los campos al SELECT *
+// *******************************
+//
+this.queryText = this.queryText + " " + "SELECT   e.ZONPICCOD," + 
+                                  " " +          "f.ZONPICREF," +
+                                  " " +          "f.ZONPICDES," + 
+                                  " " +         "(CASE" +
+                                  " " +            "WHEN g.NUMSEC IS NULL" + 
+                                  " " +              "THEN 999999999" + 
+                                  " " +            "ELSE   g.NUMSEC" +
+                                  " " +          "END)     AS NUMSEC," +    
+                                  " " +          "c.ARTREF," +
+                                  " " +          "c.ARTDES," +
+                                  " " +          "c.UNIREP," +
+                                  " " +          "c.UNIMIN," +
+                                  " " +          "d.NUMUNI AS NUMUNI_UNIREP," +
+                                  " " +          "b.CANREC," +
+                                  " " +         "(CASE" +
+                                  " " +            "WHEN g.NUMSEC IS NOT NULL" + 
+                                  " " +              "THEN 'X'" + 
+                                  " " +            "ELSE   NULL" +
+                                  " " +          "END)     AS EXI_RUT_REC"
+//
+// ****************************
+// * Añadir el FROM al SELECT *
+// ****************************
+//
+this.queryText = this.queryText + " " + "FROM     RECCAB a" +
+                                  " " +            "INNER JOIN RECLIN b" +
+                                  " " +               "ON b.RECCOD    = a.RECCOD" +
+                                  " " +            "LEFT OUTER JOIN ART c" +
+                                  " " +               "ON c.ARTCOD    = b.ARTCOD" +
+                                  " " +            "LEFT OUTER JOIN ARTPRE d" +
+                                  " " +               "ON d.ARTCOD    = b.ARTCOD" +
+                                  " " +              "AND d.UNITIP    = c.UNIREP" +
+                                  " " +            "LEFT OUTER JOIN ARTALM e" +
+                                  " " +               "ON e.ARTCOD    = b.ARTCOD" +
+                                  " " +              "AND e.ALMCOD    = a.ALMCOD" +
+                                  " " +            "LEFT OUTER JOIN ALMZONPIC f" +
+                                  " " +               "ON f.ZONPICCOD = e.ZONPICCOD" +
+                                  " " +            "LEFT OUTER JOIN ALMRUT g" +
+                                  " " +               "ON g.NUMVER    =" + " " + params["pdecNumVer"].value +
+                                  " " +              "AND g.ALMUBICOD = e.UBIPIC"
+//
+// *****************************
+// * Añadir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.RECCOD =" + params["pdecRecCod"].value +
+                                  " " +   "AND    b.CANREC > 0" + 
+                                  " " +   "AND    b.ARTCOD NOT IN (SELECT p.ARTCOD" +
+                                  " " +                           "FROM   CNTNDO p" +
+                                  " " +                           "WHERE  p.RECCOD = a.RECCOD" +
+                                  " " +                             "AND  p.ARTCOD = b.ARTCOD)"
+//
+// ********************************
+// * Añadir el ORDER BY al SELECT *
+// ********************************
+//
+this.queryText = this.queryText + " " + "ORDER BY e.ZONPICCOD," +
+                                  " " +         "(CASE" +
+                                  " " +            "WHEN g.NUMSEC IS NULL" + 
+                                  " " +              "THEN 999999999" + 
+                                  " " +            "ELSE   g.NUMSEC" +
+                                  " " +          "END) DESC"]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ZONPICCOD</property>
+                    <property name="nativeName">ZONPICCOD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ZONPICREF</property>
+                    <property name="nativeName">ZONPICREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ZONPICDES</property>
+                    <property name="nativeName">ZONPICDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">NUMSEC</property>
+                    <property name="nativeName">NUMSEC</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ARTREF</property>
+                    <property name="nativeName">ARTREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ARTDES</property>
+                    <property name="nativeName">ARTDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">UNIREP</property>
+                    <property name="nativeName">UNIREP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">UNIMIN</property>
+                    <property name="nativeName">UNIMIN</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">NUMUNI_UNIREP</property>
+                    <property name="nativeName">NUMUNI_UNIREP</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">CANREC</property>
+                    <property name="nativeName">CANREC</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">EXI_RUT_REC</property>
+                    <property name="nativeName">EXI_RUT_REC</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">// Consulta definida en evento beforeOpen</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="RAL-UBI-002 02 (Cab)" id="6390">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TERREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TERDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ALBARA</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">MOMREC</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">RECORDREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">CNT_CONT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">OBS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">RAL</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecRecCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TERREF</property>
+                    <property name="nativeName">TERREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TERDES</property>
+                    <property name="nativeName">TERDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ALBARA</property>
+                    <property name="nativeName">ALBARA</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">MOMREC</property>
+                    <property name="nativeName">MOMREC</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">RECORDREF</property>
+                    <property name="nativeName">RECORDREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">CNT_CONT</property>
+                    <property name="nativeName">CNT_CONT</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">OBS</property>
+                    <property name="nativeName">OBS</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   c.TERREF,
+         c.TERDES,
+         a.ALBARA,
+         a.MOMREC,
+         b.RECORDREF,
+        (SELECT COUNT(DISTINCT(q.ZONPICCOD))
+         FROM   RECLIN p
+                  INNER JOIN ARTALM q
+                     ON q.ARTCOD = p.ARTCOD 
+         WHERE  p.RECCOD = a.RECCOD
+           AND  p.CANREC > 0
+           AND  p.ARTCOD NOT IN (SELECT r.ARTCOD
+                                 FROM   CNTNDO r
+                                 WHERE  r.RECCOD = p.RECCOD
+                                   AND  r.ARTCOD = p.ARTCOD)
+           AND  q.ALMCOD = a.ALMCOD) AS CNT_CONT, 
+         a.OBS 
+FROM     RECCAB a
+           LEFT OUTER JOIN RECORDCAB b
+              ON b.RECORDCOD = a.RECORDCOD
+           LEFT OUTER JOIN TER c
+              ON c.TERCOD    = b.TERCOD
+WHERE    a.RECCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="RAL-UBI-002 03 (Cab2)" id="7140">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">RAL</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1
+</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">portrait</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="InformeDeUbicacionesParaPickingInverso"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="7141">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">RAL-UBI-002 03 (Cab2)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(RAL-UBI-002)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="3563">
+            <property name="marginTop">0pt</property>
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">70%</property>
+            <column id="3564">
+                <property name="width">40mm</property>
+            </column>
+            <column id="3565">
+                <property name="width">35mm</property>
+            </column>
+            <column id="6377">
+                <property name="width">45mm</property>
+            </column>
+            <column id="6371">
+                <property name="width">45mm</property>
+            </column>
+            <column id="6389">
+                <property name="width">50mm</property>
+            </column>
+            <row id="3567">
+                <property name="height">0.312in</property>
+                <cell id="3568"/>
+                <cell id="3569"/>
+                <cell id="6372"/>
+                <cell id="6366"/>
+                <cell id="6384"/>
+            </row>
+            <row id="5225">
+                <cell id="5226">
+                    <label id="5444">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Recepcion"></text-property>
+                    </label>
+                </cell>
+                <cell id="5227">
+                    <data id="6353">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Unformatted</property>
+                        </structure>
+                        <property name="textAlign">left</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pdecRecCod</property>
+                                <expression name="expression">params["pdecRecCod"].value</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pdecRecCod</property>
+                    </data>
+                </cell>
+                <cell id="6373">
+                    <label id="6507">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Remitente"></text-property>
+                    </label>
+                </cell>
+                <cell id="6367">
+                    <data id="6509">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">RAL-UBI-002 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TERREF</property>
+                                <property name="displayName">TERREF</property>
+                                <expression name="expression">dataSetRow["TERREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">TERREF</property>
+                    </data>
+                </cell>
+                <cell id="6385">
+                    <data id="6510">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">RAL-UBI-002 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TERDES</property>
+                                <property name="displayName">TERDES</property>
+                                <expression name="expression">dataSetRow["TERDES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">TERDES</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="6357">
+                <cell id="6358">
+                    <label id="6496">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Albaran"></text-property>
+                    </label>
+                </cell>
+                <cell id="6359">
+                    <data id="6513">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">RAL-UBI-002 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ALBARA</property>
+                                <property name="displayName">ALBARA</property>
+                                <expression name="expression">dataSetRow["ALBARA"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ALBARA</property>
+                    </data>
+                </cell>
+                <cell id="6374">
+                    <label id="6508">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="MomentoRecep"></text-property>
+                    </label>
+                </cell>
+                <cell id="6368">
+                    <data id="6511">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="dateTimeFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">dd/MM/yyyy HH:mm:ss</property>
+                        </structure>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">RAL-UBI-002 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">MOMREC</property>
+                                <property name="displayName">MOMREC</property>
+                                <expression name="expression">dataSetRow["MOMREC"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">MOMREC</property>
+                    </data>
+                </cell>
+                <cell id="6386"/>
+            </row>
+            <row id="6363">
+                <cell id="6364">
+                    <label id="6497">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="OrdenRecepcion"></text-property>
+                    </label>
+                </cell>
+                <cell id="6365">
+                    <data id="6512">
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">RAL-UBI-002 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">RECORDREF</property>
+                                <property name="displayName">RECORDREF</property>
+                                <expression name="expression">dataSetRow["RECORDREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">RECORDREF</property>
+                    </data>
+                </cell>
+                <cell id="6375">
+                    <label id="6505">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="TotalContenedores"></text-property>
+                    </label>
+                </cell>
+                <cell id="6369">
+                    <data id="6514">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0</property>
+                        </structure>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">RAL-UBI-002 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CNT_CONT</property>
+                                <property name="displayName">CNT_CONT</property>
+                                <expression name="expression">dataSetRow["CNT_CONT"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">CNT_CONT</property>
+                    </data>
+                </cell>
+                <cell id="6387"/>
+            </row>
+            <row id="6360">
+                <cell id="6361">
+                    <label id="6506">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Observaciones"></text-property>
+                    </label>
+                </cell>
+                <cell id="6362">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <data id="6515">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">RAL-UBI-002 02 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">OBS</property>
+                                <property name="displayName">OBS</property>
+                                <expression name="expression">dataSetRow["OBS"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">OBS</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <table id="6980">
+            <property name="width">70%</property>
+            <property name="dataSet">RAL-UBI-002 01 (Ppal)</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">ZONPICREF</property>
+                    <property name="displayName">ZONPICREF</property>
+                    <expression name="expression">dataSetRow["ZONPICREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ZONPICDES</property>
+                    <property name="displayName">ZONPICDES</property>
+                    <expression name="expression">dataSetRow["ZONPICDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NUMSEC</property>
+                    <property name="displayName">NUMSEC</property>
+                    <expression name="expression">dataSetRow["NUMSEC"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTREF</property>
+                    <property name="displayName">ARTREF</property>
+                    <expression name="expression">dataSetRow["ARTREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTDES</property>
+                    <property name="displayName">ARTDES</property>
+                    <expression name="expression">dataSetRow["ARTDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UNIREP</property>
+                    <property name="displayName">UNIREP</property>
+                    <expression name="expression">dataSetRow["UNIREP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UNIMIN</property>
+                    <property name="displayName">UNIMIN</property>
+                    <expression name="expression">dataSetRow["UNIMIN"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NUMUNI_UNIREP</property>
+                    <property name="displayName">NUMUNI_UNIREP</property>
+                    <expression name="expression">dataSetRow["NUMUNI_UNIREP"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CANREC</property>
+                    <property name="displayName">CANREC</property>
+                    <expression name="expression">dataSetRow["CANREC"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decCanRec_UniRep</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIREP"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIREP"] != 0 )
+{
+        BirtMath.roundDown( ( dataSetRow["CANREC"] / dataSetRow["NUMUNI_UNIREP"] ), 0 )
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decCanRec_UniMin</property>
+                    <expression name="expression">if ( dataSetRow["NUMUNI_UNIREP"] != null
+                       &amp;&amp;
+     dataSetRow["NUMUNI_UNIREP"] != 0 )
+{
+        BirtMath.mod( dataSetRow["CANREC"], dataSetRow["NUMUNI_UNIREP"] )
+}
+else
+{
+        dataSetRow["CANREC"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">EXI_RUT_REC</property>
+                    <property name="displayName">EXI_RUT_REC</property>
+                    <expression name="expression">dataSetRow["EXI_RUT_REC"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ZONPICCOD</property>
+                    <property name="displayName">ZONPICCOD</property>
+                    <expression name="expression">dataSetRow["ZONPICCOD"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="7034">
+                <property name="width">20mm</property>
+            </column>
+            <column id="7035">
+                <property name="width">30mm</property>
+            </column>
+            <column id="7036">
+                <property name="width">70mm</property>
+            </column>
+            <column id="7097">
+                <property name="width">10mm</property>
+            </column>
+            <column id="7038">
+                <property name="width">8mm</property>
+            </column>
+            <column id="7039">
+                <property name="width">4mm</property>
+            </column>
+            <column id="7040">
+                <property name="width">10mm</property>
+            </column>
+            <column id="7041">
+                <property name="width">8mm</property>
+            </column>
+            <column id="7043">
+                <property name="width">20mm</property>
+            </column>
+            <header>
+                <row id="7045">
+                    <property name="height">0.312in</property>
+                    <cell id="7046"/>
+                    <cell id="7047"/>
+                    <cell id="7048"/>
+                    <cell id="7090"/>
+                    <cell id="7050"/>
+                    <cell id="7051"/>
+                    <cell id="7052"/>
+                    <cell id="7053"/>
+                    <cell id="7054"/>
+                </row>
+            </header>
+            <group id="7055">
+                <property name="groupName">ZONPICCOD</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr">row["ZONPICCOD"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue">row["ZONPICCOD"]</expression>
+                </structure>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">always-excluding-first</property>
+                <property name="pageBreakInside">auto</property>
+                <header>
+                    <row id="7056">
+                        <method name="onCreate"><![CDATA[//
+// Inicializar secuencia por ZONPICCOD
+params["decSecZonPicCod"].value = 0]]></method>
+                        <cell id="7057">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <grid id="7132">
+                                <property name="width">100%</property>
+                                <column id="7133">
+                                    <property name="width">2in</property>
+                                </column>
+                                <column id="7134">
+                                    <property name="width">0.1in</property>
+                                </column>
+                                <column id="7135"/>
+                                <row id="7136">
+                                    <cell id="7137">
+                                        <label id="7089">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="color">#800000</property>
+                                            <property name="borderTopColor">#800000</property>
+                                            <property name="borderTopStyle">dotted</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="textAlign">left</property>
+                                            <text-property name="text" key="ZonaPicking"></text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="7138">
+                                        <data id="7076">
+                                            <property name="color">#800000</property>
+                                            <property name="borderTopColor">#800000</property>
+                                            <property name="borderTopStyle">dotted</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="marginLeft">4pt</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="resultSetColumn">ZONPICREF</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="7139">
+                                        <data id="7078">
+                                            <property name="color">#800000</property>
+                                            <property name="borderTopColor">#800000</property>
+                                            <property name="borderTopStyle">dotted</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="marginLeft">4pt</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="resultSetColumn">ZONPICDES</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="7092"/>
+                        <cell id="7061"/>
+                        <cell id="7062"/>
+                        <cell id="7063"/>
+                        <cell id="7064"/>
+                        <cell id="7065"/>
+                    </row>
+                    <row id="7098">
+                        <property name="height">0.2in</property>
+                        <cell id="7099"/>
+                        <cell id="7100"/>
+                        <cell id="7101"/>
+                        <cell id="7102"/>
+                        <cell id="7103"/>
+                        <cell id="7104"/>
+                        <cell id="7105"/>
+                        <cell id="7106"/>
+                        <cell id="7107"/>
+                    </row>
+                    <row id="7079">
+                        <property name="verticalAlign">bottom</property>
+                        <cell id="7080">
+                            <label id="7108">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <text-property name="text" key="Sec"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="7081">
+                            <label id="7109">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <text-property name="text" key="Articulo"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="7082">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <label id="7110">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <text-property name="text" key="Descripcion"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="7093">
+                            <property name="colSpan">5</property>
+                            <property name="rowSpan">1</property>
+                            <label id="7111">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <text-property name="text" key="Cantidad"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="7088">
+                            <label id="7112">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <text-property name="text" key="ExisteEnRutaRecorrido"></text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </header>
+                <footer>
+                    <row id="7066">
+                        <property name="height">0.312in</property>
+                        <cell id="7067"/>
+                        <cell id="7068"/>
+                        <cell id="7069"/>
+                        <cell id="7095"/>
+                        <cell id="7071"/>
+                        <cell id="7072"/>
+                        <cell id="7073"/>
+                        <cell id="7074"/>
+                        <cell id="7075"/>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="7002">
+                    <method name="onCreate"><![CDATA[//
+// Incrementar secuencia por ZONPICCOD
+params["decSecZonPicCod"].value = params["decSecZonPicCod"].value + 1]]></method>
+                    <cell id="7003">
+                        <data id="7123">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">decSecZonPicCod</property>
+                                    <expression name="expression">params["decSecZonPicCod"].value</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">decSecZonPicCod</property>
+                        </data>
+                    </cell>
+                    <cell id="7005">
+                        <data id="7010">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ARTREF</property>
+                        </data>
+                    </cell>
+                    <cell id="7007">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <data id="7012">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ARTDES</property>
+                        </data>
+                    </cell>
+                    <cell id="7094">
+                        <data id="7113">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">decCanRec_UniRep</property>
+                        </data>
+                    </cell>
+                    <cell id="7011">
+                        <data id="7014">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">UNIREP</property>
+                        </data>
+                    </cell>
+                    <cell id="7013">
+                        <label id="7044">
+                            <text-property name="text" key="+"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="7015">
+                        <data id="7114">
+                            <property name="marginTop">0pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">decCanRec_UniMin</property>
+                        </data>
+                    </cell>
+                    <cell id="7017">
+                        <data id="7016">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">UNIMIN</property>
+                        </data>
+                    </cell>
+                    <cell id="7021">
+                        <data id="7117">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">is-not-null</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#008000</property>
+                                    <expression name="testExpr">row["EXI_RUT_REC"]</expression>
+                                </structure>
+                                <structure>
+                                    <property name="operator">is-null</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#FF0000</property>
+                                    <expression name="testExpr">row["EXI_RUT_REC"]</expression>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr">row["EXI_RUT_REC"]</expression>
+                                    <property name="operator">is-not-null</property>
+                                    <text-property name="display" key="Si">Si</text-property>
+                                </structure>
+                                <structure>
+                                    <expression name="testExpr">row["EXI_RUT_REC"]</expression>
+                                    <property name="operator">is-null</property>
+                                    <text-property name="display" key="No">No</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">EXI_RUT_REC</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

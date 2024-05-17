@@ -1,0 +1,29 @@
+. /home/adaia/bin/entorno.real > /dev/null
+#echo Inicio: $LOGNAME `date`
+#echo =====================================================================
+#echo Inicio de la generacion automatica de acciones de picking de reparto
+cd $ADAIA_TRASP
+if test -f REPARTO*
+then
+echo Inicio: $LOGNAME `date`
+for FILE in `ls -rt REPARTO.*`
+do
+   PARM1=`cat $FILE|awk '{print $1}'`
+    
+   if test $PARM1 
+   then
+   adaia -Jl >>$ADAIA_HOME/log/genaccpire <<!
+LOGIC-GEN-RPA-001 USING $PARM1;
+EXIT;
+!
+   rm $FILE
+   cp "$ADAIA_HOME/log/genaccpire" "$ADAIA_HOME/log/genaccpire.ult"
+   mv "$ADAIA_HOME/log/genaccpire" "$ADAIA_TMP/genaccpire.`date +%m%d%H%M`_$$"
+   else
+      echo "Existe algun error en el fichero $FILE"
+   fi
+done
+#echo Final generacion automatica de acciones de picking de reparto.
+#echo ====================================================================
+echo Final: $LOGNAME `date`
+fi

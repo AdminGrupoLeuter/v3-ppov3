@@ -1,0 +1,39 @@
+#
+# verdbg: muestra el contenido del archivo dbg
+#
+case $1 in
+   -t )
+      shift;
+      f_dbg_name=dbg_$1.tty;
+      shift;;
+   -u )
+      shift;
+      f_dbg_name=dbg_$1.uso;
+      shift;;
+   -o )
+      shift;
+      f_dbg_name=dbg_$1.ope;
+      shift;;
+   -r )
+      shift;
+      f_dbg_name=dbg_$1.rec;
+      shift;;
+   * )
+      tty=`ps | grep ps | awk '{print $2}'`;
+      f_dbg_name=dbg_$tty.tty;;
+esac
+
+cmd=cat
+
+f_dbg_name=$ADAIA_HOME/log/$f_dbg_name
+
+if test -r $f_dbg_name
+then
+   fname=`tail -1 $f_dbg_name`
+   if test -r $fname
+   then
+      $cmd $fname
+   fi
+fi
+echo ----------------------------
+echo Fichero $f_dbg_name : $fname

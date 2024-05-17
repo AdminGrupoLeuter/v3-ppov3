@@ -1,0 +1,163 @@
+#. /home/alcor/bin/entorno
+
+#
+# VERSION 2.1
+#
+# Esta version no solo compruba que existe fichero de control sino que comprueba tambien los procesos en ejecucion. En caso de existir fichero de control y no exista proceso en ejecucion, movera el fichero de control a tmp.
+# Ademas, va a generar un fichero de log por día.
+#
+
+PROGRAMA="$1"
+PAUSA="300"
+INICIO="00:00"
+FIN="23:59"
+FECHA=`date +%y%m%d`
+cd $ADAIA_HOME/log
+
+#
+# COMPROBAMOS LOS ARGUMENTOS PASADOS AL PROGRAMA
+#
+if [ "$1" = "" ]; then
+   echo "\nSintaxis: ejecuta.programa PROGRAMA [SEGUNDOS_ESPERA] [HORA_INICIO] [HORA_FIN]\n"
+   echo "Los argumentos entre corchetes son opcionales."
+   echo "Si no se especifica SEGUNDOS_ESPERA, se ejecutara cada 5 minutos."
+   echo "Si no se especifica ninguna hora, se ejecutara en todo momento."
+   echo "El formato de hora es hh:mm.\n"
+   exit 1
+else
+   if [ ! -x $ADAIA_HOME/bin/programa.$PROGRAMA ]; then
+      echo "No existe o no es ejecutable $ADAIA_HOME/bin/programa.$PROGRAMA"
+      exit 1
+   else
+      if [ ! "$2" = "" ] && [ `echo $2 | grep : | wc -w` = 0 ]; then
+         PAUSA="$2"
+         if [ `echo $3 | grep : | wc -w` = 1 ]; then
+            INICIO=$3
+	    if [ `echo $4 | grep : | wc -w` = 1 ]; then
+               FIN=$4
+               if [ $INICIO = $FIN ]; then
+	          echo "El rango horario es incorrecto"
+                  exit 1;
+               fi
+            fi
+         fi
+      else
+         if [ `echo $2 | grep : | wc -w` = 1 ]; then
+            INICIO=$2
+	    if [ `echo $3 | grep : | wc -w` = 1 ]; then
+               FIN=$3
+               if [ $INICIO = $FIN ]; then
+	          echo "El rango horario es incorrecto"
+                  exit 1;
+	       fi
+            fi
+         fi
+      fi
+   fi
+fi
+
+#
+# EJECUCION DEL PROGRAMA
+#
+if [ "$5" = "modo_ejecucion" ]
+then
+   H_INI=`echo $3 | awk -F':' '{print $1}'`
+   M_INI=`echo $3 | awk -F':' '{print $2}'`
+   INICIO=`echo $H_INI*60+$M_INI | bc -l`
+   H_FIN=`echo $4 | awk -F':' '{print $1}'`
+   M_FIN=`echo $4 | awk -F':' '{print $2}'`
+   FIN=`echo $H_FIN*60+$M_FIN | bc -l`
+   if [ $INICIO -lt $FIN ]; then
+     #Se ejecutara cuando este en el intervalo
+     while ! test -r ctrl.$PROGRAMA.$FECHA.stop
+     do
+        H_ACTUAL=`date +%H`
+        M_ACTUAL=`date +%M`
+        ACTUAL=`echo $H_ACTUAL*60+$M_ACTUAL | bc -l`
+        FECHA_OLD=$FECHA
+        FECHA=`date +%y%m%d`
+        if [ $FECHA_OLD != $FECHA ]; then
+           mv ctrl.$PROGRAMA.$FECHA_OLD $ADAIA_TMP
+        fi
+        if [ $ACTUAL -ge $INICIO ] && [ $ACTUAL -lt $FIN ]; then
+          echo ""               >> ctrl.$PROGRAMA.$FECHA
+          echo "===============================================================================" >> ctrl.$PROGRAMA.$FECHA
+          echo " INICIO: `date`" >> ctrl.$PROGRAMA.$FECHA
+          echo "===============================================================================" >> ctrl.$PROGRAMA.$FECHA
+          programa.$PROGRAMA   >> ctrl.$PROGRAMA.$FECHA
+          echo "===============================================================================" >> ctrl.$PROGRAMA.$FECHA
+          echo " FIN: `date`"  >> ctrl.$PROGRAMA.$FECHA
+          echo "===============================================================================" >> ctrl.$PROGRAMA.$FECHA
+        fi
+	sleep $PAUSA
+     done
+   else
+     #Se ejecutara cuando este fuera del intervalo de las horas invertidas
+     TMP=$INICIO
+     INICIO=$FIN
+     FIN=$TMP
+     while ! test -r ctrl.$PROGRAMA.$FECHA.stop
+     do
+        H_ACTUAL=`date +%H`
+        M_ACTUAL=`date +%M`
+        ACTUAL=`echo $H_ACTUAL*60+$M_ACTUAL | bc -l`
+        FECHA_OLD=$FECHA
+        FECHA=`date +%y%m%d`
+        if [ $FECHA_OLD != $FECHA ]; then
+           mv ctrl.$PROGRAMA.$FECHA_OLD $ADAIA_TMP
+        fi
+        if [ $ACTUAL -lt $INICIO ] || [ $ACTUAL -ge $FIN ]; then
+          echo ""               >> ctrl.$PROGRAMA.$FECHA
+          echo "===============================================================================" >> ctrl.$PROGRAMA.$FECHA
+          echo " INICIO: `date`" >> ctrl.$PROGRAMA.$FECHA
+          echo "===============================================================================" >> ctrl.$PROGRAMA.$FECHA
+          programa.$PROGRAMA   >> ctrl.$PROGRAMA.$FECHA
+          echo "===============================================================================" >> ctrl.$PROGRAMA.$FECHA
+          echo " FIN: `date`"  >> ctrl.$PROGRAMA.$FECHA
+          echo "===============================================================================" >> ctrl.$PROGRAMA.$FECHA
+        fi
+	sleep $PAUSA
+     done
+   fi
+   rm ctrl.$PROGRAMA.$FECHA.stop
+   if test -r $ADAIA_TMP/ctrl.$PROGRAMA.$FECHA
+   then
+      cat ctrl.$PROGRAMA.$FECHA >> $ADAIA_TMP/ctrl.$PROGRAMA.$FECHA
+      rm ctrl.$PROGRAMA.$FECHA
+   else
+      mv ctrl.$PROGRAMA.$FECHA $ADAIA_TMP
+   fi
+else
+   if [ `ps -ef | grep $LOGNAME | grep $PROGRAMA | grep -v grep | grep modo_ejecucion | wc -l` != 0 ]
+   then
+      echo "+-------------------------------------------------------+"
+      echo "| ERROR: Aparentemente ya se esta ejecutando el proceso.|"
+      echo "+-------------------------------------------------------+"
+      if test -r ctrl.$PROGRAMA.$FECHA
+      then
+         echo ""
+         ls -l ctrl.$PROGRAMA.$FECHA
+         echo ""
+         echo "Ultimas ejecuciones del programa:\n"
+         tail -20 ctrl.$PROGRAMA.$FECHA
+      fi
+   else
+      if test -r ctrl.$PROGRAMA.$FECHA
+      then
+         if test -r $ADAIA_TMP/ctrl.$PROGRAMA.$FECHA
+         then
+            cat ctrl.$PROGRAMA.$FECHA >> $ADAIA_TMP/ctrl.$PROGRAMA.$FECHA
+            rm ctrl.$PROGRAMA.$FECHA
+         else
+            mv ctrl.$PROGRAMA.$FECHA $ADAIA_TMP
+         fi
+      fi
+      echo "===============================================================================" > ctrl.$PROGRAMA.$FECHA
+      echo "" >> ctrl.$PROGRAMA.$FECHA
+      echo "                        CONTROL DE $PROGRAMA" >> ctrl.$PROGRAMA.$FECHA
+      echo "" >> ctrl.$PROGRAMA.$FECHA
+      echo "===============================================================================" >> ctrl.$PROGRAMA.$FECHA
+      echo  Ejecuto programa $PROGRAMA $PAUSA
+      nohup nice ejecuta.programa "$PROGRAMA" "$PAUSA" "$INICIO" "$FIN" "modo_ejecucion" 2>/dev/null&
+   fi
+fi

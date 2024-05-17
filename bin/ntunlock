@@ -1,0 +1,54 @@
+#
+# Archivo de comandos para desbloquear el trabajo en el directorio de transferencia
+# ------------------------------------------------------------------------------
+#
+# Objeto:
+#    Desbloquear en el NT el directorio que se le indica, borrando el flag ZSTOP
+#
+# Sintaxis:
+#    ntunlock "Directorio NT"
+#                 ^^^^^^^^^^^^^^^^ Nombre de el directorio del NT
+#
+# Ejemplo:
+#    ntunlock $ADAIA_GES_A_GESTION
+#                   Desbloquea en NT el directorio
+# Requerimientos:
+#    $ADAIA_GES_CPU        con el nombre del NT en adaia
+#    $ADAIA_GES_LOGIN      con el nombre de usuario para hacer el login
+#    $ADAIA_GES_PASSWORD   pues eso!
+#    $1                    Directorio del NT
+# Valor de Retorno:
+#    0                     Salida exitosa. Directorio desblockeado
+#    253		   Faltan parametros en la l’nea de comandos
+# ---------------------------------------------------------
+# -- EDM - Verificar la cantidad de parametros
+if [ $# -lt 1 ]
+then
+echo --------------------------------------------------------------------------------
+echo Objeto:
+echo =======
+echo    Desbloquear en el NT el directorio que se le indica, borrando el flag ZSTOP
+echo
+echo Sintaxis:
+echo =========
+echo    ntunlock "Directorio NT"
+echo
+echo Ejemplo:
+echo ========
+echo    ntunlock $ADAIA_GES_A_GESTION
+echo
+echo
+echo
+echo --------------------------------------------------------------------------------
+exit 253
+fi
+# ---------------------------------------------------------
+# -- EDM - Borrar el fichero ZSTOP
+ftp -niv $ADAIA_GES_CPU <<?
+quote user $ADAIA_GES_LOGIN
+quote pass $ADAIA_GES_PASSWORD
+cd $1
+delete ZSTOP
+quit
+?
+echo $1 Desbloqueado

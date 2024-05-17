@@ -1,0 +1,64 @@
+#
+# Archivo de comandos para enviar los ficheros al NT por ftp.
+# ---------------------------------------------------------------------
+#
+# Objeto:
+#    Enviar al NT el fichero que se le indica.
+#
+# Sintaxis:
+#    ftpput fichero
+#             ^^^^^^^ nombre del fichero  a enviar
+#                      ( NO HAY COMODINES, DE UNO EN UNO)
+# Ejemplo:
+#    ftpput LTPEDPRO
+#                   Transfiere al NT el fichero
+#
+# Requerimientos:
+#    $ADAIA_GES_CPU        con el nombre del NT en adaia
+#    $ADAIA_GES_LOGIN      con el nombre de usuario para hacer el login
+#    $ADAIA_GES_PASSWORD   pues eso!
+#    $ADAIA_GES_A_GESTION  Directorio en el NT en donde dejamos los ficheros
+# Modificaciones:
+#       EDM - 22/6/2000 - Testeo de flags para evitar concurrencia
+#               Desde el NT se pondrÄ XSTOP para indicar trabajo
+#               Y este script usarÄ ZSTOP para indicar trabajo.
+#       EDM - 24/6/2000 - Se elimino control de bloqueo y se modifico para
+#                         transferir mÇltiples archivos (antes transferia solo uno)
+#       EDM - 10/7/2000 - OptimizaciÆn que hace mas facil la lectura del log
+#
+
+# ---------------------------------------------------------
+# -- EDM - Verificar cantidad de parÄmetros
+if [ $# -lt 1 ] OR [ $1 -eq "*" ]
+then
+echo Uso:
+echo ====
+echo ftpput "Nombre Destino"
+echo
+exit 255
+else
+# ---------------------------------------------------------
+# -- EDM - Transferir archivos exactamente como antes
+for FICHERO in $1*
+do
+test $FICHERO = "$1*"
+if [ $? -ne 0 ]
+then
+ftp -niv $ADAIA_GES_CPU <<?
+quote user $ADAIA_GES_LOGIN
+quote pass $ADAIA_GES_PASSWORD
+ascii
+cd $ADAIA_GES_A_GESTION
+mput $FICHERO
+quit
+?
+mv $FICHERO $ADAIA_TMP/$FICHERO.datos
+echo ---------------------------------------
+echo $FICHERO enviado
+else
+echo ---------------------------------------
+echo No hay $FICHERO para enviar
+fi
+date
+done
+fi

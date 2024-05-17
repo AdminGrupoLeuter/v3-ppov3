@@ -1,0 +1,1398 @@
+PID 17511; Tue Oct  1 13:38:23 2013; SpeedWeb server 3.04.02 Build 20 July 17, 2009
+PID 17511; Tue Oct  1 13:38:23 2013; Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+PID 17511; Tue Oct  1 13:38:23 2013; For use by authorized licensees only
+PID 17511; Tue Oct  1 13:38:23 2013; Server realm is  : SpeedWeb Application
+PID 17511; Tue Oct  1 13:38:23 2013; Log file location is /home/sco/Speedweb/speedweb.log
+PID 17511; Tue Oct  1 13:38:23 2013; Starting server...
+PID 17511; Tue Oct  1 13:38:23 2013; Server is 172.20.10.56
+PID 17511; Tue Oct  1 13:38:23 2013; SSL certificate loaded
+PID 17511; Tue Oct  1 13:38:23 2013; Standard application services
+PID 17511; Tue Oct  1 13:38:23 2013; Support for 10 sessions
+PID 17511; Tue Oct  1 13:38:23 2013; Command channel  : 
+PID 17511; Tue Oct  1 13:38:23 2013; Register port 18201
+PID 17511; Tue Oct  1 13:38:23 2013; Standard channel : 
+PID 17511; Tue Oct  1 13:38:23 2013; Register port 18200
+PID 17511; Tue Oct  1 13:38:23 2013; Secure channel   : 
+PID 17511; Tue Oct  1 13:38:23 2013; Register port 18202
+PID 17511; Tue Oct  1 13:38:23 2013; SWS-API version  : 30402
+PID 17514; Tue Oct  1 13:38:31 2013; Session [0] started...
+PID 17514; Tue Oct  1 13:38:31 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 17514; Tue Oct  1 13:38:31 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64003
+PID 17514; Tue Oct  1 13:38:31 2013; Launch PID:17516
+PID 17514; Tue Oct  1 13:38:31 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 17514; Tue Oct  1 13:38:31 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64003
+PID 17514; Tue Oct  1 13:38:31 2013; Wait for Speedweb/4GL server to connect...
+PID 17514; Tue Oct  1 13:38:32 2013; Started  Speedweb/4GL [17516] in 4294957 milliseconds
+PID 17511; Tue Oct  1 13:38:32 2013; Sign on session[0] PID:17516 USER:
+PID 17514; Tue Oct  1 13:39:11 2013; Sending termination request
+PID 17514; Tue Oct  1 13:39:11 2013; Session [0] stopped.
+PID 17511; Tue Oct  1 13:39:11 2013; Freeing session[0]
+PID 17511; Tue Oct  1 13:39:11 2013; Freeing socket [1]
+PID 17591; Tue Oct  1 13:39:18 2013; Session [0] started...
+PID 17591; Tue Oct  1 13:39:18 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 17591; Tue Oct  1 13:39:18 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/bin/adaiaweb.ini -wa,host=172.20.10.56,port=64018
+PID 17591; Tue Oct  1 13:39:18 2013; Launch PID:17592
+PID 17591; Tue Oct  1 13:39:18 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 17591; Tue Oct  1 13:39:18 2013;   arg      = /home/sco/bin/adaiaweb.ini -wa,host=172.20.10.56,port=64018
+PID 17591; Tue Oct  1 13:39:18 2013; Wait for Speedweb/4GL server to connect...
+PID 17591; Tue Oct  1 13:39:18 2013; Started  Speedweb/4GL [17592] in 4294957 milliseconds
+PID 17511; Tue Oct  1 13:39:18 2013; Sign on session[0] PID:17592 USER:
+PID 17591; Tue Oct  1 13:41:08 2013; Sending termination request
+PID 17591; Tue Oct  1 13:41:08 2013; Session [0] stopped.
+PID 17511; Tue Oct  1 13:41:08 2013; Freeing session[0]
+PID 17511; Tue Oct  1 13:41:08 2013; Freeing socket [1]
+PID 17792; Tue Oct  1 13:41:11 2013; Session [0] started...
+PID 17792; Tue Oct  1 13:41:11 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 17792; Tue Oct  1 13:41:11 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64054
+PID 17792; Tue Oct  1 13:41:11 2013; Launch PID:17793
+PID 17792; Tue Oct  1 13:41:11 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 17792; Tue Oct  1 13:41:11 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64054
+PID 17792; Tue Oct  1 13:41:11 2013; Wait for Speedweb/4GL server to connect...
+PID 17792; Tue Oct  1 13:41:12 2013; Started  Speedweb/4GL [17793] in 4294957 milliseconds
+PID 17511; Tue Oct  1 13:41:12 2013; Sign on session[0] PID:17793 USER:
+PID 17792; Tue Oct  1 13:41:24 2013; Sending termination request
+PID 17792; Tue Oct  1 13:41:24 2013; Session [0] stopped.
+PID 17511; Tue Oct  1 13:41:24 2013; Freeing session[0]
+PID 17511; Tue Oct  1 13:41:24 2013; Freeing socket [1]
+PID 13063; Thu Oct  3 02:05:07 2013; Session [0] started...
+PID 13063; Thu Oct  3 02:05:07 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 13063; Thu Oct  3 02:05:07 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52359
+PID 13063; Thu Oct  3 02:05:07 2013; Launch PID:13064
+PID 13063; Thu Oct  3 02:05:07 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 13063; Thu Oct  3 02:05:07 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52359
+PID 13063; Thu Oct  3 02:05:07 2013; Wait for Speedweb/4GL server to connect...
+PID 13063; Thu Oct  3 02:05:09 2013; Started  Speedweb/4GL [13064] in 4294957 milliseconds
+PID 17511; Thu Oct  3 02:05:09 2013; Sign on session[0] PID:13064 USER:
+PID 13351; Thu Oct  3 02:06:35 2013; Session [1] started...
+PID 13351; Thu Oct  3 02:06:35 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 13351; Thu Oct  3 02:06:35 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52442
+PID 13351; Thu Oct  3 02:06:35 2013; Launch PID:13352
+PID 13351; Thu Oct  3 02:06:35 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 13351; Thu Oct  3 02:06:35 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52442
+PID 13351; Thu Oct  3 02:06:35 2013; Wait for Speedweb/4GL server to connect...
+PID 13351; Thu Oct  3 02:06:36 2013; Started  Speedweb/4GL [13352] in 4294957 milliseconds
+PID 17511; Thu Oct  3 02:06:36 2013; Sign on session[1] PID:13352 USER:
+PID 13351; Thu Oct  3 02:07:03 2013; Sending termination request
+PID 13351; Thu Oct  3 02:07:03 2013; Session [1] stopped.
+PID 17511; Thu Oct  3 02:07:03 2013; Freeing session[1]
+PID 17511; Thu Oct  3 02:07:03 2013; Freeing socket [2]
+PID 13710; Thu Oct  3 02:14:28 2013; Session [1] started...
+PID 13710; Thu Oct  3 02:14:28 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 13710; Thu Oct  3 02:14:28 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52585
+PID 13710; Thu Oct  3 02:14:28 2013; Launch PID:13711
+PID 13710; Thu Oct  3 02:14:28 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 13710; Thu Oct  3 02:14:28 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52585
+PID 13710; Thu Oct  3 02:14:28 2013; Wait for Speedweb/4GL server to connect...
+PID 13710; Thu Oct  3 02:14:29 2013; Started  Speedweb/4GL [13711] in 4294957 milliseconds
+PID 17511; Thu Oct  3 02:14:29 2013; Sign on session[1] PID:13711 USER:
+PID 13063; Thu Oct  3 02:14:53 2013; Sending termination request
+PID 13063; Thu Oct  3 02:14:53 2013; Session [0] stopped.
+PID 17511; Thu Oct  3 02:14:53 2013; Freeing session[0]
+PID 17511; Thu Oct  3 02:14:53 2013; Freeing socket [1]
+PID 13710; Thu Oct  3 02:15:05 2013; Sending termination request
+PID 13710; Thu Oct  3 02:15:05 2013; Session [1] stopped.
+PID 17511; Thu Oct  3 02:15:05 2013; Freeing session[1]
+PID 17511; Thu Oct  3 02:15:05 2013; Freeing socket [2]
+PID 13827; Thu Oct  3 02:15:33 2013; Session [0] started...
+PID 13827; Thu Oct  3 02:15:33 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 13827; Thu Oct  3 02:15:33 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52617
+PID 13827; Thu Oct  3 02:15:33 2013; Launch PID:13828
+PID 13827; Thu Oct  3 02:15:33 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 13827; Thu Oct  3 02:15:33 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52617
+PID 13827; Thu Oct  3 02:15:33 2013; Wait for Speedweb/4GL server to connect...
+PID 13827; Thu Oct  3 02:15:34 2013; Started  Speedweb/4GL [13828] in 4294957 milliseconds
+PID 17511; Thu Oct  3 02:15:34 2013; Sign on session[0] PID:13828 USER:
+PID 13953; Thu Oct  3 02:18:39 2013; Session [1] started...
+PID 13953; Thu Oct  3 02:18:40 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 13953; Thu Oct  3 02:18:40 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52663
+PID 13953; Thu Oct  3 02:18:40 2013; Launch PID:13954
+PID 13953; Thu Oct  3 02:18:40 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 13953; Thu Oct  3 02:18:40 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52663
+PID 13953; Thu Oct  3 02:18:40 2013; Wait for Speedweb/4GL server to connect...
+PID 13953; Thu Oct  3 02:18:40 2013; Started  Speedweb/4GL [13954] in 4294957 milliseconds
+PID 17511; Thu Oct  3 02:18:40 2013; Sign on session[1] PID:13954 USER:
+PID 14339; Thu Oct  3 02:24:33 2013; Session [2] started...
+PID 14339; Thu Oct  3 02:24:34 2013; Session [2] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 14339; Thu Oct  3 02:24:34 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52768
+PID 14339; Thu Oct  3 02:24:34 2013; Launch PID:14340
+PID 14339; Thu Oct  3 02:24:34 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 14339; Thu Oct  3 02:24:34 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52768
+PID 14339; Thu Oct  3 02:24:34 2013; Wait for Speedweb/4GL server to connect...
+PID 14339; Thu Oct  3 02:24:34 2013; Started  Speedweb/4GL [14340] in 4294957 milliseconds
+PID 17511; Thu Oct  3 02:24:34 2013; Sign on session[2] PID:14340 USER:
+PID 14400; Thu Oct  3 02:24:53 2013; Session [3] started...
+PID 14400; Thu Oct  3 02:24:54 2013; Session [3] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 14400; Thu Oct  3 02:24:54 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52776
+PID 14400; Thu Oct  3 02:24:54 2013; Launch PID:14401
+PID 14400; Thu Oct  3 02:24:54 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 14400; Thu Oct  3 02:24:54 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52776
+PID 14400; Thu Oct  3 02:24:54 2013; Wait for Speedweb/4GL server to connect...
+PID 14400; Thu Oct  3 02:24:54 2013; Started  Speedweb/4GL [14401] in 4294957 milliseconds
+PID 17511; Thu Oct  3 02:24:54 2013; Sign on session[3] PID:14401 USER:
+PID 14400; Thu Oct  3 02:25:25 2013; Sending termination request
+PID 14400; Thu Oct  3 02:25:25 2013; Session [3] stopped.
+PID 17511; Thu Oct  3 02:25:25 2013; Freeing session[3]
+PID 17511; Thu Oct  3 02:25:25 2013; Freeing socket [4]
+PID 14489; Thu Oct  3 02:25:28 2013; Session [3] started...
+PID 14489; Thu Oct  3 02:25:28 2013; Session [3] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 14489; Thu Oct  3 02:25:28 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52801
+PID 14489; Thu Oct  3 02:25:28 2013; Launch PID:14490
+PID 14489; Thu Oct  3 02:25:28 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 14489; Thu Oct  3 02:25:28 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52801
+PID 14489; Thu Oct  3 02:25:28 2013; Wait for Speedweb/4GL server to connect...
+PID 14489; Thu Oct  3 02:25:28 2013; Started  Speedweb/4GL [14490] in 4294957 milliseconds
+PID 17511; Thu Oct  3 02:25:28 2013; Sign on session[3] PID:14490 USER:
+PID 13953; Thu Oct  3 02:28:11 2013; Sending termination request
+PID 13953; Thu Oct  3 02:28:11 2013; Session [1] stopped.
+PID 17511; Thu Oct  3 02:28:11 2013; Freeing session[1]
+PID 17511; Thu Oct  3 02:28:11 2013; Freeing socket [2]
+PID 13827; Thu Oct  3 02:28:19 2013; Sending termination request
+PID 13827; Thu Oct  3 02:28:19 2013; Session [0] stopped.
+PID 17511; Thu Oct  3 02:28:19 2013; Freeing session[0]
+PID 17511; Thu Oct  3 02:28:19 2013; Freeing socket [1]
+PID 14339; Thu Oct  3 02:28:24 2013; Sending termination request
+PID 14339; Thu Oct  3 02:28:24 2013; Session [2] stopped.
+PID 17511; Thu Oct  3 02:28:24 2013; Freeing session[2]
+PID 17511; Thu Oct  3 02:28:24 2013; Freeing socket [3]
+PID 14636; Thu Oct  3 02:29:09 2013; Session [0] started...
+PID 14636; Thu Oct  3 02:29:09 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 14636; Thu Oct  3 02:29:09 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52858
+PID 14636; Thu Oct  3 02:29:09 2013; Launch PID:14637
+PID 14636; Thu Oct  3 02:29:09 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 14636; Thu Oct  3 02:29:09 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52858
+PID 14636; Thu Oct  3 02:29:09 2013; Wait for Speedweb/4GL server to connect...
+PID 14636; Thu Oct  3 02:29:09 2013; Started  Speedweb/4GL [14637] in 4294957 milliseconds
+PID 17511; Thu Oct  3 02:29:09 2013; Sign on session[0] PID:14637 USER:
+PID 14636; Thu Oct  3 02:55:06 2013; Sending termination request
+PID 14636; Thu Oct  3 02:55:06 2013; Session [0] stopped.
+PID 17511; Thu Oct  3 02:55:06 2013; Freeing session[0]
+PID 17511; Thu Oct  3 02:55:06 2013; Freeing socket [1]
+PID 14489; Thu Oct  3 02:55:20 2013; Sending termination request
+PID 17511; Thu Oct  3 02:55:20 2013; Freeing session[3]
+PID 17511; Thu Oct  3 02:55:20 2013; Freeing socket [4]
+PID 14489; Thu Oct  3 02:55:20 2013; Session [3] stopped.
+PID 23439; Fri Oct  4 22:07:16 2013; Session [0] started...
+PID 23439; Fri Oct  4 22:07:17 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 23439; Fri Oct  4 22:07:17 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64851
+PID 23439; Fri Oct  4 22:07:17 2013; Launch PID:23440
+PID 23439; Fri Oct  4 22:07:17 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 23439; Fri Oct  4 22:07:17 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64851
+PID 23439; Fri Oct  4 22:07:17 2013; Wait for Speedweb/4GL server to connect...
+PID 23439; Fri Oct  4 22:07:18 2013; Started  Speedweb/4GL [23440] in 4294957 milliseconds
+PID 17511; Fri Oct  4 22:07:18 2013; Sign on session[0] PID:23440 USER:
+PID 27784; Fri Oct  4 23:38:25 2013; Session [1] started...
+PID 27784; Fri Oct  4 23:38:25 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 27784; Fri Oct  4 23:38:25 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=50030
+PID 27784; Fri Oct  4 23:38:25 2013; Launch PID:27785
+PID 27784; Fri Oct  4 23:38:25 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 27784; Fri Oct  4 23:38:25 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=50030
+PID 27784; Fri Oct  4 23:38:25 2013; Wait for Speedweb/4GL server to connect...
+PID 27784; Fri Oct  4 23:38:25 2013; Started  Speedweb/4GL [27785] in 4294957 milliseconds
+PID 17511; Fri Oct  4 23:38:25 2013; Sign on session[1] PID:27785 USER:
+PID 27784; Sat Oct  5 00:44:04 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 27784; Sat Oct  5 00:44:07 2013; Sending termination request
+PID 27784; Sat Oct  5 00:44:07 2013; Session [1] stopped.
+PID 17511; Sat Oct  5 00:44:07 2013; Freeing session[1]
+PID 17511; Sat Oct  5 00:44:07 2013; Freeing socket [2]
+PID 23439; Sat Oct  5 01:00:49 2013; Unknown event signal: 13
+PID 23439; Sat Oct  5 01:00:49 2013; Broken pipe; Module = 90 Reference = 371
+PID 23439; Sat Oct  5 01:00:49 2013; Unexpected internal Error; Module = 90 Reference = 123
+PID 23439; Sat Oct  5 01:00:49 2013; Sending termination request
+PID 23439; Sat Oct  5 01:00:49 2013; Session [0] stopped.
+PID 17511; Sat Oct  5 01:00:49 2013; Freeing session[0]
+PID 17511; Sat Oct  5 01:00:49 2013; Freeing socket [1]
+PID 7103; Mon Oct  7 19:30:03 2013; Session [0] started...
+PID 7103; Mon Oct  7 19:30:03 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 7103; Mon Oct  7 19:30:03 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=53421
+PID 7103; Mon Oct  7 19:30:03 2013; Launch PID:7104
+PID 7103; Mon Oct  7 19:30:03 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 7103; Mon Oct  7 19:30:03 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=53421
+PID 7103; Mon Oct  7 19:30:03 2013; Wait for Speedweb/4GL server to connect...
+PID 7103; Mon Oct  7 19:30:04 2013; Started  Speedweb/4GL [7104] in 4294957 milliseconds
+PID 17511; Mon Oct  7 19:30:04 2013; Sign on session[0] PID:7104 USER:
+PID 7103; Mon Oct  7 20:33:17 2013; Sending termination request
+PID 7103; Mon Oct  7 20:33:17 2013; Session [0] stopped.
+PID 17511; Mon Oct  7 20:33:17 2013; Freeing session[0]
+PID 17511; Mon Oct  7 20:33:17 2013; Freeing socket [1]
+PID 10671; Mon Oct  7 20:33:21 2013; Session [0] started...
+PID 10671; Mon Oct  7 20:33:21 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 10671; Mon Oct  7 20:33:21 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54506
+PID 10671; Mon Oct  7 20:33:21 2013; Launch PID:10672
+PID 10671; Mon Oct  7 20:33:21 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 10671; Mon Oct  7 20:33:21 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54506
+PID 10671; Mon Oct  7 20:33:21 2013; Wait for Speedweb/4GL server to connect...
+PID 10671; Mon Oct  7 20:33:21 2013; Started  Speedweb/4GL [10672] in 4294957 milliseconds
+PID 17511; Mon Oct  7 20:33:21 2013; Sign on session[0] PID:10672 USER:
+PID 10671; Mon Oct  7 20:37:44 2013; Sending termination request
+PID 10671; Mon Oct  7 20:37:44 2013; Session [0] stopped.
+PID 17511; Mon Oct  7 20:37:44 2013; Freeing session[0]
+PID 17511; Mon Oct  7 20:37:44 2013; Freeing socket [1]
+PID 10955; Mon Oct  7 20:37:51 2013; Session [0] started...
+PID 10955; Mon Oct  7 20:37:51 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 10955; Mon Oct  7 20:37:51 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54584
+PID 10955; Mon Oct  7 20:37:51 2013; Launch PID:10956
+PID 10955; Mon Oct  7 20:37:51 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 10955; Mon Oct  7 20:37:51 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54584
+PID 10955; Mon Oct  7 20:37:51 2013; Wait for Speedweb/4GL server to connect...
+PID 10955; Mon Oct  7 20:37:51 2013; Started  Speedweb/4GL [10956] in 4294957 milliseconds
+PID 17511; Mon Oct  7 20:37:51 2013; Sign on session[0] PID:10956 USER:
+PID 11131; Mon Oct  7 20:41:16 2013; Session [1] started...
+PID 11131; Mon Oct  7 20:41:16 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 11131; Mon Oct  7 20:41:16 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54650
+PID 11131; Mon Oct  7 20:41:16 2013; Launch PID:11132
+PID 11131; Mon Oct  7 20:41:16 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 11131; Mon Oct  7 20:41:16 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54650
+PID 11131; Mon Oct  7 20:41:16 2013; Wait for Speedweb/4GL server to connect...
+PID 11131; Mon Oct  7 20:41:16 2013; Started  Speedweb/4GL [11132] in 4294957 milliseconds
+PID 17511; Mon Oct  7 20:41:16 2013; Sign on session[1] PID:11132 USER:
+PID 11131; Mon Oct  7 21:22:13 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 10955; Mon Oct  7 21:23:05 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 11131; Mon Oct  7 21:32:14 2013; Connection timed out; Module = 90 Reference = 351
+PID 11131; Mon Oct  7 21:32:14 2013; Sending termination request
+PID 17511; Mon Oct  7 21:32:14 2013; Freeing session[1]
+PID 17511; Mon Oct  7 21:32:14 2013; Freeing socket [2]
+PID 11131; Mon Oct  7 21:32:14 2013; Session [1] stopped.
+PID 10955; Mon Oct  7 21:33:05 2013; Connection timed out; Module = 90 Reference = 351
+PID 10955; Mon Oct  7 21:33:05 2013; Sending termination request
+PID 10955; Mon Oct  7 21:33:05 2013; Session [0] stopped.
+PID 17511; Mon Oct  7 21:33:05 2013; Freeing session[0]
+PID 17511; Mon Oct  7 21:33:05 2013; Freeing socket [1]
+PID 17684; Mon Oct  7 22:39:35 2013; Session [0] started...
+PID 17684; Mon Oct  7 22:39:35 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 17684; Mon Oct  7 22:39:35 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=56663
+PID 17684; Mon Oct  7 22:39:35 2013; Launch PID:17685
+PID 17684; Mon Oct  7 22:39:35 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 17684; Mon Oct  7 22:39:35 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=56663
+PID 17684; Mon Oct  7 22:39:35 2013; Wait for Speedweb/4GL server to connect...
+PID 17684; Mon Oct  7 22:39:36 2013; Started  Speedweb/4GL [17685] in 4294957 milliseconds
+PID 17511; Mon Oct  7 22:39:36 2013; Sign on session[0] PID:17685 USER:
+PID 18744; Mon Oct  7 22:58:58 2013; Session [1] started...
+PID 18744; Mon Oct  7 22:58:58 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 18744; Mon Oct  7 22:58:58 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=56999
+PID 18744; Mon Oct  7 22:58:58 2013; Launch PID:18745
+PID 18744; Mon Oct  7 22:58:58 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 18744; Mon Oct  7 22:58:58 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=56999
+PID 18744; Mon Oct  7 22:58:58 2013; Wait for Speedweb/4GL server to connect...
+PID 18744; Mon Oct  7 22:58:58 2013; Started  Speedweb/4GL [18745] in 4294957 milliseconds
+PID 17511; Mon Oct  7 22:58:58 2013; Sign on session[1] PID:18745 USER:
+PID 21144; Mon Oct  7 23:38:40 2013; Session [2] started...
+PID 21144; Mon Oct  7 23:38:40 2013; Session [2] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 21144; Mon Oct  7 23:38:40 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=57683
+PID 21144; Mon Oct  7 23:38:40 2013; Launch PID:21145
+PID 21144; Mon Oct  7 23:38:40 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 21144; Mon Oct  7 23:38:40 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=57683
+PID 21144; Mon Oct  7 23:38:40 2013; Wait for Speedweb/4GL server to connect...
+PID 21144; Mon Oct  7 23:38:40 2013; Started  Speedweb/4GL [21145] in 4294957 milliseconds
+PID 17511; Mon Oct  7 23:38:40 2013; Sign on session[2] PID:21145 USER:
+PID 21186; Mon Oct  7 23:38:45 2013; Session [3] started...
+PID 21186; Mon Oct  7 23:38:45 2013; Session [3] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 21186; Mon Oct  7 23:38:45 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=57688
+PID 21186; Mon Oct  7 23:38:45 2013; Launch PID:21187
+PID 21186; Mon Oct  7 23:38:45 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 21186; Mon Oct  7 23:38:45 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=57688
+PID 21186; Mon Oct  7 23:38:45 2013; Wait for Speedweb/4GL server to connect...
+PID 21186; Mon Oct  7 23:38:45 2013; Started  Speedweb/4GL [21187] in 4294957 milliseconds
+PID 17511; Mon Oct  7 23:38:45 2013; Sign on session[3] PID:21187 USER:
+PID 18744; Mon Oct  7 23:39:11 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 17684; Mon Oct  7 23:40:46 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 18744; Mon Oct  7 23:49:12 2013; Connection timed out; Module = 90 Reference = 351
+PID 18744; Mon Oct  7 23:49:12 2013; Sending termination request
+PID 18744; Mon Oct  7 23:49:12 2013; Session [1] stopped.
+PID 17511; Mon Oct  7 23:49:12 2013; Freeing session[1]
+PID 17511; Mon Oct  7 23:49:12 2013; Freeing socket [2]
+PID 21186; Mon Oct  7 23:49:54 2013; Sending termination request
+PID 21186; Mon Oct  7 23:49:54 2013; Session [3] stopped.
+PID 17511; Mon Oct  7 23:49:54 2013; Freeing session[3]
+PID 17511; Mon Oct  7 23:49:54 2013; Freeing socket [4]
+PID 21854; Mon Oct  7 23:50:00 2013; Session [1] started...
+PID 21854; Mon Oct  7 23:50:01 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 21854; Mon Oct  7 23:50:01 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=57889
+PID 21854; Mon Oct  7 23:50:01 2013; Launch PID:21893
+PID 21854; Mon Oct  7 23:50:01 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 21854; Mon Oct  7 23:50:01 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=57889
+PID 21854; Mon Oct  7 23:50:01 2013; Wait for Speedweb/4GL server to connect...
+PID 21854; Mon Oct  7 23:50:01 2013; Started  Speedweb/4GL [21893] in 4294957 milliseconds
+PID 17511; Mon Oct  7 23:50:01 2013; Sign on session[1] PID:21893 USER:
+PID 17684; Mon Oct  7 23:50:47 2013; Connection timed out; Module = 90 Reference = 351
+PID 17684; Mon Oct  7 23:50:47 2013; Sending termination request
+PID 17684; Mon Oct  7 23:50:47 2013; Session [0] stopped.
+PID 17511; Mon Oct  7 23:50:47 2013; Freeing session[0]
+PID 17511; Mon Oct  7 23:50:47 2013; Freeing socket [1]
+PID 21144; Tue Oct  8 00:26:31 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 21144; Tue Oct  8 00:26:35 2013; Sending termination request
+PID 21144; Tue Oct  8 00:26:35 2013; Session [2] stopped.
+PID 17511; Tue Oct  8 00:26:35 2013; Freeing session[2]
+PID 17511; Tue Oct  8 00:26:35 2013; Freeing socket [3]
+PID 21854; Tue Oct  8 00:26:58 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 21854; Tue Oct  8 00:27:01 2013; Sending termination request
+PID 21854; Tue Oct  8 00:27:01 2013; Session [1] stopped.
+PID 17511; Tue Oct  8 00:27:01 2013; Freeing session[1]
+PID 17511; Tue Oct  8 00:27:01 2013; Freeing socket [2]
+PID 24175; Tue Oct  8 00:32:17 2013; Session [0] started...
+PID 24175; Tue Oct  8 00:32:17 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 24175; Tue Oct  8 00:32:17 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=58612
+PID 24175; Tue Oct  8 00:32:17 2013; Launch PID:24176
+PID 24175; Tue Oct  8 00:32:17 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 24175; Tue Oct  8 00:32:17 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=58612
+PID 24175; Tue Oct  8 00:32:17 2013; Wait for Speedweb/4GL server to connect...
+PID 24175; Tue Oct  8 00:32:18 2013; Started  Speedweb/4GL [24176] in 4294957 milliseconds
+PID 17511; Tue Oct  8 00:32:18 2013; Sign on session[0] PID:24176 USER:
+PID 24235; Tue Oct  8 00:32:44 2013; Session [1] started...
+PID 24235; Tue Oct  8 00:32:44 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 24235; Tue Oct  8 00:32:44 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=58623
+PID 24235; Tue Oct  8 00:32:44 2013; Launch PID:24236
+PID 24235; Tue Oct  8 00:32:44 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 24235; Tue Oct  8 00:32:44 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=58623
+PID 24235; Tue Oct  8 00:32:44 2013; Wait for Speedweb/4GL server to connect...
+PID 24235; Tue Oct  8 00:32:45 2013; Started  Speedweb/4GL [24236] in 4294957 milliseconds
+PID 17511; Tue Oct  8 00:32:45 2013; Sign on session[1] PID:24236 USER:
+PID 24235; Tue Oct  8 00:38:35 2013; Sending termination request
+PID 24235; Tue Oct  8 00:38:35 2013; Session [1] stopped.
+PID 17511; Tue Oct  8 00:38:35 2013; Freeing session[1]
+PID 17511; Tue Oct  8 00:38:35 2013; Freeing socket [2]
+PID 24780; Tue Oct  8 00:38:51 2013; Session [1] started...
+PID 24780; Tue Oct  8 00:38:51 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 24780; Tue Oct  8 00:38:51 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=58737
+PID 24780; Tue Oct  8 00:38:51 2013; Launch PID:24781
+PID 24780; Tue Oct  8 00:38:51 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 24780; Tue Oct  8 00:38:51 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=58737
+PID 24780; Tue Oct  8 00:38:51 2013; Wait for Speedweb/4GL server to connect...
+PID 24780; Tue Oct  8 00:38:52 2013; Started  Speedweb/4GL [24781] in 4294957 milliseconds
+PID 17511; Tue Oct  8 00:38:52 2013; Sign on session[1] PID:24781 USER:
+PID 24175; Tue Oct  8 02:11:48 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 24175; Tue Oct  8 02:11:51 2013; Sending termination request
+PID 24175; Tue Oct  8 02:11:51 2013; Session [0] stopped.
+PID 17511; Tue Oct  8 02:11:51 2013; Freeing session[0]
+PID 17511; Tue Oct  8 02:11:51 2013; Freeing socket [1]
+PID 24780; Tue Oct  8 02:13:03 2013; Sending termination request
+PID 17511; Tue Oct  8 02:13:03 2013; Freeing session[1]
+PID 17511; Tue Oct  8 02:13:03 2013; Freeing socket [2]
+PID 24780; Tue Oct  8 02:13:03 2013; Session [1] stopped.
+PID 953; Tue Oct  8 02:13:06 2013; Session [0] started...
+PID 953; Tue Oct  8 02:13:06 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 953; Tue Oct  8 02:13:06 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=60563
+PID 953; Tue Oct  8 02:13:06 2013; Launch PID:954
+PID 953; Tue Oct  8 02:13:06 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 953; Tue Oct  8 02:13:06 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=60563
+PID 953; Tue Oct  8 02:13:06 2013; Wait for Speedweb/4GL server to connect...
+PID 953; Tue Oct  8 02:13:07 2013; Started  Speedweb/4GL [954] in 4294957 milliseconds
+PID 17511; Tue Oct  8 02:13:07 2013; Sign on session[0] PID:954 USER:
+PID 953; Tue Oct  8 02:29:25 2013; Sending termination request
+PID 953; Tue Oct  8 02:29:25 2013; Session [0] stopped.
+PID 17511; Tue Oct  8 02:29:25 2013; Freeing session[0]
+PID 17511; Tue Oct  8 02:29:25 2013; Freeing socket [1]
+PID 14168; Tue Oct  8 17:45:18 2013; Session [0] started...
+PID 14168; Tue Oct  8 17:45:19 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 14168; Tue Oct  8 17:45:19 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59907
+PID 14168; Tue Oct  8 17:45:19 2013; Launch PID:14169
+PID 14168; Tue Oct  8 17:45:19 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 14168; Tue Oct  8 17:45:19 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59907
+PID 14168; Tue Oct  8 17:45:19 2013; Wait for Speedweb/4GL server to connect...
+PID 14168; Tue Oct  8 17:45:20 2013; Started  Speedweb/4GL [14169] in 4294957 milliseconds
+PID 17511; Tue Oct  8 17:45:20 2013; Sign on session[0] PID:14169 USER:
+PID 14168; Tue Oct  8 18:15:47 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 14168; Tue Oct  8 18:15:50 2013; Sending termination request
+PID 14168; Tue Oct  8 18:15:50 2013; Session [0] stopped.
+PID 17511; Tue Oct  8 18:15:50 2013; Freeing session[0]
+PID 17511; Tue Oct  8 18:15:50 2013; Freeing socket [1]
+PID 15906; Tue Oct  8 18:15:56 2013; Session [0] started...
+PID 15906; Tue Oct  8 18:15:56 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 15906; Tue Oct  8 18:15:56 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=60425
+PID 15906; Tue Oct  8 18:15:56 2013; Launch PID:15907
+PID 15906; Tue Oct  8 18:15:56 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 15906; Tue Oct  8 18:15:56 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=60425
+PID 15906; Tue Oct  8 18:15:56 2013; Wait for Speedweb/4GL server to connect...
+PID 15906; Tue Oct  8 18:15:57 2013; Started  Speedweb/4GL [15907] in 4294957 milliseconds
+PID 17511; Tue Oct  8 18:15:57 2013; Sign on session[0] PID:15907 USER:
+PID 15906; Tue Oct  8 19:00:53 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 15906; Tue Oct  8 19:00:54 2013; Sending termination request
+PID 15906; Tue Oct  8 19:00:54 2013; Session [0] stopped.
+PID 17511; Tue Oct  8 19:00:54 2013; Freeing session[0]
+PID 17511; Tue Oct  8 19:00:54 2013; Freeing socket [1]
+PID 17999; Tue Oct  8 19:01:04 2013; Session [0] started...
+PID 17999; Tue Oct  8 19:01:04 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 17999; Tue Oct  8 19:01:04 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=61190
+PID 17999; Tue Oct  8 19:01:04 2013; Launch PID:18000
+PID 17999; Tue Oct  8 19:01:04 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 17999; Tue Oct  8 19:01:04 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=61190
+PID 17999; Tue Oct  8 19:01:04 2013; Wait for Speedweb/4GL server to connect...
+PID 17999; Tue Oct  8 19:01:05 2013; Started  Speedweb/4GL [18000] in 4294957 milliseconds
+PID 17511; Tue Oct  8 19:01:05 2013; Sign on session[0] PID:18000 USER:
+PID 19404; Tue Oct  8 19:33:14 2013; Session [1] started...
+PID 19404; Tue Oct  8 19:33:15 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 19404; Tue Oct  8 19:33:15 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=61734
+PID 19404; Tue Oct  8 19:33:15 2013; Launch PID:19405
+PID 19404; Tue Oct  8 19:33:15 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 19404; Tue Oct  8 19:33:15 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=61734
+PID 19404; Tue Oct  8 19:33:15 2013; Wait for Speedweb/4GL server to connect...
+PID 19404; Tue Oct  8 19:33:15 2013; Started  Speedweb/4GL [19405] in 4294957 milliseconds
+PID 17511; Tue Oct  8 19:33:15 2013; Sign on session[1] PID:19405 USER:
+PID 17999; Tue Oct  8 19:39:29 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 17999; Tue Oct  8 19:39:31 2013; Sending termination request
+PID 17999; Tue Oct  8 19:39:31 2013; Session [0] stopped.
+PID 17511; Tue Oct  8 19:39:31 2013; Freeing session[0]
+PID 17511; Tue Oct  8 19:39:31 2013; Freeing socket [1]
+PID 19404; Tue Oct  8 20:11:02 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 19404; Tue Oct  8 20:11:04 2013; Sending termination request
+PID 17511; Tue Oct  8 20:11:04 2013; Freeing session[1]
+PID 17511; Tue Oct  8 20:11:04 2013; Freeing socket [2]
+PID 19404; Tue Oct  8 20:11:04 2013; Session [1] stopped.
+PID 21441; Tue Oct  8 20:17:53 2013; Session [0] started...
+PID 21441; Tue Oct  8 20:17:53 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 21441; Tue Oct  8 20:17:53 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62488
+PID 21441; Tue Oct  8 20:17:53 2013; Launch PID:21442
+PID 21441; Tue Oct  8 20:17:53 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 21441; Tue Oct  8 20:17:53 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62488
+PID 21441; Tue Oct  8 20:17:53 2013; Wait for Speedweb/4GL server to connect...
+PID 21441; Tue Oct  8 20:17:54 2013; Started  Speedweb/4GL [21442] in 4294957 milliseconds
+PID 17511; Tue Oct  8 20:17:54 2013; Sign on session[0] PID:21442 USER:
+PID 21441; Tue Oct  8 20:47:59 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 21441; Tue Oct  8 20:48:00 2013; Sending termination request
+PID 21441; Tue Oct  8 20:48:00 2013; Session [0] stopped.
+PID 17511; Tue Oct  8 20:48:00 2013; Freeing session[0]
+PID 17511; Tue Oct  8 20:48:00 2013; Freeing socket [1]
+PID 26296; Tue Oct  8 22:01:13 2013; Session [0] started...
+PID 26296; Tue Oct  8 22:01:13 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 26296; Tue Oct  8 22:01:13 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64242
+PID 26296; Tue Oct  8 22:01:13 2013; Launch PID:26297
+PID 26296; Tue Oct  8 22:01:13 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 26296; Tue Oct  8 22:01:13 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64242
+PID 26296; Tue Oct  8 22:01:13 2013; Wait for Speedweb/4GL server to connect...
+PID 26296; Tue Oct  8 22:01:14 2013; Started  Speedweb/4GL [26297] in 4294957 milliseconds
+PID 17511; Tue Oct  8 22:01:14 2013; Sign on session[0] PID:26297 USER:
+PID 27300; Tue Oct  8 22:22:39 2013; Session [1] started...
+PID 27300; Tue Oct  8 22:22:39 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 27300; Tue Oct  8 22:22:39 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64617
+PID 27300; Tue Oct  8 22:22:39 2013; Launch PID:27301
+PID 27300; Tue Oct  8 22:22:39 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 27300; Tue Oct  8 22:22:39 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64617
+PID 27300; Tue Oct  8 22:22:39 2013; Wait for Speedweb/4GL server to connect...
+PID 27300; Tue Oct  8 22:22:39 2013; Started  Speedweb/4GL [27301] in 4294957 milliseconds
+PID 17511; Tue Oct  8 22:22:39 2013; Sign on session[1] PID:27301 USER:
+PID 26296; Tue Oct  8 22:42:36 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 26296; Tue Oct  8 22:52:37 2013; Connection timed out; Module = 90 Reference = 351
+PID 26296; Tue Oct  8 22:52:37 2013; Sending termination request
+PID 26296; Tue Oct  8 22:52:37 2013; Session [0] stopped.
+PID 17511; Tue Oct  8 22:52:37 2013; Freeing session[0]
+PID 17511; Tue Oct  8 22:52:37 2013; Freeing socket [1]
+PID 27300; Tue Oct  8 23:03:54 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 27300; Tue Oct  8 23:03:56 2013; Sending termination request
+PID 27300; Tue Oct  8 23:03:56 2013; Session [1] stopped.
+PID 17511; Tue Oct  8 23:03:56 2013; Freeing session[1]
+PID 17511; Tue Oct  8 23:03:56 2013; Freeing socket [2]
+PID 29300; Tue Oct  8 23:04:03 2013; Session [0] started...
+PID 29300; Tue Oct  8 23:04:03 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 29300; Tue Oct  8 23:04:03 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=65318
+PID 29300; Tue Oct  8 23:04:03 2013; Launch PID:29301
+PID 29300; Tue Oct  8 23:04:03 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 29300; Tue Oct  8 23:04:03 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=65318
+PID 29300; Tue Oct  8 23:04:03 2013; Wait for Speedweb/4GL server to connect...
+PID 29300; Tue Oct  8 23:04:04 2013; Started  Speedweb/4GL [29301] in 4294957 milliseconds
+PID 17511; Tue Oct  8 23:04:04 2013; Sign on session[0] PID:29301 USER:
+PID 29300; Tue Oct  8 23:34:10 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 29300; Tue Oct  8 23:44:11 2013; Connection timed out; Module = 90 Reference = 351
+PID 29300; Tue Oct  8 23:44:11 2013; Sending termination request
+PID 29300; Tue Oct  8 23:44:11 2013; Session [0] stopped.
+PID 17511; Tue Oct  8 23:44:11 2013; Freeing session[0]
+PID 17511; Tue Oct  8 23:44:11 2013; Freeing socket [1]
+PID 3829; Mon Oct 28 22:12:59 2013; Session [0] started...
+PID 3829; Mon Oct 28 22:12:59 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 3829; Mon Oct 28 22:12:59 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=61478
+PID 3829; Mon Oct 28 22:12:59 2013; Launch PID:3830
+PID 3829; Mon Oct 28 22:12:59 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 3829; Mon Oct 28 22:12:59 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=61478
+PID 3829; Mon Oct 28 22:12:59 2013; Wait for Speedweb/4GL server to connect...
+PID 3829; Mon Oct 28 22:13:00 2013; Started  Speedweb/4GL [3830] in 4294957 milliseconds
+PID 17511; Mon Oct 28 22:13:00 2013; Sign on session[0] PID:3830 USER:
+PID 6383; Mon Oct 28 22:38:13 2013; Session [1] started...
+PID 6383; Mon Oct 28 22:38:13 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 6383; Mon Oct 28 22:38:13 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62085
+PID 6383; Mon Oct 28 22:38:13 2013; Launch PID:6384
+PID 6383; Mon Oct 28 22:38:13 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 6383; Mon Oct 28 22:38:13 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62085
+PID 6383; Mon Oct 28 22:38:13 2013; Wait for Speedweb/4GL server to connect...
+PID 6383; Mon Oct 28 22:38:14 2013; Started  Speedweb/4GL [6384] in 4294957 milliseconds
+PID 17511; Mon Oct 28 22:38:14 2013; Sign on session[1] PID:6384 USER:
+PID 3829; Mon Oct 28 22:44:02 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 7007; Mon Oct 28 22:44:50 2013; Session [2] started...
+PID 7007; Mon Oct 28 22:44:50 2013; Session [2] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 7007; Mon Oct 28 22:44:50 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62239
+PID 7007; Mon Oct 28 22:44:50 2013; Launch PID:7008
+PID 7007; Mon Oct 28 22:44:50 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 7007; Mon Oct 28 22:44:50 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62239
+PID 7007; Mon Oct 28 22:44:50 2013; Wait for Speedweb/4GL server to connect...
+PID 7007; Mon Oct 28 22:44:51 2013; Started  Speedweb/4GL [7008] in 4294957 milliseconds
+PID 17511; Mon Oct 28 22:44:51 2013; Sign on session[2] PID:7008 USER:
+PID 3829; Mon Oct 28 22:54:03 2013; Connection timed out; Module = 90 Reference = 351
+PID 3829; Mon Oct 28 22:54:03 2013; Sending termination request
+PID 3829; Mon Oct 28 22:54:03 2013; Session [0] stopped.
+PID 17511; Mon Oct 28 22:54:03 2013; Freeing session[0]
+PID 17511; Mon Oct 28 22:54:03 2013; Freeing socket [1]
+PID 7007; Mon Oct 28 23:51:47 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 7007; Mon Oct 28 23:51:52 2013; Sending termination request
+PID 7007; Mon Oct 28 23:51:52 2013; Session [2] stopped.
+PID 17511; Mon Oct 28 23:51:52 2013; Freeing session[2]
+PID 17511; Mon Oct 28 23:51:52 2013; Freeing socket [3]
+PID 13849; Mon Oct 28 23:52:05 2013; Session [0] started...
+PID 13849; Mon Oct 28 23:52:05 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 13849; Mon Oct 28 23:52:05 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=63844
+PID 13849; Mon Oct 28 23:52:05 2013; Launch PID:13850
+PID 13849; Mon Oct 28 23:52:05 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 13849; Mon Oct 28 23:52:05 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=63844
+PID 13849; Mon Oct 28 23:52:05 2013; Wait for Speedweb/4GL server to connect...
+PID 13849; Mon Oct 28 23:52:06 2013; Started  Speedweb/4GL [13850] in 4294957 milliseconds
+PID 17511; Mon Oct 28 23:52:06 2013; Sign on session[0] PID:13850 USER:
+PID 13849; Tue Oct 29 00:22:16 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 13849; Tue Oct 29 00:22:18 2013; Sending termination request
+PID 13849; Tue Oct 29 00:22:18 2013; Session [0] stopped.
+PID 17511; Tue Oct 29 00:22:19 2013; Freeing session[0]
+PID 17511; Tue Oct 29 00:22:19 2013; Freeing socket [1]
+PID 6383; Tue Oct 29 00:55:30 2013; Sending termination request
+PID 6383; Tue Oct 29 00:55:30 2013; Session [1] stopped.
+PID 17511; Tue Oct 29 00:55:30 2013; Freeing session[1]
+PID 17511; Tue Oct 29 00:55:30 2013; Freeing socket [2]
+PID 22900; Fri Nov  1 01:47:19 2013; Session [0] started...
+PID 22900; Fri Nov  1 01:47:19 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 22900; Fri Nov  1 01:47:19 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54500
+PID 22900; Fri Nov  1 01:47:19 2013; Launch PID:22901
+PID 22900; Fri Nov  1 01:47:19 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 22900; Fri Nov  1 01:47:19 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54500
+PID 22900; Fri Nov  1 01:47:19 2013; Wait for Speedweb/4GL server to connect...
+PID 22900; Fri Nov  1 01:47:20 2013; Started  Speedweb/4GL [22901] in 4294957 milliseconds
+PID 17511; Fri Nov  1 01:47:20 2013; Sign on session[0] PID:22901 USER:
+PID 22900; Fri Nov  1 02:38:47 2013; Sending termination request
+PID 22900; Fri Nov  1 02:38:47 2013; Session [0] stopped.
+PID 17511; Fri Nov  1 02:38:47 2013; Freeing session[0]
+PID 17511; Fri Nov  1 02:38:47 2013; Freeing socket [1]
+PID 7751; Fri Nov  1 20:23:47 2013; Session [0] started...
+PID 7751; Fri Nov  1 20:23:47 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 7751; Fri Nov  1 20:23:47 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64592
+PID 7751; Fri Nov  1 20:23:47 2013; Launch PID:7752
+PID 7751; Fri Nov  1 20:23:47 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 7751; Fri Nov  1 20:23:47 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64592
+PID 7751; Fri Nov  1 20:23:47 2013; Wait for Speedweb/4GL server to connect...
+PID 7751; Fri Nov  1 20:23:49 2013; Started  Speedweb/4GL [7752] in 4294957 milliseconds
+PID 17511; Fri Nov  1 20:23:49 2013; Sign on session[0] PID:7752 USER:
+PID 8191; Fri Nov  1 20:28:20 2013; Session [1] started...
+PID 8191; Fri Nov  1 20:28:20 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 8191; Fri Nov  1 20:28:20 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64706
+PID 8191; Fri Nov  1 20:28:20 2013; Launch PID:8192
+PID 8191; Fri Nov  1 20:28:20 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 8191; Fri Nov  1 20:28:20 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64706
+PID 8191; Fri Nov  1 20:28:20 2013; Wait for Speedweb/4GL server to connect...
+PID 8191; Fri Nov  1 20:28:21 2013; Started  Speedweb/4GL [8192] in 4294957 milliseconds
+PID 17511; Fri Nov  1 20:28:21 2013; Sign on session[1] PID:8192 USER:
+PID 7751; Fri Nov  1 20:59:27 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 7751; Fri Nov  1 20:59:30 2013; Sending termination request
+PID 7751; Fri Nov  1 20:59:30 2013; Session [0] stopped.
+PID 17511; Fri Nov  1 20:59:30 2013; Freeing session[0]
+PID 17511; Fri Nov  1 20:59:30 2013; Freeing socket [1]
+PID 8191; Fri Nov  1 21:00:47 2013; Sending termination request
+PID 8191; Fri Nov  1 21:00:47 2013; Session [1] stopped.
+PID 17511; Fri Nov  1 21:00:47 2013; Freeing session[1]
+PID 17511; Fri Nov  1 21:00:47 2013; Freeing socket [2]
+PID 18519; Tue Nov  5 02:20:14 2013; Session [0] started...
+PID 18519; Tue Nov  5 02:20:14 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 18519; Tue Nov  5 02:20:14 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59462
+PID 18519; Tue Nov  5 02:20:14 2013; Launch PID:18520
+PID 18519; Tue Nov  5 02:20:14 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 18519; Tue Nov  5 02:20:14 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59462
+PID 18519; Tue Nov  5 02:20:14 2013; Wait for Speedweb/4GL server to connect...
+PID 18519; Tue Nov  5 02:20:16 2013; Started  Speedweb/4GL [18520] in 4294957 milliseconds
+PID 17511; Tue Nov  5 02:20:16 2013; Sign on session[0] PID:18520 USER:
+PID 18519; Tue Nov  5 02:50:27 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 18519; Tue Nov  5 02:50:29 2013; Sending termination request
+PID 18519; Tue Nov  5 02:50:29 2013; Session [0] stopped.
+PID 17511; Tue Nov  5 02:50:29 2013; Freeing session[0]
+PID 17511; Tue Nov  5 02:50:29 2013; Freeing socket [1]
+PID 16477; Tue Nov  5 17:56:28 2013; Session [0] started...
+PID 16477; Tue Nov  5 17:56:28 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 16477; Tue Nov  5 17:56:28 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=65121
+PID 16477; Tue Nov  5 17:56:28 2013; Launch PID:16478
+PID 16477; Tue Nov  5 17:56:28 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 16477; Tue Nov  5 17:56:28 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=65121
+PID 16477; Tue Nov  5 17:56:28 2013; Wait for Speedweb/4GL server to connect...
+PID 16477; Tue Nov  5 17:56:29 2013; Started  Speedweb/4GL [16478] in 4294957 milliseconds
+PID 17511; Tue Nov  5 17:56:29 2013; Sign on session[0] PID:16478 USER:
+PID 16477; Tue Nov  5 18:45:35 2013; Sending termination request
+PID 16477; Tue Nov  5 18:45:35 2013; Session [0] stopped.
+PID 17511; Tue Nov  5 18:45:35 2013; Freeing session[0]
+PID 17511; Tue Nov  5 18:45:35 2013; Freeing socket [1]
+PID 19976; Thu Nov  7 02:20:41 2013; Session [0] started...
+PID 19976; Thu Nov  7 02:20:41 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 19976; Thu Nov  7 02:20:41 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62057
+PID 19976; Thu Nov  7 02:20:41 2013; Launch PID:19977
+PID 19976; Thu Nov  7 02:20:41 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 19976; Thu Nov  7 02:20:41 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62057
+PID 19976; Thu Nov  7 02:20:41 2013; Wait for Speedweb/4GL server to connect...
+PID 19976; Thu Nov  7 02:20:42 2013; Started  Speedweb/4GL [19977] in 4294957 milliseconds
+PID 17511; Thu Nov  7 02:20:42 2013; Sign on session[0] PID:19977 USER:
+PID 19976; Thu Nov  7 02:20:43 2013; Sending termination request
+PID 19976; Thu Nov  7 02:20:43 2013; Session [0] stopped.
+PID 17511; Thu Nov  7 02:20:43 2013; Freeing session[0]
+PID 17511; Thu Nov  7 02:20:43 2013; Freeing socket [1]
+PID 19978; Thu Nov  7 02:20:44 2013; Session [0] started...
+PID 19978; Thu Nov  7 02:20:44 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 19978; Thu Nov  7 02:20:44 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62062
+PID 19978; Thu Nov  7 02:20:44 2013; Launch PID:19979
+PID 19978; Thu Nov  7 02:20:44 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 19978; Thu Nov  7 02:20:44 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62062
+PID 19978; Thu Nov  7 02:20:44 2013; Wait for Speedweb/4GL server to connect...
+PID 19978; Thu Nov  7 02:20:45 2013; Started  Speedweb/4GL [19979] in 4294957 milliseconds
+PID 17511; Thu Nov  7 02:20:45 2013; Sign on session[0] PID:19979 USER:
+PID 19992; Thu Nov  7 02:20:46 2013; Session [1] started...
+PID 19992; Thu Nov  7 02:20:46 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 19992; Thu Nov  7 02:20:46 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62066
+PID 19992; Thu Nov  7 02:20:46 2013; Launch PID:19993
+PID 19992; Thu Nov  7 02:20:46 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 19992; Thu Nov  7 02:20:46 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62066
+PID 19992; Thu Nov  7 02:20:46 2013; Wait for Speedweb/4GL server to connect...
+PID 19992; Thu Nov  7 02:20:47 2013; Started  Speedweb/4GL [19993] in 4294957 milliseconds
+PID 17511; Thu Nov  7 02:20:47 2013; Sign on session[1] PID:19993 USER:
+PID 19978; Thu Nov  7 02:20:48 2013; Sending termination request
+PID 19978; Thu Nov  7 02:20:48 2013; Session [0] stopped.
+PID 17511; Thu Nov  7 02:20:48 2013; Freeing session[0]
+PID 17511; Thu Nov  7 02:20:48 2013; Freeing socket [1]
+PID 19992; Thu Nov  7 02:33:23 2013; Sending termination request
+PID 19992; Thu Nov  7 02:33:23 2013; Session [1] stopped.
+PID 17511; Thu Nov  7 02:33:23 2013; Freeing session[1]
+PID 17511; Thu Nov  7 02:33:23 2013; Freeing socket [2]
+PID 21243; Thu Nov  7 02:33:40 2013; Session [0] started...
+PID 21243; Thu Nov  7 02:33:41 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 21243; Thu Nov  7 02:33:41 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62373
+PID 21243; Thu Nov  7 02:33:41 2013; Launch PID:21244
+PID 21243; Thu Nov  7 02:33:41 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 21243; Thu Nov  7 02:33:41 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62373
+PID 21243; Thu Nov  7 02:33:41 2013; Wait for Speedweb/4GL server to connect...
+PID 21243; Thu Nov  7 02:33:41 2013; Started  Speedweb/4GL [21244] in 4294957 milliseconds
+PID 17511; Thu Nov  7 02:33:41 2013; Sign on session[0] PID:21244 USER:
+PID 21243; Thu Nov  7 03:52:44 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 21243; Thu Nov  7 03:52:46 2013; Sending termination request
+PID 21243; Thu Nov  7 03:52:46 2013; Session [0] stopped.
+PID 17511; Thu Nov  7 03:52:46 2013; Freeing session[0]
+PID 17511; Thu Nov  7 03:52:46 2013; Freeing socket [1]
+PID 4905; Thu Nov  7 20:40:28 2013; Session [0] started...
+PID 4905; Thu Nov  7 20:40:29 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 4905; Thu Nov  7 20:40:29 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55300
+PID 4905; Thu Nov  7 20:40:29 2013; Launch PID:4906
+PID 4905; Thu Nov  7 20:40:29 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 4905; Thu Nov  7 20:40:29 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55300
+PID 4905; Thu Nov  7 20:40:29 2013; Wait for Speedweb/4GL server to connect...
+PID 4905; Thu Nov  7 20:40:30 2013; Started  Speedweb/4GL [4906] in 4294957 milliseconds
+PID 17511; Thu Nov  7 20:40:30 2013; Sign on session[0] PID:4906 USER:
+PID 4905; Thu Nov  7 20:42:32 2013; Sending termination request
+PID 4905; Thu Nov  7 20:42:32 2013; Session [0] stopped.
+PID 17511; Thu Nov  7 20:42:32 2013; Freeing session[0]
+PID 17511; Thu Nov  7 20:42:32 2013; Freeing socket [1]
+PID 4553; Mon Nov 11 10:23:43 2013; SpeedWeb server 3.04.02 Build 20 July 17, 2009
+PID 4553; Mon Nov 11 10:23:43 2013; Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+PID 4553; Mon Nov 11 10:23:43 2013; For use by authorized licensees only
+PID 4553; Mon Nov 11 10:23:43 2013; Server realm is  : SpeedWeb Application
+PID 4553; Mon Nov 11 10:23:43 2013; Log file location is /home/sco/Speedweb/speedweb.log
+PID 4553; Mon Nov 11 10:23:43 2013; Starting server...
+PID 4553; Mon Nov 11 10:23:43 2013; Server is 172.20.10.56
+PID 4553; Mon Nov 11 10:23:44 2013; SSL certificate loaded
+PID 4553; Mon Nov 11 10:23:44 2013; Standard application services
+PID 4553; Mon Nov 11 10:23:44 2013; Support for 10 sessions
+PID 4553; Mon Nov 11 10:23:44 2013; Command channel  : 
+PID 4553; Mon Nov 11 10:23:44 2013; Register port 18201
+PID 4553; Mon Nov 11 10:23:44 2013; Standard channel : 
+PID 4553; Mon Nov 11 10:23:44 2013; Register port 18200
+PID 4553; Mon Nov 11 10:23:44 2013; Secure channel   : 
+PID 4553; Mon Nov 11 10:23:44 2013; Register port 18202
+PID 4553; Mon Nov 11 10:23:44 2013; SWS-API version  : 30402
+PID 4607; Mon Nov 11 10:24:09 2013; Session [0] started...
+PID 4607; Mon Nov 11 10:24:09 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 4607; Mon Nov 11 10:24:09 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=65439
+PID 4607; Mon Nov 11 10:24:09 2013; Launch PID:4608
+PID 4607; Mon Nov 11 10:24:09 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 4607; Mon Nov 11 10:24:09 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=65439
+PID 4607; Mon Nov 11 10:24:09 2013; Wait for Speedweb/4GL server to connect...
+PID 4607; Mon Nov 11 10:24:10 2013; Started  Speedweb/4GL [4608] in 4294957 milliseconds
+PID 4553; Mon Nov 11 10:24:10 2013; Sign on session[0] PID:4608 USER:
+PID 4607; Mon Nov 11 10:29:37 2013; Sending termination request
+PID 4607; Mon Nov 11 10:29:37 2013; Session [0] stopped.
+PID 4553; Mon Nov 11 10:29:37 2013; Freeing session[0]
+PID 4553; Mon Nov 11 10:29:37 2013; Freeing socket [1]
+PID 15390; Mon Nov 11 19:03:24 2013; Session [0] started...
+PID 15390; Mon Nov 11 19:03:25 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 15390; Mon Nov 11 19:03:25 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=61285
+PID 15390; Mon Nov 11 19:03:25 2013; Launch PID:15391
+PID 15390; Mon Nov 11 19:03:25 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 15390; Mon Nov 11 19:03:25 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=61285
+PID 15390; Mon Nov 11 19:03:25 2013; Wait for Speedweb/4GL server to connect...
+PID 15390; Mon Nov 11 19:03:25 2013; Started  Speedweb/4GL [15391] in 4294957 milliseconds
+PID 4553; Mon Nov 11 19:03:25 2013; Sign on session[0] PID:15391 USER:
+PID 15390; Mon Nov 11 19:49:17 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 15390; Mon Nov 11 19:49:19 2013; Sending termination request
+PID 15390; Mon Nov 11 19:49:19 2013; Session [0] stopped.
+PID 4553; Mon Nov 11 19:49:19 2013; Freeing session[0]
+PID 4553; Mon Nov 11 19:49:19 2013; Freeing socket [1]
+PID 12798; Tue Nov 12 19:05:18 2013; Session [0] started...
+PID 12798; Tue Nov 12 19:05:19 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 12798; Tue Nov 12 19:05:19 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62797
+PID 12798; Tue Nov 12 19:05:19 2013; Launch PID:12799
+PID 12798; Tue Nov 12 19:05:19 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 12798; Tue Nov 12 19:05:19 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62797
+PID 12798; Tue Nov 12 19:05:19 2013; Wait for Speedweb/4GL server to connect...
+PID 12798; Tue Nov 12 19:05:20 2013; Started  Speedweb/4GL [12799] in 4294957 milliseconds
+PID 4553; Tue Nov 12 19:05:20 2013; Sign on session[0] PID:12799 USER:
+PID 13685; Tue Nov 12 19:14:21 2013; Session [1] started...
+PID 13685; Tue Nov 12 19:14:21 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 13685; Tue Nov 12 19:14:21 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=63021
+PID 13685; Tue Nov 12 19:14:21 2013; Launch PID:13686
+PID 13685; Tue Nov 12 19:14:21 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 13685; Tue Nov 12 19:14:21 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=63021
+PID 13685; Tue Nov 12 19:14:21 2013; Wait for Speedweb/4GL server to connect...
+PID 13685; Tue Nov 12 19:14:21 2013; Started  Speedweb/4GL [13686] in 4294957 milliseconds
+PID 4553; Tue Nov 12 19:14:21 2013; Sign on session[1] PID:13686 USER:
+PID 12798; Tue Nov 12 22:01:43 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 12798; Tue Nov 12 22:01:45 2013; Sending termination request
+PID 12798; Tue Nov 12 22:01:45 2013; Session [0] stopped.
+PID 4553; Tue Nov 12 22:01:45 2013; Freeing session[0]
+PID 4553; Tue Nov 12 22:01:45 2013; Freeing socket [1]
+PID 13685; Tue Nov 12 22:01:53 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 13685; Tue Nov 12 22:01:55 2013; Sending termination request
+PID 13685; Tue Nov 12 22:01:55 2013; Session [1] stopped.
+PID 4553; Tue Nov 12 22:01:55 2013; Freeing session[1]
+PID 4553; Tue Nov 12 22:01:55 2013; Freeing socket [2]
+PID 1522; Tue Nov 12 22:43:30 2013; Session [0] started...
+PID 1522; Tue Nov 12 22:43:30 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 1522; Tue Nov 12 22:43:30 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=51581
+PID 1522; Tue Nov 12 22:43:30 2013; Launch PID:1523
+PID 1522; Tue Nov 12 22:43:30 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 1522; Tue Nov 12 22:43:30 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=51581
+PID 1522; Tue Nov 12 22:43:30 2013; Wait for Speedweb/4GL server to connect...
+PID 1522; Tue Nov 12 22:43:31 2013; Started  Speedweb/4GL [1523] in 4294957 milliseconds
+PID 4553; Tue Nov 12 22:43:31 2013; Sign on session[0] PID:1523 USER:
+PID 1524; Tue Nov 12 22:43:33 2013; Session [1] started...
+PID 1524; Tue Nov 12 22:43:33 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 1524; Tue Nov 12 22:43:33 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=51585
+PID 1524; Tue Nov 12 22:43:33 2013; Launch PID:1525
+PID 1524; Tue Nov 12 22:43:33 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 1524; Tue Nov 12 22:43:33 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=51585
+PID 1524; Tue Nov 12 22:43:33 2013; Wait for Speedweb/4GL server to connect...
+PID 1524; Tue Nov 12 22:43:33 2013; Started  Speedweb/4GL [1525] in 4294957 milliseconds
+PID 4553; Tue Nov 12 22:43:33 2013; Sign on session[1] PID:1525 USER:
+PID 1524; Tue Nov 12 23:13:41 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 1524; Tue Nov 12 23:13:44 2013; Sending termination request
+PID 1524; Tue Nov 12 23:13:44 2013; Session [1] stopped.
+PID 4553; Tue Nov 12 23:13:44 2013; Freeing session[1]
+PID 4553; Tue Nov 12 23:13:44 2013; Freeing socket [2]
+PID 4312; Tue Nov 12 23:13:49 2013; Session [1] started...
+PID 4312; Tue Nov 12 23:13:50 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 4312; Tue Nov 12 23:13:50 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52305
+PID 4312; Tue Nov 12 23:13:50 2013; Launch PID:4313
+PID 4312; Tue Nov 12 23:13:50 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 4312; Tue Nov 12 23:13:50 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52305
+PID 4312; Tue Nov 12 23:13:50 2013; Wait for Speedweb/4GL server to connect...
+PID 4312; Tue Nov 12 23:13:51 2013; Started  Speedweb/4GL [4313] in 4294957 milliseconds
+PID 4553; Tue Nov 12 23:13:51 2013; Sign on session[1] PID:4313 USER:
+PID 4312; Tue Nov 12 23:47:57 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 4312; Tue Nov 12 23:47:58 2013; Sending termination request
+PID 4312; Tue Nov 12 23:47:58 2013; Session [1] stopped.
+PID 4553; Tue Nov 12 23:47:58 2013; Freeing session[1]
+PID 4553; Tue Nov 12 23:47:58 2013; Freeing socket [2]
+PID 7117; Tue Nov 12 23:48:21 2013; Session [1] started...
+PID 7117; Tue Nov 12 23:48:22 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 7117; Tue Nov 12 23:48:22 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=53123
+PID 7117; Tue Nov 12 23:48:22 2013; Launch PID:7118
+PID 7117; Tue Nov 12 23:48:22 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 7117; Tue Nov 12 23:48:22 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=53123
+PID 7117; Tue Nov 12 23:48:22 2013; Wait for Speedweb/4GL server to connect...
+PID 7117; Tue Nov 12 23:48:23 2013; Started  Speedweb/4GL [7118] in 4294957 milliseconds
+PID 4553; Tue Nov 12 23:48:23 2013; Sign on session[1] PID:7118 USER:
+PID 1522; Wed Nov 13 00:33:16 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 10885; Wed Nov 13 00:33:19 2013; Session [2] started...
+PID 10885; Wed Nov 13 00:33:19 2013; Session [2] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 10885; Wed Nov 13 00:33:19 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54189
+PID 10885; Wed Nov 13 00:33:19 2013; Launch PID:10886
+PID 10885; Wed Nov 13 00:33:19 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 10885; Wed Nov 13 00:33:19 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54189
+PID 10885; Wed Nov 13 00:33:19 2013; Wait for Speedweb/4GL server to connect...
+PID 10885; Wed Nov 13 00:33:19 2013; Started  Speedweb/4GL [10886] in 4294957 milliseconds
+PID 4553; Wed Nov 13 00:33:19 2013; Sign on session[2] PID:10886 USER:
+PID 10889; Wed Nov 13 00:33:22 2013; Session [3] started...
+PID 10889; Wed Nov 13 00:33:22 2013; Session [3] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 10889; Wed Nov 13 00:33:22 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54193
+PID 10889; Wed Nov 13 00:33:22 2013; Launch PID:10915
+PID 10889; Wed Nov 13 00:33:22 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 10889; Wed Nov 13 00:33:22 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54193
+PID 10889; Wed Nov 13 00:33:22 2013; Wait for Speedweb/4GL server to connect...
+PID 10889; Wed Nov 13 00:33:23 2013; Started  Speedweb/4GL [10915] in 4294957 milliseconds
+PID 4553; Wed Nov 13 00:33:23 2013; Sign on session[3] PID:10915 USER:
+PID 1522; Wed Nov 13 00:43:17 2013; Connection timed out; Module = 90 Reference = 351
+PID 1522; Wed Nov 13 00:43:17 2013; Sending termination request
+PID 1522; Wed Nov 13 00:43:17 2013; Session [0] stopped.
+PID 4553; Wed Nov 13 00:43:17 2013; Freeing session[0]
+PID 4553; Wed Nov 13 00:43:17 2013; Freeing socket [1]
+PID 7117; Wed Nov 13 00:46:48 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 7117; Wed Nov 13 00:56:48 2013; Connection timed out; Module = 90 Reference = 351
+PID 7117; Wed Nov 13 00:56:48 2013; Sending termination request
+PID 4553; Wed Nov 13 00:56:48 2013; Freeing session[1]
+PID 4553; Wed Nov 13 00:56:48 2013; Freeing socket [2]
+PID 7117; Wed Nov 13 00:56:48 2013; Session [1] stopped.
+PID 10889; Wed Nov 13 01:39:08 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 10889; Wed Nov 13 01:39:09 2013; Sending termination request
+PID 10889; Wed Nov 13 01:39:09 2013; Session [3] stopped.
+PID 4553; Wed Nov 13 01:39:09 2013; Freeing session[3]
+PID 4553; Wed Nov 13 01:39:09 2013; Freeing socket [4]
+PID 16885; Wed Nov 13 01:43:30 2013; Session [0] started...
+PID 16885; Wed Nov 13 01:43:31 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 16885; Wed Nov 13 01:43:31 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55843
+PID 16885; Wed Nov 13 01:43:31 2013; Launch PID:16886
+PID 16885; Wed Nov 13 01:43:31 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 16885; Wed Nov 13 01:43:31 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55843
+PID 16885; Wed Nov 13 01:43:31 2013; Wait for Speedweb/4GL server to connect...
+PID 16885; Wed Nov 13 01:43:31 2013; Started  Speedweb/4GL [16886] in 4294957 milliseconds
+PID 4553; Wed Nov 13 01:43:31 2013; Sign on session[0] PID:16886 USER:
+PID 10885; Wed Nov 13 03:31:00 2013; Sending termination request
+PID 10885; Wed Nov 13 03:31:01 2013; Session [2] stopped.
+PID 4553; Wed Nov 13 03:31:01 2013; Freeing session[2]
+PID 4553; Wed Nov 13 03:31:01 2013; Freeing socket [3]
+PID 16885; Wed Nov 13 03:31:04 2013; Sending termination request
+PID 16885; Wed Nov 13 03:31:04 2013; Session [0] stopped.
+PID 4553; Wed Nov 13 03:31:04 2013; Freeing session[0]
+PID 4553; Wed Nov 13 03:31:04 2013; Freeing socket [1]
+PID 23307; Wed Nov 13 21:00:23 2013; Session [0] started...
+PID 23307; Wed Nov 13 21:00:23 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 23307; Wed Nov 13 21:00:24 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=50597
+PID 23307; Wed Nov 13 21:00:24 2013; Launch PID:23308
+PID 23307; Wed Nov 13 21:00:24 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 23307; Wed Nov 13 21:00:24 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=50597
+PID 23307; Wed Nov 13 21:00:24 2013; Wait for Speedweb/4GL server to connect...
+PID 23307; Wed Nov 13 21:00:25 2013; Started  Speedweb/4GL [23308] in 4294957 milliseconds
+PID 4553; Wed Nov 13 21:00:25 2013; Sign on session[0] PID:23308 USER:
+PID 23307; Wed Nov 13 21:33:33 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 23307; Wed Nov 13 21:43:34 2013; Connection timed out; Module = 90 Reference = 351
+PID 23307; Wed Nov 13 21:43:34 2013; Sending termination request
+PID 23307; Wed Nov 13 21:43:34 2013; Session [0] stopped.
+PID 4553; Wed Nov 13 21:43:34 2013; Freeing session[0]
+PID 4553; Wed Nov 13 21:43:34 2013; Freeing socket [1]
+PID 2195; Wed Nov 13 22:48:17 2013; Session [0] started...
+PID 2195; Wed Nov 13 22:48:17 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 2195; Wed Nov 13 22:48:17 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=53127
+PID 2195; Wed Nov 13 22:48:17 2013; Launch PID:2196
+PID 2195; Wed Nov 13 22:48:17 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 2195; Wed Nov 13 22:48:17 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=53127
+PID 2195; Wed Nov 13 22:48:17 2013; Wait for Speedweb/4GL server to connect...
+PID 2195; Wed Nov 13 22:48:18 2013; Started  Speedweb/4GL [2196] in 4294957 milliseconds
+PID 4553; Wed Nov 13 22:48:18 2013; Sign on session[0] PID:2196 USER:
+PID 2648; Wed Nov 13 22:52:21 2013; Session [1] started...
+PID 2648; Wed Nov 13 22:52:22 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 2648; Wed Nov 13 22:52:22 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=53232
+PID 2648; Wed Nov 13 22:52:22 2013; Launch PID:2649
+PID 2648; Wed Nov 13 22:52:22 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 2648; Wed Nov 13 22:52:22 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=53232
+PID 2648; Wed Nov 13 22:52:22 2013; Wait for Speedweb/4GL server to connect...
+PID 2648; Wed Nov 13 22:52:22 2013; Started  Speedweb/4GL [2649] in 4294957 milliseconds
+PID 4553; Wed Nov 13 22:52:22 2013; Sign on session[1] PID:2649 USER:
+PID 2648; Thu Nov 14 00:12:23 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 2648; Thu Nov 14 00:12:25 2013; Sending termination request
+PID 2648; Thu Nov 14 00:12:25 2013; Session [1] stopped.
+PID 4553; Thu Nov 14 00:12:25 2013; Freeing session[1]
+PID 4553; Thu Nov 14 00:12:25 2013; Freeing socket [2]
+PID 9732; Thu Nov 14 00:16:36 2013; Session [1] started...
+PID 9732; Thu Nov 14 00:16:36 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 9732; Thu Nov 14 00:16:36 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55221
+PID 9732; Thu Nov 14 00:16:36 2013; Launch PID:9733
+PID 9732; Thu Nov 14 00:16:36 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 9732; Thu Nov 14 00:16:36 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55221
+PID 9732; Thu Nov 14 00:16:36 2013; Wait for Speedweb/4GL server to connect...
+PID 9732; Thu Nov 14 00:16:36 2013; Started  Speedweb/4GL [9733] in 4294957 milliseconds
+PID 4553; Thu Nov 14 00:16:36 2013; Sign on session[1] PID:9733 USER:
+PID 9732; Thu Nov 14 00:46:42 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 9732; Thu Nov 14 00:46:44 2013; Sending termination request
+PID 4553; Thu Nov 14 00:46:44 2013; Freeing session[1]
+PID 4553; Thu Nov 14 00:46:44 2013; Freeing socket [2]
+PID 9732; Thu Nov 14 00:46:44 2013; Session [1] stopped.
+PID 12530; Thu Nov 14 00:46:54 2013; Session [1] started...
+PID 12530; Thu Nov 14 00:46:54 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 12530; Thu Nov 14 00:46:54 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55946
+PID 12530; Thu Nov 14 00:46:54 2013; Launch PID:12531
+PID 12530; Thu Nov 14 00:46:54 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 12530; Thu Nov 14 00:46:54 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55946
+PID 12530; Thu Nov 14 00:46:54 2013; Wait for Speedweb/4GL server to connect...
+PID 12530; Thu Nov 14 00:46:54 2013; Started  Speedweb/4GL [12531] in 4294957 milliseconds
+PID 4553; Thu Nov 14 00:46:54 2013; Sign on session[1] PID:12531 USER:
+PID 2195; Thu Nov 14 01:44:55 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 2195; Thu Nov 14 01:44:56 2013; Sending termination request
+PID 2195; Thu Nov 14 01:44:56 2013; Session [0] stopped.
+PID 4553; Thu Nov 14 01:44:56 2013; Freeing session[0]
+PID 4553; Thu Nov 14 01:44:56 2013; Freeing socket [1]
+PID 12530; Thu Nov 14 01:46:10 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 12530; Thu Nov 14 01:46:11 2013; Sending termination request
+PID 12530; Thu Nov 14 01:46:11 2013; Session [1] stopped.
+PID 4553; Thu Nov 14 01:46:11 2013; Freeing session[1]
+PID 4553; Thu Nov 14 01:46:11 2013; Freeing socket [2]
+PID 18587; Thu Nov 14 01:52:26 2013; Session [0] started...
+PID 18587; Thu Nov 14 01:52:26 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 18587; Thu Nov 14 01:52:26 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=57497
+PID 18587; Thu Nov 14 01:52:26 2013; Launch PID:18588
+PID 18587; Thu Nov 14 01:52:26 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 18587; Thu Nov 14 01:52:26 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=57497
+PID 18587; Thu Nov 14 01:52:26 2013; Wait for Speedweb/4GL server to connect...
+PID 18587; Thu Nov 14 01:52:27 2013; Started  Speedweb/4GL [18588] in 4294957 milliseconds
+PID 4553; Thu Nov 14 01:52:27 2013; Sign on session[0] PID:18588 USER:
+PID 18589; Thu Nov 14 01:52:27 2013; Session [1] started...
+PID 18589; Thu Nov 14 01:52:27 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 18589; Thu Nov 14 01:52:27 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=57501
+PID 18589; Thu Nov 14 01:52:27 2013; Launch PID:18590
+PID 18589; Thu Nov 14 01:52:27 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 18589; Thu Nov 14 01:52:27 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=57501
+PID 18589; Thu Nov 14 01:52:27 2013; Wait for Speedweb/4GL server to connect...
+PID 18589; Thu Nov 14 01:52:28 2013; Started  Speedweb/4GL [18590] in 4294957 milliseconds
+PID 4553; Thu Nov 14 01:52:28 2013; Sign on session[1] PID:18590 USER:
+PID 18589; Thu Nov 14 02:37:23 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 18589; Thu Nov 14 02:47:23 2013; Connection timed out; Module = 90 Reference = 351
+PID 18589; Thu Nov 14 02:47:24 2013; Sending termination request
+PID 18589; Thu Nov 14 02:47:24 2013; Session [1] stopped.
+PID 4553; Thu Nov 14 02:47:24 2013; Freeing session[1]
+PID 4553; Thu Nov 14 02:47:24 2013; Freeing socket [2]
+PID 18587; Thu Nov 14 02:50:39 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 18587; Thu Nov 14 03:00:40 2013; Connection timed out; Module = 90 Reference = 351
+PID 18587; Thu Nov 14 03:00:40 2013; Sending termination request
+PID 4553; Thu Nov 14 03:00:40 2013; Freeing session[0]
+PID 4553; Thu Nov 14 03:00:40 2013; Freeing socket [1]
+PID 18587; Thu Nov 14 03:00:40 2013; Session [0] stopped.
+PID 25360; Thu Nov 14 21:16:19 2013; Session [0] started...
+PID 25360; Thu Nov 14 21:16:19 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 25360; Thu Nov 14 21:16:19 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52414
+PID 25360; Thu Nov 14 21:16:19 2013; Launch PID:25361
+PID 25360; Thu Nov 14 21:16:19 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 25360; Thu Nov 14 21:16:19 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52414
+PID 25360; Thu Nov 14 21:16:19 2013; Wait for Speedweb/4GL server to connect...
+PID 25360; Thu Nov 14 21:16:21 2013; Started  Speedweb/4GL [25361] in 4294957 milliseconds
+PID 4553; Thu Nov 14 21:16:21 2013; Sign on session[0] PID:25361 USER:
+PID 25360; Thu Nov 14 21:46:31 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 25360; Thu Nov 14 21:46:32 2013; Sending termination request
+PID 25360; Thu Nov 14 21:46:32 2013; Session [0] stopped.
+PID 4553; Thu Nov 14 21:46:32 2013; Freeing session[0]
+PID 4553; Thu Nov 14 21:46:32 2013; Freeing socket [1]
+PID 2678; Thu Nov 14 22:36:59 2013; Session [0] started...
+PID 2678; Thu Nov 14 22:36:59 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 2678; Thu Nov 14 22:36:59 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54320
+PID 2678; Thu Nov 14 22:36:59 2013; Launch PID:2679
+PID 2678; Thu Nov 14 22:36:59 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 2678; Thu Nov 14 22:36:59 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54320
+PID 2678; Thu Nov 14 22:36:59 2013; Wait for Speedweb/4GL server to connect...
+PID 2678; Thu Nov 14 22:37:01 2013; Started  Speedweb/4GL [2679] in 4294957 milliseconds
+PID 4553; Thu Nov 14 22:37:01 2013; Sign on session[0] PID:2679 USER:
+PID 4232; Thu Nov 14 22:55:18 2013; Session [1] started...
+PID 4232; Thu Nov 14 22:55:18 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 4232; Thu Nov 14 22:55:18 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54761
+PID 4232; Thu Nov 14 22:55:18 2013; Launch PID:4233
+PID 4232; Thu Nov 14 22:55:18 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 4232; Thu Nov 14 22:55:18 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54761
+PID 4232; Thu Nov 14 22:55:18 2013; Wait for Speedweb/4GL server to connect...
+PID 4232; Thu Nov 14 22:55:19 2013; Started  Speedweb/4GL [4233] in 4294957 milliseconds
+PID 4553; Thu Nov 14 22:55:19 2013; Sign on session[1] PID:4233 USER:
+PID 2678; Fri Nov 15 00:02:56 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 2678; Fri Nov 15 00:02:58 2013; Sending termination request
+PID 2678; Fri Nov 15 00:02:58 2013; Session [0] stopped.
+PID 4553; Fri Nov 15 00:02:58 2013; Freeing session[0]
+PID 4553; Fri Nov 15 00:02:58 2013; Freeing socket [1]
+PID 10944; Fri Nov 15 00:16:26 2013; Session [0] started...
+PID 10944; Fri Nov 15 00:16:26 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 10944; Fri Nov 15 00:16:26 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=56681
+PID 10944; Fri Nov 15 00:16:26 2013; Launch PID:10945
+PID 10944; Fri Nov 15 00:16:26 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 10944; Fri Nov 15 00:16:26 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=56681
+PID 10944; Fri Nov 15 00:16:26 2013; Wait for Speedweb/4GL server to connect...
+PID 10944; Fri Nov 15 00:16:27 2013; Started  Speedweb/4GL [10945] in 4294957 milliseconds
+PID 4553; Fri Nov 15 00:16:27 2013; Sign on session[0] PID:10945 USER:
+PID 11682; Fri Nov 15 00:23:00 2013; Session [2] started...
+PID 11682; Fri Nov 15 00:23:00 2013; Session [2] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 11682; Fri Nov 15 00:23:00 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=56840
+PID 11682; Fri Nov 15 00:23:00 2013; Launch PID:11683
+PID 11682; Fri Nov 15 00:23:00 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 11682; Fri Nov 15 00:23:00 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=56840
+PID 11682; Fri Nov 15 00:23:00 2013; Wait for Speedweb/4GL server to connect...
+PID 11682; Fri Nov 15 00:23:01 2013; Started  Speedweb/4GL [11683] in 4294957 milliseconds
+PID 4553; Fri Nov 15 00:23:01 2013; Sign on session[2] PID:11683 USER:
+PID 11684; Fri Nov 15 00:23:01 2013; Session [3] started...
+PID 11684; Fri Nov 15 00:23:01 2013; Session [3] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 11684; Fri Nov 15 00:23:01 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=56843
+PID 11684; Fri Nov 15 00:23:01 2013; Launch PID:11685
+PID 11684; Fri Nov 15 00:23:01 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 11684; Fri Nov 15 00:23:01 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=56843
+PID 11684; Fri Nov 15 00:23:01 2013; Wait for Speedweb/4GL server to connect...
+PID 11684; Fri Nov 15 00:23:01 2013; Started  Speedweb/4GL [11685] in 4294957 milliseconds
+PID 4553; Fri Nov 15 00:23:01 2013; Sign on session[3] PID:11685 USER:
+PID 10944; Fri Nov 15 00:30:46 2013; Connection timed out; Module = 90 Reference = 351
+PID 10944; Fri Nov 15 00:30:46 2013; Sending termination request
+PID 10944; Fri Nov 15 00:30:46 2013; Session [0] stopped.
+PID 4553; Fri Nov 15 00:30:46 2013; Freeing session[0]
+PID 4553; Fri Nov 15 00:30:46 2013; Freeing socket [1]
+PID 4232; Fri Nov 15 00:50:24 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 4232; Fri Nov 15 01:00:25 2013; Connection timed out; Module = 90 Reference = 351
+PID 4232; Fri Nov 15 01:00:25 2013; Sending termination request
+PID 4232; Fri Nov 15 01:00:25 2013; Session [1] stopped.
+PID 4553; Fri Nov 15 01:00:25 2013; Freeing session[1]
+PID 4553; Fri Nov 15 01:00:25 2013; Freeing socket [2]
+PID 11682; Fri Nov 15 01:28:41 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 11682; Fri Nov 15 01:28:43 2013; Sending termination request
+PID 4553; Fri Nov 15 01:28:43 2013; Freeing session[2]
+PID 4553; Fri Nov 15 01:28:43 2013; Freeing socket [3]
+PID 11682; Fri Nov 15 01:28:43 2013; Session [2] stopped.
+PID 11684; Fri Nov 15 01:33:50 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 11684; Fri Nov 15 01:33:52 2013; Sending termination request
+PID 11684; Fri Nov 15 01:33:52 2013; Session [3] stopped.
+PID 4553; Fri Nov 15 01:33:52 2013; Freeing session[3]
+PID 4553; Fri Nov 15 01:33:52 2013; Freeing socket [4]
+PID 19561; Fri Nov 15 01:55:46 2013; Session [0] started...
+PID 19561; Fri Nov 15 01:55:46 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 19561; Fri Nov 15 01:55:46 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59030
+PID 19561; Fri Nov 15 01:55:46 2013; Launch PID:19562
+PID 19561; Fri Nov 15 01:55:46 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 19561; Fri Nov 15 01:55:46 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59030
+PID 19561; Fri Nov 15 01:55:46 2013; Wait for Speedweb/4GL server to connect...
+PID 19563; Fri Nov 15 01:55:46 2013; Session [1] started...
+PID 19563; Fri Nov 15 01:55:46 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 19563; Fri Nov 15 01:55:46 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59031
+PID 19563; Fri Nov 15 01:55:46 2013; Launch PID:19572
+PID 19563; Fri Nov 15 01:55:46 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 19563; Fri Nov 15 01:55:46 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59031
+PID 19563; Fri Nov 15 01:55:46 2013; Wait for Speedweb/4GL server to connect...
+PID 19563; Fri Nov 15 01:55:47 2013; Started  Speedweb/4GL [19572] in 4294957 milliseconds
+PID 4553; Fri Nov 15 01:55:47 2013; Sign on session[1] PID:19572 USER:
+PID 19561; Fri Nov 15 01:55:47 2013; Started  Speedweb/4GL [19562] in 4294957 milliseconds
+PID 4553; Fri Nov 15 01:55:47 2013; Sign on session[0] PID:19562 USER:
+PID 19561; Fri Nov 15 02:39:52 2013; Sending termination request
+PID 19561; Fri Nov 15 02:39:52 2013; Session [0] stopped.
+PID 4553; Fri Nov 15 02:39:52 2013; Freeing session[0]
+PID 4553; Fri Nov 15 02:39:52 2013; Freeing socket [1]
+PID 19563; Fri Nov 15 02:40:06 2013; Sending termination request
+PID 19563; Fri Nov 15 02:40:06 2013; Session [1] stopped.
+PID 4553; Fri Nov 15 02:40:06 2013; Freeing session[1]
+PID 4553; Fri Nov 15 02:40:06 2013; Freeing socket [2]
+PID 13507; Fri Nov 15 18:25:56 2013; Session [0] started...
+PID 13507; Fri Nov 15 18:25:57 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 13507; Fri Nov 15 18:25:57 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=49885
+PID 13507; Fri Nov 15 18:25:57 2013; Launch PID:13508
+PID 13507; Fri Nov 15 18:25:57 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 13507; Fri Nov 15 18:25:57 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=49885
+PID 13507; Fri Nov 15 18:25:57 2013; Wait for Speedweb/4GL server to connect...
+PID 13507; Fri Nov 15 18:25:58 2013; Started  Speedweb/4GL [13508] in 4294957 milliseconds
+PID 4553; Fri Nov 15 18:25:58 2013; Sign on session[0] PID:13508 USER:
+PID 13507; Fri Nov 15 18:56:09 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 13507; Fri Nov 15 18:56:10 2013; Sending termination request
+PID 13507; Fri Nov 15 18:56:10 2013; Session [0] stopped.
+PID 4553; Fri Nov 15 18:56:10 2013; Freeing session[0]
+PID 4553; Fri Nov 15 18:56:10 2013; Freeing socket [1]
+PID 14537; Fri Nov 22 01:50:29 2013; Session [0] started...
+PID 14537; Fri Nov 22 01:50:29 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 14537; Fri Nov 22 01:50:29 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=50390
+PID 14537; Fri Nov 22 01:50:29 2013; Launch PID:14538
+PID 14537; Fri Nov 22 01:50:29 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 14537; Fri Nov 22 01:50:29 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=50390
+PID 14537; Fri Nov 22 01:50:29 2013; Wait for Speedweb/4GL server to connect...
+PID 14537; Fri Nov 22 01:50:31 2013; Started  Speedweb/4GL [14538] in 4294957 milliseconds
+PID 4553; Fri Nov 22 01:50:31 2013; Sign on session[0] PID:14538 USER:
+PID 14537; Fri Nov 22 01:59:56 2013; Sending termination request
+PID 14537; Fri Nov 22 01:59:56 2013; Session [0] stopped.
+PID 4553; Fri Nov 22 01:59:56 2013; Freeing session[0]
+PID 4553; Fri Nov 22 01:59:56 2013; Freeing socket [1]
+PID 24302; Fri Nov 22 22:54:41 2013; Session [0] started...
+PID 24302; Fri Nov 22 22:54:41 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 24302; Fri Nov 22 22:54:41 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64066
+PID 24302; Fri Nov 22 22:54:41 2013; Launch PID:24303
+PID 24302; Fri Nov 22 22:54:41 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 24302; Fri Nov 22 22:54:41 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64066
+PID 24302; Fri Nov 22 22:54:41 2013; Wait for Speedweb/4GL server to connect...
+PID 24302; Fri Nov 22 22:54:42 2013; Started  Speedweb/4GL [24303] in 4294957 milliseconds
+PID 4553; Fri Nov 22 22:54:42 2013; Sign on session[0] PID:24303 USER:
+PID 24302; Fri Nov 22 23:49:47 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 24302; Fri Nov 22 23:49:58 2013; Sending termination request
+PID 24302; Fri Nov 22 23:49:58 2013; Session [0] stopped.
+PID 4553; Fri Nov 22 23:49:58 2013; Freeing session[0]
+PID 4553; Fri Nov 22 23:49:58 2013; Freeing socket [1]
+PID 28518; Fri Nov 22 23:49:59 2013; Session [0] started...
+PID 28518; Fri Nov 22 23:50:01 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 28518; Fri Nov 22 23:50:01 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=65369
+PID 28518; Fri Nov 22 23:50:01 2013; Launch PID:28583
+PID 28518; Fri Nov 22 23:50:01 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 28518; Fri Nov 22 23:50:01 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=65369
+PID 28518; Fri Nov 22 23:50:01 2013; Wait for Speedweb/4GL server to connect...
+PID 28518; Fri Nov 22 23:50:02 2013; Started  Speedweb/4GL [28583] in 4294957 milliseconds
+PID 4553; Fri Nov 22 23:50:02 2013; Sign on session[0] PID:28583 USER:
+PID 28518; Fri Nov 22 23:55:27 2013; Sending termination request
+PID 28518; Fri Nov 22 23:55:27 2013; Session [0] stopped.
+PID 4553; Fri Nov 22 23:55:27 2013; Freeing session[0]
+PID 4553; Fri Nov 22 23:55:27 2013; Freeing socket [1]
+PID 29025; Fri Nov 22 23:55:43 2013; Session [0] started...
+PID 29025; Fri Nov 22 23:55:43 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 29025; Fri Nov 22 23:55:43 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=65515
+PID 29025; Fri Nov 22 23:55:43 2013; Launch PID:29026
+PID 29025; Fri Nov 22 23:55:43 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 29025; Fri Nov 22 23:55:43 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=65515
+PID 29025; Fri Nov 22 23:55:43 2013; Wait for Speedweb/4GL server to connect...
+PID 29025; Fri Nov 22 23:55:43 2013; Started  Speedweb/4GL [29026] in 4294957 milliseconds
+PID 4553; Fri Nov 22 23:55:43 2013; Sign on session[0] PID:29026 USER:
+PID 29025; Sat Nov 23 00:36:18 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 29025; Sat Nov 23 00:36:18 2013; Sending termination request
+PID 29025; Sat Nov 23 00:36:18 2013; Session [0] stopped.
+PID 4553; Sat Nov 23 00:36:18 2013; Freeing session[0]
+PID 4553; Sat Nov 23 00:36:18 2013; Freeing socket [1]
+PID 2969; Sat Nov 23 00:45:46 2013; Session [0] started...
+PID 2969; Sat Nov 23 00:45:46 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 2969; Sat Nov 23 00:45:46 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=50337
+PID 2969; Sat Nov 23 00:45:46 2013; Launch PID:2970
+PID 2969; Sat Nov 23 00:45:46 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 2969; Sat Nov 23 00:45:46 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=50337
+PID 2969; Sat Nov 23 00:45:46 2013; Wait for Speedweb/4GL server to connect...
+PID 2969; Sat Nov 23 00:45:47 2013; Started  Speedweb/4GL [2970] in 4294957 milliseconds
+PID 4553; Sat Nov 23 00:45:47 2013; Sign on session[0] PID:2970 USER:
+PID 2969; Sat Nov 23 01:15:53 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 2969; Sat Nov 23 01:15:56 2013; Sending termination request
+PID 2969; Sat Nov 23 01:15:56 2013; Session [0] stopped.
+PID 4553; Sat Nov 23 01:15:56 2013; Freeing session[0]
+PID 4553; Sat Nov 23 01:15:56 2013; Freeing socket [1]
+PID 5738; Sat Nov 23 01:16:43 2013; Session [0] started...
+PID 5738; Sat Nov 23 01:16:44 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 5738; Sat Nov 23 01:16:44 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=51060
+PID 5738; Sat Nov 23 01:16:44 2013; Launch PID:5739
+PID 5738; Sat Nov 23 01:16:44 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 5738; Sat Nov 23 01:16:44 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=51060
+PID 5738; Sat Nov 23 01:16:44 2013; Wait for Speedweb/4GL server to connect...
+PID 5738; Sat Nov 23 01:16:45 2013; Started  Speedweb/4GL [5739] in 4294957 milliseconds
+PID 4553; Sat Nov 23 01:16:45 2013; Sign on session[0] PID:5739 USER:
+PID 5738; Sat Nov 23 01:44:24 2013; Sending termination request
+PID 5738; Sat Nov 23 01:44:24 2013; Session [0] stopped.
+PID 4553; Sat Nov 23 01:44:24 2013; Freeing session[0]
+PID 4553; Sat Nov 23 01:44:24 2013; Freeing socket [1]
+PID 7958; Sat Nov 23 01:45:01 2013; Session [0] started...
+PID 7958; Sat Nov 23 01:45:01 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 7958; Sat Nov 23 01:45:01 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=51742
+PID 7958; Sat Nov 23 01:45:01 2013; Launch PID:7959
+PID 7958; Sat Nov 23 01:45:01 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 7958; Sat Nov 23 01:45:01 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=51742
+PID 7958; Sat Nov 23 01:45:01 2013; Wait for Speedweb/4GL server to connect...
+PID 7958; Sat Nov 23 01:45:02 2013; Started  Speedweb/4GL [7959] in 4294957 milliseconds
+PID 4553; Sat Nov 23 01:45:02 2013; Sign on session[0] PID:7959 USER:
+PID 7960; Sat Nov 23 01:45:03 2013; Session [1] started...
+PID 7960; Sat Nov 23 01:45:03 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 7960; Sat Nov 23 01:45:03 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=51746
+PID 7960; Sat Nov 23 01:45:03 2013; Launch PID:7961
+PID 7960; Sat Nov 23 01:45:03 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 7960; Sat Nov 23 01:45:03 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=51746
+PID 7960; Sat Nov 23 01:45:03 2013; Wait for Speedweb/4GL server to connect...
+PID 7960; Sat Nov 23 01:45:03 2013; Started  Speedweb/4GL [7961] in 4294957 milliseconds
+PID 4553; Sat Nov 23 01:45:03 2013; Sign on session[1] PID:7961 USER:
+PID 10666; Sat Nov 23 02:07:37 2013; Session [2] started...
+PID 10666; Sat Nov 23 02:07:37 2013; Session [2] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 10666; Sat Nov 23 02:07:37 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52501
+PID 10666; Sat Nov 23 02:07:37 2013; Launch PID:10667
+PID 10666; Sat Nov 23 02:07:37 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 10666; Sat Nov 23 02:07:37 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=52501
+PID 10666; Sat Nov 23 02:07:37 2013; Wait for Speedweb/4GL server to connect...
+PID 10666; Sat Nov 23 02:07:39 2013; Started  Speedweb/4GL [10667] in 4294957 milliseconds
+PID 4553; Sat Nov 23 02:07:39 2013; Sign on session[2] PID:10667 USER:
+PID 10666; Sat Nov 23 02:38:17 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 10666; Sat Nov 23 02:38:19 2013; Sending termination request
+PID 10666; Sat Nov 23 02:38:20 2013; Session [2] stopped.
+PID 4553; Sat Nov 23 02:38:20 2013; Freeing session[2]
+PID 4553; Sat Nov 23 02:38:20 2013; Freeing socket [3]
+PID 13720; Sat Nov 23 02:43:55 2013; Session [2] started...
+PID 13720; Sat Nov 23 02:43:55 2013; Session [2] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 13720; Sat Nov 23 02:43:55 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=53370
+PID 13720; Sat Nov 23 02:43:55 2013; Launch PID:13721
+PID 13720; Sat Nov 23 02:43:55 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 13720; Sat Nov 23 02:43:55 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=53370
+PID 13720; Sat Nov 23 02:43:55 2013; Wait for Speedweb/4GL server to connect...
+PID 13720; Sat Nov 23 02:43:57 2013; Started  Speedweb/4GL [13721] in 4294957 milliseconds
+PID 4553; Sat Nov 23 02:43:57 2013; Sign on session[2] PID:13721 USER:
+PID 7958; Sat Nov 23 02:47:08 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 7958; Sat Nov 23 02:47:11 2013; Sending termination request
+PID 7958; Sat Nov 23 02:47:11 2013; Session [0] stopped.
+PID 4553; Sat Nov 23 02:47:11 2013; Freeing session[0]
+PID 4553; Sat Nov 23 02:47:11 2013; Freeing socket [1]
+PID 7960; Sat Nov 23 02:49:54 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 7960; Sat Nov 23 02:49:56 2013; Sending termination request
+PID 7960; Sat Nov 23 02:49:56 2013; Session [1] stopped.
+PID 4553; Sat Nov 23 02:49:56 2013; Freeing session[1]
+PID 4553; Sat Nov 23 02:49:56 2013; Freeing socket [2]
+PID 13720; Sat Nov 23 03:07:02 2013; Sending termination request
+PID 13720; Sat Nov 23 03:07:02 2013; Session [2] stopped.
+PID 4553; Sat Nov 23 03:07:02 2013; Freeing session[2]
+PID 4553; Sat Nov 23 03:07:02 2013; Freeing socket [3]
+PID 21839; Mon Nov 25 22:49:52 2013; Session [0] started...
+PID 21839; Mon Nov 25 22:49:52 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 21839; Mon Nov 25 22:49:52 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=58969
+PID 21839; Mon Nov 25 22:49:52 2013; Launch PID:21840
+PID 21839; Mon Nov 25 22:49:52 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 21839; Mon Nov 25 22:49:52 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=58969
+PID 21839; Mon Nov 25 22:49:52 2013; Wait for Speedweb/4GL server to connect...
+PID 21839; Mon Nov 25 22:49:53 2013; Started  Speedweb/4GL [21840] in 4294957 milliseconds
+PID 4553; Mon Nov 25 22:49:53 2013; Sign on session[0] PID:21840 USER:
+PID 21839; Mon Nov 25 22:51:13 2013; Sending termination request
+PID 21839; Mon Nov 25 22:51:13 2013; Session [0] stopped.
+PID 4553; Mon Nov 25 22:51:13 2013; Freeing session[0]
+PID 4553; Mon Nov 25 22:51:13 2013; Freeing socket [1]
+PID 22207; Mon Nov 25 22:51:39 2013; Session [0] started...
+PID 22207; Mon Nov 25 22:51:39 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 22207; Mon Nov 25 22:51:39 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59071
+PID 22207; Mon Nov 25 22:51:39 2013; Launch PID:22208
+PID 22207; Mon Nov 25 22:51:39 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 22207; Mon Nov 25 22:51:39 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59071
+PID 22207; Mon Nov 25 22:51:39 2013; Wait for Speedweb/4GL server to connect...
+PID 22207; Mon Nov 25 22:51:40 2013; Started  Speedweb/4GL [22208] in 4294957 milliseconds
+PID 4553; Mon Nov 25 22:51:40 2013; Sign on session[0] PID:22208 USER:
+PID 22207; Mon Nov 25 22:55:52 2013; Sending termination request
+PID 22207; Mon Nov 25 22:55:52 2013; Session [0] stopped.
+PID 4553; Mon Nov 25 22:55:52 2013; Freeing session[0]
+PID 4553; Mon Nov 25 22:55:52 2013; Freeing socket [1]
+PID 22763; Mon Nov 25 22:55:56 2013; Session [0] started...
+PID 22763; Mon Nov 25 22:55:57 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 22763; Mon Nov 25 22:55:57 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59323
+PID 22763; Mon Nov 25 22:55:57 2013; Launch PID:22764
+PID 22763; Mon Nov 25 22:55:57 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 22763; Mon Nov 25 22:55:57 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59323
+PID 22763; Mon Nov 25 22:55:57 2013; Wait for Speedweb/4GL server to connect...
+PID 22763; Mon Nov 25 22:55:57 2013; Started  Speedweb/4GL [22764] in 4294957 milliseconds
+PID 4553; Mon Nov 25 22:55:57 2013; Sign on session[0] PID:22764 USER:
+PID 22763; Mon Nov 25 23:26:02 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 22763; Mon Nov 25 23:26:04 2013; Sending termination request
+PID 22763; Mon Nov 25 23:26:04 2013; Session [0] stopped.
+PID 4553; Mon Nov 25 23:26:04 2013; Freeing session[0]
+PID 4553; Mon Nov 25 23:26:04 2013; Freeing socket [1]
+PID 27054; Mon Nov 25 23:31:46 2013; Session [0] started...
+PID 27054; Mon Nov 25 23:31:46 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 27054; Mon Nov 25 23:31:46 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=61311
+PID 27054; Mon Nov 25 23:31:46 2013; Launch PID:27055
+PID 27054; Mon Nov 25 23:31:46 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 27054; Mon Nov 25 23:31:46 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=61311
+PID 27054; Mon Nov 25 23:31:46 2013; Wait for Speedweb/4GL server to connect...
+PID 27054; Mon Nov 25 23:31:48 2013; Started  Speedweb/4GL [27055] in 4294957 milliseconds
+PID 4553; Mon Nov 25 23:31:48 2013; Sign on session[0] PID:27055 USER:
+PID 18103; Tue Nov 26 02:14:59 2013; Session [1] started...
+PID 18103; Tue Nov 26 02:15:00 2013; Session [1] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 18103; Tue Nov 26 02:15:00 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54072
+PID 18103; Tue Nov 26 02:15:00 2013; Launch PID:18104
+PID 18103; Tue Nov 26 02:15:00 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 18103; Tue Nov 26 02:15:00 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=54072
+PID 18103; Tue Nov 26 02:15:00 2013; Wait for Speedweb/4GL server to connect...
+PID 18103; Tue Nov 26 02:15:01 2013; Started  Speedweb/4GL [18104] in 4294957 milliseconds
+PID 4553; Tue Nov 26 02:15:01 2013; Sign on session[1] PID:18104 USER:
+PID 22070; Tue Nov 26 02:46:50 2013; Session [2] started...
+PID 22072; Tue Nov 26 02:46:50 2013; Session [3] started...
+PID 22070; Tue Nov 26 02:46:51 2013; Session [2] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 22070; Tue Nov 26 02:46:51 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55808
+PID 22070; Tue Nov 26 02:46:51 2013; Launch PID:22074
+PID 22070; Tue Nov 26 02:46:51 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 22070; Tue Nov 26 02:46:51 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55808
+PID 22070; Tue Nov 26 02:46:51 2013; Wait for Speedweb/4GL server to connect...
+PID 22072; Tue Nov 26 02:46:51 2013; Session [3] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 22072; Tue Nov 26 02:46:51 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55809
+PID 22072; Tue Nov 26 02:46:51 2013; Launch PID:22078
+PID 22072; Tue Nov 26 02:46:51 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 22072; Tue Nov 26 02:46:51 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=55809
+PID 22072; Tue Nov 26 02:46:51 2013; Wait for Speedweb/4GL server to connect...
+PID 22072; Tue Nov 26 02:46:51 2013; Started  Speedweb/4GL [22078] in 4294957 milliseconds
+PID 22070; Tue Nov 26 02:46:51 2013; Started  Speedweb/4GL [22074] in 4294957 milliseconds
+PID 4553; Tue Nov 26 02:46:51 2013; Sign on session[3] PID:22078 USER:
+PID 4553; Tue Nov 26 02:46:51 2013; Sign on session[2] PID:22074 USER:
+PID 18103; Tue Nov 26 02:50:14 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 27054; Tue Nov 26 02:53:51 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 18103; Tue Nov 26 03:00:14 2013; Connection timed out; Module = 90 Reference = 351
+PID 18103; Tue Nov 26 03:00:14 2013; Sending termination request
+PID 18103; Tue Nov 26 03:00:14 2013; Session [1] stopped.
+PID 4553; Tue Nov 26 03:00:15 2013; Freeing session[1]
+PID 4553; Tue Nov 26 03:00:15 2013; Freeing socket [2]
+PID 27054; Tue Nov 26 03:03:52 2013; Connection timed out; Module = 90 Reference = 351
+PID 27054; Tue Nov 26 03:03:52 2013; Sending termination request
+PID 27054; Tue Nov 26 03:03:52 2013; Session [0] stopped.
+PID 4553; Tue Nov 26 03:03:52 2013; Freeing session[0]
+PID 4553; Tue Nov 26 03:03:52 2013; Freeing socket [1]
+PID 22070; Tue Nov 26 03:10:17 2013; Sending termination request
+PID 22070; Tue Nov 26 03:10:17 2013; Session [2] stopped.
+PID 4553; Tue Nov 26 03:10:17 2013; Freeing session[2]
+PID 4553; Tue Nov 26 03:10:17 2013; Freeing socket [3]
+PID 22072; Tue Nov 26 03:10:21 2013; Sending termination request
+PID 22072; Tue Nov 26 03:10:21 2013; Session [3] stopped.
+PID 4553; Tue Nov 26 03:10:21 2013; Freeing session[3]
+PID 4553; Tue Nov 26 03:10:21 2013; Freeing socket [4]
+PID 26755; Tue Nov 26 19:30:21 2013; Session [0] started...
+PID 26755; Tue Nov 26 19:30:21 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 26755; Tue Nov 26 19:30:21 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=60363
+PID 26755; Tue Nov 26 19:30:21 2013; Launch PID:26756
+PID 26755; Tue Nov 26 19:30:21 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 26755; Tue Nov 26 19:30:21 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=60363
+PID 26755; Tue Nov 26 19:30:21 2013; Wait for Speedweb/4GL server to connect...
+PID 26755; Tue Nov 26 19:30:21 2013; Started  Speedweb/4GL [26756] in 4294957 milliseconds
+PID 4553; Tue Nov 26 19:30:21 2013; Sign on session[0] PID:26756 USER:
+PID 26755; Tue Nov 26 21:33:31 2013; Sending termination request
+PID 26755; Tue Nov 26 21:33:31 2013; Session [0] stopped.
+PID 4553; Tue Nov 26 21:33:31 2013; Freeing session[0]
+PID 4553; Tue Nov 26 21:33:31 2013; Freeing socket [1]
+PID 11807; Fri Nov 29 00:27:57 2013; Session [0] started...
+PID 11807; Fri Nov 29 00:27:58 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 11807; Fri Nov 29 00:27:58 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64822
+PID 11807; Fri Nov 29 00:27:58 2013; Launch PID:11808
+PID 11807; Fri Nov 29 00:27:58 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 11807; Fri Nov 29 00:27:58 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64822
+PID 11807; Fri Nov 29 00:27:58 2013; Wait for Speedweb/4GL server to connect...
+PID 11807; Fri Nov 29 00:27:59 2013; Started  Speedweb/4GL [11808] in 4294957 milliseconds
+PID 4553; Fri Nov 29 00:27:59 2013; Sign on session[0] PID:11808 USER:
+PID 11807; Fri Nov 29 01:17:24 2013; sessionSendTerminate2(SpeedwebServerTimeout)
+PID 11807; Fri Nov 29 01:17:26 2013; Sending termination request
+PID 11807; Fri Nov 29 01:17:26 2013; Session [0] stopped.
+PID 4553; Fri Nov 29 01:17:26 2013; Freeing session[0]
+PID 4553; Fri Nov 29 01:17:26 2013; Freeing socket [1]
+PID 24645; Fri Nov 29 19:36:40 2013; Session [0] started...
+PID 24645; Fri Nov 29 19:36:40 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 24645; Fri Nov 29 19:36:40 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59733
+PID 24645; Fri Nov 29 19:36:40 2013; Launch PID:24646
+PID 24645; Fri Nov 29 19:36:40 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 24645; Fri Nov 29 19:36:40 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=59733
+PID 24645; Fri Nov 29 19:36:40 2013; Wait for Speedweb/4GL server to connect...
+PID 24645; Fri Nov 29 19:36:42 2013; Started  Speedweb/4GL [24646] in 4294957 milliseconds
+PID 4553; Fri Nov 29 19:36:42 2013; Sign on session[0] PID:24646 USER:
+PID 24645; Fri Nov 29 19:38:32 2013; Sending termination request
+PID 24645; Fri Nov 29 19:38:32 2013; Session [0] stopped.
+PID 4553; Fri Nov 29 19:38:32 2013; Freeing session[0]
+PID 4553; Fri Nov 29 19:38:32 2013; Freeing socket [1]
+PID 20520; Wed Dec  4 20:57:07 2013; Session [0] started...
+PID 20520; Wed Dec  4 20:57:07 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 20520; Wed Dec  4 20:57:07 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62488
+PID 20520; Wed Dec  4 20:57:07 2013; Launch PID:20521
+PID 20520; Wed Dec  4 20:57:07 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 20520; Wed Dec  4 20:57:07 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=62488
+PID 20520; Wed Dec  4 20:57:07 2013; Wait for Speedweb/4GL server to connect...
+PID 20520; Wed Dec  4 20:57:08 2013; Started  Speedweb/4GL [20521] in 4294957 milliseconds
+PID 4553; Wed Dec  4 20:57:08 2013; Sign on session[0] PID:20521 USER:
+PID 20520; Wed Dec  4 21:01:28 2013; Sending termination request
+PID 20520; Wed Dec  4 21:01:28 2013; Session [0] stopped.
+PID 4553; Wed Dec  4 21:01:28 2013; Freeing session[0]
+PID 4553; Wed Dec  4 21:01:28 2013; Freeing socket [1]
+PID 24712; Fri Dec  6 20:40:37 2013; Session [0] started...
+PID 24712; Fri Dec  6 20:40:37 2013; Session [0] ID = D7F9E9FE-0000-48DC-9EEB-E34DB5750F6A
+PID 24712; Fri Dec  6 20:40:37 2013; Command      : /home/Speedware/SpeedWeb304/bin/spweb4gl /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64726
+PID 24712; Fri Dec  6 20:40:37 2013; Launch PID:24713
+PID 24712; Fri Dec  6 20:40:37 2013;   program  = /home/Speedware/SpeedWeb304/bin/spweb4gl
+PID 24712; Fri Dec  6 20:40:37 2013;   arg      = /home/sco/Speedweb/adaiaweb.ini -wa,host=172.20.10.56,port=64726
+PID 24712; Fri Dec  6 20:40:37 2013; Wait for Speedweb/4GL server to connect...
+PID 24712; Fri Dec  6 20:40:38 2013; Started  Speedweb/4GL [24713] in 4294957 milliseconds
+PID 4553; Fri Dec  6 20:40:38 2013; Sign on session[0] PID:24713 USER:
+PID 24712; Fri Dec  6 20:59:43 2013; Sending termination request
+PID 24712; Fri Dec  6 20:59:43 2013; Session [0] stopped.
+PID 4553; Fri Dec  6 20:59:43 2013; Freeing session[0]
+PID 4553; Fri Dec  6 20:59:43 2013; Freeing socket [1]
+PID 18232; Thu Jan  9 20:02:59 2014; SpeedWeb server 3.04.02 Build 20 July 17, 2009
+PID 18232; Thu Jan  9 20:02:59 2014; Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+PID 18232; Thu Jan  9 20:02:59 2014; For use by authorized licensees only
+PID 18232; Thu Jan  9 20:02:59 2014; Server realm is  : SpeedWeb Application
+PID 18232; Thu Jan  9 20:02:59 2014; Log file location is /home/sco/Speedweb/speedweb.log
+PID 18232; Thu Jan  9 20:02:59 2014; Starting server...
+PID 18232; Thu Jan  9 20:02:59 2014; Server is 172.20.10.56
+PID 18232; Thu Jan  9 20:02:59 2014; SSL certificate loaded
+PID 18232; Thu Jan  9 20:02:59 2014; Standard application services
+PID 18232; Thu Jan  9 20:02:59 2014; Support for 10 sessions
+PID 18232; Thu Jan  9 20:02:59 2014; Command channel  : 
+PID 18232; Thu Jan  9 20:02:59 2014; Register port 18201
+PID 18232; Thu Jan  9 20:02:59 2014; Standard channel : 
+PID 18232; Thu Jan  9 20:02:59 2014; Register port 18200
+PID 18232; Thu Jan  9 20:02:59 2014; Secure channel   : 
+PID 18232; Thu Jan  9 20:02:59 2014; Register port 18202
+PID 18232; Thu Jan  9 20:02:59 2014; SWS-API version  : 30402
+PID 18232; Sat Feb  1 14:18:28 2014; Kill signal

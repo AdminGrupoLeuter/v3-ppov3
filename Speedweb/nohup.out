@@ -1,0 +1,104 @@
+SpeedWeb server 3.04.02 Build 20 July 17, 2009
+Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+For use by authorized licensees only
+SpeedWeb server 3.04.02 Build 20 July 17, 2009
+Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+For use by authorized licensees only
+Server realm is  : SpeedWeb Application
+Server realm is  : SpeedWeb Application
+Log file location is /home/sco/Speedweb/speedweb.log
+Starting server...
+Server is 172.20.10.56
+Log file location is /home/sco/Speedweb/speedwebrf.log
+Starting server...
+Server is 172.20.10.56
+SSL certificate loaded
+Standard application services
+Support for 10 sessions
+Command channel  : Register port 18206
+Standard channel : Register port 18205
+Secure channel   : Register port 18207
+SWS-API version  : 30402
+SSL certificate loaded
+Standard application services
+Support for 10 sessions
+Command channel  : Register port 18201
+Standard channel : Register port 18200
+Secure channel   : Register port 18202
+SWS-API version  : 30402
+PID 23439; Sat Oct  5 01:00:49 2013; Broken pipe; Module = 90 Reference = 371
+PID 23439; Sat Oct  5 01:00:49 2013; Unexpected internal Error; Module = 90 Reference = 123
+PID 11131; Mon Oct  7 21:32:14 2013; Connection timed out; Module = 90 Reference = 351
+PID 10955; Mon Oct  7 21:33:05 2013; Connection timed out; Module = 90 Reference = 351
+PID 18744; Mon Oct  7 23:49:12 2013; Connection timed out; Module = 90 Reference = 351
+PID 17684; Mon Oct  7 23:50:47 2013; Connection timed out; Module = 90 Reference = 351
+PID 26296; Tue Oct  8 22:52:37 2013; Connection timed out; Module = 90 Reference = 351
+PID 29300; Tue Oct  8 23:44:11 2013; Connection timed out; Module = 90 Reference = 351
+PID 3829; Mon Oct 28 22:54:03 2013; Connection timed out; Module = 90 Reference = 351
+SpeedWeb server 3.04.02 Build 20 July 17, 2009
+SpeedWeb server 3.04.02 Build 20 July 17, 2009
+Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+For use by authorized licensees only
+Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+For use by authorized licensees only
+Server realm is  : SpeedWeb Application
+Server realm is  : SpeedWeb Application
+Log file location is /home/sco/Speedweb/speedwebrf.log
+Log file location is /home/sco/Speedweb/speedweb.log
+Starting server...
+Server is 172.20.10.56
+Starting server...
+Server is 172.20.10.56
+SSL certificate loaded
+Standard application services
+Support for 10 sessions
+Command channel  : Register port 18201
+Standard channel : Register port 18200
+Secure channel   : Register port 18202
+SWS-API version  : 30402
+SSL certificate loaded
+Standard application services
+Support for 10 sessions
+Command channel  : Register port 18206
+Standard channel : Register port 18205
+Secure channel   : Register port 18207
+SWS-API version  : 30402
+PID 1522; Wed Nov 13 00:43:17 2013; Connection timed out; Module = 90 Reference = 351
+PID 7117; Wed Nov 13 00:56:48 2013; Connection timed out; Module = 90 Reference = 351
+PID 23307; Wed Nov 13 21:43:34 2013; Connection timed out; Module = 90 Reference = 351
+PID 18589; Thu Nov 14 02:47:23 2013; Connection timed out; Module = 90 Reference = 351
+PID 18587; Thu Nov 14 03:00:40 2013; Connection timed out; Module = 90 Reference = 351
+PID 10944; Fri Nov 15 00:30:46 2013; Connection timed out; Module = 90 Reference = 351
+PID 4232; Fri Nov 15 01:00:25 2013; Connection timed out; Module = 90 Reference = 351
+PID 18103; Tue Nov 26 03:00:14 2013; Connection timed out; Module = 90 Reference = 351
+PID 27054; Tue Nov 26 03:03:52 2013; Connection timed out; Module = 90 Reference = 351
+SpeedWeb server 3.04.02 Build 20 July 17, 2009
+Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+SpeedWeb server 3.04.02 Build 20 July 17, 2009
+For use by authorized licensees only
+Copyright(c) 2006 Speedware Ltd.  All rights reserved.
+For use by authorized licensees only
+Server realm is  : SpeedWeb Application
+Log file location is /home/sco/Speedweb/speedwebrf.log
+Starting server...
+Server is 172.20.10.56
+Server realm is  : SpeedWeb Application
+Log file location is /home/sco/Speedweb/speedweb.log
+Starting server...
+Server is 172.20.10.56
+SSL certificate loaded
+Standard application services
+Support for 10 sessions
+SSL certificate loaded
+Standard application services
+Support for 10 sessions
+Command channel  : Register port 18206
+Command channel  : Register port 18201
+Standard channel : Register port 18205
+Standard channel : Register port 18200
+Secure channel   : Register port 18207
+Secure channel   : Register port 18202
+SWS-API version  : 30402
+SWS-API version  : 30402
+Kill signal
+Kill signal

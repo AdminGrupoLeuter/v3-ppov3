@@ -1,0 +1,7 @@
+if [ "$1" = "" ]
+then
+   cmd=tail
+else
+   cmd=$*
+fi
+tty=`ps | grep ps | egrep -v grep | awk '{print $2}'`;$cmd `tail -1 $ADAIA_HOME/log/dbg_$tty.tty`

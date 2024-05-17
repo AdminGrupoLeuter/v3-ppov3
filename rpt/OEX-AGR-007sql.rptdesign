@@ -1,0 +1,1303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Gim√©nez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 18/03/2010 (versi√≥n inicial): Se a√±ade el par√°metro pdecAlmCod (c√≥digo interno almac√©n) con 
+* respecto a la versi√≥n de SpeedWare, ya que desde un informe BIRT no es posible recuperar una 
+* variable global de SpeedWare.
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*       Informe de oleada ya lanzada.
+* 
+* PARAMETROS RECIBIDOS:
+*       1. pdecAlmCod                           -> C√≥digo interno almac√©n
+*       1. pdecExpOrdPri                        -> C√≥digo interno orden expedici√≥n principal
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pdecAlmCod" id="7953">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecAlmCod"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">1</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecExpOrdPri" id="5796">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecExpOrdPri"></text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">1769</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strParAlmCliRep" id="6980">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strParPickingUds" id="6982">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">N</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="OEX" id="411">
+            <property name="odaDriverClass">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+            <property name="odaURL">jdbc:sqlserver://172.20.10.65\ADAIASRV:1433</property>
+            <property name="odaUser">bra</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YnJh</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-AGR-007 03 (Ppal)" id="6003">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ORDEN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TEXTO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ALMREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ALMDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">SUM_PAL</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">SUM_UDSEXP</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">SUM_UDSMIN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">SUM_TOTUDSEXP</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">SUM_TOTUDSMIN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">SUM_CAN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="beforeOpen"><![CDATA[//
+// Inicializar la string de la consulta
+this.queryText = ''
+//
+// ************
+// * SELECT 1 *
+// ************
+//
+this.queryText = this.queryText + " " + "(SELECT   1            AS ORDEN," +
+                                  " " +           "'Repos. de alm. pulm√≥n a ppal.'" +
+                                  " " +                        "AS TEXTO," +  
+                                  " " +           "NULL         AS ALMREF," +
+                                  " " +           "NULL         AS ALMDES," + 
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ROUND((b.CAN /" + 
+                                  " " +                              "(d.NUMUNI * d.UNIPAL)),0,1)" +
+                                  " " +                 "ELSE   0" +
+                                  " " +               "END)     AS SUM_PAL," +
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ROUND((b.CAN % (CAST(d.NUMUNI AS INT) * CAST(d.UNIPAL AS INT))) /" +
+                                  " " +                               "d.NUMUNI,0,1)" +
+                                  " " +                 "ELSE   0" +
+                                  " " +               "END)     AS SUM_UDSEXP," +
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ((b.CAN % (CAST(d.NUMUNI AS INT) * CAST(d.UNIPAL AS INT))) %" +
+                                  " " +                          "CAST(d.NUMUNI AS INT))" +
+                                  " " +                 "ELSE   b.CAN" +
+                                  " " +               "END)     AS SUM_UDSMIN," +
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ROUND((b.CAN / d.NUMUNI),0,1)" +
+                                  " " +                 "ELSE   0" +
+                                  " " +               "END)     AS SUM_TOTUDSEXP," + 
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN (b.CAN % CAST(d.NUMUNI AS INT))" +
+                                  " " +                "ELSE    b.CAN" +
+                                  " " +              "END)     AS SUM_TOTUDSMIN," +
+                                  " " +           "SUM(b.CAN)   AS SUM_CAN" +                
+                                  " " +  "FROM     EXPORDCAB a" +
+                                  " " +             "INNER JOIN ACCTRA b" +
+                                  " " +                "ON b.EXPORDCOD = a.EXPORDCOD" +
+                                  " " +             "LEFT OUTER JOIN ART c" +
+                                  " " +                "ON c.ARTCOD    = b.ARTCOD" +
+                                  " " +             "LEFT OUTER JOIN ARTPRE d" +
+                                  " " +                "ON d.ARTCOD    = b.ARTCOD" +
+                                  " " +               "AND d.UNITIP    = c.UNIEXP" +            
+                                  " " +  "WHERE    a.EXPORDPRI =" + " " + params["pdecExpOrdPri"].value +
+                                  " " +    "AND    a.EXPORDSIT = 'AC'" +
+                                  " " +    "AND    a.TERCOD    = (SELECT p.TERCOD" +
+                                  " " +                          "FROM   TER p" +
+                                  " " +                          "WHERE  p.TERREF =" +
+                                  " " +                                 "'" + params["strParAlmCliRep"].value + "')" +         
+                                  " " +    "AND    b.ACCTIPTAR = 'EXRE')" 
+//
+// **********
+// * UNION  *
+// **********
+//
+this.queryText = this.queryText + " " +     "UNION"
+//
+// ************
+// * SELECT 2 *
+// ************
+//
+this.queryText = this.queryText + " " + "(SELECT   2            AS ORDEN," +
+                                  " " +           "'Exped. de alm. pulm√≥n a ppal.'" +
+                                  " " +                        "AS TEXTO," +
+                                  " " +           "NULL         AS ALMREF," +
+                                  " " +           "NULL         AS ALMDES," +
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ROUND((b.CAN /" + 
+                                  " " +                              "(d.NUMUNI * d.UNIPAL)),0,1)" +
+                                  " " +                 "ELSE   0" +
+                                  " " +               "END)     AS SUM_PAL," +
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ROUND((b.CAN % (CAST(d.NUMUNI AS INT) * CAST(d.UNIPAL AS INT))) /" +
+                                  " " +                               "d.NUMUNI,0,1)" +
+                                  " " +                 "ELSE   0" +
+                                  " " +               "END)     AS SUM_UDSEXP," +
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ((b.CAN % (CAST(d.NUMUNI AS INT) * CAST(d.UNIPAL AS INT))) %" +
+                                  " " +                          "CAST(d.NUMUNI AS INT))" +
+                                  " " +                 "ELSE   b.CAN" +
+                                  " " +               "END)     AS SUM_UDSMIN," +
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ROUND((b.CAN / d.NUMUNI),0,1)" +
+                                  " " +                 "ELSE   0" +
+                                  " " +               "END)     AS SUM_TOTUDSEXP," + 
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN (b.CAN % CAST(d.NUMUNI AS INT))" +
+                                  " " +                 "ELSE   b.CAN" +
+                                  " " +               "END)     AS SUM_TOTUDSMIN," +
+                                  " " +           "SUM(b.CAN)   AS SUM_CAN" +                
+                                  " " +  "FROM     EXPORDCAB a" +
+                                  " " +             "INNER JOIN ACCTRA b" +
+                                  " " +                "ON b.EXPORDCOD = a.EXPORDCOD" +
+                                  " " +             "LEFT OUTER JOIN ART c" +
+                                  " " +                "ON c.ARTCOD    = b.ARTCOD" +
+                                  " " +             "LEFT OUTER JOIN ARTPRE d" +
+                                  " " +                "ON d.ARTCOD    = b.ARTCOD" +
+                                  " " +               "AND d.UNITIP    = c.UNIEXP" +            
+                                  " " +  "WHERE    a.EXPORDPRI =" + " " + params["pdecExpOrdPri"].value +
+                                  " " +    "AND    a.EXPORDSIT = 'AC'" +
+                                  " " +    "AND    a.TERCOD    = (SELECT p.TERCOD" +
+                                  " " +                          "FROM   TER p" +
+                                  " " +                          "WHERE  p.TERREF =" +
+                                  " " +                                 "'" + params["strParAlmCliRep"].value + "')" + 
+                                  " " +    "AND    b.ACCTIPTAR = 'EXPL')"
+//
+// **********
+// * UNION  *
+// **********
+//
+this.queryText = this.queryText + " " +     "UNION"
+//
+// ************
+// * SELECT 3 *
+// ************
+//    
+this.queryText = this.queryText + " " + "(SELECT   3            AS ORDEN," +
+                                  " " +           "'Expediciones de cada almac√©n'" +
+                                  " " +                        "AS TEXTO," +
+                                  " " +           "e.ALMREF," +
+                                  " " +           "e.ALMDES," +
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ROUND((b.CAN /" + 
+                                  " " +                              "(d.NUMUNI * d.UNIPAL)),0,1)" +
+                                  " " +                 "ELSE   0" +
+                                  " " +               "END)     AS SUM_PAL," +
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ROUND((b.CAN % (CAST(d.NUMUNI AS INT) * CAST(d.UNIPAL AS INT))) /" +
+                                  " " +                               "d.NUMUNI,0,1)" +
+                                  " " +                 "ELSE   0" +
+                                  " " +               "END)     AS SUM_UDSEXP," +
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ((b.CAN % (CAST(d.NUMUNI AS INT) * CAST(d.UNIPAL AS INT))) %" +
+                                  " " +                          "CAST(d.NUMUNI AS INT))" +
+                                  " " +                 "ELSE   b.CAN" +
+                                  " " +               "END)     AS SUM_UDSMIN," +
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ROUND((b.CAN / d.NUMUNI),0,1)" +
+                                  " " +                 "ELSE   0" +
+                                  " " +               "END)     AS SUM_TOTUDSEXP," + 
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN (b.CAN % CAST(d.NUMUNI AS INT))" +
+                                  " " +                 "ELSE   b.CAN" +
+                                  " " +               "END)     AS SUM_TOTUDSMIN," +
+                                  " " +           "SUM(b.CAN)   AS SUM_CAN" +
+                                  " " +  "FROM     EXPORDCAB a" +
+                                  " " +             "INNER JOIN ACCTRA b" +
+                                  " " +                "ON b.EXPORDCOD = a.EXPORDCOD" +
+                                  " " +             "LEFT OUTER JOIN ART c" +
+                                  " " +                "ON c.ARTCOD    = b.ARTCOD" +
+                                  " " +             "LEFT OUTER JOIN ARTPRE d" +
+                                  " " +                "ON d.ARTCOD    = b.ARTCOD" +
+                                  " " +               "AND d.UNITIP    = c.UNIEXP" +  
+                                  " " +             "LEFT OUTER JOIN ALM e" +
+                                  " " +                "ON e.ALMCOD    = a.ALMCOD" +
+                                  " " +  "WHERE    a.EXPORDPRI =" + " " + params["pdecExpOrdPri"].value +
+                                  " " +    "AND    a.EXPORDSIT =  'AC'" +
+                                  " " +    "AND  ((SELECT p.TERCOD" +
+                                  " " +           "FROM   TER p" +
+                                  " " +           "WHERE  p.TERREF =" +
+                                  " " +                  "'" + params["strParAlmCliRep"].value + "') IS NULL OR" +
+                                  " " +           "a.TERCOD             <> (SELECT q.TERCOD" +
+                                  " " +                                    "FROM   TER q" +
+                                  " " +                                    "WHERE  q.TERREF =" +
+                                  " " +                                           "'" + params["strParAlmCliRep"].value + "'))" +  
+                                  " " +    "AND    b.ACCTIPTAR = 'EX'" +  
+                                  " " +  "GROUP BY e.ALMREF," +
+                                  " " +           "e.ALMDES)"
+//
+// **********
+// * UNION  *
+// **********
+//
+this.queryText = this.queryText + " " +     "UNION"
+//
+// ************
+// * SELECT 4 *
+// ************
+//          
+this.queryText = this.queryText + " " + "(SELECT   4            AS ORDEN," +
+                                  " " +           "'Acciones de picking est√°ndar'" +
+                                  " " +                        "AS TEXTO," +
+                                  " " +           "NULL         AS ALMREF," +
+                                  " " +           "NULL         AS ALMDES," +
+                                  " " +           "NULL         AS SUM_PAL," +
+                                  " " +           "NULL         AS SUM_UDSEXP," +
+                                  " " +           "NULL         AS SUM_UDSMIN," +  
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN ROUND((b.CAN / d.NUMUNI),0,1)" +
+                                  " " +                 "ELSE   0" +
+                                  " " +               "END)     AS SUM_TOTUDSEXP," + 
+                                  " " +           "SUM(CASE" +
+                                  " " +                 "WHEN c.UNIEXP <>     'UD'" +
+                                  " " +                  "AND d.NUMUNI IS NOT NULL" +
+                                  " " +                  "AND d.NUMUNI <>     0" +   
+                                  " " +                  "AND d.UNIPAL IS NOT NULL" +
+                                  " " +                  "AND d.UNIPAL <>     0" + 
+                                  " " +                   "THEN (b.CAN % CAST(d.NUMUNI AS INT))" +
+                                  " " +                 "ELSE   b.CAN" +
+                                  " " +               "END)     AS SUM_TOTUDSMIN," +
+                                  " " +           "SUM(b.CAN)   AS SUM_CAN" +                
+                                  " " +  "FROM     EXPORDCAB a" +
+                                  " " +             "INNER JOIN ACCTRA b" +
+                                  " " +                "ON b.EXPORDCOD = a.EXPORDCOD" +
+                                  " " +             "LEFT OUTER JOIN ART c" +
+                                  " " +                "ON c.ARTCOD    = b.ARTCOD" +
+                                  " " +             "LEFT OUTER JOIN ARTPRE d" +
+                                  " " +                "ON d.ARTCOD    = b.ARTCOD" +
+                                  " " +               "AND d.UNITIP    = c.UNIEXP" +            
+                                  " " +  "WHERE    a.EXPORDPRI =" + " " + params["pdecExpOrdPri"].value +
+                                  " " +    "AND    a.EXPORDSIT =  'AC'" +
+                                  " " +    "AND    b.ACCTIPTAR =  'PISU'" + 
+                                  " " +    "AND   (c.UNIEXP    IS NULL OR" +
+                                  " " +           "c.UNIEXP    <> 'UD'))"
+//
+// **********
+// * UNION  *
+// **********
+//
+this.queryText = this.queryText + " " +     "UNION"
+//
+// ************
+// * SELECT 4 *
+// ************
+//          
+this.queryText = this.queryText + " " + "(SELECT   5            AS ORDEN," +
+                                  " " +           "'Acciones de picking detalle'" +
+                                  " " +                        "AS TEXTO," +
+                                  " " +           "NULL         AS ALMREF," +
+                                  " " +           "NULL         AS ALMDES," +
+                                  " " +           "NULL         AS SUM_PAL," +
+                                  " " +           "NULL         AS SUM_UDSEXP," +
+                                  " " +           "NULL         AS SUM_UDSMIN," +
+                                  " " +           "NULL         AS SUM_TOTUDSEXP," +
+                                  " " +           "NULL         AS SUM_TOTUDSMIN," +
+                                  " " +           "SUM(b.CAN)   AS SUM_CAN" +                
+                                  " " +  "FROM     EXPORDCAB a" +
+                                  " " +             "INNER JOIN ACCTRA b" +
+                                  " " +                "ON b.EXPORDCOD = a.EXPORDCOD" +
+                                  " " +             "INNER JOIN ART c" +
+                                  " " +                "ON c.ARTCOD    = b.ARTCOD" +
+                                  " " +             "LEFT OUTER JOIN ARTPRE d" +
+                                  " " +                "ON d.ARTCOD    = b.ARTCOD" +
+                                  " " +               "AND d.UNITIP    = c.UNIEXP" +            
+                                  " " +  "WHERE    a.EXPORDPRI =" + " " + params["pdecExpOrdPri"].value +
+                                  " " +    "AND    a.EXPORDSIT = 'AC'" +
+                                  " " +    "AND" + " " + "'" + params["strParPickingUds"].value + "'" + " " + "= 'S'" +
+                                  " " +    "AND    b.ACCTIPTAR = 'PISU'" +
+                                  " " +    "AND    c.UNIEXP    = 'UD')"
+//
+// *********************************
+// * ORDER BY de todos los SELECTs *
+// *********************************
+// 
+this.queryText = this.queryText + " " + "ORDER BY 1," +
+                                  " " +          "2," +
+                                  " " +          "3"]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ORDEN</property>
+                    <property name="nativeName">ORDEN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TEXTO</property>
+                    <property name="nativeName">TEXTO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ALMREF</property>
+                    <property name="nativeName">ALMREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ALMDES</property>
+                    <property name="nativeName">ALMDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">SUM_PAL</property>
+                    <property name="nativeName">SUM_PAL</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">SUM_UDSEXP</property>
+                    <property name="nativeName">SUM_UDSEXP</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">SUM_UDSMIN</property>
+                    <property name="nativeName">SUM_UDSMIN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">SUM_TOTUDSEXP</property>
+                    <property name="nativeName">SUM_TOTUDSEXP</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">SUM_TOTUDSMIN</property>
+                    <property name="nativeName">SUM_TOTUDSMIN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">SUM_CAN</property>
+                    <property name="nativeName">SUM_CAN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">// Consulta definida en evento beforeOpen</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-AGR-007 04 (Cab)" id="7727">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EXPORDREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecExpOrdPri</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EXPORDREF</property>
+                    <property name="nativeName">EXPORDREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.EXPORDREF
+FROM     EXPORDCAB a 
+WHERE    a.EXPORDCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-AGR-007 01 (Par1)" id="6979">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">VALALF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="onFetch"><![CDATA[//
+// Guardar el valor del par√°metro ALM-CLI-REP para 
+// utilizarlo en el conjunto de datos OEX-AGR-007 03 (Ppal)
+params["strParAlmCliRep"].value = BirtStr.trimRight( dataSetRow["VALALF"] )]]></method>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p2</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p3</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">VALALF</property>
+                    <property name="nativeName">VALALF</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.VALALF
+FROM     GENPAR a
+WHERE    a.GENPARCAT = 'INSTALACION'       
+  AND    a.GENPARCOD = 'ALM-CLI-REP'
+  AND    a.ALMCOD    = (CASE
+                          WHEN (SELECT COUNT(*)
+                                FROM   GENPAR t
+                                WHERE  t.GENPARCAT = a.GENPARCAT
+                                  AND  t.GENPARCOD = a.GENPARCOD
+                                  AND  t.ALMCOD    = ?) > 0
+                            THEN ?                           
+                          WHEN ? &lt;> 1
+                            THEN 1
+                          ELSE   NULL
+                        END)</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-AGR-007 02 (Par2)" id="6981">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">VALALF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <method name="onFetch"><![CDATA[//
+// Guardar el valor del par√°metro PICKING-UDS para 
+// utilizarlo en el conjunto de datos OEX-AGR-007 03 (Ppal)
+params["strParPickingUds"].value = BirtStr.trimRight( dataSetRow["VALALF"] )]]></method>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p2</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p3</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">VALALF</property>
+                    <property name="nativeName">VALALF</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.VALALF
+FROM     GENPAR a
+WHERE    a.GENPARCAT = 'INSTALACION'      
+  AND    a.GENPARCOD = 'PICKING-UDS'
+  AND    a.ALMCOD    = (CASE
+                          WHEN (SELECT COUNT(*)
+                                FROM   GENPAR t
+                                WHERE  t.GENPARCAT = a.GENPARCAT
+                                  AND  t.GENPARCOD = a.GENPARCOD
+                                  AND  t.ALMCOD    = ?) > 0
+                            THEN ?                           
+                          WHEN ? &lt;> 1
+                            THEN 1
+                          ELSE   NULL
+                        END)</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OEX-AGR-007 05 (Cab)" id="7974">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OEX</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">portrait</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="InformeDeOleadaYaLanzada"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="7975">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">OEX-AGR-007 05 (Cab)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(OEX-AGR-007)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="3563">
+            <property name="marginTop">0pt</property>
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">25%</property>
+            <column id="3564">
+                <property name="width">50mm</property>
+            </column>
+            <column id="3565">
+                <property name="width">50mm</property>
+            </column>
+            <row id="3567">
+                <property name="height">0.312in</property>
+                <cell id="3568"/>
+                <cell id="3569"/>
+            </row>
+            <row id="5225">
+                <cell id="5226">
+                    <label id="5444">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="OrdenExpedicion"></text-property>
+                    </label>
+                </cell>
+                <cell id="5227">
+                    <data id="7728">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">OEX-AGR-007 04 (Cab)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">EXPORDREF</property>
+                                <property name="displayName">EXPORDREF</property>
+                                <expression name="expression">dataSetRow["EXPORDREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">EXPORDREF</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <table id="7954">
+            <property name="width">0%</property>
+            <property name="dataSet">OEX-AGR-007 01 (Par1)</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">VALALF</property>
+                    <property name="displayName">VALALF</property>
+                    <expression name="expression">dataSetRow["VALALF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="7963"/>
+            <detail>
+                <row id="7958">
+                    <cell id="7959"/>
+                </row>
+            </detail>
+        </table>
+        <table id="7964">
+            <property name="width">0%</property>
+            <property name="dataSet">OEX-AGR-007 02 (Par2)</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">VALALF</property>
+                    <property name="displayName">VALALF</property>
+                    <expression name="expression">dataSetRow["VALALF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="7973"/>
+            <detail>
+                <row id="7968">
+                    <cell id="7969"/>
+                </row>
+            </detail>
+        </table>
+        <table id="7865">
+            <property name="marginTop">0pt</property>
+            <property name="width">70%</property>
+            <property name="dataSet">OEX-AGR-007 03 (Ppal)</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">ORDEN</property>
+                    <property name="displayName">ORDEN</property>
+                    <expression name="expression">dataSetRow["ORDEN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TEXTO</property>
+                    <property name="displayName">TEXTO</property>
+                    <expression name="expression">dataSetRow["TEXTO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ALMREF</property>
+                    <property name="displayName">ALMREF</property>
+                    <expression name="expression">dataSetRow["ALMREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ALMDES</property>
+                    <property name="displayName">ALMDES</property>
+                    <expression name="expression">dataSetRow["ALMDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_PAL</property>
+                    <property name="displayName">SUM_PAL</property>
+                    <expression name="expression">dataSetRow["SUM_PAL"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_UDSEXP</property>
+                    <property name="displayName">SUM_UDSEXP</property>
+                    <expression name="expression">dataSetRow["SUM_UDSEXP"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_UDSMIN</property>
+                    <property name="displayName">SUM_UDSMIN</property>
+                    <expression name="expression">dataSetRow["SUM_UDSMIN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_TOTUDSEXP</property>
+                    <property name="displayName">SUM_TOTUDSEXP</property>
+                    <expression name="expression">dataSetRow["SUM_TOTUDSEXP"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_TOTUDSMIN</property>
+                    <property name="displayName">SUM_TOTUDSMIN</property>
+                    <expression name="expression">dataSetRow["SUM_TOTUDSMIN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_CAN</property>
+                    <property name="displayName">SUM_CAN</property>
+                    <expression name="expression">dataSetRow["SUM_CAN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">ne</property>
+                    <expression name="expr">row["SUM_CAN"]</expression>
+                    <simple-property-list name="value1">
+                        <value>null</value>
+                    </simple-property-list>
+                </structure>
+            </list-property>
+            <column id="7919">
+                <property name="width">55mm</property>
+            </column>
+            <column id="7920">
+                <property name="width">20mm</property>
+            </column>
+            <column id="7921">
+                <property name="width">30mm</property>
+            </column>
+            <column id="7922">
+                <property name="width">18mm</property>
+            </column>
+            <column id="7923">
+                <property name="width">15mm</property>
+            </column>
+            <column id="7924">
+                <property name="width">15mm</property>
+            </column>
+            <column id="7925">
+                <property name="width">15mm</property>
+            </column>
+            <column id="7949">
+                <property name="width">4mm</property>
+            </column>
+            <column id="7926">
+                <property name="width">15mm</property>
+            </column>
+            <column id="7927">
+                <property name="width">15mm</property>
+            </column>
+            <header>
+                <row id="7929">
+                    <property name="height">0.312in</property>
+                    <cell id="7930"/>
+                    <cell id="7931"/>
+                    <cell id="7932"/>
+                    <cell id="7933"/>
+                    <cell id="7934"/>
+                    <cell id="7935"/>
+                    <cell id="7936"/>
+                    <cell id="7945"/>
+                    <cell id="7937"/>
+                    <cell id="7938"/>
+                </row>
+                <row id="7866">
+                    <property name="verticalAlign">bottom</property>
+                    <cell id="7867">
+                        <label id="7939">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <text-property name="text" key="Concepto"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="7869">
+                        <label id="7940">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Almacen"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="7871">
+                        <label id="7941">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Descripcion"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="7873">
+                        <label id="7942">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Pallets"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="7875">
+                        <label id="7943">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="UdsExp"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="7877">
+                        <label id="7944">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="UdsMin"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="7879">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <label id="7951">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="TotalUdsExpUdsMin"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="7883">
+                        <label id="7952">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="TotalUdsMin"></text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="7887">
+                    <cell id="7888">
+                        <data id="7891">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">TEXTO</property>
+                        </data>
+                    </cell>
+                    <cell id="7890">
+                        <data id="7893">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ALMREF</property>
+                        </data>
+                    </cell>
+                    <cell id="7892">
+                        <data id="7895">
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ALMDES</property>
+                        </data>
+                    </cell>
+                    <cell id="7894">
+                        <data id="7897">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">SUM_PAL</property>
+                        </data>
+                    </cell>
+                    <cell id="7896">
+                        <data id="7899">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">SUM_UDSEXP</property>
+                        </data>
+                    </cell>
+                    <cell id="7898">
+                        <data id="7901">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">SUM_UDSMIN</property>
+                        </data>
+                    </cell>
+                    <cell id="7900">
+                        <data id="7903">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">SUM_TOTUDSEXP</property>
+                        </data>
+                    </cell>
+                    <cell id="7947">
+                        <label id="7950">
+                            <property name="marginTop">0pt</property>
+                            <list-property name="visibility">
+                             HŒ§…√:       HŒ¶…√n       HŒ®…√z       HŒ™…√ä       HŒ¨…√¬       HŒÆ…√“       HŒ∞…√Ó       HŒ≤…√˙       HŒ¥…ƒ       HŒ∂…ƒ       HŒ∏…ƒ"       HŒ∫…ƒ*       HŒº…ƒ2       HŒæ…ƒ:       HŒ¿…ƒB       HŒ¬…ƒJ       HŒƒ…ƒR       HŒ∆…ƒZ       HŒ»…ƒ¢       HŒ …ƒ≤       HŒÃ…ƒ∫       HŒŒ…ƒ        HŒ–…ƒ“       HŒ“…ƒ⁄       HŒ‘…ƒ‚       HŒ÷…ƒÚ       HŒÿ…∆
+       HŒ⁄…∆       HŒ‹…∆"       HŒﬁ…∆*       HŒ‡…∆2       HŒ‚…∆:       HŒ‰…«Ã       HŒÊ…»Ü       HŒË…»í       HŒÍ…»™       HŒÏ…»∫       HŒÓ……B       HŒ……J       HŒÚ……R       HŒÙ……Z       HŒˆ……b       HŒ¯……j       HŒ˙……r       HŒ¸……x       HŒ˛……Ç       Hœ ……ä       Hœ……í       Hœ……¢       Hœ……™       Hœ……∏       Hœ
+……∆       Hœ……        Hœ……“       Hœ……‚       Hœ……Í       Hœ……˙       Hœ… 
+       Hœ…        Hœ…        Hœ… "       Hœ… :       Hœ … @       Hœ"… Ç       Hœ$… í       Hœ&… ¨       Hœ(… ¥       Hœ*… Ë       Hœ,…À"       Hœ.…À*       Hœ0…ÀR       Hœ2…ÀZ       Hœ4…Àb       Hœ6…Àj       Hœ8…Àr       Hœ:…À™       Hœ<…À≤       Hœ>…Ã
+       Hœ@…Ã       HœB…Ã       HœD…Ã"       HœF…Ã4       HœH…ŒB       HœJ…ŒJ       HœL…ŒZ       HœN…Œb       HœP…Œr       HœR…Œ~       HœT…Œ¢       HœV…Œ™       HœX…Œ≤       HœZ…Œ∫       Hœ\…ŒŒ       Hœ^…Œ“       Hœ`…Œﬁ       Hœb…Œ‚       Hœd…ŒÍ       Hœf…Œ˙       Hœh…—¶       Hœj…—¬       Hœl…—        Hœn…—“       Hœp…—‚       Hœr…—˙       Hœt…“       Hœv…“"       Hœx…“*       Hœz…“B       Hœ|…“J       Hœ~…“R       HœÄ…“r       HœÇ…“Ñ       HœÑ…“ö       HœÜ…“¢       Hœà…“™       Hœä…“∫       Hœå…“¬       Hœé…“        Hœê…“‡       Hœí…“       Hœî…”       Hœñ…”       Hœò…”B       Hœö…”J       Hœú…”R       Hœû…”Z       Hœ†…”é                                                                                                                                                                                                                                                                                                    

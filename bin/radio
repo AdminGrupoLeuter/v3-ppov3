@@ -1,0 +1,3 @@
+export ADAIA_TERM=VT21x16
+export ADAIA_START=LOGIC-RFL-INI-001
+adaia

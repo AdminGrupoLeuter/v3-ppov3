@@ -1,0 +1,12 @@
+cd $ADAIA_A_GESTION
+for file in CONTADOR.*
+do
+   NUM=`echo $file | cut -c 10-15`
+   NUM=`expr $NUM + 1`
+   if [ $NUM = 999 ]
+   then
+       NUM=`expr 100`
+   fi
+   file2="CONTADOR.$NUM"
+   mv $file $file2
+done

@@ -1,0 +1,2543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Gim√©nez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 17/02/2010 (versi√≥n inicial) 
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*       Informe de actividad.
+*
+* PARAMETROS RECIBIDOS:
+*       1. pdecAlmCod                   -> C√≥digo interno almac√©n
+*       2. pstrFecMovDesde      -> Fecha movimiento desde
+*       3. pstrFecMovHasta              -> Fecha movimiento hasta
+*          4. pstrFraHorCod             -> Turno (todos si en blanco)
+*       5. pstrRecOpeRef                -> Operario (todos si en blanco)
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pdecAlmCod" id="1579">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecAlmCod"></text-property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">1</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrFecMovDesde" id="1625">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrFecMovDesde"></text-property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">01/01/1900</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrFecMovHasta" id="1626">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrFecMovHasta"></text-property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">31/12/2010</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrFraHorCod" id="1863">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrFraHorCod"></text-property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrRecOpeRef" id="2172">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrRecOpeRef"></text-property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strHorMovDesde" id="2176">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">00:00:00</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="strHorMovHasta" id="2177">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">00:00:00</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="CTR" id="411">
+            <property name="odaDriverClass">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+            <property name="odaURL">jdbc:sqlserver://172.20.10.65\ADAIASRV:1433</property>
+            <property name="odaUser">bra</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YnJh</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="CTR-PRD-012 02 (Ppal)" id="412">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FEC</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FRAHORCOD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">RECOPEREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ORIMOV</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ACCTIPTAR</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ARTCOD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">UNIEXP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">NUMUNI_UNIEXP</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">CUB_UD</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">CANUNI</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">CNT_REG</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">SUM_CANUNI</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">SUM_PES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CTR</property>
+            <method name="beforeOpen"><![CDATA[//
+// Convertir parametro fecha-hora movto. desde a formato sqlServer
+//
+var strFecHorMovDesde = params["pstrFecMovDesde"].value.substr(6,4) + 
+                               "-" +
+                        params["pstrFecMovDesde"].value.substr(3,2) +
+                               "-" +
+                        params["pstrFecMovDesde"].value.substr(0,2) +
+                               " " + 
+                        params["strHorMovDesde"].value.substr(0,8)
+//
+// Convertir parametro fecha-hora movto. hasta a formato sqlServer      
+//
+var strFecHorMovHasta = params["pstrFecMovHasta"].value.substr(6,4) + 
+                               "-" +
+                        params["pstrFecMovHasta"].value.substr(3,2) +
+                               "-" +
+                        params["pstrFecMovHasta"].value.substr(0,2) +
+                               " " + 
+                        params["strHorMovHasta"].value.substr(0,8)
+//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.ACCTIPTAR IN ('EX','AGRU','PISU','PIRE','VALI','RE','UB','UBMA')" +
+                                  " " +   "AND    a.ORIMOV    IN ('VIAJ','CNDR','CNDO')" +
+                                  " " +   "AND    a.ALMCOD    =" + " " + params["pdecAlmCod"].value + 
+                                  " " +   "AND    a.ESTADO    =  'OK'" +
+                                  " " +   "AND    a.CANUNI    >  0" +
+                                  " " +   "AND    a.MOMFIN BETWEEN" +
+                                  " " +          "'" + strFecHorMovDesde + "'" +
+                                  " " +                       "AND" +
+                                  " " +          "'" + strFecHorMovHasta + "'"                                 
+//
+// Si est√° informado el par√°metro turno ==>
+//   filtrar dicho campo
+if ( params["pstrFraHorCod"].value != null
+            &amp;&amp;
+     BirtStr.trimRight( params["pstrFraHorCod"].value ) != '' )
+{
+	this.queryText = this.queryText + " " + "AND    a.FRAHORCOD =" + " " + "'" + params["pstrFraHorCod"].value + "'"
+}  
+//
+// Si est√° informado el par√°metro operario ==>
+//   filtrar dicho campo
+if ( params["pstrRecOpeRef"].value != null
+            &amp;&amp;
+     BirtStr.trimRight( params["pstrRecOpeRef"].value ) != '' )
+{
+	this.queryText = this.queryText + " " + "AND    a.RECOPEREF =" + " " + "'" + params["pstrRecOpeRef"].value + "'"
+}
+//  
+// ********************************
+// * A√±adir el GROUP BY al SELECT *
+// ********************************
+//
+this.queryText = this.queryText + " " + "GROUP BY a.FEC," + 
+                                  " " +          "a.FRAHORCOD," +
+                                  " " +          "a.RECOPEREF," +
+                                  " " +          "a.ORIMOV," +
+                                  " " +          "a.ACCTIPTAR," +
+                                  " " +          "a.ARTCOD," +
+                                  " " +          "b.UNIEXP," +
+                                  " " +          "c.NUMUNI," +
+                                  " " +          "d.CUB," +
+                                  " " +          "a.CANUNI"
+//
+// ********************************
+// * A√±adir el ORDER BY al SELECT *
+// ********************************
+//
+this.queryText = this.queryText + " " + "ORDER BY a.FEC," + 
+                                  " " +          "a.FRAHORCOD," +
+                                  " " +          "a.RECOPEREF"]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FEC</property>
+                    <property name="nativeName">FEC</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FRAHORCOD</property>
+                    <property name="nativeName">FRAHORCOD</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">RECOPEREF</property>
+                    <property name="nativeName">RECOPEREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ORIMOV</property>
+                    <property name="nativeName">ORIMOV</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ACCTIPTAR</property>
+                    <property name="nativeName">ACCTIPTAR</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ARTCOD</property>
+                    <property name="nativeName">ARTCOD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">UNIEXP</property>
+                    <property name="nativeName">UNIEXP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">NUMUNI_UNIEXP</property>
+                    <property name="nativeName">NUMUNI_UNIEXP</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">CUB_UD</property>
+                    <property name="nativeName">CUB_UD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">CANUNI</property>
+                    <property name="nativeName">CANUNI</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">CNT_REG</property>
+                    <property name="nativeName">CNT_REG</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">SUM_CANUNI</property>
+                    <property name="nativeName">SUM_CANUNI</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">SUM_PES</property>
+                    <property name="nativeName">SUM_PES</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.FEC,
+         a.FRAHORCOD,
+         a.RECOPEREF,
+         a.ORIMOV,
+         a.ACCTIPTAR,
+         a.ARTCOD,
+         COALESCE(b.UNIEXP, 'UD')   AS UNIEXP,
+         COALESCE(c.NUMUNI, 0)      AS NUMUNI_UNIEXP,
+         COALESCE(d.CUB, 0)         AS CUB_UD,
+         a.CANUNI,
+         COUNT(*)                   AS CNT_REG,
+         SUM(a.CANUNI)              AS SUM_CANUNI,
+         SUM(a.PES)                 AS SUM_PES         
+FROM     HISMOVACC a
+           LEFT OUTER JOIN ART b
+              ON b.ARTCOD = a.ARTCOD
+           LEFT OUTER JOIN ARTPRE c
+              ON c.ARTCOD = a.ARTCOD
+             AND c.UNITIP = b.UNIEXP
+           LEFT OUTER JOIN ARTPRE d
+              ON d.ARTCOD = a.ARTCOD
+             AND d.UNITIP = 'UD'</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="CTR-PRD-012 03 (Alm)" id="1709">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ALMREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ALMDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CTR</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecAlmCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ALMREF</property>
+                    <property name="nativeName">ALMREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ALMDES</property>
+                    <property name="nativeName">ALMDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.ALMREF,
+         a.ALMDES
+FROM     ALM a
+WHERE    a.ALMCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="CTR-PRD-012 01 (Tur)" id="2175">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FRAHORINI</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FRAHORFIN</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CTR</property>
+            <method name="beforeOpen"><![CDATA[//
+// Inicializar string consulta
+this.queryText = ''
+//
+// ***************************
+// * A√±adir campos al SELECT *
+// ***************************
+//
+// Si est√° informado el par√°metro turno ==>
+if ( params["pstrFraHorCod"].value != null
+            &amp;&amp;
+     BirtStr.trimRight( params["pstrFraHorCod"].value ) != '' )
+{
+	this.queryText = this.queryText + " " + "SELECT   a.FRAHORINI," +
+                                      " " +          "a.FRAHORFIN"
+}
+//
+// En el caso contrario ==>
+else
+{
+	this.queryText = this.queryText + " " + "SELECT   MIN(a.FRAHORINI) AS FRAHORINI," +
+                                      " " +          "MIN(a.FRAHORINI) AS FRAHORFIN"
+}
+//
+// ****************************
+// * A√±adir el FROM al SELECT *
+// ****************************
+//
+this.queryText = this.queryText + " " + "FROM     VARFRAHOR a"
+//
+// *****************************
+// * A√±adir el WHERE al SELECT *
+// *****************************
+//
+// Si est√° informado el par√°metro turno ==>
+//   filtrar dicho campo
+if ( params["pstrFraHorCod"].value != null
+            &amp;&amp;
+     BirtStr.trimRight( params["pstrFraHorCod"].value ) != '' )
+{
+	this.queryText = this.queryText + " " + "WHERE    a.FRAHORCOD =" + " " + "'" + params["pstrFraHorCod"].value + "'" +
+                                      " " +   "AND    a.FRAHORTIP = 'TUR'"
+}
+//
+// En el caso contrario ==>
+//   se seleccionan todos los turnos
+else
+{
+	this.queryText = this.queryText + " " + "WHERE    a.FRAHORTIP = 'TUR'"
+}]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FRAHORINI</property>
+                    <property name="nativeName">FRAHORINI</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FRAHORFIN</property>
+                    <property name="nativeName">FRAHORFIN</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <property name="queryText">// Configurado en evento beforeOpen</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="CTR-PRD-012 04 (Cab)" id="2510">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CTR</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1
+</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLIENTE</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="InformeDeActividad"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="2511">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">CTR-PRD-012 04 (Cab)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(CTR-PRD-012)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="2178">
+            <property name="marginTop">0pt</property>
+            <property name="width">0%</property>
+            <property name="dataSet">CTR-PRD-012 01 (Tur)</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FRAHORINI</property>
+                    <property name="displayName">FRAHORINI</property>
+                    <expression name="expression">dataSetRow["FRAHORINI"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">FRAHORFIN</property>
+                    <property name="displayName">FRAHORFIN</property>
+                    <expression name="expression">dataSetRow["FRAHORFIN"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <column id="2192"/>
+            <detail>
+                <row id="2184">
+                    <method name="onCreate"><![CDATA[//
+// Guardar hora inicial turno en par√°metro
+if ( row["FRAHORINI"] != null )
+{
+	params["strHorMovDesde"].value = row["FRAHORINI"].toTimeString().substring(0, 8)
+}
+else
+{
+	params["strHorMovDesde"].value = '00:00:00'
+}
+//
+// Guardar hora final turno en par√°metro
+if ( row["FRAHORFIN"] != null )
+{
+	params["strHorMovHasta"].value = row["FRAHORFIN"].toTimeString().substring(0, 8)
+}
+else
+{
+	params["strHorMovHasta"].value = '00:00:00'
+}]]></method>
+                    <cell id="2185"/>
+                </row>
+            </detail>
+        </table>
+        <grid id="1864">
+            <property name="width">40%</property>
+            <column id="1865">
+                <property name="width">40mm</property>
+            </column>
+            <column id="1866">
+                <property name="width">40mm</property>
+            </column>
+            <column id="2199">
+                <property name="width">60mm</property>
+            </column>
+            <column id="1896">
+                <property name="width">10mm</property>
+            </column>
+            <column id="2205">
+                <property name="width">30mm</property>
+            </column>
+            <column id="1867">
+                <property name="width">40mm</property>
+            </column>
+            <row id="1868">
+                <property name="height">0.312in</property>
+                <cell id="1869"/>
+                <cell id="1870"/>
+                <cell id="2194"/>
+                <cell id="1892"/>
+                <cell id="2200"/>
+                <cell id="1871"/>
+            </row>
+            <row id="1872">
+                <cell id="1873">
+                    <label id="1884">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Almacen"></text-property>
+                    </label>
+                </cell>
+                <cell id="1874">
+                    <data id="1889">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">CTR-PRD-012 03 (Alm)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ALMREF</property>
+                                <property name="displayName">ALMREF</property>
+                                <expression name="expression">dataSetRow["ALMREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ALMREF</property>
+                    </data>
+                </cell>
+                <cell id="2195">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <data id="1890">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">CTR-PRD-012 03 (Alm)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ALMDES</property>
+                                <property name="displayName">ALMDES</property>
+                                <expression name="expression">dataSetRow["ALMDES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ALMDES</property>
+                    </data>
+                </cell>
+                <cell id="1875"/>
+            </row>
+            <row id="1876">
+                <cell id="1877">
+                    <label id="1885">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="De"></text-property>
+                    </label>
+                </cell>
+                <cell id="1878">
+                    <data id="2206">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrFecMovDesde</property>
+                                <expression name="expression">params["pstrFecMovDesde"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrFecMovDesde</property>
+                    </data>
+                </cell>
+                <cell id="2196">
+                    <data id="2496">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">strHorMovDesde</property>
+                                <expression name="expression">params["strHorMovDesde"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">strHorMovDesde</property>
+                    </data>
+                </cell>
+                <cell id="1894">
+                    <label id="1897">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text" key="a"></text-property>
+                    </label>
+                </cell>
+                <cell id="2202">
+                    <data id="2208">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrFecMovHasta</property>
+                                <expression name="expression">params["pstrFecMovHasta"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrFecMovHasta</property>
+                    </data>
+                </cell>
+                <cell id="1879">
+                    <data id="2497">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">strHorMovHasta</property>
+                                <expression name="expression">params["strHorMovHasta"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">strHorMovHasta</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1880">
+                <cell id="1881">
+                    <label id="1886">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Turno"></text-property>
+                    </label>
+                </cell>
+                <cell id="1882">
+                    <data id="1891">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="mapRules">
+                            <structure>
+                                <expression name="testExpr">if ( params["pstrFraHorCod"].value != null
+            &amp;&amp;
+     BirtStr.trimRight( params["pstrFraHorCod"].value ) != '' )
+{
+        false
+}
+else
+{
+        true
+}</expression>
+                                <property name="operator">is-true</property>
+                                <text-property name="display" key="Todos">Todos</text-property>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrFraHorCod</property>
+                                <expression name="expression">params["pstrFraHorCod"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrFraHorCod</property>
+                    </data>
+                </cell>
+                <cell id="2197"/>
+                <cell id="1895"/>
+                <cell id="2203"/>
+                <cell id="1883"/>
+            </row>
+            <row id="2167">
+                <cell id="2168">
+                    <label id="2174">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Operario"></text-property>
+                    </label>
+                </cell>
+                <cell id="2169">
+                    <data id="2173">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="mapRules">
+                            <structure>
+                                <expression name="testExpr">if ( params["pstrRecOpeRef"].value != null
+            &amp;&amp;
+     BirtStr.trimRight( params["pstrRecOpeRef"].value ) != '' )
+{
+        false
+}
+else
+{
+        true
+}</expression>
+                                <property name="operator">is-true</property>
+                                <text-property name="display" key="Todos">Todos</text-property>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrRecOpeRef</property>
+                                <expression name="expression">params["pstrRecOpeRef"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrRecOpeRef</property>
+                    </data>
+                </cell>
+                <cell id="2198"/>
+                <cell id="2170"/>
+                <cell id="2204"/>
+                <cell id="2171"/>
+            </row>
+        </grid>
+        <table id="1898">
+            <property name="width">70%</property>
+            <property name="dataSet">CTR-PRD-012 02 (Ppal)</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FEC</property>
+                    <property name="displayName">FEC</property>
+                    <expression name="expression">dataSetRow["FEC"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">FRAHORCOD</property>
+                    <property name="displayName">FRAHORCOD</property>
+                    <expression name="expression">dataSetRow["FRAHORCOD"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ORIMOV</property>
+                    <property name="displayName">ORIMOV</property>
+                    <expression name="expression">dataSetRow["ORIMOV"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ACCTIPTAR</property>
+                    <property name="displayName">ACCTIPTAR</property>
+                    <expression name="expression">dataSetRow["ACCTIPTAR"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTCOD</property>
+                    <property name="displayName">ARTCOD</property>
+                    <expression name="expression">dataSetRow["ARTCOD"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">NUMUNI_UNIEXP</property>
+                    <property name="displayName">NUMUNI_UNIEXP</property>
+                    <expression name="expression">dataSetRow["NUMUNI_UNIEXP"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CUB_UD</property>
+                    <property name="displayName">CUB_UD</property>
+                    <expression name="expression">dataSetRow["CUB_UD"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CNT_REG</property>
+                    <property name="displayName">CNT_REG</property>
+                    <expression name="expression">dataSetRow["CNT_REG"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_CANUNI</property>
+                    <property name="displayName">SUM_CANUNI</property>
+                    <expression name="expression">dataSetRow["SUM_CANUNI"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_PES</property>
+                    <property name="displayName">SUM_PES</property>
+                    <expression name="expression">dataSetRow["SUM_PES"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UNIEXP</property>
+                    <property name="displayName">UNIEXP</property>
+                    <expression name="expression">dataSetRow["UNIEXP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RECOPEREF</property>
+                    <expression name="expression">dataSetRow["RECOPEREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">decAccPik</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'CNDO' 
+                         &amp;&amp; 
+   ( dataSetRow["ACCTIPTAR"] == 'PISU' || dataSetRow["ACCTIPTAR"] == 'PIRE' ) ) 
+{
+        dataSetRow["CNT_REG"]
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decMovPik</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'VIAJ' 
+                         &amp;&amp;
+     dataSetRow["ACCTIPTAR"] == 'AGRU' )
+{
+        dataSetRow["CNT_REG"]
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decBulPik</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'CNDO' 
+                         &amp;&amp; 
+   ( dataSetRow["ACCTIPTAR"] == 'PISU' || dataSetRow["ACCTIPTAR"] == 'PIRE' ) ) 
+{
+        if ( dataSetRow["UNIEXP"] != 'UD  ' )
+        {
+                if ( dataSetRow["NUMUNI_UNIEXP"] != 0 )
+                {
+                        BirtMath.roundDown( ( dataSetRow["SUM_CANUNI"] / dataSetRow["NUMUNI_UNIEXP"] ), 0 )
+                }
+                else
+                {
+                        0
+                }
+        }
+        else
+        {
+                0
+        }
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decUdsPik</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'CNDO' 
+                         &amp;&amp; 
+   ( dataSetRow["ACCTIPTAR"] == 'PISU' || dataSetRow["ACCTIPTAR"] == 'PIRE' ) ) 
+{
+        if ( dataSetRow["UNIEXP"] != 'UD  ' )
+        {
+                if ( dataSetRow["NUMUNI_UNIEXP"] != 0 )
+                {
+                        BirtMath.mod( dataSetRow["SUM_CANUNI"], dataSetRow["NUMUNI_UNIEXP"] )
+                }
+                else
+                {
+                        0
+                }
+        }
+        else
+        {
+                dataSetRow["SUM_CANUNI"]
+        }
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decUbiCom</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'CNDR' 
+                        &amp;&amp;
+   ( dataSetRow["ACCTIPTAR"] == 'UB  ' || dataSetRow["ACCTIPTAR"] == 'UBMA' ) )
+{
+        dataSetRow["CNT_REG"]
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decRepCom</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'CNDR' 
+                        &amp;&amp;
+     dataSetRow["ACCTIPTAR"] == 'RE  ' )
+{
+        dataSetRow["CNT_REG"]
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decExpCom</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'CNDR' 
+                        &amp;&amp;
+     dataSetRow["ACCTIPTAR"] == 'EX  ' )
+{
+        dataSetRow["CNT_REG"]
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decValCom</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'CNDR' 
+                        &amp;&amp;
+     dataSetRow["ACCTIPTAR"] == 'VALI' )
+{
+        dataSetRow["CNT_REG"]
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decPesCom</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'CNDR' 
+                        &amp;&amp;
+   ( dataSetRow["ACCTIPTAR"] == 'UB  ' || dataSetRow["ACCTIPTAR"] == 'UBMA' ||
+     dataSetRow["ACCTIPTAR"] == 'RE  ' || dataSetRow["ACCTIPTAR"] == 'EX  ' ||
+     dataSetRow["ACCTIPTAR"] == 'VALI' ) ) 
+{
+        dataSetRow["SUM_PES"]
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decVolCom</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'CNDR' 
+                        &amp;&amp;
+   ( dataSetRow["ACCTIPTAR"] == 'UB  ' || dataSetRow["ACCTIPTAR"] == 'UBMA' ||
+     dataSetRow["ACCTIPTAR"] == 'RE  ' || dataSetRow["ACCTIPTAR"] == 'EX  ' ||
+     dataSetRow["ACCTIPTAR"] == 'VALI' ) ) 
+{
+        ( dataSetRow["CUB_UD"] * dataSetRow["SUM_CANUNI"] ) / 1000000 
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decPesPik</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'CNDR' 
+                        &amp;&amp;
+   ( dataSetRow["ACCTIPTAR"] == 'PISU' || dataSetRow["ACCTIPTAR"] == 'PIRE' ) )
+{
+        dataSetRow["SUM_PES"] 
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">decVolPik</property>
+                    <expression name="expression">if ( dataSetRow["ORIMOV"] == 'CNDR' 
+                        &amp;&amp;
+   ( dataSetRow["ACCTIPTAR"] == 'PISU' || dataSetRow["ACCTIPTAR"] == 'PIRE' ) )
+{
+        ( dataSetRow["CUB_UD"] * dataSetRow["SUM_CANUNI"] ) / 1000000 
+}
+else
+{
+        0
+}</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">sbtOpeAccPik</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>RECOPEREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["decAccPik"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtOpeMovPik</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>RECOPEREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["decMovPik"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtOpeBulPik</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>RECOPEREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["decBulPik"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtOpeUdsPik</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>RECOPEREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["decUdsPik"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtOpeUbiCom</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>RECOPEREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["decUbiCom"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtOpeRepCom</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>RECOPEREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["decRepCom"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtOpeExpCom</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>RECOPEREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["decExpCom"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <s¬—˘PK
+   ]¨RDçmˆ+»     9   org/springframework/web/servlet/tags/EditorAwareTag.classUé¡NAÜˇ"∞ÇL<√Y/4Ü#'p0&öËÃÆu≤À∫3È,º¿á2ŒJBbì¶˝⁄˛Õˇ˝s¸pèIÜQÜ1ad%ÆﬁÀËî0ΩΩ{™ÃŒp.¶	¸¢Œã∆√iΩ$åW˚B|,]2\%~u[-d]÷B∏9ù=¥FÂÕÿy˜à∞pj9x-˚°ÊSZßn%Á ∫´%r46)·˙œEmÀœy%E$Ã∫—˛,´ÇÁ«‡œÜÜB]PüpÅ~‚A¢ÆSf©Ô·ÚPK
+   ]¨RDπè≥=  @  2   org/springframework/web/servlet/tags/EvalTag.class≠X	w◊˛Fç=åccIH¬[6ßadbÍÖ`Ÿƒ¥ç;ñ[D÷(3#/Mõ=iö≤5M°M˜ñ.¥%mê!§Ån§M˜}˘1=˝ﬁÃXñÂ±dszÃ€Ó˝Ó˙ﬁΩÚˇ}Á= €Òª1"#© ÄëJÏ¬IÒyH|RÀ0ä¥ò‚ìQ0Ã
+KÅçl∆åcB∆§¬ÕOä≈#À)|ZÃïÒòX<Æ‡	<)ûR4ûQ,>#ûSY</„/*XÉS2N+X'ÙyI¡º,Ø»xU¡&±˘öÇ-b¸ú¿z]¡ÁÒÜÇ|Aêù{ge|QA_;o
+_ñÒ_≈◊ñ·ÎBœo»¯¶Ñ∫√VÊàidt”ûå&∫e¶µ=ù÷Õ÷îfY∫%a}¨/⁄—ç∑ww¥vw≈cƒéD≈¢Ò¯—ˆΩÒòÑ⁄éì⁄òIiÈ·Hèm&”√-™Zç¥ekiªOKeu	5˙D∆§å§ë>¢ôñNQ€;s8be«	S’«Û°»]$VƒBXeÊXB„¬»∫dL£–•VÇ&Kê⁄©ì–ª'a&3vÃJhŒˆq	°{íÈ§Ωèı}Ç≠∆O™;íiΩ+;:®õqm0•ªçÑñÍ”Ã§X{õA{$Iø5˚™6ÆFh«XJ∑#∂6lEbcZ*Æ9˛≤t;V`€ ˙π^⁄ÑH◊'©‡§«µ•é”√sLQb	=cç˙‘=∂f⁄÷û∂u3≠•˚ËÖä!#ñ‚¡)>õ≤gá¥{§û∞©b@ü†^ÓI“à¥wÁpπNS≤öX1Ú∂>Aîe„SÃC†õ¶ÆŸ˙ú#	=ÆK&Ú.<ie"G¥a}öπ·F‰-ÀÃ HX[FÑ91M{®ú8+£ß"V6ì1Lõ1‘“Cö9‰ß√rbéÈ¶`Í°‡dÇ·€Èãû0L=‚R€ë÷b.B≠÷Ì9˚zoÃwe≈)=F÷LËmIë˚™óŒÕBîä6í]êè<ﬂDz∏*æı*>å}*†U≈Aƒd|K≈∑qN≈~‹´"äﬂQÒ]|O≈ÉêÒ}ÁÒ	ª)ππHr3o`≥ÁÇfqõÁæo2~®‚G∏ a€b”I≈«qo·«2~¢‚m\ãú˜“ﬁeq8%„íäÀxG≈º+„ß*ﬁ√U◊ÑùWU¸?óÒøDÔ∏œµì∞fnP˘™Á	D~%!ˆ…S	˜.ÊM€ËS^Ñ>◊Uºè_Ûqœ7GT°rùZf¶:Ì] S,=ñ4çÙ®û∂œ|@◊“mZ¬6Ã…£∫e§∆D˛»¯≠äﬂ·˜¬ä?®¯#˛§b˙Bsº»øÒ…åÓﬁ([wÛg¡_U¸ü◊;•n£å®¯'˛%„ﬂö*	{D~ü=ör™…¢„ö©;ºëEVqñ“åòVª˝~’nQ’}”|dÌd*BE{9≤VÁÀ¶oâeA‹UjFÍÃÒ∞´Ω®0åìHBõèàyvJ<ÕÏIÓ(I¬ßófEm¬fmö∂Ÿ◊ü>5]µfÒm)≠Ø«&˙êÜ«ıπ◊“!ãÆ—æä◊/H”v°Í±êY ÂÙ¬˛JlÙ√u≤ƒ%ÒÚ¢ÜˆLZôî6ÈjZ†i∑˙ı—j“ _;›iŸòõKf®†˜$+#ºÂí"/sﬁ«√ÅüÈ4=!!ö◊ùÕS}ÉO*≥3ì∂”æﬂV‚òΩπIú[
+çèò∆∏Ë≠ù¥€P∂è!Qù644˜óÕŒ≤iPÃ„Ä-ßuGıá≥∫eÁo€ﬁzˇ«©≈ú~ÔgÛ∂îx^Js“-‘‰ò>ÕdR…ƒÏ ºßÑB”Œóï˙Ï˜À 0+r¬≠ÉÖ5—ÒJ5ﬂ±7] Ÿ,ïuo!Ω≤€ü•L”)8k(~VÂØ…≤Úg180 Ll%¨õìΩ=ÓËQ–U’EØ°ã≤ÿx◊˚ﬁ•€KAb=ØÔ¬jÏE$‹√U 7°VtΩŒúmÆ3≤”uF6¬Œ»^òc%yÿhÛ{Wq,·XûÇæÇ@ˇñ\D0ºà•aŒBo9ºÌ¸Æ¬R~ÔFê™âµÇ(∑‚MÊÆÍ¢‡#Ë‡(°]ûÑCî‡Xøç`„e»\D≈¨‚w—ÑnjïKÓAâŸ~«PâÁ”†˚H#®B·∆ã®,∆Í£¢«
+∞By¨ê„Åu$èı∞*√çó†–Ïb∏QÅÅ∏ <\%}Î¬›O∏Ägo–≥∑vY#MV/°jñ]–¥wd{:†G9r\√ˇ=îﬂ‰à#V|1‰Ïå"‡°bÙNcH;π∑Ñ'gÖzµ7ÂP}5çÔcïàë:ÖÂÓIcµúU^«z^] ù‚LÏ6Ò≥4áÁpøsZáïó±j	Æaeg”%‹‹Œ·ñ3P8øıÇMÇ1‰ÆWOØ’nk ·ˆs®ÍºÇ5˝MSX{µ&tû˙∂„yú¬ûçmXŒØâ*ÿúeôjcÿà	4bR¸çÁèêÓQ«c÷„0gO„Y¢<ç”xo‡9«G;ôªP√<9FÙ„ÿ∆Ygß––Ôƒ„¨Á¡*r«Gg≈# ~µyŸÛ.˜Ç‚"]¡:ﬁùıùMW∞°øq
+wÊ∞ëÛM‹‹ÏN∑pZÔN˙È˛#≠ﬂÊÿ‹µı:™yÈﬂ:Öm9lo∫êèfjº»D<≈kwkÒ¬xôóˇ¶‡´¥˛5Í˜∫c]ÿ’'üOqÒ+ó⁄Vp˝	hŒÉPãA$úã…ﬂ#˘ãÍﬁÉ:F}GÓ aÁe‹`8Ô∫Pîjg
+∑./®Œ`r˙aÏq“ùEòÓ˛îˇPK
+   ]¨RDEÕ€…
+  ‚  5   org/springframework/web/servlet/tags/MessageTag.class≠X|S’ˇﬂÊ∂7‹ﬁ>WDÅ…£MR2 √QÆî@I öƒé·mz	)inLnJaõ2Ên√M7ß›”°¬t*ÌÑPd"®uémÍ¶s:˜pns/˜–˘ÿ–Ô‹{ì¶·¶˛ÄsæsÓ˘˛Á˚˛Á;ﬂ˘¬#ßÔ9
+`>ﬁ—ÑOŸÒÈ	XéœÿÒY÷_Õöœ±ÊÛ¨˘kv≥Ê÷|—éV÷Iƒµ∏N$ÈÀ¨˘äàÎÒU7‡F;¸Ï€Ä_√◊E|ﬂdkæ%‡€nb‚wDL≈&›l«-nQèΩv¨bö˚ÿ¸wE‹Ü€KÒ=‹aGã>6y'ﬂ≈ö˝E·˚vlg:w3Ä""-‚ÜpèàÃΩ#¨ˇkÓµ„(Î˜
+à∏ØKqåŸw\Ñ˜ãx ≤}oQç
+8!‡$á©+º+;|Ìõ€Vu¯ΩÅˆMAÔ⁄∆∂∆ˆ÷6_è‹'{¢r,Ï	jâH,ºîCYìKjrL['GS
+°WI&Â∞2zykWè“h9RªÈ€9Nı*1-…abF*q9!kjÇñiJø∆¡÷'”†8R„§T…Ç°D$Æyì!ôMqór(π(ãhÀhuMÌ:Rm“w®EbJ ’€•$⁄ÂÆ®nèí£Î‰DÑçÕI^€!Ê˚‘Dÿìå3ß6'‰^eõöÿÍŸ¶tyíJ¢/™hM'=~√∑vôy.&Õüq∂™ÊLoô5-2µ¬§è≠êhE„ìsÜ9Ñ0úvùìí÷1ZÏ$f&ë∏˙rDoHâk: ›jPìôﬂ”îDLéÍ§µ–)&î§ÌS∫M@[o2Ã°43´ÔW§ÙsXhITHç±Û‘`*¥≈$%ª˚Rs(7¡≤îMÆ©µ
+(^Èè”nÂŸiL$‰Ì‰cßU<ïô·TSâÅ∫∆¥œüªò¥+2fçZ4~˝6]óÖ!I$„∞≥C„Ã*ÕaŒ9œµ
+KÌ&(‹#Ùèé´4©≥e≈LñGi["¢ç∞]ŒFkÜ´::Ä≥akAXü
+%©GâökﬁIåX∆ÇhÏΩ2¬Æj≈»Ìõ«÷J¯(+qn	k‡•¿â”G	x%¥b≠ÑUhñ–¬Ü´ô‰cíü5è‡GïcúíEØÑü‡ß~&·1<.‡	¶ˇ∏Ñü„ûî~)‡i	ø¬3Æ@'á˙≥wê√Lft6°Ù$„û’…8yì]#·ÿ≈‹Íîp%v„uFHMPÙƒ’X7Ì6c‘ôÃÿ¨¶b›ºÉòï,s¸◊xN¬o[øì{</‡^¿%lC?ì˛ƒö?õ…7˜xº(·/¯+√¯õÑø„^íO∆‰ø$¸˝£îåpÊpN>ŒÚT$⁄≠$rﬁÚ˛?xô5Ø–Òn§L°Î§¥H‘”§F£Ñ£ìı_º*·5º.·¸O¿ˇ%úfÃΩÄ^û≥ÃÁñåK£YÎçÍ˘ï]ømr¬–=ﬂÚhsŒ~íÓADı¥¥ÊÃñ≤àm2Œâ√tﬂô(kG–uX\»Dù/ÂMÚáêΩ}ÙÀlè˙@…¶B1fîÂ™Ud⁄z•≈kT`¶∞EµÙ˙JëdñENhrŒòÜ≤ı¶a‚ñ›9V/§UZpè	?Úöõîgº7 8¨Wú∑≤lˆòñQ¨ò&Ÿ√Ÿ∑€≤.†ﬁò€õuÉFÎªR¡‘åÌì˘ö¥∞ä√Æ©&Ïj8l?)∆LSTN&œÜ•Ïã6ëºoS.O)I-ÎNCÅ«(˜&SÒ∏ö–<£u«∫ckRŒ!KÙ≤0∑—œ ò%Ï⁄q'W
+ÁpNIÿ9ˆ;X®ñ8”ÀH€hq\ÂC°|[¸5gÉˇ∂h≥¨ò–µå%Êµò⁄≠D#ΩT∂t˚"I≠›S≥ÃY2Æ ≠µ,Üﬁı?Rù—ëÎ7Åí¸®Ç÷∏î{Û¶®ñèdj⁄¬¥¯&-eöjåMµ9Wÿ√_7Æåiæ∞dÀ¥öñ±>öjÓPUc]ãñê∑≠)ˆXôæûÒË≠gUß∆2ã“∫9/ØgJ]´S:wD˙®¥òI?éõË'˝˙›∫^–[F£"˝U|∫LEüﬁØ6«kÃ±œÏ˝f0{*©Ø ,*)©“»GÛıSúá¿9Eas:¯É(v⁄¢dH◊kß÷û⁄©ıB§ù*	ΩÉf$CÎ∞ûzó`ÉâºL∑(q∫BAıŸKPL+;t]}ïâ¿$ÊïD∏ùVXˆ|¨MÑuY¨ù;∂∂kB>÷¬ä¿Zm⁄µ—⁄.[>÷ÂÑï(Äµ∆¥Î#÷Xb>V?am/ÄÂ3±6YcïÊcÌ"¨O¿ÚõXóYcÁcÌ&¨k
+`L,ô∞ät¨U?lUÖ”!πúP6åÚQafÄ^èr‹êZë≠† f†]$Û‘á0›PL¯óhéÖiè3ç
+5ï]√ò∏ºÀG˚ïcá>vL¢ôR√ä…~˜	ÃtT—®ÿú	∞ﬁÌ™∆î4ŒŸª”ï∆{¯;|G0uìœ=Ñi˜È·ﬂI·UmzPOWÿK¥‹Ü*‹éŸ∏p]ù˝d˘ ]º!ÚÏn
+Ó4iS0÷=]H^îa3µ6í◊#¨{∫ µî^BﬂH_#Ë—wÏ1È“â."∂íÁÙ#œ`ÇB	};L$úÁsùD≥⁄q>3ôÛìg¬qL@9ìéa∫.`‚	Lc]3éôuì0›‡‚Ωl	‰pπ	ÔÇ4f∆lsËª=√óc.I¢9j‡ÎN¬^Õü¿b'MMH£¶°òß∏Í™I»‚‘cêMe'ú<´˘¡lH0â⁄˚…°(>H£áàÿá1ù~‡:Ò(Ê”‹%8E∑Û1Z˚—Ù$ëÒv‡iäÚg(Bü≈ux∑‚y¢¸EùÏf§31ùÏ›D±ä8Ì@Ñôƒ„ ›ﬂë]Ö[êÑF÷l%¸îÆ±£è$>Á ™iDø&ÕË Ü7‰:◊ Æpx€0‹~˜Q˛&∏un[Ω¡÷º@ë[óÜ'ç˜¿N17êøılu¡A˜Qí∂≈|Ô>∫ÛÎ™¯#X∞·:•±∏äO„B«˚IJcâªäœ`Ø‚π}oû™$PJ4–_6\:Ä2.=åã8bˇ$c3WpêÀ'˛e¢Íí^%_√ºNë˙ëwÀπ"4s6¥q<vPøì∞ãq5Wäkπ2‹»ïcWâΩú˚π*ù¯eD÷L£T÷L4Æ¡"¢Ú£D\3Ù#∞—N*>ÜèÎ˜~({ÔáÃ‰;rÔyˆŸ¥Rd¶r=ç–_ñ∆≈yiÖõÅrnfÅ¥ïVÿe∫;ÕXØg1P§Î1˙¡äJÿ<77Á%¥õò<˚OS	ıløbJç˘ Ûr*ŒTlﬁtéBò≠øÍ-PK
+   ]¨RD˛q>â  d  3   org/springframework/web/servlet/tags/ParamTag.classïTYOA˛zaw`ê€[G<XfïoX¿#D!}hvöetôŸÃÙ˛"_|1—≈#Q_‘ƒe¨Ó—Ä˜a∫´´´æ˙™¶™ø}˜¿nõËÅc g"ß›8≠ñ3Í8¨$WIgMíFLú√yp—¿%•πl‡JÆöË¿µ6X50f‡:Cs¿◊Cw·	_Ánô%wAF~PeHØÛrï.”Ò5Ü”Ö0*πqE]ØêFlÑ—SwC,ª±à÷ÀB∫íóbw^Yì{fÃ|9Œ–îZ¢H˘–#∞=?s’µe-ÚÂ≤éyyâGæ:' fπÍ«n!π"›‚Ö3ÅG≤é{õ°]≥ü‹‡ë–⁄ë µÅö3õEQë~'#rNW≠/ªªl*’≤X™◊Œ\´QQÃ˙*©ˆü<áïõÖ˝8¿‡¸?{±œB/˙,úƒ)˝JT“8nò∞0â)y”ò¢Í5ò©ÖÃ2QÏ6∑çûƒ˜N\Ÿ.√Ù‚™∞uYmB∞◊™±¥óÖÕmOƒEx<êv∏Bgu+Wπ¥„j•F2Æ{	)¢X•Oƒo‚√ôÜ˛2√‡nÜd!6•;zœ»d°è°£$§“Â√@äÄŸÏP·üﬁâ%˝ıˇc«–J!Í?ü°7Aﬂ1Iù;u™¡#üf™o≈º…†(bF|πö/ÛòöÏnˆÔ,U£ˇE{å˛#´d0∏ÁÕ◊ŸÕ62…CK8FOHΩBMÙ¬P˜ëîRΩßwjI⁄õ¡T;”zêN.Ìåˆ¥≥ˆRõ¢5£ï8L´U7¿•ù¡¶ )Ì¸Yá|Á=R∑–ÙÕŒ+˝•k»–f|AW¢1jhyéÉN≠_–´ï$÷`÷–FWN¨7hˇ´ê˚äˆ˜ËxÿΩgùs Ù-∫RËÃºÿ&8å∂du)ø≥Dt9úß◊Ù"Ú∏ä9å‚>∆X¡îN§øN6IdéR¿qJËDRï˙hXì åìµ≤œ8π◊Hˇ*ç©µÛTê{ø°fT%©∫´™˛Àÿâıà∞ˇ´?¡ jü°PK
+   ]¨RD©s‘!  i  8   org/springframework/web/servlet/tags/NestedPathTag.classïUﬂSW˛nŸ∞.?åDT∞ñd[K±≠V	ëö*ZÈBÆaÈ≤ª≥{‡_ig˙ÍK⁄ô;ÌL€';”?™”swCàúÈ√ﬁÁ~ÁûÔ;˜ûªˇ¸˚€ >Ç°"âq|™‚4>ã„sŸﬂTpKE7dÛÖln˜‡,Óƒ1¢R?+'Ysòè#£‚.r
+§Òûú, fI¡}‰Üπb)ww}%[Z\/g-eÁÚπıBv9«ê»ouC∑ª™Ög⁄’õΩÛéÌ√e√™qÜ®kà-¬∫ØõNÕ/p_ J`å›2mS‹fËJMî	:ÔT»£?o⁄ºP€Ÿ‡^…ÿ∞∏‰lVŸL9o£bÀÙ¶ÛéW’}WÜ·;|◊Òæ’w˘ÜÓsØnq°£ÍÎáaKÜ§©¯\Ñ$Œ¶éÀêlîÍb05—I©Zqä¬m(Xb–<Ó;V˝@üj∑âUs{õ‹&•G¡2Cº‚‰ÏJ‡¨TúyClË\;ô“ñÁÏJ±üq0%ŒQ
+
+´8¶mX÷>Ö,:5oì/òAﬂJ¡î‹@√E\bÄÜáò``SV%√–Qµs5”™pO√#5îpU√Ü5| GèQV∞™·+<Q∞¶·)û1›B√ÈÒ5ûkX«7◊ˇˇπ1\ë€Óµ €æ+a|OË¥\¨πÆ„	Ü‘…(o?»t+EóéCÔ˚nÎ®Œt»4›\ã€Uy™qnW¸UÛƒã¥FX√u	≈p≠‡ò©ôk∫`q·Ñ&ÜS.Òß $Ça4úı !Ä\gNJnMòñû€£jÙ}“ó´SïRÈcZ†rÍ„°ÖD^Ì@˙À…Ñ:÷œ≈w˙P1Qf°7jÇR~µë•ˆçnlÛM)^ÛﬂrLΩ[A”mI÷Xø«wú:osNvåZ∆ez1ì†RAÜqé>ÜÛÙ*G–OG0æÙ
+≠Q°Q;J3ùz™9tß_É˝¿∆®ç∆I⁄X÷c ¿{∏B=√˚o:Ô:"ˇÃﬂà%"˘L]?`,ìà6–˝Ü~GÏ…k(déKSºÅû|:Û
+Ía†Û
+»"Jˇ Ö^˚!‰ê¡=|à≈ x2–.G#Å:&´˝òÜ_†˛tDC°£Ü&%ùøß–]‘/'N•–hãﬁ_—óOÀA¢øªÅÅøp˙4Oº¡HSíúë†L(Í%¢ôÂ–aí<ŒDlëHRP–’G“(÷0ãgxÄÁ©±0pìTÓ hõE/Â`òvò${î,◊Ëõ" °ﬁßÅ9ÜëÂDâﬁ˜¡Åÿ!ïπ/(Õ[tE,
+Î¥ÂfºïùíÊfÜf2˝ëÃüG≤Í∑N§u8:ûÎ¥~@˚c˙¶[Wmö÷•o,Õ(üáW@vŸ•DÌµÒâµ¯| g˛PK
+   ]¨RD           *   org/springframework/web/servlet/tags/form/ PK
+   ]¨RD‘¶-b=  6  ;   org/springframework/web/servlet/tags/form/CheckboxTag.classùVYSU˛ÜÈ¶”,aLåì®,√êb bXkH  ∏$=3ó°I”=tﬂf—®qM‹}M˛@^,KÛ0X¶ ÂE´¸QñÁˆ40!Sö UÁng˘Œwœπ”ˇÛÀØ ⁄Òùä&1¢¢Ø)∏†bc
+∆LàÈ§å)ïVpQå”BÔíò]V–Æ†G¡åÿö‚ä∞ò≥y!^W±ÄEo®xoU¢oÀ∏™“xM,t°ì"-#£Ä©àaI¨≥B,+0d¨»∏.!‹kXÔìPﬁ‹2'!4hgòÑö	√bSﬁjä9≥z §ù»Ñù÷Õ9›1ƒ:ÿÒe√ï–5a;Ÿ§õs+ª‰Ë´l√vÆ'7X*È2g›d<…ı¨õ\≤ù’‰‡2K_OŸõ≥z∂á‚l8'oŸA€‚Ã‚Œ5?Å32úúûñQBcë∂@∫¢ØÎIS∑≤….‹P†Jæ£*·ÏÅ"HPá7”,«€reòE‡á◊”=8x"^KŸ∂…tkN7=J¢Æ(âÅ¬	!®X/úßx1µ¬“ú´Ê⁄Ê:À.‘îÌY;ãJﬂrv+GÛ√E÷É¶Ó∫d¨eµr/®in)≈¢:c{Nöç‚ÚkãÆÚ¥P÷–åIº®a¡5ÑG∂Ü÷Dπ¯Œ√ÀF&√,à≥˙˝q<√Ãà{íÆj‡4¨c@√$îŸd÷/ñõÿ“éà˜.nhxÔÀ¯@√M|H	>¬ùåè4|åO4|äÛ}Lü·ñÜ€Ë÷9æ–%nH8µß6jö,´õ˝N÷[•:›≠	Á˚9πHyú≈ö|íõbÜsÿög8,€XfV,eXä„vÃ≤≠∂‡™cæ∫+h[”æ÷æï†§b©T‘XFﬂÆ?ÂrGOÛ“5ôÔÖeÜM&“Ù}ù,lÓZÆ∏π‰òõ+b@5‹!√/B∆F%ú9@P‚.◊ùB–£Õè÷ühìjøÁv)ó–TB±¥iXœÂòE€J˘~d+(C™zôzc Zn©∆réùfÆ;b0sß…∆À„ß®a¬ÍSQE·äZ˘·ﬁ‹k°Fu6√uÓQ_uí⁄ˇ›ÇÎÂr∂√ì{v‰®„…≠
+Ô«‹ﬁS˜∆ùG¶v?lëÂößãßÛ°íïö]ò¶;{Â‚RÈo)˝ZéÙOÃêÌaá®dŒàcØá∆õKò¯ÒVv≤ß)HuQöÁ˛ªví,uô5{êK’V†w@º8Iﬂ M!H‚—&ßUíFâ∆ä¯6§ühRÜVía≥	íZAm8Ìõ”cOZ¬¯“+ßq:ﬁ∫ç≤˘xÂw1‘	ÂQ—	G‰<î®\ÿÜ9îáF
+U4‰Q=Ÿ©I–ik§6ûà¶ÉHub#è#ÂﬂÔ‚h§O#‡,≈ÈB^F∫q=Ë@/≠^¡˙0Eøgå∞t‡8°Ó kB ≥3xâ≤8§ﬂI≤Á
+YHçd¶ì€π D°·Ë$âßÚ®ü™CC[—ª®∫èß≈Ïâ?pÏ%~«±üq|2Ò'Tö7‹C¯>ûÈ≈£!J‰ƒ=tíìgªC—–_®zÄÿB‰‰6N˝˘Ê’ÒHmî∏zÓ*¢°Óäx¥Ç¨ûﬂªÖ>‘êÅä4E=∆iíÚõ"¶)˚KÙ≥∏ÇEÃ·*Êa–W‚MZ›¢ØD¡ »§'[›îı"q“C‹ÖHG&˛zÈ^)Û]¶nL’`ã¢˜éz¨·Uú'éäŸ£ﬂ„†Ä⁄Ç*èº„æÚπVT>ÂA	Éæ÷–øPK
+   ]¨RD¡¡û<  ÷	  9   org/springframework/web/servlet/tags/form/ButtonTag.classùUÕWUˇ	dH&–Ü-ä-`$Ö±î*•XK ê¢ñ ⁄Î$y§S&393®∑∫”≠A7]Ë9œÈ¢K˛QÔ}B”s(ã‹˚ﬁù˚ªÔw?ﬁÀ?ˇæz‡û∆Ò≤›¬ãe9+q‹≈jú6k*÷YŒñ^›c±©bå-_0‡K∂|≈‚>ã-y£¨∑YÏ®ÿUÒ5æâ·A§ñ◊∂≥πÂ'ã˘¸˝µÏv>G∆çg∆Å°[Ü]÷∑|◊¥À∑$ó€Û€ﬂ1¨öP–ÌÂ]◊ÙÖ´‡∆Ü„ñuØ Æ{ÆQáéªØäÇÓ	˜¿æNŒûæÁ∏=£òQõ|t4B™%”3
+ñ()ËZ0m”ø≠ 21πCéKNâz7L[l÷*·ÊŸë©:E√⁄1\ì˜Å1Í?5Ω∑cï≠˘æc7b+SÎüò+EÃ;rò8˘ù˘™"®ìÍ5ó	≤.7SLx≠ªﬁC.
+†2˚¬ˆÃMú©™ìk
+‚πÁEQıMÍXèhoz«'QEêIû;ÎQîi\ˆ.Ôl{‹NPÏ5Î(eÆe˛˚™lÆì≥Kñò‰ñSsãb≈‰ñı40Õ’!.k¡∞ÜQc¶°(Hßk¯”û`ûªMÒ5|ä´æAob^√'ò”P‡ qI£;F_ã(i–yµ¿"√B`èo’
+ìjﬁÂ…ÖÜ2.+∏~Ü˘QpÁÙ®≈ÇÁªF—_ı+VŒÍªÒ◊‡yÃ´ÍÎ^µŸ‘∑bñ?æ¶*›_∑q¬†l–´Eü&ój+Ë“Ù»MãÇÒê˙8ùWYÀ)Ó”(√Y«±Ñaü:ÕÊ˘™ÎÖÁ≠ò¬*É¥~*tHº∞‹%‰$“|—√t‚ﬁ«0®Ú¥Î@í~46rM3(ıh†«§Ní/ç(…+¥”I+'˝îﬂ•€8….iºà	íZ√ìHìVx¯NÄˇ@«om‡ôP¶mÚÓ`ÔtÊOtó÷õÑôó^A^ç»|æ!D"ÌDÓÑ˘(úH§ù»]¬¨æÅ»h@‰Z(ëh;ëÕP"3·D¢ÌDv≥˚"cíH◊1Kﬂ8÷OàHØŸL™≥ŒÎàeRj∫éÓ:‚ºM–Z˚âL*ôJíçL=|poÙeÛ‰+Ë&˘êNxÑcÄØ!zªFËπö§7jä¶îZXÕ6YÕ 9§ˇ2ZGILíû∂Äﬂ‚«uH§SI"rÆéÛ/€ µﬂRÆD∂5=ñA∞
+!"§«)RÍoJè‘ƒHı›À§˙”¥∏⁄H}ê2=ÆlèÑ˘ËCç»/5B5ÛÚËC?nQù;˛Gb°Ÿ˙©†ıë‘;Ìçˇ°%ìH8 œ˛	ËªÌ–C†
+M gAÍs4N◊[«Ös]«elÃÕœà·óñ(Ò•§á_bˇPK
+   ]¨RD˝{ÂÜ   Y  G   org/springframework/web/servlet/tags/form/TagWriter$TagStateEntry.class•íMo”@Üﬂuª5n˙A[æiA=§AbÖË≠©DTBä !Që∏≠√÷l„ÿhΩm≈‚ R˝=“J@‚ü f7!•ê\fwfgûô◊ûìG« ‡nÑ*nL¬«MknÖX
+±ÃënâædòkÌä}¡3ëßºm¥ ”uÜâ$+∫ΩéHÿKÜ‡ë ïyÃ∞Pˇ;{uõ¡oØà5›Rπ‹⁄Î'RwDí9z—Ÿ∂– ˙√†o^´íaä¯m#å|ö˝ñ!~ñÁR73Qñíûõ≠Bßº|cõÏhöı†–=~ ^JΩüI√IC…w
+›ÁDz°ïëzÂìîD©4ù_ZÁÎ´„‘÷˙B˜6 '#Õï∫©ã!˙Qªÿ”]π©¨å⁄®Î}ça1FÄ0∆&C‹aÿ¯o	3Á?Ove◊0<¸,ñÈˇWi)<ÃŸ!›çÊ§”)√%≤1yõ˜Ëåü¿˜·}pπSdk®ê˝LßTyF>∞8»∆4q·nñNãÉÀò2πÛÅj„#º˜#\‡Ç_&$1¥jØQ∂}˛!*Á√DÆÒW™˘ˆ!Æ‡Íòˆïw¥ˇ>¶ΩákŒ^«¨kD;ã€òAÙPK
+   ]¨RD[l˛
+  é  9   org/springframework/web/servlet/tags/form/SelectTag.classùWy`Wˇ=≤ª3ŸLHÿp4î£P§a7dK9
+Å¢	$\&õTb+Ní!LvóôYÆB´ïz[èZE{XA•∂@Y(hµ°≈⁄⁄Àz_ı®÷[[mk—Ôõù=≤Y*‰èyÔÕ{ﬂÒ˚æ˜}ﬂ{ÔÙô ò%d?V`w)>äõJ—Çõπ˘7ÁÊ‹|íõ[d| è[Òi?˝|Üõ=2:yfØå˛ˇ,7ü„fOûG_ê—∆˝m‹‹.£›è;p'ˇ|QFT¬]<¸7˚˝òÄ~|_aÓØÚ‹A›Õ⁄ø∆Õ=2Óı„À8"„˜I8ÍGªe§∏?∆Õq€e‹/„ã8…"æŒ£o∞ç¯©y–èxP¬C<˝07ﬂÙ„[¯6è·—@N·Q?ñ·1?N„;Á˛ªû`o=… æ'·)¶ÿ-·i	œ@@iâ≈4sâ°Zñf	TGZ⁄£k;"MkW7,kZ€ç∂µ4vDõëÍf5l®±æpªmÍ±æÖÂK‚1ÀVcvßj$5o” ’—5ÉâWuo–zl"ˆÍ∂÷OZJπwúqDÌ÷è•oß)π?iÿz¬‡U[Ìª“$S`n$nˆÖ≠k^g™˝⁄ñ∏π1ºEÎ[öπŸ–Ï0[·uq≥?Õ∞ëVﬂ"=¶€ãJjftíí%Ò^í\—cZk≤ø[3£j7Î
+D‚=™—©ö:ˇªì{ΩnùüÓvÕ s	Èñ-ÕnI=¶f®Kè‹ó%]3£ò€WàÎ±AÇ‹ç`AJﬂ ≤¡¬≤ñÊ∫<√‰˛J¥⁄ÓlÇ‘óï—‹ ÏéîıÂˇUla/ì≠∂≥Ê◊kõf¥¯-«s≠ƒCÅµôÕXm∆öio£ÉÊ˛ïx¬÷„±LpÃ?≠´Ú8…#eNT¶ΩM ö∂ˆhÅ%·Y «¬ÂzoØ#∏-ÎZµÕ≤Ts€mÂ(å9V˙u+ÁLäœ.2î®{¥<ákΩ∫7›]ıwÎ±ﬁv[µì/s˛Øz+ôHƒM;‹òÂ"ÉK◊F∑%Hﬁ®ºq™ ≠è∂i©M€î‘M-ﬁËö!¥å◊c;Ç‰ﬁxS¨óåtÏ†›,Ìç7Î1’0»QÚ¢√MB{<Iˆ5Î,rd6WÍX¥Ç5ËíúÇÔ„yùxáÇ’‹¥q”éVQn:–Jiùé	?PCh
+~Ñm
+Æ¡?∆OlDüÇü‚g
+~é_(¯%œu£G¡Øxa˙$º‡ÆÈ ‘sáë·”f)¯5~£‡∑¨v~'·Eøg ¿K
+∂ÚËèËRp%ﬁ©‡O¯≥¿§ßÆ@OÈ©sı‘±û:÷SóÛé°[È
++·/
+˛äøq1ç%í∞æıNl
+å+Ãˆ∆§nÙrràµ
+˛é(¯'Í›ú%A‡_∆+ï ˆ≥k˛≈nˇ7^®,¶‡5ºÆ`'vH¯èÇ7pF¡˚±K¡©V°à$@î‡å$<äbå##iÎFxI‹`S(´·√.äÚ‹⁄J5°‡CÑAH–iŒ‰‰Ïalç@”πs5t[∂©ˆÿÀÌ~£Ö›⁄dh˝TŒ9ì–÷,◊+^a%≤eÇr(á∏174ïÊºÕëv:4´"CûóA—‹(”Ak¶1çu™“RmùJÈŸ`”u'm>¿G:ŸÅKäú≈œY„¿Pôi˛õ3eNØbáU%ùKu+a®€“å”ãù|≈Œ¶ÈÚ¨Y#‹“«'R˙lòVÃ}N,••w–ê|QNçyÂrùà√*òänqd4Y=*ó∫£ÁSˆs∑Å°NösŸÕÆ‚<oxG$Ÿü∑/‰GüÊzOMÀı;'V£ÔŸH«UBÌ”ú€¿V ‹…ë°…≥:G@æù¯¶È˚ πásﬁΩ ß&T`f±˚“ê)∑XÚùÕég"wT¬åÛiﬂ¨kFØÜ+Œ)°ŒE%ÈÚD€:öÿ£õí™q∂K"≤ô‹ÃòsÃk‚ΩÏ¸£,}/ÏÃ]™]&3ÖR"jrn'¥èänÇgÖ3µÙ2—Vüu1}vΩÀCG<Ÿ\†ê*Än5ò¶JäJYñﬁ„[z≥Ô'rSÎèoŒï>L°∑—
+z0 ®∆J¥“cg˝ç¿tåÁ[Ö3ns{∫[8}‘Ì;‹æ”]ß„õ˙*íA7jﬂEı4Oo((¡c¡√q%áÍ´®ıS‘¬CúW3UöÔ∆Z√Î=P]9Àâíi+É°H°˝ÜÁ(ºÖ≤6†Ç.5,klöﬁï≈#∂É¢â/8Æ‘0ı¨—ºﬁ{≥¢|Œ§ô…õÖ‘Õe^ÏBÚCG·+≤ìxÆÕ‚ÀÒ9éd tø*ƒW‰Ü¢@÷"πâxn>ê®D/
+D*rkQ äëÅ‹F<∑üHádcQ r!êEÅŸhdHº"û√g“È∆H—))r¢bà1ãQJ©ú
+JSC)îQ&({P
+î S
+TÉÙ•Pô¬®)T—œËïµ∏¶ñ¢¸.¨∆‘“bÎÃ\EkcÎ=‘é ¬¿<¢µ„®ﬁè®˜“ˇxgÂBÂ≠¯Nb¬ö‡LöùXÌ≠ˆQ?©⁄sìÎ•jâp]Ú§0%:Ü©%Èˇbˆ›42˙-ÅÈÃì¬%ûÉYÛª»wdπ·Qî·1pö*∆„®√òç'q9û¢]xÕxÜÍÀ≥TKû£@yªË≤èw“„ ^¿›Ù4∏/‚=é”%˚º‰∏¥ç‹∂ö%AÅ·!ŒÿD#/ÒO¶ƒl%Ω˚Ë≥`C"W#I˚V‚  ÏÂ)ß—5∑8ô?õùÕÿBczt§∑àB“Áp.KÔKc(PC;
+Ãê’#O"¥Êj3S®cœSóBxe(pi≠≥w≥ÇµÅÀòr6ˇ¶0'lSùùô æÇrz5å°GC-^%@Ø°ØÏ7S/"ıµ‰ºÌdá„≤¨	À\ÚÅ”€ÕæÉ¯ò~iü9åy§˛ÚΩPÂ4òø^œAŸá±`Fiˆ!,H°˛ Ÿπ0∑ë„…|_Ø∏Äﬁ'„Ö”Ëi¶áF.EÊ∏òhﬁMë|L;≥òÓpíá >GLÑp,‚0Vjè„
+Õ,¿DÓÓ«[8¢+»∑oÀî‰êMß‹Å® dïãQ#'FcíÉ1Ûƒ8Ã„îA“ZC%˛Z7Í≥xÁ‚:ºóP˘q)ﬁáÎÖÅügnöø›=®¶ÚÜΩWÖF-ŸãÚ*,Â—H £<ÄN	SÛJ¿™’◊;µË¯†ÎíUÆ‡j⁄åipGq‰ûr≠“ó`ﬂâ=k1RÃƒXŒ^Ì⁄î√/¯EË‚oq’T—ˆ6E6uSh>T†`>UÉ(ıàÖy
+™\2>ú{±≥˝@ŸI,£DX~ûCéÅπ∏ÄH>‚®∏ß»
+Lpò?PK
+   ]¨RDÃâr.  '	  8   org/springframework/web/servlet/tags/form/LabelTag.classùV]WU›7ÑLò∆BKUöjmHR;µ¥äÇµ†∆Ä®[ú$ó0t2ì5sáèWıQ}?¯P◊“îÂÉ?¿ÂÚ‹IYêZÀCÓ◊ú≥œ>˚‹3ìøˇ˘Û/ b[≈%|≈«*&ÒIFiS*¶ÒY˜U⁄.7‰*#W3“fV≈≤Ú,'áy9,»a1äáÚŸ“4/±øTPP∞ƒ–óœÃdÛ[≈Ã<C,økÏ∫eÿU}U∏¶]ùbËüulO∂X7,ü”>∑¥≤ï)Wg÷äYFıëk
+Ó2‹À;nU˜Í“u€5j|ﬂqüÈ˚º§{‹›≥∏–…ÿ”∑∑¶è›(F/ù,V"”¶mä˚=„…uÜ¨S°àÉy”ÊøV‚n—(Y\u Üµn∏¶‹∑√b«ÙÓæáºQ‚!
+èãúC9èüUAíâT[«ì›t‹óŸÈ%∏-&«œ%GrëAÕîy]ò$ΩÇeÖÇÄû∏‹s¨=P4|·TπÕ]C4O¢'kW,–êê˙*NŒ¥À:$ﬂU«wÀ<gJπ˙èìø%ì—pqÜÀâ†âxÕ˜D‹vDºƒ„∂oY
+æ“∞ÇUc•ÇY“YAQ√ã‹4ËHjX«#_„±Üƒ5ºçwlj¯O4<≈ñÜoA—nK”í°MzPFEóˆí∆ù◊/!√ÉˇÔî)y¬5 bA‘¨¨≈kTÆ bLJq–vÿıÍ˙CØﬁÆ√’n1|aZz∆#/*∫B¢H0ÜDÁEZ*ÌÚ≤òÍ~µ&ŒqM®‘‘ïnì˜@p˜2Ç Kæ‡ßb∑"uè=∏ŒÒm√∑D¡;ˇÌ%LïŒ |∆r œÆøT≤&ã5ZR8e«ä¸@º§7(_æGo C¶7˘ﬂÈµƒNû=b¢Nö3Ω∫e6nt)T˜'ﬂe◊©S°ó±#ªãì<cæí‘q&›Ä#<ËY\£wı%˙ Ñqó1
+F3B/ÕouÏ˙QckÍGö˚Ëu0ç◊hß”ÃhÓMΩ ˚-0{ó∆HpxÔ—®5pÔ”L" —r^ Îê¥H«BGËI•ˇ@¯c =4f	+áò∞Föˆ-,π»2å#yÜ“Ô??E©–ÖR)§…J:ÔPP"ûéı6I«îT—˙RÈT˙]ê,µØm‹+Ñ<¶qCÿƒ0ΩÄFÒÑà=Ì†oSéz2‹"3|@„-"ﬂå≥E>ƒN3ﬂÌ`j°ubËmåÂ‡ì°ˇƒR)JÑv40¯úr:¡o
+-†¬'Êq∆∫ƒπ›ésófi•‹±ÿﬁ<Õ˘ª,ı£øwZXì≠ºUb©5pq(r¢∞(¯=›≈^Å7—æó”mn/0úbT≤”ÎGÚ˙ânÛœ]0È€Xﬂ˚PK
+   ]¨RDD“4µ—  S  ?   org/springframework/web/servlet/tags/form/AbstractFormTag.classùV]WU›Å!”iÀGHE¥-UK±≈R
+µ 5Ú¿V™NíK:4d¶37|¯¶ˇ¢˛_˙–∫\)K◊rÈK¸Q.œùCH∆îkù;sÔπ˚Ï{Œπ{Úœøøˇ	‡,a|&„Û zëT0ÖÈ fêR»Ã
+ÛÖ0s
+≠Œs_Åä/e§≈¯ïòYfQò%ÀXfUºf¨a]∆ÜåØ%¥ﬂ’K:ø'°5]óò6ÚL¬≈¥^bÂù,≥2Z∂H3›i#ß◊5KÔÓdÄ?÷m	ìi√*$l”“KÖ-K€a{Üı$±«≤	õYªE∆\+ÿâ-√⁄I$≥6∑¥ü•óåVòî–¡vµbY„Ñ7IokªZ¢®ï
+âU.&kf≥€,«'£çSŒkú¸≥eŒàÄ‡€Ä$°MD™[Ùî‘~éô\7J∂åîÉ#^SÜQdZI¬`szÓLÙ°Ñ‡—ﬁºÑû•s∂Ë k≈‰M	õë∑»ÂjC‡X>}8P)É¸hãÑ[gäD9»YåNë9F∫âû´;o¨rÕ‚47_¢)JÜ”uÛ2(cù∆gt€,j’3H∏i^{Ø¨I«ÍLñÍf'ñ,√d?HÂunX˛ÃN˙õ HË—Ì∂•ïã|éÔSvN3ôs:JWæq•ß&¶€O"ΩNkPB¶ Hâ;7‡,ŸçŒSˇÆe+«fuq3Cu˜lDÑWq	ÔP™ÎèØ‚l x§‚2æïÒùäÔ1°BCVEy„bÌääõU±™ŒËx
+èUcD≈$Ó™–1.c[¿>¶®b%Ü
+O%‹9≥ÆúvØW#rKÓisˆ^⁄˜<∑m3qﬂ6=}†rß∞fˆú©òS }*Âït# “±ïÏˇ(ñπ^$`”b∂M»©™ò–”-ê‡núJàﬁﬂWFª⁄îT>≥≤ñ¢/{Z÷DÙ^ø{I}/;Í∫∏Â/îQﬂ†f´èÎUaÓ˜◊Jwıî˙K⁄w-Ú¶√ìì™€µWt¸ÙÕÊùF!äÉ>yË+3So'U˛ ]§ï+TfsØ€&N°ÀvŸ4ã'NÓm÷àÕwíÃ’nTªﬁà_µÙÎ#Òß@ZD∂èﬁ4J4∂≈^AzI-xólª3C?YµÍÄ˜>ç!F‰%6o¢ï˛Åp¸o¥<CÁP¸/¥ƒ~CÎ!/‚/<¥é◊M»EcÍ’ÍNU<]≈Ä)åk¯Äv~ËDìŸÎtc˛@˚4é≈›Hø¢m∏Çˆüqiÿ·&áê+Ëx9≠œ=.
+ç@‚w]øsFÕ„1‚Ò!‰≠ì1j≠aBîvVÂ)[#4¸›ƒ*'6¡
+î
+ŒΩ¨À¡2yÆ†ôöÿ!/vCà;±CãÁI∞h=ëq∑|c¥"¸’?†>˘xÖÛ«yØVÒQMU7Và
+ˇ±ÀîF±å≈*∏P¡≈Áu ÖÄ†pDÁY˙0πt>•}Çtpà†:—Uœ≈p†¬U'Ô‹Aß‚íıâ5ÁˆñBu∞∫Î±j˙HÒ∞K<›¢¸¥Ímåª®À4äÿ}ÑŸSA(=Ùö"4iî—ÅüjH˜πÅ:–Ö;òÄàœ)¡H¢<î{ˇPK
+   ]¨RD9ÜÈT  «,  7   org/springframework/web/servlet/tags/form/FormTag.class•Yy`T’’?g2…<&/€1†‡÷L¢‡Ç»‚ê¢ô$&•“ó…c20ôgﬁP´‚÷ZwÎ"∏UZóTàEp£Ó⁄Ω˝⁄œØ_≠ˆ[jø∂~ı[¨~Á‹w3yÛx¡»˜GÓ=Áæ{œ˝›sŒ=˜ú…kü={  N¡y·Jq\Å.∏w+X»}7Ó«q„Â¶òïõnJπ)„¶\¡
+/,B3«)8ﬁã∞“KÃÒ
+‹À}èLT`3ì∏9AÅ˚∏?QÅ≠‹OVp
+˜')∞ç{ø€πü™¿‹W≥ÑiLMÁf73πô•‡lk(pèÇµ<V«ìÎôö√ê∏9Ÿãß‡\¶Ê)x*3ßytÊœ‡|/,A‡ÊLpñ‚"n{pâÇg{°É
+‹ÕRór”®`˜Õ‹¥xq.g™ïõs∏9◊ãmR∞ùu”¡L'7ÁÒﬁ]≈ÿça/ˆ‡
+ûÔ¡äaÆ‰œ*xëW·Wºò˘’<˝´‘ä±#‹Ù±pΩ◊`¥˚1Våkq7q¯‰	ì
+¶x∆%
+¶Ã∞µîUpêóØ˜‚‹Ë¡KºÃËdxπøÊ≈+J^Â¡M•MÕ-¡û∂ÍPsxyGÇØm≠6®5ƒµD¥°€H«—≥Jìâå°%åZ<´#å^’ÿ
+€õV∑CÕe°é¶Ê∂’¡p∏´uiOòF&€FVØvµó∂5À„Û∑_›Ï
+Ü»g[:∫B´√¡e„Z€;{¬&]l∑v¥[7(ó≠C·`◊≤Ê∞u®¢πΩ1º≤≥Ÿ:VlllÓ§#,vuÁO˜u¥w˜,µÊÀËhÔj∂M¨ˆÑ;HùmÕ·<·•|<Î@Ÿä`[O˛;†qÜ=?3Ù4¬im…t¥!ìb˝ØIk˙˙dz]√zΩ∑!£ß„∫—@ì3kíÈÅÜ22TÈ@≤Oè2\o÷ Kπ¥°Hã±daÇ\ﬂ•«5#6®Âx—ÄnÙ'˚à                     <expression name="value">row["sbtTurPes"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtFecVol</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>FEC</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtTurVol"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totAccPik</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtFecAccPik"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totMovPik</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtFecMovPik"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totBulPik</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtFecBulPik"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totUdsPik</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtFecUdsPik"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totUbiCom</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtFecUbiCom"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totRepCom</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtFecRepCom"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totExpCom</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtFecExpCom"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totValCom</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtFecValCom"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totPes</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtFecPes"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totVol</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtFecVol"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+            </list-property>
+            <column id="1952">
+                <property name="width">50mm</property>
+            </column>
+            <column id="1954">
+                <property name="width">15mm</property>
+            </column>
+            <column id="1955">
+                <property name="width">22mm</property>
+            </column>
+            <column id="2086">
+                <property name="width">15mm</property>
+            </column>
+            <column id="2096">
+                <property name="width">18mm</property>
+            </column>
+            <column id="2332">
+                <property name="width">20mm</property>
+            </column>
+            <column id="2344">
+                <property name="width">20mm</property>
+            </column>
+            <column id="1956">
+                <property name="width">20mm</property>
+            </column>
+            <column id="1957">
+                <property name="width">20mm</property>
+            </column>
+            <column id="1958">
+                <property name="width">30mm</property>
+            </column>
+            <column id="2288">
+                <property name="width">25mm</property>
+            </column>
+            <header>
+                <row id="2010">
+                    <property name="height">0.312in</property>
+                    <cell id="2011"/>
+                    <cell id="2013"/>
+                    <cell id="2014"/>
+                    <cell id="2078"/>
+                    <cell id="2088"/>
+                    <cell id="2321"/>
+                    <cell id="2333"/>
+                    <cell id="2015"/>
+                    <cell id="2016"/>
+                    <cell id="2017"/>
+                    <cell id="2277"/>
+                </row>
+                <row id="2447">
+                    <property name="verticalAlign">bottom</property>
+                    <cell id="2448"/>
+                    <cell id="2451">
+                        <text id="2442">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#000000</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[...]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2452">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="2441">
+                            <property name="fontWeight">bold</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="color">#000000</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Picking"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2454">
+                        <text id="2443">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#000000</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">right</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[...]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2455">
+                        <text id="2445">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#000000</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[...]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2456">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="2444">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#000000</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <text-property name="text" key="Pallets"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2458">
+                        <text id="2446">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#000000</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">right</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[...]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2459"/>
+                    <cell id="2460"/>
+                </row>
+                <row id="1899">
+                    <property name="verticalAlign">bottom</property>
+                    <cell id="1900">
+                        <label id="2047">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <text-property name="text" key="Fecha"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="1904">
+                        <label id="2118">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Acc"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="1906">
+                        <label id="2119">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Cntdors"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2079">
+                        <label id="2120">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Bultos"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2089">
+                        <label id="2121">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Uds"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2322">
+                        <label id="2390">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Ubic"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2334">
+                        <label id="2391">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Rep"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="1908">
+                        <label id="2122">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Exp"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="1910">
+                        <label id="2123">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="Val"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="1912">
+                        <label id="2124">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="PesoEnKgs"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2278">
+                        <label id="2392">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="VolumenEnM3"></text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="1962">
+                <property name="groupName">FEC</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr">row["FEC"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue">row["FEC"]</expression>
+                </structure>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">true</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <property name="pageBreakInside">auto</property>
+                <footer>
+                    <row id="1974">
+                        <cell id="1975">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <data id="2495">
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <structure name="dateTimeFormat">
+                                    <property name="category">Medium Date</property>
+                                    <property name="pattern">Medium Date</property>
+                                </structure>
+                                <property name="resultSetColumn">FEC</property>
+                            </data>
+                        </cell>
+                        <cell id="1977">
+                            <data id="2370">
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtFecAccPik</property>
+                            </data>
+                        </cell>
+                        <cell id="1978">
+                            <data id="2371">
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtFecMovPik</property>
+                            </data>
+                        </cell>
+                        <cell id="2082">
+                            <data id="2372">
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtFecBulPik</property>
+                            </data>
+                        </cell>
+                        <cell id="2092">
+                            <data id="2373">
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtFecUdsPik</property>
+                            </data>
+                        </cell>
+                        <cell id="2327">
+                            <data id="2374">
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtFecUbiCom</property>
+                            </data>
+                        </cell>
+                        <cell id="2339">
+                            <data id="2375">
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtFecRepCom</property>
+                            </data>
+                        </cell>
+                        <cell id="1979">
+                            <data id="2376">
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtFecExpCom</property>
+                            </data>
+                        </cell>
+                        <cell id="1980">
+                            <data id="2377">
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtFecValCom</property>
+                            </data>
+                        </cell>
+                        <cell id="1981">
+                            <data id="2378">
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0.000</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtFecPes</property>
+                            </data>
+                        </cell>
+                        <cell id="2283">
+                            <data id="2379">
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="color">#800000</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0.000</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtFecVol</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="2147">
+                        <property name="height">0.2in</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">true</expression>
+                            </structure>
+                        </list-property>
+                        <cell id="2148"/>
+                        <cell id="2150"/>
+                        <cell id="2151"/>
+                        <cell id="2152"/>
+                        <cell id="2153"/>
+                        <cell id="2328"/>
+                        <cell id="2340"/>
+               +ˇÁø‡¸KF/Œ H‚©&ÍÂ$‰e0˘• ·ª¸¥∏±%Ù≥≠√MëõYnŒâòì wÁel√”2z=ﬂ«∏˘!è=√_üÂÊ9	ªd¸?ñ–'‚'26„ß‹</·I˛˛3/‡E/·ÁºÊÀ2~ÅWD¸R¬Ø$¸Z∆o[6{U¬yø√k".à∏(‚íÄÊ±Ç£õÜ}““Õ†åÜfÃ©∂≠Ÿ¬4ößglÙ¨:´¶r™1ìÀú’≤Œ>M¸qRÕµZÉq«“çô≤¡®ö—r§)›V39mJ@dønËŒçù]ìBÕ)Bh’Ìx1ü—¨	6dL3´Ê&UKÁw0‰ú—âPˇ®iÕ§ÏØ4m©yÌúi=ï:ßeR∂fÕÊ4'Â®3vj⁄¥Ú)ﬂ≈	ï9I∂ÊåxNmÍº›+&$ÕTLZ;ªÇ<W|ﬂ˘ ﬂ{RfjÃj¡*Q*É˘Å*OÚ_£Ùu®∫ËÃ“7Y∑´/Ã«ihx.´y˛äxù¢zé7ñ\?héf8ˆvÆ"t4—S∆æÆ⁄[ÀQ hp–,SÛÚj√ü\›êK≤gxú¿Ib≥Ï˛	À,hñ3OÔ9ˆ¨˙Æò.ﬂ≤á÷¥≥[ktÃ⁄s ‘Ù≠…c¬®¯ª:åÒÚ4¬à∫‰)G@[≠§)Äæ¨[Î£∏?qÄXömÊfµ⁄`IüÚ4#†AüÚÑ2^%∏á‘µ6äÕ4®ÑÆ:EŒ≠ Ÿ≈B¡¥úTuoªöÕj∂Ωu«é\çŒñ§(´∏aé ‰q≥heµC:«ß•jë‰H)xè(ÿÉΩ
+«;‹€Q9ç:⁄ÛE€i7Lß=£µk˘Ç3/‚Mo·mª∞ªlÏfXÄ±Ç>ÏV–œÕÜ\∆;
+Td<åÎÎìX¡º´ ã)Ô·}(∏ Ù~è?(¯#Cqs√"˛§‡C¸Y¿‡ˇ/sˆˇ/
+˛äk
+>bÏø)¯;?Ø≥≥7îpSƒÇÇ‡cª÷†¢óù$ãàó">Q)>S9˛)‡!BM÷°&	5È£&5…®…
+j2ß€éªU"n)¯_
+ÿπz≈	ÿΩñ
+xxÂ”2∂c©YÁàìœÁ¥<°.ƒ}¨Åπ Ñ≥v!u‘.T_ N›vÁÿYïO…-AK=ó†Jk—— ûQÌ	mézÂ$∏¿¥h|∂™é6hö9M5V<órL*œuK¬ù&ïKc`%§≥√›IØl¨)qÂr–R7DZ“Ìa£òß\¢˘‹£Úd;™·∏eπÎâ†•D2ı* ÷eÉÈ?F]€√¶˙X»©ÛÂÉs{P…* œ≠ÒÙZI W∫ªä[ª« ˘∑÷¬MHaæSL’ú\Âä$9f98Àá’≥√x€!AEÍåÊ^3Xƒ[FoœêU
+ÒﬁUy32uX£õ©ÍòT–#A∞C√À)w˘Ö∑{€r\\˜iyﬂ˜ªT7[è®ˆÄA•é»åM{ üÏXó<†%Su¬“b•*ÿ4M^yµì∫s∆O°±’.ÿug{™äwúóÎ1À˘‘ÿ§É€’é˚ÈßGí~5Ö–¿•öz\Ö›güˇÏwü-∏¢S˚ ΩÌ¢ß@œp‚&>rÕ“‘ Ù:ÓﬂÿG=≈3¬~<DOu‡ Y≤m$—}çıáhŒa°Õ≥Ú∏«4Èßó{+U!sç◊*Pwp,ê» ˙ìè¯DîÓXhÅ àN§Jg©}ú∞û@ßóPR*î‹{ãKâ.î"ıî≤ÅîQ}JR=•aÂâí±•>ü“·@JR=•Ÿ@JG*îj∂´©~ªû°9œ.≥]˝>ëë@"MıDû ¬Q<BV<πèºÁo—DLNî-A˘∞‚ï%Qb‘Öpå⁄„§	Lx"Y WH≈Õ«n›q!Í]ƒ=Ω_†Â"ö±ıΩ%l∏äPo:tÌ=%ƒJÿò«√ãà≈√%¥^ÑÃœMÈP<¥àSd—ñ‘]Èµwß≈xd±x<BH∏á¿Ñ¥›—Øƒ≈%£Mü`Û©D<≈•x”M‹õñ„rw	˜5≤èçÆèá∞Å⁄W)8Á¡ˇ0h∆k4rù∏D©Ò:Ì‘È∑)dóqÔ`íÓøßÒ.,ºèËÊ{â.æóÈﬁÀ1z|Ao%ªG	Ô˝}Év+Lsé∫öé–Ã!WJ"ÕObúz°‹ç	Í5VèëµÃ1¨Ï˘úƒ7)÷aºâSî;Ù˝Çõ∂çƒˆ<e“N⁄Ö”˛yÎã¨óÓ—∑…o√Áh>ëàm°Ä∂S∏Fª±ô¬rˇ±û|ı"÷ıêíæ∂Ä≠ƒkBURmÑ
+∫uGqùŒØ¥Râ‚¥‡˙ﬁN®≠Ù˜ÚÑ5õ˘G±O∫GLïOˇ¿’;‰évb#∂≈∂«:–…›t›¬∂Í⁄^f|Jxü-—c[E“ÙÉƒG‹Cñ¸≠ôΩàëè›∑–Sü_.iˆ@÷K–0}[Rï ‘gDGMRÕ∏p∆muÏpŸ
+ÿLµ ÖÜˇPK
+   ]¨RDÈ ÿá  B  O   org/springframework/web/servlet/tags/form/AbstractSingleCheckedElementTag.class≠îÔsE«øõÑÊö-T˘QKöPŒÇH•X©iÅBhïîu6…Æ\Ô2wõˇ'_¿å∆^¯“æıˇq|ûM•=tË8ô<ª˚‹Û<˚yvü}˛¯Î’o Ê(É>≈Q\aÒ©Ö´Ã„≥-ÆY(Ú∏`·:èü≥XdÒ€‹∞0…ã%_Z(±rô+<ªô∆≠4nËJØ£≤ÂMŸïé'˝ñ≥^ﬂTΩ@=YWû¿»u◊wı¢@2?SHïÇ&πLî]_≠u∂Í*‹êuœ	“´ –Âı@ô“O›H‡n9[N‘]øı$î[j;ü9€™ÓD*ÏzJ;Z∂"ÁIn9KıHá≤°+dÎ©“S’x¶ö+û⁄Ræﬁê-"≥"•´}Ú£˘ΩËLiµÜ&GÚ3qÈqêr?C6L'∂CW|´¯ö6òœø;9÷8@∏0≥*0™ˇY
+\ŸWÅÑ€|Û~*öC–óÉ°äØ´öÙÃ ÛÜjk7£4Vw§≤¨¥tΩhˇ©–yf*A'l®õ._Í‘\—E¶µÒ>Nÿ8Ü„6&qúÍ…ı€ù∆wQ∂qk6÷ÒâO(6æf≈}ÃŸ¯òEÖ›ß1ec®˙à F5ÒççoQX˝ﬂ J†ÙÓ±b¢ú‚‹ü}6£∂s'jØF‡Ú>ÆÄ´UÀ∞ø√%?®æ¢—A=¨6w◊¸∞dr¶$÷âÙñ4ÈÎM7˙xï±wèx¥4=∞5
+*p,ûÄäsD˘Mìü•∏+I∆öèI5ÊΩ«=Ôq≥—éœˇ{¨¥πF‡wùv∞ÏFmO˛ÿˇ&0◊l‚ŒyL∂€îéi@©3‘vs‘—Ù£◊`fìfLC#!˘≠ç
+øBº4f'IéÂá8E“Ó–Í4çgpv‡ºh¬ìu°¯ØΩ3F;G>óLÑ\ﬂjÅgåDOÁ0µ‰g$^Ïôè˘($π‰˘,Ωdr 2í‹r+$ÖÛ»ì;ˇI´çµb6’£=å‹+≥È=X4éí"c¶=å±∞È∞ê'˝Dá÷f«…bvú\ãŸ˜»)[,Ãˆp∏á#lò¸iàs„$ÔVc‘´„°UÈ@kÛ®U]≈#,‡1Â˛n„{ju?êU›§PËcO¢Ü“Q°å"y'»˚4fÈtí∏hípR)ní4jË…0]˛PK
+   ]¨RDÑ˜X—9	  )  9   org/springframework/web/servlet/tags/form/OptionTag.classùWmxW~g≥a7ªKÑèí"ÿ$ªöB°@7H ÑHBhã≥ŸIXòÏ¨3≥!Xµj’™m˝™Ui´ˆCE€j°¬´m±jQ¨≠mmıáˇ|ıá>è?¸°èÁ‹ôùùlH¯±wÓΩ{Ó9ÔyÔ9Áﬁ{ÈœΩ ‡ºA;∆kp#és3FgÑæ'∏˘@wFA|àˇ˘07wÖ±-Çè‡£¸˜«∏π;Çè„‹˚$7˜∞‘ßX‰”a|Ü˜ÚÙ},¡˝‹˚lü·Û,ÒÖ0æ¡¯RÚ__ÊÊ+‹|ïõì$˜f©G∏˜µ0æŒﬂoÃ£‹<∆√«√∏ïøOÑÕ0æ¡∑qä«ﬂâ‡ªxí{OÖtﬂ·˚•z˜wJÌÎIuÙvÓKÌÈñÎ=™å+IM…ç&,#õ›"°∂Sœôñí≥Ü≠†JX⁄’3–ﬂõ∫˝∞øäÅÓﬁÓŒ¡ÓÆ√©¡¡}=˚i≤ŒıÃƒH	Øö"V=n[¬ÿõ>™[£ZS“™&!¨kIuª≤f^SN83·L÷T“ööë0Áñl.kmìPµv›êÑ`ßû·%ΩŸú⁄WK´∆ ≤1}X—Ü#Àcg2h…ö⁄{uc4iÊôâCSèÎ∆±‰q5ù4Uc\S≠§•åö…›KÓÕ[Y=7®0eaS-±’∞v∫3å'<Íä‘Ø]ÁÁpîîtπÓL—„ÏÎâéz•¶™r∑0í5À2ƒ«AöÍûVd3Ñgl»Ω√£n∑ﬁPs’ËRGîÇfQ XjŒí∞iÌ,à!JYK5ﬁ´4úΩe-ƒÖçjá°èuËô.¨;lé&‹ÂGÕ<´P'¨§GpÀ5Éè¶ΩÊ÷ÃÃöÑ˘zN(!eÓ‚yÍD^7’îE{î.X*E[-ÒﬁëÕe,≈*–¯&⁄Ã´!5˘ºnêAwŸõg®c˙¯›≤Mô§˘DÂÙ¿πfûjmkj)QÁ*KUs™°XjO∆vUÑò#∞∆/K|ãë°ö∫6Ójã™@+(VìpY˚ŸÚÄ™ë
+Eûì)œp„H-ªÂ.¥ì»NK«‡ÉÇgÅœÅ–∆∞∫#ÀEeÆ["ºVF∫el√vùÿ$„›ÿ'„4ŒHX‹,‹jn+òVSN∑ö“jSÆ†i!<+„8+„V^q≈ŒÀòƒe≈1#·9?b]9÷o¢OFäç¸œ¿åß` Ë‡?ÜëëÒ^îq?ë∞ï¯ITì ~?	Ê'¡¸$\~Z÷,’≥ı≥Z/°üj∂.
+·ß2~∆Å,!˚9˚Ú2. ¯ –ëóÒKûªÑ_…xøñÒ~¢ÑŸ€#c É2~É~øencÈﬂ·U	ÆaÔ	ó≠9Ñ◊d¸ØÀxoÜ∂˚ñå=Ëõïb7$tÕ|U*mZÜ2lÌ¥∆¥nM£*¬UF®i∫b!"◊MŸeÊ›CÄNFïO_ œ]◊TÖfö}éüCà¢~Öü+´%S"'%Ñ(à˚(Ä+¥^∂Ùàjõ'D¡ú +|™mYÄt˘ÏJ‡÷ƒäöS2ÎwØöIôßìççPC¶Ã)¶Æ¬§ÁZ¿J∫3YKßx^^:Ã”¥f≤ﬂ–ÛƒÂ	˚o.Ûˆ—œŸ\≤õ∫,πæ:|Kl]≈È1´ÿ,üÓa∫4v˛‘8UëKˇ¬„¸øùäÊ±rË⁄.3äQbvëø]:Cƒcô£É:oË√™iÓ»™Ó%s◊å≤‡ °‰r;WÄòydx≥A…ÁÈTuPÕ°Æ†6\J[q+õIî˘Ö¯ÍÀ1/íòÌß/Qµ»>cw*f*GDQÌ<ë'„CW∏{Ò˘È±⁄©ëñÔ[√ù%k≤÷±\¬ﬁŸ\weyJûŸûŒ-§SÀ+t≥·úÌπz˚\Ÿ¸Ó∏ûûlÌ†k "hƒFl¢˛ÕÙ^ J„Õûq==,∑x∆Õ4æeä¸lıåÉÙ£káË”=B|SŒ∏√˘vä˘ZC∑jw–(I_âæ’ÒÛêŒ±wQ;GLÆ«Nje[ =ÿE_	ª—Î,ﬁF“ñé∑úC†º:"f3¥F⁄RéÓ1TzíÒ9;»YNW 9Êd/˙˝ÄTU±hM·2@:áAæ®˘ ©™rßê _MHä∑£J¸ç«ÇÒ"™ãòÛtÖäª=*¢éä˝Be˝∏^Ìtºí[b°IÑŸ∑ö≤os…p/iΩèÙ‹ÔÒOv˝wJ·ﬂmæ˛’T˙˜ÄØ∑„†„üF£ }”‚H,ZÑº'ﬁzµ}Ò÷∂ñÛò[Ür'i¬<<åExDËé€Î]àãÒ"{rà£"@“aª CKÔ≈Ü„4™¶o£ã°Ø•à∫Õ¡x[c∞’ƒ£§¸1R˚8{BÄ∏—V‡ÇhƒaºO8›(‡hEùÄSEÎjú‡8äõA<4Ø2Ùû$—ß|9Mì€ü{hñe∑ìÇ˘Ωq◊´sàŸ}ÚnÅ=]/¶Ï~ºÖ"laãäXLe”Kh3ÅgHÌib‡ñ·Y¨£'∆6úıD…vJ5’;Ω˛—˚¡Òo#I3ÙZaµë\¿í ∏ôÙ¯XÎ˙®∫$=Ë‰≈nR{π><`ﬂ$rı‰íÁK©”P™ÁÅ#‘P"ññ˝]C;<è=xÍÒ"˘˚V”£ï^7„"’¡KËƒ›ƒ ?Æúm¯´V#m±eE,è∑≈Æ#~W—o+‚z/€j¥W+ãxGcêÖWm∂≈¢ç¡"V«)÷úD¥-÷kÊqk≈0„ø€ZãXGÍ‚eÙ7a†7ÕzÕÃ«´¥;Øa=I⁄Ò:U¯7à¬7©LæE%ÊmäÃ?R‰˝âà˝≥'éG‹8qví{≥—„àÆ"ù82-é≥Tlˇ[ù8Hïõ˚sÅi+¿ØTGáAv8„Ví€-{Z/"‘r
+ëx¨ï‹nÎã∑ï),€∞Îÿﬂ»ìø”ŸÙOëXÈ˙µí
+˚UçÂé_ƒ⁄ò»O/íúpõ≈°é/@"∂,ñúƒ;+ìÛüT7ˇÂÒMv£Çﬁ£éûv'˙£¨g7\@¢íû˚Ù ?_[ù2^√ﬁ∑Lb}ÂâOV÷∏>◊8>¯π?˝xâí∂ƒj%öˇ^Âx±Ñ|·ˇPK
+   ]¨RD«wÎI  ˚  F   org/springframework/web/servlet/tags/form/AbstractHtmlElementTag.class•óy`Â¿ﬂÀµìÕ$!õp{Ñà6¡ÉHé£!A≤Ä±∂:IÜe`≥ªÏŒÊ‡h±óı®Wï
+µV≠w±‚ï Qºµ⁄jµ∑Ù¥ˆ“ûˆ∞ï∂⁄˜fæÏNføE¥ÏªÊ;~ﬂ˚ﬁ|ÛÌÔ8 Ûq©∫‡ôb8ûeÒão∞xû≈,æ…‚[,^dÒão≥xô≈+,æ√‚ª,æ«‚˚,~¿‚á¯ë™‡/9Øz‡ê~ÏÖ)å?a˝S~∆˙Á
+¸Çık^òø,Å◊·WˆkÓˆ~À˙w^xﬁT‡˜
+ƒÿˇã?z·Og‚Ï¸Ö≈[
+lf˝W¨ˇ¶@íıﬂ0YˇCÅÎ∑Ëg˝OXˇKÅA÷Ô(0ƒ˙∞[Xˇ[Å≠¨ˇ£¿6÷ˇU`;ÎwΩ°"ñ`Êó`≤(Ú†á√
+µ¬b^/5QŸ*ıbñ+U†è˝	¨†œÉïÂÕmçùù6ÜB´[õ÷ÑÇæ∂çZøàh—p†”L—pBis,ö4µ®πVã§tÍ÷Íj:ªïµ5∂Øp C≠°ÒMJ[ZWèõ)‘ÿ‘⁄ﬁ<œ¨Ëhonkm>«´ÍhoijÀ
+OÏh_Ÿ±¶3ÿ“±Æ›ØÒ5´d≠;÷WÀ‚+ÈÅkRª˝öê+|N∞k’Í‡¯¨UX·Ò3VZ17ù“ìL6G¥díBf0ëà%Ñœè:Õ°%∏ÄÛèPh&ª˘ΩFÇûõZ∑Ì’<±hOƒËŸÑ‡çE{ª#¬)âE˚b©§ﬁà"/œ<âıÎâå◊GÆ5Ñ˝,eZŒ&}(û–ô»c9‹øÿ≤Ïq+zá¢Zü—”hR}tßLùZñ€eì2çH`•ßö)Ó4¬QÕL%hÜÖ„ü.ÕÆ1G§£{£ﬁc6,£1äñQ√\F	®ù≥ñ≤“ÎÂÍk3¢z{™Ø[OÑ¥nŒèØ-÷£E÷j	É},07D÷‘KÑ…8O≥>°ıÈ±ƒ¶¿ÄﬁHÍâ˛ànL-ú¨è%˙ç›I3°ıògô}ë`DÔ”£fH„†$©õÕÈçõXõΩ Ê+	;[U’ŒëΩKÏ°ú?!úärœCœ⁄¨˙Ñ«,Öb!ªXîp⁄,¢hóNQX<n(]F<n∆Û“≥ét]ÖN©ı$Sg•·Ò~ôı‹QzeaW@Õ¥‡rR√„\Gª@˝E ”¬.ZG;PÍÉπ4ÏÚ≠Áô⁄∂üg|ÔÿsÚÜé:ˆD,%<Œ≠‚‘føcªÔx%πcG˝"T&≥'AX"©√£ëk5?ï0Ë%çã”No6˝ˆ·ÓÀÓ@		ˆËq”†ÔÄ´&I˙ΩŸP≥è5Üp>¬§ÅÑaÍ-˙z-1ùπ[\˚ﬁYzA◊Ò8	kY≈ÊòÀßŒáÖ÷fquX´’"N∞çÑ<c&Ìªc+[©£f∆∏s9US,“ØgŒog,ïË—œ4¯çú.?bN‚±T¯$|JÖ>∏@Ö(ãã8ãÕ,,í,L)˝,X≤b±Ö≈V€XlgÒq¯’dÜ¯,-πÅ
+PÖ}∞°&≥?≠ëà¶U'¬)fKo;•≈Ω≠M)#“Àâˆ¶sT≠‚DúD:ΩÜ≠…t∂’T…ÍhÃ¨÷"ëÿÄﬁ´‚∏Çózôß™8ß´p FU8£TÑ=ú4ûÑ+<xåä«‚qLÚ¡ß¬’‘è«jŒP±OP·ZéÃƒU∏é›…‚ªY‹»‚&7≥∏ï≈m,Ó`qã{XÏ·…f©8kUúÉ~÷©Xès=xíäúß‚|<ôñ‚NÄäõ‚©\§‚bjWÚÄKT<T∏Æ@X˛ˇ~ÑZ?¯-ö©5≈R—ﬁ3)ÍÀœKL˜‹òåso}–Hé≤„≤üùå;*£Hã«ıh/¬\Ÿá1+$Í¶¡’~Ïd8B{≈åŸ!:æ«§tû≈˘ê_,»S§O∏‚∞†˜Y~Và{Ú˚úÖé´É¢ÛÈ´Ò∫¯ËPŸf ÷`Â»n≤ÜLqﬂh1íÒà64ñŒYGµcáv÷Ç.¯páˆ—&®6Á“öctdı0èXû«H˚‚Ê} j]ﬂ`˛Ï—ßªS7›üh
+5å++´çbà£ùV>Æπ„»˜eG	bÉñlß ∫ª“¨QÀ)Lo\~ò'{øMH7ÁªK›⁄:M∫`”äO•Qﬂ/˘…T<KòÅL?Ë‰ﬁÀŒ/_UèToˆŒçmÂ"d-_zs>ø`˝∑ÌÑÛ°¶¬G‡≤?
+ y0ì¸è9¸Ÿ‰_ËÎ…ø»·»◊˛|Úª˛Ú{˛BÚ{˛"ÚuáøÑ¸ıøÅ¸∞√?ù¸ˇÚáﬂH˛FáﬂL˛&á$?‚W–è. ñ:&t\ËÕB'ÑN
+m
+ù∫_Ë°Özã–[Öﬁ&Ùv°ÈŒ@\;,˚bòC6›OH~ö"“H∫–?xø’‰3$ã¨`=|ñ§j7ÄK‡s§.ÖÀDÁe‘:è[˚ÎÜºLoØ¢>[¨&Ÿ≠ƒlıY©*‡oj»Cê∑◊r±‰Ûrê|7»•‘Á≤ Qr•$ﬂrç‰*9HÅdıŸù$&@ÆñÇ∏AnëÇ\#)tÉ‹M}Ó… ◊JA
+› ˜KAæ )rÉÏß>rÄl ◊IAä‹ OHAÆóÉx‹ œSürÄ$»N)à«Úä‰ãr≈Ú*ı9î$)@nêÇ(nê◊§ ª‰ ≈nê7®œõ9@L≤[
+RÏyK
+Ú%9à◊Úı9ú$%@nîÇx] àRê/ÀAJ\ XÖËÕ“/@níÇî∏A*§ _ëÉ®nê©2-»Ä πY
+¢∫AfHAnëÉî∫AÊà?»† πU
+RÍô/˘™§Ã≤Ñ@NÀ2$@nìÇîπA• ∑ÀA › ≠rvê-‰)Hπdï‰N9»7»y“ïd´ πK
+2¡rë‰n9HÖdÅ9@∂	ê{§ nê∏‰krüdê@ÜrÄl {§ >7»	H‹_ßVÓŒïÓŒóH:Ô∞⁄‹G±ΩÙEµπóÜ, }.Úî˘G°™k&>ï˛˙π√0i7‘è¬‰ÆQòB·©æi√0Ωû~æcH–Ûc}«ë1«è@ıc<F˝‹˝0#÷e3çê Ø^>º¶„µ–Ç◊√*‹iA˙mÄt¢ŒÖ¨D±ı Yyñı–•Ü≠ åê‹Gv;çÀIÁÛ|{\i∏—ö°⁄~öû!œ-ã«Õ£—¿®H…
+±¡%˛∫®Ò◊√	ô≈îÒPx;ÌÚ‡≈;;]íæÅGix'Ï¡±·iÒÖ÷Ç◊˘f˙á·ƒaòUÁõÌ˜’í3g¸˚ÄfúÂØÛ’SÄ2|ô2ÁŸÊ|2O∂Õdûbõ…<’6ëπÿ6óêyöm6êπ‘6O'sômûAÊr€l$≥…6õ…l±Õ ôg⁄Ê
+2œbì6y¥ÓÜ∂ˆ√ŸH˚p¬ ˙˝–∆_˛»Xâ8¥∑◊Õıs#*âé<J«*ZÿùÔ ds-L§å‹Gô‹«‚Pã¬|ñ·√–ä√¬∏˜¡F‹)< ;p.«G`'>
+∑‡AÿÉè¡>O‡ì:>o„”>õ.´◊°£≠ŒáóÈ/…„t}„ù:úﬁ©√íùzíﬁNª∫©…<Z˘π√∞zL'´sÑvAÖﬂ∑Ü{√ˆ˙}k…['<WµºU¯‘†ÛŒ6O0dfFx Í˜Ùˇ PK
+   ]¨RD           %   org/springframework/web/servlet/view/ PK
+   ]¨RD	Éuﬂp  *9  7   org/springframework/web/servlet/view/RedirectView.classµZy`T’’?ÁÕÚfy	!dë∞Ö03aD1 0H$ÃÇ|Ia$ôﬂÃ∞TEA\Z•uØ±⁄≈™K[ó:±¢U°.]Ïj˜V[≠›ªW˘ŒπÔÕÀdÚBæÚGÓªÔæ{œ9˜wñ{ÓôºÚ¡”œ¿\©–€·}/lÉ∏9F7Ë£F¢ØË‡W'7.ss#˚–É^˙–ÔC∏)Ù·,Ú·X,Êﬁ8ÓçÁy%2N‡)>(¡â~`)Sò$„dî¬˚¸RÊ¡S}–ÇS¸XéSißqo∫g¯p&VúY<\…ΩŸ‹Y†ê√XÂ√9·Ê4?,ƒπ‹úŒÕ2ûÈ¡yúÔÉN‰g1ó><õ(a5.‰±E<vé„πÃÙ<k|∏óz|fYÀÕ2nŒ·ÊûΩú%®c˙q÷˚±Wr≥J∆’~Xé1ãF6a≥[pç◊‚≈~\áı2Æ˜√*¨góà≈Lµï]*„&º—Éó…®˙‡bù6f‘ŒΩj∏âõN&≤Ÿ§≈À}∏ªxJ771∆1·«+Pó1ÈÉNLqìˆ„V‹Ê«Ì∏√I¸˜ÆÙ‡U¸ºöõùº¯/^ãªd‹Ì•9◊ypÉ|Ωå7»x£å7!îµ4÷mlÆmX]_”\ªqMMc]Õí˙⁄ç´köõkW"Í/W∑™ët*⁄—µNm{dµöJizl!¬òˆx,•mO5j]j*∫UC¿ıEõS©ƒ‹”ñ∆ª4⁄÷E√%⁄ˆD<©5ƒ;¥ÆöTJè∂•SZ°Pãµ«;¢±Œ¶ˆÕZ7M,6∏u©±ŒHÕãu_2•¶“…•¥af}\Ôå$¸mìÆvk€‚˙ñ≥å,ß¶IL•E•ƒRçu¥Ë—f≠;AÚikT=™í8ƒ◊Ω(ã¶#8*gØAp§«‘Gc⁄ twõ¶7´BÓ‚˙xª⁄ï]h:Sõ£D„[A∂imë§¶oÌ“Rë≠Qm[§QÎàÍZ{jΩêX%ïÉw»"8“z¬õØÎ˘Û)vƒóâ∂_ƒß‚§ñZöØ!g•¯6éæ-§ßâ4ZkØ™±¸)O[4÷î£õ  )á˘óúÜ‘Pa4ôãú–Ÿ÷ÿh“⁄—i˙‹AÿËZ¨C”4ΩSÎXïN%“)!=ÇZôcºjb°x›n)®_0cÄij…‘”íâx,©âç§ı(Cèi±	“,Ñ-π≥ŸÖ6u©…Õ$[ÉS;5aÓ∞vµl‡¢‚Í66<&oø≤nÏ	a÷7è‡—ÕíFG
+ù3)ïêja;ˆdwÖÒvà∆ÑÅ˛∂#ëıπy7∂h∞ÕÁå¨jªúÃf·bµ€€µD*J2 ¯a≤)⁄##‘âÊçï'DÙ$ÿ–òv]#ÛoÓ¬¥‹ŸvÒ”ªµﬂØÉ&,IGª:Ñ9(èjsdÒB?Çê8©à⁄ÓmíÆQËh◊Ï£»•6¡—ÿ¸◊—˘8à9c*«A◊Vµ+ùwzôª£H€û÷)Bë^£π'˘X∫ã‹RÓVSNuªì∂¡¯DD
+qıj2%FËò≠Cÿ7ÏﬁFˇhı=:ú »Æó0ò⁄à∆Ç·„Ã »piAâàl8A"#‹1ù›j"Az∏(≠È;VÎÒÑ¶ß¢,˝9É5ë›˙÷µF¯'ôO]äç`|Œ
+QSq–'%≠cÖ∂CÉxYcXùGW∑ô]¨”W≠ÒTÍb1M_J6…ÇñgÜòE‘•ËéŸ∫⁄ŸM¸j¨}s\Ø£cu;€’˘ ©¥mëùA!,¥c4‚†›>R<Ge‡˘®èπ"_èÂ˘Aw∞µuùXÑï≈Â QM÷vE;993%•Œ“Òsós∂$k]ö°Q∫UÄªKãu¶(z8€„]úlÊµîFhùì|la+”œ€¥Æπk/ÂÆ"5‘,O∆õlCπ+£‘çßO√=#„ˇ√SŸN@«6ïŒ«≥ÜLhÃ€Pd≠÷VìHtE€U‘ÃW˘NËÒv-ôåìü/6-J¶â∏ûäò¢üØ¶T°á’Y"D±–ÃÓLˇh…ˆK˜ËˇÙ<9…™Píà≥m§°§Lá∏Üõë7Àπ•±û¯NÛ*57˜.t”…iˆØ¬„‘Ï=.W@œ¢ˆ.ÛÏkäßıvmYîSÌ±π˜Æ9ÃTÅÎ·ÆÇ´ÿ…Õ5‹Ï°oÜ€˘Î-
+\ªÿ◊)8<°¿o·w2ﬁ¢‡^¸®åSVºM∆€ºÔT.º[∆è+xˆ»xØÇü xﬁØ‡'ÒS
+~?É0•ªuõ:’.^≥ÚyÑöº{Py,û*ﬂO«: ;¥hJ+èã€`yvb˘fu+aUﬁ¶i±r∫Ä
+—e|@¡œ‚É
+º£€‰GèÇa“àÇcØåè(∏{|?ß‡~˛‰´kZUµ`¡º≥´Ê ¯yøÄ_T‡%8¢‡c4˙‡i^ÜW¯\)„„
+<áO»¯§Ç_¬‡)Ã(x ﬁQ ˆ)¯4ˆ!LÑAçﬁôÊàû√dqŸ•≠%	ÄrëJ
+z9ÒÚY$,·3
+~üïÒ∞åœ)¯<º´‡Whﬁƒgd|A¡I{¯°˚Ï óóÒ®Ç_≈óâŒt_¡Wô	˙~ç_øÆ¿è‡«
+~ø)„Î
+~ø-„w¸.ÔË{¯}≤=õD@¡7˚
+˛ („è¸1‹+„O¸)˛L∆ü+¯|S∆∑(≤;û¸%˛äQ[¡wòAQææ¯5ºã YU
+ı—ÿ≠cπa
+¸~¶‡ØÒ]ﬁÜwd¸çÇø≈ﬂ1Ëø'Keq˛†‡ÒO2˛Y¡ø0X≈˜¸˛]∆(¯O|O∆)¯o¸¬¸∏dz¯_ﬂ«d<¶H °,Iä‰êú
+<Cöë\íõ|îÔ√b€í,yÿB…”˛ˇî%Ø"˘`¬ÙÑ EÚ√u3[Ø¨ºdC‰“–π≥[ØVàY¬‹Q◊∞Œ—öö∂dJW€˘ _¢&)Ykg∑∂©[’M>ÜÈD„ë∫U9Ê>#;⁄3ë’:≤u©úi¨J÷j5µ9Á™±ƒÙ’BVƒU0äıFâiôU·h˘Ωc•êJªπyŒ`
+%S¶÷ù‡‘∞xPª˛8:\ê2cEÅMzºõ>.ÖpÅ]ŸrïÆ˛´†´çªs*G≥ûG>õ !=±‚)äT⁄&∂⁄©Ç(ê)…®©HÉp!WAïœ‡;2îAó˝®»ﬂÃJó⁄—ëG‘†“l_Cµ!2*s*&NÀÚKçÎˇ˜ñ€_ìåår	◊´’≠Zæw]eèáÌ6OBiŒùΩÉèz*π6 ∫∑≠‚ì´Õë ÜÌòÅ≈0&∑QZ@®≤u¥°++„ô“fï#≠¶g„ E…!m» êçî54ãã√§\æL∞âeçµkb_ûT<	r’?!ú14â„T∂—k»÷√úõ¢åà´Sèßåyù≠'˚˘⁄•FcIQqÎZwúÁ®∞ª¨⁄’ÁÑ qÍ?3‘—M-ôÊ„KlxBeù=„¢|b§ˇ·bTˆ1Ó¨˚&Õ,∫8Ñ˛ÁgÏÀ’XGó¶ìπ'ÑxÂ∂øﬂ5m¨inn¨[““\K?Ì–˙)'≥ê)±K¿Hzè∆ßçŒ±ï6π(◊çVm¬M^7%¨ãRfãmN}ït^«9mlb=dHC§¨bé'jVßXyπ”s
+j≈ÉGwX)‹¡èÅááåá Õﬂÿˇ∏æF˘ Ä…bê‡…«uçÆ´;éÁ•+”Z
+Rq„›\6ÀŒ¥/±¥®ób-û’d}îc–ÃJõ%πhÒ4Æ1aÁ yIúfM⁄Àr4πrÈÒ¥Ã1V8ØC‘ÿ–°/Á\ﬁtm[lƒƒÃK<ÍÕ˙óm´Œ◊:[>∂Ywõ¶∆íë%‘fΩ<öläv'Ã˙ˇö≈5»F8¿πnå¸ª•±ﬁ®•ë=∫5≥™6ë§∑≠*Q6~ú<j∏Ç‘x„wß∆º"“='ßtëSV=·"U’p[5ß÷«UÅ‡î˛Ü¿oﬁ	Åg‹Ã}ZcÂfËád‡⁄¿5'€!Ê#OÕ‰˛úspM°ˆ8ˆ4ö“dÕˇõÂ\f¡T$`£Bn¯rs≈» ∂Î5ø·Œ–˛ﬂ^≠ë0N≥5∆–rÕ∞œaj˘9?WÿûπxóÊ@cm”ÍU+õj765◊4∑»ºMµµW5/Øm§C®ùnK¢ﬁwúå”Êü~`*lÉÌÄ∞d(ÂR H\œùÊÛÛy-Ïœ›pùxÓ„•¥˛z∏Å⁄ÈÌ2Gzû< t<R–˘8∏qr„
+:2‡~\¨øâÁgÄ88a#xAÖBháqÖâêÄ2∏>L_É"|n‹n1πm!*=ßC@1ª+¡EÏ|ƒn±OÏ¥ÈSi;ÃnÇA“d«ΩΩ¥qå?j2ﬁIsÙú14„…<6ê˚4P{É˜â˚M0ù¯≥ÂmKÇ¶‹cÂHBñèô≤‹FÔNzŒFñ2(Papáç@wí@wë@wC%|\4òXBÕ∂Ñöm
+≈=∂áÔVSºáËããûëëàW"
+$— >k#‰É$‰C$‰√ƒ∏Ê¿#B–3vñ†K–à%hƒî{lﬁN˙~‹näºÿ4+wpI÷/âOåíƒê…±∑≈…-Ë≥•‹aOÀëOÎE¢ı“¥vö¥Ó¥ßÂÃßı5¢ıı!h]c“∫Àrù~Z°ß¿ìOÎ{DÎ˚C–∫÷ÙÜª…0lhyÛi˝åh˝|ZJò÷=ˆ{tÂ”˙—˙Ì¥ˆò{ÏÅ{MZaÒNú˚-:n1ÚÁú¿"ô4úâ¡+˘+ˇeªÚ>∏ü¨âV‚íêΩº;
+g¿WÌú°pU¸’ŒAP™]◊A(∏ñú°0c™›W¿ùÅ¢å5z≈∑ñ&èØñÚQ(8%Îä'ÄS‰Ä+\’ùWú¡/9KÄar!ÁC	· 0Ω@LE?ÑPÅyX Áa!,√1∞ã†ã·2,Å.ú 6’HÇá`|>Eõ]Fë˝”0ª-òª·rEΩÖosÔar?≠÷»whÜ}(AÒ9,^πüzüÄ!|æ( |åú˘qx¬ÑÔtZ„¶Ò›á†t›ò¥ív(ı@i0ìãÀ2pjVÖ˚`
+íñØ≠‚qÓ–4Oµ3‡<
+~˙:¡xëãßU3HÆòRu¶˜¿ƒ`¯ Ã®vI%3CÑ∑3Ã≈Ÿ˛`UàﬂgÒ∑«,LS»úJòNÉI8*∞"XIxŒÜj¬√XEòûÎp.az:ƒLH„<∏l”Æ.£”ÌI»h¢ª-DwõàzË$~H≥§ã
+7åËÁLì7hdL=`"zêﬁ˙‡iQn@˜ôàVªûÄ PfWªÛe6∑`\p”æC’ûp¿”aâú®Pt´$R≠øäªs$®ˆºGa∆!à¨3©üFË<‘œ•Üp; ß∏B%ÇÙ8ì’C8{30èM~æxßogÕó{èÌSIú÷Ã~‡´i≥Äu‡≈°W@	÷C6¿L\	µ∏
+.ƒ’∞·*lÇ[∞Ó¿∏◊¿√∏VÄæâ6>bpà Ù@-¨Ñg‡À‚»€g¡øOò,ä+BΩg©ÁΩk¸^rÖ√§S‘{û'uñPd˛
+º@íUéAcøE#C4ÚïÛ"˝ΩG®ΩQ8ÖëGBO¿Ÿ}P-ÌÖ·# á{¡}ıÉ! ∂Bn»I÷F¬zê¸_Å£b#Yﬂ3F24bàUËex≈∞Èzz2Ã”±⁄*>'ãÁªJ\“É0!T‚ ¿π4Z‚"ùóÅöµÙúYtnñ‹≤≥úé˘Ó Öπ•}p>íÕQ^ !´èBY–QÓ]Ä¥•Â’∂ ∫ñ≥!ã!k∏0+z†$‡=ı°°V“g_/Tºœ√™(xüÉU}∞⁄√/ÍÉF~¯LóqèxT˚K‹=Pb·ö÷íXΩ‡UKêY7≥-‰◊k™ïÄˇ~2HËWÒ⁄ÍÇP@!˚+" ölâΩ«ÓÎ=F&{Ñ(qT(_€fc0â ãÉ‡«+`,Íjì0∑¡Y∏6‡Ëƒ+a^∆ùp^ü∆›∞˜@Øá√xºà7¬´xºé7√∏ﬁ≈è¬1¸·≠8o√	x'N¬ªp	ÿPDπ£^Ö◊»Ó∑zá·"a◊~xfQ∞ã‘}∆R.∞ãTﬂIˆ¯aı˚©o¨ÿ@AÂõmÚâÂ4Î;4&≥dMâz~PÙLü†{ÇÉv\ﬂ>·«âî'º@>q¸é≤Ö´…'ÿ‰8ˇ2‰|√íì{ˇ7,˛?‡sRp`è…˜ì“€è‡«¶üºMT8‰≠?SÿY◊Í∑∏ïU¶-,Æ≤ÃçO›¨“πW««≈zä˛as‹ÏÉK@ö>Ów¥R>ÄA
+˜A%>LGf/ï˚‡b|‘ /+°J Ë§√Î|Å ;„zÀ◊õA›CáÍaÀŸeçï?…Ùz3Ä≥ˆ[˙˙˙S õD.ÇÌ4¬G‚ﬁQp9ˆ≥øµˆÄÀπ?úı°”)W∏tqŸΩ¸Ÿ1ﬂY‚,{ &áK(ÿn†É.@^‹*æÌqbÔ±_“B·_ã√‰^ﬁFè>S˜2„‡4-Â;W.ëﬁco:˜Á§EmtW§3˚¿çá†üÅ"|JÒ0ù“œ¡t|ûˆ0_Ñ˘¯úãG†Üﬁ/¿óIØí{øF~ç\ÊÎƒ˛õp%æ{[p~á\Áªp3âh+ô|2Úüì1≥¶¿/»¯úÙ¬õ‘s–µ.˚u3›lY)Nh°5o¡/ÖzˆZÍŸø2É˛^·:|Åzﬁ1ìøÂÙ‰>>t∆Rƒª ®=fºÀKÒ≠údtºEº†äDı◊‰îÜ	◊õ°æê®˙C§±6¢áèÂ—˚sNl/¥ËR‚k»[(‹0◊]ú¸Ô9 ˚‹"_kERY⁄9ŒQñHÜ“QÌÍÖ–A–(€tÅ©wlB:áN9ùÎhé9@…—fNQè@ÄU5¶‹U‰qó;†>‘Ô(so¿ˇRHx|¯ú"!Lñ$I8Wr√˘í+$¨ñº∞^R¨s2]Ÿ~ YWPfıG¯ì0ÔVk∑≠÷ë‹j…≠‚tsàgõNÍØ£4˛/rÃV3ònÙWöı¸Õƒˇ-zcl÷q˛ºÖrW	•| ¸Ë@*Û3]}–-A∏8pıA‹Aå¬aÓ&8öâ¸’Ó0Á/˘sÛn¨R)x•IP(MÜ©¶IßBDöFG|,ïf¡J©.ñÇîÂ$ÿR '¯6ƒP¨≥†XgÍ‹„mK¢˜ààƒ‹€)ÓÆ^Xß1WNrÌ‰-1˙Û
+^al÷√è«(„–Õå#…>‹ÁcO@™ﬂ$E$îŒY™EZ•“90EZL{9/Á¶]aI[aI[aI[aJ[J*˙ÌœIo´\4UÃß¬÷'°íAƒúÎV+˘èËø-ë!¡µ^w{ˇPK
+   ]¨RDº5=    *  G   org/springframework/web/servlet/view/AbstractTemplateViewResolver.class•ïmSQ«ˇë¶‡CZ&jh¢Ÿìb5d6Ω@ùQs ÈÕÇ7\]X∫ªÄ_°oS3â3Ωhz›áj:gŸ°){¡ˇ,ÁûÛªÁûsa˛˙ˆ¿ûá0ÄT˝XdYbπœ≤ÃÚ Äá(Ñ ≥<aYaYeI∞¿S£‚¥lZbG|¨ÀŒÿ∂‘s[X
+îQÕ0Ãöª∏]RÍá¢ô¥+,K7KÌIçw°ï0Ê&î•^*ljyiæFYH ØÈ%›~¶¿OÏ+P◊MN»Í%±U)ÊÑ‹”ryÜ≤f^3ˆ5©Ûw◊©⁄G:1÷≥¶,§,á˛AjEQ3ÂI™&r)K»™!ÏTUµT&gŸRÀ€{¢X64[ÏìsGX¶Au¶J:ß.≈!˚◊Õ"r$û»kU-eh•B qR‰∏%Ïç^}S„|êQä…tÌ^+ªKõiz8—JÎ“∆`Æ¢NÂ
+∂„m5Ô⁄úN¸[ãﬁH„Öf5ZAÓ„≈- ‚9\`”ô´Œ∆ÈÀœÅ °ç”º(€th+ ∫°]≥"Û‚ïŒìé˝ix\R#„√bâ∞DYÜ1®`Â“µÖqw¬∏Ö©0b,”,3,≥òRê˘Ô€˜∑’µè•ïiM§ŸB*¥ü˛  <‹zÚp[qm‘µ√éÌÉ¬-$£oÔ…ØêùLûCIzœ‡aÒ≤®,æ§zˇ'ˇ:È8¸§1®‘ò 5¨wiü±Êh7hò¿≤*n“scß≤º¶F¯‹‰˘ﬂb[ÆÍÊ*<	7˜E{8:9A∂™	9ﬁ:˝™CiDπ~‚ûæ±Ó,o'Î%±6z∞Ü\÷twñ⁄…⁄$÷VVƒeÕtg˘:YoâıÆ+Í≤fª≥¸ù,çXπ¨aá•ÚOÅ÷òıâ¨óÏrrÓ}?ÿúO~Ößé [o!∂jWÿ˙Í≥ı◊quæ5ÊIz∫2G¥ÅNæc…	]ÉﬁrEßò©∆6ÕbñÈj≈©ò íó$“ús=Ã”Áû√^¯PK
+   ]¨RD0X≥<  Ç'  7   org/springframework/web/servlet/view/AbstractView.class≈Y	xT◊u˛œÏ=!1 @√∞°≈ÿl¬BÑ±µ`IÄÖ„à'Õ”h`43ºy#¿∆Nù‘q‚∂I”6v Æõ¥∂I©ì`b$+¥N⁄¶4u€tqkZwK˜tM∫•{‹sÓ{çF#D‹Úı”7Ô›{ﬂπÁ˛gΩÁ^Ω˛ù/æ`3=ƒ1º¿oU` øÌ«õAxÜtÆÀ„w‰ÒªÚxÀèﬂ‡˜É‚‰ÒáÚ¯£ æƒz¸±‚«ü^&Ô?‡/‰˝óA,ƒ7ÑËØ¯kyˇç<˛6»<ˇ.àø«7+±ﬂ™ƒ?‡+ÒO¯gy¸ãﬂÆƒZ¸´ˇ&Ôöˇ‚?Ò_ÇÂø+Òº àxr»ÕC‰a¶‰ïáO˛
+Ë®§
+
+˙©íYê∆“Qï¥Aµüj‰Ω0àV
+IkQÄ®∂íñ–“ -PùL_.ÃÎ¥"@∑i%≠
+RòVhçLY+◊	Ÿ˙ ›†~j¢õ™‰„F·‘(]MZMÚhñnKêÓ†à ‹‰ßÕAÙ”~à∂B¯FÄÓ–]~⁄Íßm~⁄ÓßÑ≈˚⁄˜GuÙ¥uwıµwıÙıl'Ñ:éÎcz$•ßë^ÀL¶ªUmôtŒ“”÷a=ï7+ªı<‘7∞∑øØ} ⁄”Ìàu≈˙b—éÅﬁÿQÊB17PVË†°ßªÙQûT9îI[F⁄Í;ìÂﬁR”8ô7rVõû∂¢Ø5ò∑¯KØd%á
+#9Bµ*o%SëN=Àà*zìâ¥nÂMû∞uÊ◊ªgKP4“=x‹≤vÌaãå”ŸLŒ8®[#áu3©¶d-:J›ùL'≠=w√∆√O[&näd⁄Ë èfüã≤2Czjj≤3Ë±FíÃÁŒéåôà‰≤`ÿdú ò'"ßå¡HŒ0«RÜKß"—¡úeÍC÷aÓ0¶ úaÌ-®¨∂a∂,®2QLµ∏ac9£-`Vm≈*_ê(XŒ=sôay‚kxÊ¥Å⁄zì€ ú xçì±¯iVBZAÛéŸ„ YÑ˙";Ÿ(˚2'åtÚa√d∏¡¨ô…⁄√‹i?=dd≠$ª{ﬂå≈uEåÚ,√¥íFNi&®.)OW
+ü}ÜMŸP‚c¬ÕÀ™2œª›~k±t⁄0€Rz.'¸kgNYß®òΩ+πé≠RÙ1f¶neDÃ%3]ÜÌ‡∏Mc9fe|πQ\w›º.Ø»64‹ùHZìò•ëÖSnUv€K«n:ÿBz<ﬁ;3∞ßÒ›x∫‡ÕÊ f–Ω≥í≈6n{π»ˆ4Vµ…\ŸœÎ˙¶ëé&A/u’=]àﬁÀ F£◊pbe~≤\ñΩ⁄∞˝kîKä‡wí!k‰&W·Ãj:ú7ª&géQ√LÒNY◊O;	c7Â"∑@ˆ•C¶°[Fß¬”ù∑≤y´”÷FÊVk~ñ[≤∂+àì‰8.˛ø®Â∆÷b[ï3≥5·Û˚≈wáØ4CŒª√ÂÚŸl∆¥"3ë1‚◊n-¥õ‘‹ˇBÄÍ¨idu”Ë)aœˇµH$ÀFZ∂#∑/s*ù ËqgWî$™2ÒÛ‰¸æ[N∑ ˛Jª¬R∏¢9áCqÆﬁ˘C]òW®‰ió@A’v™”gòs'-L∑T{ºﬁ◊>cî}K7œÿ∆cﬁÜ>JX=µperty>
+                            </data>
+                        </cell>
+                        <cell id="2245">
+                            <data id="2347">
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtOpeAccPik</property>
+                            </data>
+                        </cell>
+                        <cell id="2246">
+                            <data id="2348">
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtOpeMovPik</property>
+                            </data>
+                        </cell>
+                        <cell id="2247">
+                            <data id="2349">
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtOpeBulPik</property>
+                            </data>
+                        </cell>
+                        <cell id="2248">
+                            <data id="2350">
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtOpeUdsPik</property>
+                            </data>
+                        </cell>
+                        <cell id="2324">
+                            <data id="2351">
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtOpeUbiCom</property>
+                            </data>
+                        </cell>
+                        <cell id="2336">
+                            <data id="2352">
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtOpeRepCom</property>
+                            </data>
+                        </cell>
+                        <cell id="2249">
+                            <data id="2353">
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtOpeExpCom</property>
+                            </data>
+                        </cell>
+                        <cell id="2250">
+                            <data id="2354">
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtOpeValCom</property>
+                            </data>
+                        </cell>
+                        <cell id="2251">
+                            <data id="2355">
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0.000</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtOpePes</property>
+                            </data>
+                        </cell>
+                        <cell id="2280">
+                            <data id="2356">
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0.000</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtOpeVol</property>
+                            </data>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="1920">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr">true</expression>
+                        </structure>
+                    </list-property>
+                    <cell id="1921"/>
+                    <cell id="1925"/>
+                    <cell id="1927">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <property name="fontWeight">bold</property>
+                    </cell>
+                    <cell id="2461">
+                        <property name="fontWeight">bold</property>
+                    </cell>
+                    <cell id="2090"/>
+                    <cell id="2323"/>
+                    <cell id="2335">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <property name="fontWeight">bold</property>
+                    </cell>
+                    <cell id="2462">
+                        <property name="fontWeight">bold</property>
+                    </cell>
+                    <cell id="1931"/>
+                    <cell id="1933"/>
+                    <cell id="2279"/>
+                </row>
+            </detail>
+            <footer>
+                <row id="1941">
+                    <property name="height">0.312in</property>
+                    <cell id="1942"/>
+                    <cell id="1944"/>
+                    <cell id="1945"/>
+                    <cell id="2083"/>
+                    <cell id="2093"/>
+                    <cell id="2329"/>
+                    <cell id="2341"/>
+                    <cell id="1946"/>
+                    <cell id="1947"/>
+                    <cell id="1948"/>
+                    <cell id="2285"/>
+                </row>
+                <row id="2025">
+                    <cell id="2026">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <label id="2159">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text" key="TotalGeneral"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="2028">
+                        <data id="2380">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totAccPik</property>
+                        </data>
+                    </cell>
+                    <cell id="2029">
+                        <data id="2381">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totMovPik</property>
+                        </data>
+                    </cell>
+                    <cell id="2084">
+                        <data id="2382">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totBulPik</property>
+                        </data>
+                    </cell>
+                    <cell id="2094">
+                        <data id="2383">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totUdsPik</property>
+                        </data>
+                    </cell>
+                    <cell id="2330">
+                        <data id="2384">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totUbiCom</property>
+                        </data>
+                    </cell>
+                    <cell id="2342">
+                        <data id="2385">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totRepCom</property>
+                        </data>
+                    </cell>
+                    <cell id="2030">
+                        <data id="2386">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totExpCom</property>
+                        </data>
+                    </cell>
+                    <cell id="2031">
+                        <data id="2387">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totValCom</property>
+                        </data>
+                    </cell>
+                    <cell id="2032">
+                        <data id="2388">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0.000</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totPes</property>
+                        </data>
+                    </cell>
+                    <cell id="2286">
+                        <data id="2389">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0.000</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totVol</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="2036">
+                    <property name="height">0.312in</property>
+                    <cell id="2037"/>
+                    <cell id="2039"/>
+                    <cell id="2040"/>
+                    <cell id="2085"/>
+                    <cell id="2095"/>
+                    <cell id="2331"/>
+                    <cell id="2343"/>
+                    <cell id="2041"/>
+                    <cell id="2042"/>
+                    <cell id="2043"/>
+                    <cell id="2287"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

@@ -1,0 +1,45 @@
+# Ejecucion de Adaia
+#
+export SPEC=$ADAIA_HOME/$ADAIA_VERSION/adaias
+export SPECSTD=$ADAIA_HOME/$ADAIA_VERSION/adaiag
+export PROFILE=$ADAIA_HOME/$ADAIA_VERSION/adaiap
+export CATALOG=$ADAIA_HOME/$ADAIA_VERSION/adaiac
+export SPECTEST=
+#
+# El fichero de ultimos cambios ha de utilizar el mas reciente
+#
+if test -r $ADAIA_HOME/$ADAIA_VERSION/adaiat*
+then
+   for FNAME in `ls -t $ADAIA_HOME/$ADAIA_VERSION/adaiat*`
+   do
+      export SPECTEST=$FNAME
+      echo
+      echo Ultimos cambios en $FNAME
+      echo
+      break
+   done
+fi
+#cd $ADAIA_HOME/usr/$LOGNAME
+
+#Comprobacion de compilacion (se desactiva el SPECTEST)
+echo $* | grep " -E"
+if test $? -eq 0
+then
+   unset SPECTEST
+fi
+#Fin comprobacion de compilacion
+
+if [ $ADAIA_SO = 'HPUX' ] || [ `hostname` = 'itanium' ]
+then
+   PARAMETROS_ADICIONALES=-AROMAN8
+else
+   PARAMETROS_ADICIONALES=-AISO
+fi
+
+if test -r $ADAIA_HOME/$ADAIA_VERSION/adaia.ini
+then
+   PARAMETRO_ENTORNO=$ADAIA_HOME/$ADAIA_VERSION/adaia.ini
+fi
+
+spw4gl $PARAMETRO_ENTORNO -T$ADAIA_TERM $1 $2 $3 $4 $5 -D$ADAIA_PRINTER_CLASS/$ADAIA_PRINTER_DEV $PARAMETROS_ADICIONALES
+

@@ -1,0 +1,109 @@
+#Script de activacion de una nueva version de adaia
+#
+#Sintaxis: ver_act version
+# donde version es la version a activar
+##############################################################
+#Descripcion: Modifica el entorno.real modificando el ADAIA_VERSION por el 
+# valor indicado como parametro y modica el ADAIA_VERSION_OLD con la version a
+# la que apuntaba ADAIA_VERSION
+
+. $ADAIA_HOME/bin/entorno.real
+
+if test $1
+then
+   if test -d $ADAIA_HOME/$1
+   then
+      echo activando la version $1
+   else
+      echo Version $1 inexistente !!
+      exit
+   fi
+else
+   echo 
+   echo Falta indicar parametro!
+   echo "Sintaxis correcta:"
+   echo " $0 version"
+   echo
+   exit
+fi
+
+#Comprovar si existe ADAIA_VERSION_OLD en el entorno.real
+#==========================================================
+#
+grep ADAIA_VERSION_OLD $ADAIA_HOME/bin/entorno.real >/dev/null
+RESP=$?
+if [ $RESP = 0 ]
+then 
+   #Modificar el valor de ADAIA_VERSION_OLD por $ADAIA_VERSION
+   #==========================================================
+   #
+   echo "Modificando el valor de ADAIA_VERSION_OLD ($ADAIA_VERSION)"
+   ex $ADAIA_HOME/bin/entorno.real >/dev/null 2>&1 <<?
+%s/ADAIA_VERSION_OLD.*/ADAIA_VERSION_OLD=$ADAIA_VERSION/g
+x!
+?
+else
+   #Si no existe a·adimos ADAIA_VERSION_OLD el valor
+   #================================================
+   #
+   echo "A·adimos el valor de ADAIA_VERSION_OLD ($ADAIA_VERSION)"
+   echo "     export ADAIA_VERSION_OLD=$ADAIA_VERSION" >version_antigua
+   echo >>version_antigua
+   ex $ADAIA_HOME/bin/entorno.real >/dev/null 2>&1 <<?
+/ADAIA_VERSION=$ADAIA_VERSION
+j
+r version_antigua
+x!
+?
+
+   rm version_antigua
+fi
+
+#Comprovar si existe FECHA_ACTIVACION en el entorno.real
+#==========================================================
+#
+FECHA=`date +%d/%m/%y\ %H:%M`
+echo "#    FECHA_ACTIVACION=$FECHA" >fecha_activacion
+grep FECHA_ACTIVACION $ADAIA_HOME/bin/entorno.real >/dev/null
+RESP=$?
+if [ $RESP = 0 ]
+then 
+   #Modificar el valor de FECHA_ACTIVACION por $ADAIA_VERSION
+   #==========================================================
+   #
+   echo "Modificando el valor de FECHA_ACTIVACION ($FECHA)"
+   vi $ADAIA_HOME/bin/entorno.real >/dev/null 2>&1 <<?
+/FECHA_ACTIVACION
+dd
+kkk
+:r fecha_activacion
+:x!
+?
+   rm fecha_activacion
+else
+   #Si no existe a·adimos FECHA_ACTIVACION el valor
+   #================================================
+   #
+   echo "A·adimos el valor de FECHA_ACTIVACION ($FECHA)"
+   ex $ADAIA_HOME/bin/entorno.real >/dev/null 2>&1 <<?
+/ADAIA_VERSION_OLD=
+j
+r fecha_activacion
+x!
+?
+
+   rm fecha_activacion
+fi
+
+#Modificar ADAIA_VERSION por la nueva version
+#============================================
+#
+echo "Modificando el valor de ADAIA_VERSION ($1)"
+ex $ADAIA_HOME/bin/entorno.real >/dev/null 2>&1 <<?
+%s/ADAIA_VERSION=$ADAIA_VERSION/ADAIA_VERSION=$1/g
+x!
+?
+
+
+export ADAIA_VERSION=$1
+echo Version $1 activada!

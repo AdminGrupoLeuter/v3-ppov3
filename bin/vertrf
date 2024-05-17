@@ -1,0 +1,8 @@
+vermon
+echo
+echo Terminales de Radiofrecuencia
+echo 'Terminal Inicio   Usuario Tiempo PID'
+ps -ef | grep "\-TVT21x16" | grep spw4gl |grep car| awk '{print $12,$5,$1,$7,$2}' | sort -k1
+echo 'Numero de terminales de carretilla:';ps -ef | grep "\-TVT21x16" |grep car| egrep -v grep | wc -l
+ps -ef | grep "\-TVT21x16" | grep spw4gl |grep man| awk '{print $12,$5,$1,$7,$2}' | sort -k1
+echo 'Numero de terminales de mano:';ps -ef | grep "\-TVT21x16" |grep man| egrep -v grep | wc -l

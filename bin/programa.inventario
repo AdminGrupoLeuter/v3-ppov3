@@ -1,0 +1,85 @@
+
+#-------------- DEFINICION DE FICHEROS Y PROGRAMAS ------------------#
+#
+#Definimos los nombres de Ficheros
+#
+       F_SITUACION_STOCK=TRSTO*
+
+#Definimos los programas de Traspasos
+#
+       SITUACION_STOCK=LOGIC-INT-INV-001
+#--------------------------------------------------------------------#
+
+#
+function Lanza_Speedware
+{
+ FICHERO=$1
+
+ LANZA=FALSE
+ case $FICHERO in
+   $F_SITUACION_STOCK)
+      SENTENCIA="$SITUACION_STOCK USING '$FICHERO';";LANZA=TRUE;;
+ esac
+
+ if test $LANZA = 'TRUE'
+ then
+     adaia -Jl <<! 
+$SENTENCIA
+EXIT;
+!
+    
+     mv $FICHERO $ADAIA_TMP
+    
+ fi
+}
+
+#
+function Procesa_Ficheros
+{
+ #SITUACION_STOCK
+ #===============
+ for FNAME in `ls -rt $F_SITUACION_STOCK 2>/dev/null`
+ do
+    Lanza_Speedware $FNAME
+ done 
+
+}
+#
+# Funciones del programa
+#
+
+# Sustituye los tabuladores por pipes
+
+function TabToPipes
+{
+FNAME=$1
+ex $ADAIA_TRASP/$FNAME <<! > /dev/null 
+%s/	/|/g
+wq!
+!
+}
+
+############################################################################
+# Programa principal
+############################################################################
+
+# Cargamos el entorno
+
+. /home/adaia/bin/entorno >/dev/null
+cd $ADAIA_DE_GESTION
+
+#Cojemos los ficheros de la mÄquina de gestion (descomentar en caso necesario)
+#ftpget "*"
+
+#Enviamos los ficheros de 'de_gestion' al directorio de procesado $ADAIA_TRASP
+#
+for FNAME in `ls -rt $ADAIA_DE_GESTION`
+do
+   mv $ADAIA_DE_GESTION/$FNAME $ADAIA_TRASP
+   TabToPipes $ADAIA_DE_GESTION/$FNAME
+done
+
+#Procesamos los ficheros
+#
+cd $ADAIA_TRASP
+Procesa_Ficheros

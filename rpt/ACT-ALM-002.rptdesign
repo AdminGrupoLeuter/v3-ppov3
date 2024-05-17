@@ -1,0 +1,1851 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="author">Enrique Giménez</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_v20090521 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>diccionario</value>
+    </simple-property-list>
+    <property name="comments">***********************************************************************************
+* EG 02/02/2010 (versión inicial) 
+***********************************************************************************</property>
+    <html-property name="description">***********************************************************************************
+* NOMBRE:       
+*      Actividad almacén: Salidas.
+*
+* PARAMETROS RECIBIDOS:
+*       1. pstrFecExpDesde              -> Fecha expedición desde
+*       2. pstrFecExpHasta              -> Fecha expedición hasta
+*       3. pdecTerCod                   -> Código interno tercero (todos si a 0)
+*       4. pdecArtCod                   -> Código interno artículo (todos si a 0)
+***********************************************************************************</html-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="pstrFecExpDesde" id="1625">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrFecExpDesde"></text-property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">01/02/2010</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pstrFecExpHasta" id="1626">
+            <property name="hidden">false</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pstrFecExpHasta"></text-property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">02/02/2010</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecTerCod" id="1828">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecTerCod">Proveedor</text-property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">0</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pdecArtCod" id="1830">
+            <property name="valueType">static</property>
+            <property name="dataType">decimal</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText" key="pdecArtCod">Artículo</text-property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">0</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="ACT" id="411">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@172.20.10.56:1521:adaiasrv</property>
+            <property name="odaUser">loreagx</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">bG9yZWFneA==</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/ADAIASRV</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ACT-ALM-002 01 (Ppal)" id="412">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TERREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TERDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ARTREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ARTDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">PESUNI</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">CNT_PALCOM</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">SUM_CANPIK_UNIEXP</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">SUM_CANPIK_UNIMIN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">SUM_CANTOT_UNIEXP</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">SUM_CANTOT_UNIMIN</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">SUM_PESPIK</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">SUM_PESTOT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ACT</property>
+            <method name="beforeOpen"><![CDATA[//
+// *****************************
+// * Añadir el WHERE al SELECT *
+// *****************************
+//
+this.queryText = this.queryText + " " + "WHERE    a.MOMEXP BETWEEN"  +
+                                  " " +          "LTR_TO_DATE('" + params["pstrFecExpDesde"].value + 
+                                  " " +                       "00:00:00'," +
+                                  " " +                      "'DD/MM/YYYY HH24:MI:SS')" +                                     
+                                  " " +                       "AND" +
+                                  " " +          "LTR_TO_DATE('" + params["pstrFecExpHasta"].value +
+                                  " " +                       "23:59:59'," +
+                                  " " +                      "'DD/MM/YYYY HH24:MI:SS')" +
+                                  " " +   "AND    a.EXPORDSIT        IN ('PR','CE')" +
+                                  " " +   "AND  ((a.EXPORDTIPAGR NOT IN ('FUS','OLA'))" + 
+                                  " " +                             "OR" +
+                                  " " +         "(a.EXPORDTIPAGR     IN ('FUS','OLA') AND a.EXPORDPRI <> 0))"
+//
+// Si está informado el parámetro código interno tercero ==>
+//   filtrarlo en la tabla EXPORDCAB
+if ( params["pdecTerCod"].value != 0 )
+{
+  this.queryText = this.queryText + " " + "AND    a.TERCOD =" + " " + params["pdecTerCod"].value
+}  
+//  
+// Si está informado el parámetro código interno artículo ==>
+//   filtrarlo en la tabla EXPORDLIN
+if ( params["pdecArtCod"].value != 0 )
+{
+  this.queryText = this.queryText + " " + "AND    c.ARTCOD =" + " " + params["pdecArtCod"].value
+}
+//  
+// ********************************
+// * Añadir el GROUP BY al SELECT *
+// ********************************
+this.queryText = this.queryText + " " + "GROUP BY b.TERREF," + 
+                                  " " +          "b.TERDES," +
+                                  " " +          "e.ARTREF," +
+                                  " " +          "e.ARTDES," +
+                                  " " +          "e.PESVAR," +
+                                  " " +          "g.PESUNI" 
+//
+// ********************************
+// * Añadir el ORDER BY al SELECT *
+// ********************************
+this.queryText = this.queryText + " " + "ORDER BY b.TERREF," + 
+                                  " " +          "e.ARTREF"]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TERREF</property>
+                    <property name="nativeName">TERREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TERDES</property>
+                    <property name="nativeName">TERDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ARTREF</property>
+                    <property name="nativeName">ARTREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ARTDES</property>
+                    <property name="nativeName">ARTDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">PESUNI</property>
+                    <property name="nativeName">PESUNI</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">CNT_PALCOM</property>
+                    <property name="nativeName">CNT_PALCOM</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">SUM_CANPIK_UNIEXP</property>
+                    <property name="nativeName">SUM_CANPIK_UNIEXP</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">SUM_CANPIK_UNIMIN</property>
+                    <property name="nativeName">SUM_CANPIK_UNIMIN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">SUM_CANTOT_UNIEXP</property>
+                    <property name="nativeName">SUM_CANTOT_UNIEXP</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">SUM_CANTOT_UNIMIN</property>
+                    <property name="nativeName">SUM_CANTOT_UNIMIN</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">SUM_PESPIK</property>
+                    <property name="nativeName">SUM_PESPIK</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">SUM_PESTOT</property>
+                    <property name="nativeName">SUM_PESTOT</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   b.TERREF, 
+         b.TERDES,
+         e.ARTREF,
+         e.ARTDES,
+        (CASE 
+           WHEN e.PESVAR IN ('N','M') 
+             THEN g.PESUNI
+           ELSE   -1
+         END)                      AS PESUNI,
+         COALESCE(COUNT(CASE
+                          WHEN d.CANUNI = g.UNIPAL
+                            THEN 1
+                          ELSE   NULL
+                        END),0)    AS CNT_PALCOM,
+         COALESCE(SUM(CASE
+                        WHEN d.CANUNI &lt;> g.UNIPAL
+                          THEN (CASE 
+                                  WHEN f.NUMUNI IS NOT NULL
+                                   AND f.NUMUNI &lt;>     0 
+                                    THEN TRUNC((d.CANUNI / f.NUMUNI),0)
+                                  ELSE   0
+                                END)    
+                        ELSE   0
+                      END),0)      AS SUM_CANPIK_UNIEXP, 
+         COALESCE(SUM(CASE
+                        WHEN d.CANUNI &lt;> g.UNIPAL
+                          THEN (CASE 
+                                  WHEN f.NUMUNI IS NOT NULL
+                                   AND f.NUMUNI &lt;>     0 
+                                    THEN MOD(d.CANUNI, f.NUMUNI)
+                                  ELSE   0
+                                END)    
+                        ELSE   0
+                      END),0)      AS SUM_CANPIK_UNIMIN,
+         COALESCE(SUM(CASE 
+                        WHEN f.NUMUNI IS NOT NULL
+                         AND f.NUMUNI &lt;>     0
+                          THEN (d.CANUNI / f.NUMUNI)
+                        ELSE   0
+                      END),0)      AS SUM_CANTOT_UNIEXP,                                   
+         COALESCE(SUM(d.CANUNI),0) AS SUM_CANTOT_UNIMIN,
+         COALESCE(SUM(CASE 
+                        WHEN e.PESVAR IN ('N','M')
+                          THEN g.PESUNI * (CASE
+                                             WHEN d.CANUNI &lt;> g.UNIPAL
+                                               THEN d.CANUNI
+                                             ELSE   0
+                                           END)    
+                        WHEN d.CANUNI &lt;> g.UNIPAL 
+                          THEN d.PES
+                        ELSE   0
+                      END),0)      AS SUM_PESPIK,
+         COALESCE((CASE 
+                     WHEN e.PESVAR IN ('N','M') 
+                       THEN (SUM(d.CANUNI) * g.PESUNI)
+                     ELSE   SUM(d.PES)
+                   END),0)         AS SUM_PESTOT        
+FROM     EXPORDCAB a
+           LEFT OUTER JOIN TER b
+              ON b.TERCOD       = a.TERCOD
+           INNER JOIN EXPORDLIN c
+              ON c.EXPORDCOD    = a.EXPORDCOD
+           INNER JOIN CNTNDO d
+              ON d.EXPORDCODORI = a.EXPORDCOD
+             AND d.ARTCOD       = c.ARTCOD
+           LEFT OUTER JOIN ART e
+              ON e.ARTCOD       = c.ARTCOD
+           LEFT OUTER JOIN ARTPRE f
+              ON f.ARTCOD       = c.ARTCOD
+             AND f.UNITIP       = e.UNIEXP
+           LEFT OUTER JOIN ARTPRE g
+              ON g.ARTCOD       = c.ARTCOD
+             AND g.UNITIP       = e.UNIMIN</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ACT-ALM-002 02 (Ter)" id="1709">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TERREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TERDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ACT</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecTerCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TERREF</property>
+                    <property name="nativeName">TERREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TERDES</property>
+                    <property name="nativeName">TERDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.TERREF,
+         a.TERDES
+FROM     TER a
+WHERE    a.TERCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ACT-ALM-002 03 (Art)" id="1945">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ARTREF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ARTDES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ACT</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p1</property>
+                    <property name="paramName">pdecArtCod</property>
+                    <property name="dataType">decimal</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ARTREF</property>
+                    <property name="nativeName">ARTREF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ARTDES</property>
+                    <property name="nativeName">ARTDES</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="queryText">SELECT   a.ARTREF,
+         a.ARTDES
+FROM     ART a
+WHERE    a.ARTCOD = ?</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ACT-ALM-002 04 (cab)" id="2247">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CLIENTE</property>
+                    <property name="displayName">CLIENTE</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CLIENTE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">ACT</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CLIENTE</property>
+                    <property name="nativeName">CLIENTE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select VALALF as CLIENTE
+from GENPAR
+where GENPARCOD = 'CLIENTE'
+AND ALMCOD = 1
+</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+
+  <Version>1.0</Version>
+
+  <design:ResultSets derivedMetaData="true">
+
+    <design:resultSetDefinitions>
+
+      <design:resultSetColumns>
+
+        <design:resultColumnDefinitions>
+
+          <design:attributes>
+
+            <design:name>CLIENTE</design:name>
+
+            <design:position>1</design:position>
+
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+
+            <design:precision>20</design:precision>
+
+            <design:scale>0</design:scale>
+
+            <design:nullability>NotNullable</design:nullability>
+
+            <design:uiHints>
+
+              <design:displayName>CLIENTE</design:displayName>
+
+            </design:uiHints>
+
+          </design:attributes>
+
+          <design:usageHints>
+
+            <design:label>CLIENTE</design:label>
+
+            <design:formattingHints>
+
+              <design:displaySize>20</design:displaySize>
+
+            </design:formattingHints>
+
+          </design:usageHints>
+
+        </design:resultColumnDefinitions>
+
+      </design:resultSetColumns>
+
+    </design:resultSetDefinitions>
+
+  </design:ResultSets>
+
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">"Verdana"</property>
+            <property name="fontSize">10pt</property>
+            <property name="borderTopStyle">none</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+            <property name="whiteSpace">nowrap</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.5104166666666666in</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <page-header>
+                <grid id="75">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="width">100%</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">Fecha</property>
+                            <property name="displayName">Fecha</property>
+                            <expression name="expression">BirtDateTime.now()</expression>
+                            <property name="dataType">date-time</property>
+                        </structure>
+                    </list-property>
+                    <column id="76">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <column id="77">
+                        <property name="width">4in</property>
+                    </column>
+                    <column id="78">
+                        <property name="width">1.84375in</property>
+                    </column>
+                    <row id="144">
+                        <cell id="145"/>
+                        <cell id="146"/>
+                        <cell id="147">
+                            <property name="textAlign">right</property>
+                            <image id="1472">
+                                <property name="height">71px</property>
+                                <property name="width">136px</property>
+                                <property name="source">file</property>
+                                <expression name="uri">"cliente.png"</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="1689">
+                        <cell id="1690">
+                            <label id="1687">
+                                <property name="fontFamily">"Garamond"</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">ADAIA</text-property>
+                            </label>
+                        </cell>
+                        <cell id="1691"/>
+                        <cell id="1692">
+                            <data id="94">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">General Date</property>
+                                    <property name="pattern">General Date</property>
+                                </structure>
+                                <structure name="numberFormat">
+                                    <property name="category">Custom</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Fecha</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="83">
+                        <cell id="84"/>
+                        <cell id="85">
+                            <label id="92">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="ActividadAlmacenSalidas">InformeDeEntradasDeAlmacen</text-property>
+                            </label>
+                        </cell>
+                        <cell id="86"/>
+                    </row>
+                    <row id="87">
+                        <cell id="88">
+                            <data id="2248">
+                                <property name="textAlign">left</property>
+                                <property name="dataSet">ACT-ALM-002 04 (cab)</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">CLIENTE</property>
+                                        <property name="displayName">CLIENTE</property>
+                                        <expression name="expression">dataSetRow["CLIENTE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">CLIENTE</property>
+                            </data>
+                        </cell>
+                        <cell id="89"/>
+                        <cell id="90">
+                            <label id="95">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">(ACT-ALM-002)</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="230">
+                    <property name="width">7.875in</property>
+                    <column id="242">
+                        <property name="width">5.760416666666667in</property>
+                    </column>
+                    <column id="231">
+                        <property name="width">1.0520833333333333in</property>
+                    </column>
+                    <column id="232">
+                        <property name="width">0.19791666666666666in</property>
+                    </column>
+                    <column id="233">
+                        <property name="width">0.8645833333333334in</property>
+                    </column>
+                    <row id="234">
+                        <cell id="241"/>
+                        <cell id="235">
+                            <auto-text id="236">
+                                <property name="textAlign">right</property>
+                                <property name="type">page-number</property>
+                            </auto-text>
+                        </cell>
+                        <cell id="237">
+                            <text id="238">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">plain</property>
+                                <text-property name="content"><![CDATA[/]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="239">
+                            <auto-text id="240">
+                                <property name="textAlign">right</property>
+                                <property name="type">total-page</property>
+                            </auto-text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="1710">
+            <property name="marginTop">0pt</property>
+            <property name="textAlign">center</property>
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">55%</property>
+            <column id="1711">
+                <property name="width">40mm</property>
+            </column>
+            <column id="1712">
+                <property name="width">40mm</property>
+            </column>
+            <column id="1736">
+                <property name="width">40mm</property>
+            </column>
+            <column id="1741">
+                <property name="width">80mm</property>
+            </column>
+            <row id="2077">
+                <property name="height">0.3125in</property>
+                <property name="textAlign">left</property>
+                <property name="verticalAlign">bottom</property>
+                <cell id="2078"/>
+                <cell id="2079"/>
+                <cell id="2080"/>
+                <cell id="2081"/>
+            </row>
+            <row id="1721">
+                <property name="textAlign">left</property>
+                <cell id="1722">
+                    <label id="1730">
+                        <property name="fontWeight">bold</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="FechaExpedicion"></text-property>
+                    </label>
+                </cell>
+                <cell id="1723">
+                    <data id="2144">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="dateTimeFormat">
+                            <property name="category">Medium Date</property>
+                            <property name="pattern">Medium Date</property>
+                        </structure>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrFecExpDesde</property>
+                                <expression name="expression">params["pstrFecExpDesde"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrFecExpDesde</property>
+                    </data>
+                </cell>
+                <cell id="1735">
+                    <label id="1738">
+                        <property name="fontWeight">bold</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <text-property name="text" key="a"></text-property>
+                    </label>
+                </cell>
+                <cell id="1740">
+                    <data id="2145">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <structure name="dateTimeFormat">
+                            <property name="category">Medium Date</property>
+                            <property name="pattern">Medium Date</property>
+                        </structure>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pstrFecExpHasta</property>
+                                <expression name="expression">params["pstrFecExpHasta"].value</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">pstrFecExpHasta</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1960">
+                <property name="textAlign">left</property>
+                <cell id="1961">
+                    <label id="1941">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text" key="Destinatario"></text-property>
+                    </label>
+                </cell>
+                <cell id="1962">
+                    <data id="1943">
+                        <property name="color">#0000A0</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="mapRules">
+                            <structure>
+                                <expression name="testExpr">params["pdecTerCod"].value</expression>
+                                <property name="operator">eq</property>
+                                <simple-property-list name="value1">
+                                    <value>0</value>
+                                </simple-property-list>
+                                <text-property name="display">Todos</text-property>
+                            </structure>
+                        </list-property>
+                        <property name="dataSet">ACT-ALM-002 02 (Ter)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TERREF</property>
+                                <property name="displayName">TERREF</property>
+                                <expression name="expression">dataSetRow["TERREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">TERREF</property>
+                    </data>
+                </cell>
+                <cell id="1963"/>
+                <cell id="1964">
+                    <data id="1944">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">ACT-ALM-002 02 (Ter)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TERDES</property>
+                                <property name="displayName">TERDES</property>
+                                <expression name="expression">dataSetRow["TERDES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">TERDES</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1935">
+                <property name="textAlign">left</property>
+                <cell id="1936">
+                    <label id="1942">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">left</property>
+                        <property name="masterPage">Simple MasterPage</property>
+                        <text-property name="text" key="Articulo"></text-property>
+                    </label>
+                </cell>
+                <cell id="1937">
+                    <data id="1946">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <list-property name="mapRules">
+                            <structure>
+                                <expression name="testExpr">params["pdecArtCod"].value</expression>
+                                <property name="operator">eq</property>
+                                <simple-property-list name="value1">
+                                    <value>0</value>
+                                </simple-property-list>
+                                <text-property name="display">Todos</text-property>
+                            </structure>
+                        </list-property>
+                        <property name="dataSet">ACT-ALM-002 03 (Art)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ARTREF</property>
+                                <property name="displayName">ARTREF</property>
+                                <expression name="expression">dataSetRow["ARTREF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ARTREF</property>
+                    </data>
+                </cell>
+                <cell id="1938"/>
+                <cell id="1939">
+                    <data id="1947">
+                        <property name="color">#0000A0</property>
+                        <property name="marginLeft">4pt</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">ACT-ALM-002 03 (Art)</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ARTDES</property>
+                                <property name="displayName">ARTDES</property>
+                                <expression name="expression">dataSetRow["ARTDES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ARTDES</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <table id="1629">
+            <property name="textOverline">none</property>
+            <property name="marginTop">0pt</property>
+            <property name="canShrink">false</property>
+            <property name="width">75%</property>
+            <property name="dataSet">ACT-ALM-002 01 (Ppal)</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">ARTREF</property>
+                    <property name="displayName">ARTREF</property>
+                    <expression name="expression">dataSetRow["ARTREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARTDES</property>
+                    <property name="displayName">ARTDES</property>
+                    <expression name="expression">dataSetRow["ARTDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TERREF</property>
+                    <property name="displayName">TERREF</property>
+                    <expression name="expression">dataSetRow["TERREF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TERDES</property>
+                    <property name="displayName">TERDES</property>
+                    <expression name="expression">dataSetRow["TERDES"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PESUNI</property>
+                    <property name="displayName">PESUNI</property>
+                    <expression name="expression">dataSetRow["PESUNI"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CNT_PALCOM</property>
+                    <property name="displayName">CNT_PALCOM</property>
+                    <expression name="expression">dataSetRow["CNT_PALCOM"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_CANPIK_UNIEXP</property>
+                    <property name="displayName">SUM_CANPIK_UNIEXP</property>
+                    <expression name="expression">dataSetRow["SUM_CANPIK_UNIEXP"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_CANPIK_UNIMIN</property>
+                    <property name="displayName">SUM_CANPIK_UNIMIN</property>
+                    <expression name="expression">dataSetRow["SUM_CANPIK_UNIMIN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_CANTOT_UNIEXP</property>
+                    <property name="displayName">SUM_CANTOT_UNIEXP</property>
+                    <expression name="expression">dataSetRow["SUM_CANTOT_UNIEXP"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_CANTOT_UNIMIN</property>
+                    <property name="displayName">SUM_CANTOT_UNIMIN</property>
+                    <expression name="expression">dataSetRow["SUM_CANTOT_UNIMIN"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_PESPIK</property>
+                    <property name="displayName">SUM_PESPIK</property>
+                    <expression name="expression">dataSetRow["SUM_PESPIK"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SUM_PESTOT</property>
+                    <property name="displayName">SUM_PESTOT</property>
+                    <expression name="expression">dataSetRow["SUM_PESTOT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">sbtTerCnt_PalCom</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>TERREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["CNT_PALCOM"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtTerSum_CanPik_UniExp</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>TERREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["SUM_CANPIK_UNIEXP"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtTerSum_CanPik_UniMin</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>TERREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["SUM_CANPIK_UNIMIN"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtTerSum_CanTot_UniExp</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>TERREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["SUM_CANTOT_UNIEXP"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtTerSum_CanTot_UniMin</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>TERREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["SUM_CANTOT_UNIMIN"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtTerSum_PesPik</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>TERREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["SUM_PESPIK"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">sbtTerSum_PesTot</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>TERREF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["SUM_PESTOT"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totCnt_PalCom</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtTerCnt_PalCom"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totSum_CanPik_UniExp</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtTerSum_CanPik_UniExp"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totSum_CanPik_UniMin</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtTerSum_CanPik_UniMin"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totSum_CanTot_UniExp</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtTerSum_CanTot_UniExp"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totSum_CanTot_UniMin</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtTerSum_CanTot_UniMin"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totSum_PesPik</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtTerSum_PesPik"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">totSum_PesTot</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["sbtTerSum_PesTot"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+            </list-property>
+            <property name="repeatHeader">true</property>
+            <column id="1663">
+                <property name="width">26mm</property>
+            </column>
+            <column id="1665">
+                <property name="width">70mm</property>
+            </column>
+            <column id="1666">
+                <property name="width">22mm</property>
+            </column>
+            <column id="1667">
+                <property name="width">20mm</property>
+            </column>
+            <column id="1668">
+                <property name="width">20mm</property>
+            </column>
+            <column id="2027">
+                <property name="width">20mm</property>
+            </column>
+            <column id="2036">
+                <property name="width">20mm</property>
+            </column>
+            <column id="1983">
+                <property name="width">20mm</property>
+            </column>
+            <column id="2046">
+                <property name="width">20mm</property>
+            </column>
+            <column id="1989">
+                <property name="width">20mm</property>
+            </column>
+            <header>
+                <row id="2236">
+                    <property name="height">0.312in</property>
+                    <cell id="2237"/>
+                    <cell id="2238"/>
+                    <cell id="2239"/>
+                    <cell id="2240"/>
+                    <cell id="2241"/>
+                    <cell id="2242"/>
+                    <cell id="2243"/>
+                    <cell id="2244"/>
+                    <cell id="2245"/>
+                    <cell id="2246"/>
+                </row>
+            </header>
+            <group id="1901">
+                <property name="groupName">TERREF</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr">row["TERREF"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue">row["TERREF"]</expression>
+                </structure>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <property name="pageBreakInside">auto</property>
+                <header>
+                    <row id="1902">
+                        <cell id="1903">
+                            <property name="colSpan">5</property>
+                            <property name="rowSpan">1</property>
+                            <grid id="2198">
+                                <property name="width">100%</property>
+                                <column id="2199">
+                                    <property name="width">30mm</property>
+                                </column>
+                                <column id="2200">
+                                    <property name="width">35mm</property>
+                                </column>
+                                <column id="2201">
+                                    <property name="width">80mm</property>
+                                </column>
+                                <row id="2202">
+                                    <cell id="2203">
+                                        <label id="1926">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="color">#800000</property>
+                                            <property name="borderTopColor">#800000</property>
+                                            <property name="borderTopStyle">dotted</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="textAlign">left</property>
+                                            <text-property name="text" key="Destinatario"></text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="2204">
+                                        <data id="1923">
+                                            <property name="color">#800000</property>
+                                            <property name="borderTopColor">#800000</property>
+                                            <property name="borderTopStyle">dotted</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="marginTop">0pt</property>
+                                            <property name="marginLeft">4pt</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="resultSetColumn">TERREF</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="2205">
+                                        <data id="1924">
+                                            <property name="color">#800000</property>
+                                            <property name="textLineThrough">none</property>
+                                            <property name="borderTopColor">#800000</property>
+                                            <property name="borderTopStyle">dotted</property>
+                                            <property name="borderTopWidth">1px</property>
+                                            <property name="marginTop">0pt</property>
+                                            <property name="marginLeft">4pt</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="textTransform">none</property>
+                                            <property name="whiteSpace">normal</property>
+                                            <property name="resultSetColumn">TERDES</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="2235"/>
+                        <cell id="2030"/>
+                        <cell id="1978"/>
+                        <cell id="2040"/>
+                        <cell id="1984"/>
+                    </row>
+                    <row id="2094">
+                        <property name="height">0.2in</property>
+                        <property name="textAlign">center</property>
+                        <cell id="2095"/>
+                        <cell id="2096"/>
+                        <cell id="2098"/>
+                        <cell id="2099"/>
+                        <cell id="2100"/>
+                        <cell id="2101"/>
+                        <cell id="2102"/>
+                        <cell id="2103"/>
+                        <cell id="2104"/>
+                        <cell id="2105"/>
+                    </row>
+                    <row id="1916">
+                        <property name="textAlign">center</property>
+                        <property name="verticalAlign">bottom</property>
+                        <cell id="1917">
+                            <label id="1931">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="Articulo"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="1918">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <label id="1932">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="Descripcion"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="1919">
+                            <label id="1929">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="PalletsCompletos"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="1920">
+                            <label id="1930">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="UdsExpPicking"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="1921">
+                            <label id="1933">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="UdsMinPicking"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="2022">
+                            <label id="2028">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="UdsExpTotales"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="2031">
+                            <label id="2037">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="UdsMinTotales"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="1979">
+                            <label id="1990">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="PESUNI"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="2041">
+                            <label id="2047">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="PESPIKTOT"></text-property>
+                            </label>
+                        </cell>
+                        <cell id="1985">
+                            <label id="1991">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">4pt</property>
+                                <property name="textAlign">center</property>
+                                <text-property name="text" key="PESTOT"></text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </header>
+                <footer>
+                    <row id="1909">
+                        <cell id="1910"/>
+                        <cell id="1911">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                        </cell>
+                        <cell id="1912">
+                            <data id="2217">
+                                <property name="color">#800000</property>
+                                <property name="borderTopColor">#800000</property>
+                                <property name="borderTopStyle">dotted</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtTerCnt_PalCom</property>
+                            </data>
+                        </cell>
+                        <cell id="1913">
+                            <data id="2218">
+                                <property name="color">#800000</property>
+                                <property name="borderTopColor">#800000</property>
+                                <property name="borderTopStyle">dotted</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtTerSum_CanPik_UniExp</property>
+                            </data>
+                        </cell>
+                        <cell id="1914">
+                            <data id="2219">
+                                <property name="color">#800000</property>
+                                <property name="borderTopColor">#800000</property>
+                                <property name="borderTopStyle">dotted</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtTerSum_CanPik_UniMin</property>
+                            </data>
+                        </cell>
+                        <cell id="2025">
+                            <data id="2220">
+                                <property name="color">#800000</property>
+                                <property name="borderTopColor">#800000</property>
+                                <property name="borderTopStyle">dotted</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtTerSum_CanTot_UniExp</property>
+                            </data>
+                        </cell>
+                        <cell id="2034">
+                            <data id="2221">
+                                <property name="color">#800000</property>
+                                <property name="borderTopColor">#800000</property>
+                                <property name="borderTopStyle">dotted</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtTerSum_CanTot_UniMin</property>
+                            </data>
+                        </cell>
+                        <cell id="1981"/>
+                        <cell id="2044">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#000000</property>
+                            <property name="textAlign">right</property>
+                            <data id="2222">
+                                <property name="color">#800000</property>
+                                <property name="borderTopColor">#800000</property>
+                                <property name="borderTopStyle">dotted</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0.000</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtTerSum_PesPik</property>
+                            </data>
+                        </cell>
+                        <cell id="1987">
+                            <property name="fontWeight">normal</property>
+                            <property name="color">#000000</property>
+                            <property name="textAlign">right</property>
+                            <data id="2223">
+                                <property name="color">#800000</property>
+                                <property name="borderTopColor">#800000</property>
+                                <property name="borderTopStyle">dotted</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="marginLeft">4pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">#,##0.000</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">sbtTerSum_PesTot</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="2130">
+                        <property name="height">0.312in</property>
+                        <cell id="2131"/>
+                        <cell id="2132"/>
+                        <cell id="2134"/>
+                        <cell id="2135"/>
+                        <cell id="2136"/>
+                        <cell id="2137"/>
+                        <cell id="2138"/>
+                        <cell id="2139"/>
+                        <cell id="2140">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#800000</property>
+                            <property name="textAlign">right</property>
+                        </cell>
+                        <cell id="2141">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#800000</property>
+                            <property name="textAlign">right</property>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="2158">
+                    <cell id="2159">
+                        <data id="2214">
+                            <property name="marginTop">0pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">ARTREF</property>
+                        </data>
+                    </cell>
+                    <cell id="2160">
+                        <data id="2215">
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">4pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">ARTDES</property>
+                        </data>
+                    </cell>
+                    <cell id="2162">
+                        <data id="2206">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">CNT_PALCOM</property>
+                        </data>
+                    </cell>
+                    <cell id="2163">
+                        <data id="2207">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">SUM_CANPIK_UNIEXP</property>
+                        </data>
+                    </cell>
+                    <cell id="2164">
+                        <data id="2208">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">SUM_CANPIK_UNIMIN</property>
+                        </data>
+                    </cell>
+                    <cell id="2165">
+                        <data id="2209">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">SUM_CANTOT_UNIEXP</property>
+                        </data>
+                    </cell>
+                    <cell id="2166">
+                        <data id="2210">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">SUM_CANTOT_UNIMIN</property>
+                        </data>
+                    </cell>
+                    <cell id="2167">
+                        <data id="2216">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0.000</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr">row["PESUNI"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value>-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display" key="PV">PV</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">PESUNI</property>
+                        </data>
+                    </cell>
+                    <cell id="2168">
+                        <data id="2212">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0.000</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">SUM_PESPIK</property>
+                        </data>
+                    </cell>
+                    <cell id="2169">
+                        <data id="2213">
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0.000</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">SUM_PESTOT</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="1652">
+                    <cell id="1653"/>
+                    <cell id="1655">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <label id="1977">
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="allowExport">true</property>
+                            <text-property name="text" key="TotalGeneral"></text-property>
+                        </label>
+                    </cell>
+                    <cell id="1656">
+                        <data id="2224">
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totCnt_PalCom</property>
+                        </data>
+                    </cell>
+                    <cell id="1657">
+                        <data id="2225">
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totSum_CanPik_UniExp</property>
+                        </data>
+                    </cell>
+                    <cell id="1658">
+                        <data id="2226">
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totSum_CanPik_UniMin</property>
+                        </data>
+                    </cell>
+                    <cell id="2026">
+                        <data id="2227">
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totSum_CanTot_UniExp</property>
+                        </data>
+                    </cell>
+                    <cell id="2035">
+                        <data id="2228">
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totSum_CanTot_UniMin</property>
+                        </data>
+                    </cell>
+                    <cell id="1982"/>
+                    <cell id="2045">
+                        <property name="fontWeight">normal</property>
+                        <property name="color">#000000</property>
+                        <property name="textAlign">right</property>
+                        <data id="2229">
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0.000</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totSum_PesPik</property>
+                        </data>
+                    </cell>
+                    <cell id="1988">
+                        <property name="fontWeight">normal</property>
+                        <property name="color">#000000</property>
+                        <property name="textAlign">right</property>
+                        <data id="2230">
+                            <property name="color">#0000A0</property>
+                            <property name="borderBottomColor">#0000A0</property>
+                            <property name="borderBottomStyle">dotted</property>
+                            <property name="borderBottomWidth">1px</property>
+                            <property name="borderTopColor">#0000A0</property>
+                            <property name="borderTopStyle">dotted</property>
+                            <property name="borderTopWidth">1px</property>
+                            <property name="marginLeft">4pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0.000</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totSum_PesTot</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="2118">
+                    <property name="height">0.312in</property>
+                    <cell id="2119"/>
+                    <cell id="2120"/>
+                    <cell id="2122"/>
+                    <cell id="2123"/>
+                    <cell id="2124"/>
+                    <cell id="2125"/>
+                    <cell id="2126"/>
+                    <cell id="2127"/>
+                    <cell id="2128">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">right</property>
+                    </cell>
+                    <cell id="2129">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">right</property>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

@@ -1,0 +1,38 @@
+(**********************************************************************)
+(*                                                                    *)
+(* Specification file for application      ppov3                      *)
+(*                                                                    *)
+(* Release Label   (2)                                                *)
+(*                                                                    *)
+(* Last Updated    06-Nov-2017 17:57:39                               *)
+(*                                                                    *)
+(* By              ppov3                                              *)
+(*                                                                    *)
+(* From Design     C:\home\ppov3\a0000\ppov3                          *)
+(*                                                                    *)
+(*                                                                    *)
+(**********************************************************************)
+
+TERMINATE:
+EXIT;
+
+
+GLOBAL:
+SET TITLE("Adaia - ppov3");
+SET COUNTRY(DATE='DD-MMM-YYYY',DATA=SPANISH,MOMENT="YYYY.0M.0D 0H:0I:0S",
+            DURATION="0H:0I:0S");
+SET ARITHMETIC(DIV0=ZERO,OVERFLOW=ZERO);
+SET ERROR(BELL=YES);
+SET FIELD-ENTRY(PASSIVE-COLOR=BLACK);
+SET BRANCH-ENTRY(PASSIVE-COLOR=BLACK,PASSIVE-ENHANCEMENT=NORMAL);
+SET SCREEN-ENTRY(MANUAL=YES);
+SET WINDOW-LIST(ROW=1,COL=1,HEIGHT=15,WIDTH=80,LINE=INVISIBLE,FORE=WHITE,
+                BACK="0X1475A2",COORDTYPE=MAXIMIZE,COORDROW=UP,COORDCOL=CENTER);
+SET PRINTSCREEN(ENABLE=YES,DEVICE=LOCAL);
+EXIT;
+
+
+
+
+
+

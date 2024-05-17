@@ -1,0 +1,23 @@
+# Script que mata las sesiones anteriores de la misma IP desde
+# la que se conecta. Pensado para las sesiones de terminal.
+#
+# Ejemplo de llamada en el profile:
+#case $LOGNAME in
+#   'man' )
+#      . /home/adaia/bin/ctrl_sesiones;
+#      . /home/adaia/bin/entorno;;
+#   'car' )
+#      . /home/adaia/bin/ctrl_sesiones;
+#      . /home/adaia/bin/entorno;;
+#   * )
+#      . /home/adaia/bin/entorno;;
+#esac
+
+export MIPTS=`ps | grep telnetd | awk '{print $2}'`
+export MIIP=`who -u | grep "$MIPTS " | awk '{print $8}'`
+if [ `who -u | grep "$MIIP" | grep -v "$MIPTS " | wc -l` -gt 0 ] ; then
+  for i in `who -u | grep "$MIIP" | grep -v "$MIPTS " | awk '{print $7}'`
+  do
+    kill -9 $i
+  done
+fi

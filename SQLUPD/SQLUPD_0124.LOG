@@ -1,0 +1,143 @@
+SQL> SET ECHO ON
+SQL> SET TIMING ON
+SQL> 
+SQL> -----------------------------------INICIO MODIFICACIONES
+SQL> 
+SQL>   CREATE TABLE "DISINP"
+  2     (	"COD" NUMBER(9,0) NOT NULL ENABLE,
+  3  	"MOMCRE" DATE DEFAULT SYSDATE,
+  4  	"MOMLEC" DATE,
+  5  	"RECMAQREF" CHAR(10 BYTE) NOT NULL ENABLE,
+  6  	"SEC" NUMBER(9,0) NOT NULL ENABLE,
+  7  	"CON" VARCHAR2(1120 BYTE) NOT NULL ENABLE,
+  8  	"MSG" VARCHAR2(160 BYTE) NOT NULL ENABLE,
+  9  	"OPC" VARCHAR2(160 BYTE) NOT NULL ENABLE,
+ 10  	"INP" VARCHAR2(80 BYTE),
+ 11  	 CONSTRAINT "DISINP_PK" PRIMARY KEY ("COD"));
+  CREATE TABLE "DISINP"
+               *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+Elapsed: 00:00:00.01
+SQL> 
+SQL> 
+SQL>    COMMENT ON COLUMN "DISINP"."COD" IS 'Codigo Identificador';
+
+Comment created.
+
+Elapsed: 00:00:00.03
+SQL>    COMMENT ON COLUMN "DISINP"."MOMCRE" IS 'Momento de creacion';
+
+Comment created.
+
+Elapsed: 00:00:00.00
+SQL>    COMMENT ON COLUMN "DISINP"."MOMLEC" IS 'Momento de lectura';
+
+Comment created.
+
+Elapsed: 00:00:00.01
+SQL>    COMMENT ON COLUMN "DISINP"."RECMAQREF" IS 'Referencia Recurso Maquina';
+
+Comment created.
+
+Elapsed: 00:00:00.00
+SQL>    COMMENT ON COLUMN "DISINP"."SEC" IS 'Secuencia';
+
+Comment created.
+
+Elapsed: 00:00:00.00
+SQL>    COMMENT ON COLUMN "DISINP"."CON" IS 'Contenido';
+
+Comment created.
+
+Elapsed: 00:00:00.01
+SQL>    COMMENT ON COLUMN "DISINP"."MSG" IS 'Mensaje';
+
+Comment created.
+
+Elapsed: 00:00:00.00
+SQL>    COMMENT ON COLUMN "DISINP"."OPC" IS 'Opciones';
+
+Comment created.
+
+Elapsed: 00:00:00.00
+SQL>    COMMENT ON COLUMN "DISINP"."INP" IS 'Input esperado';
+
+Comment created.
+
+Elapsed: 00:00:00.01
+SQL> 
+SQL> 
+SQL> 
+SQL>   CREATE TABLE "DISOUT"
+  2     (	"COD" NUMBER(9,0) NOT NULL ENABLE,
+  3  	"MOMCRE" DATE DEFAULT SYSDATE,
+  4  	"MOMLEC" DATE,
+  5  	"RECMAQREF" CHAR(10 BYTE) NOT NULL ENABLE,
+  6  	"SEC" NUMBER(9,0) NOT NULL ENABLE,
+  7  	"SEL" NUMBER(9,0) NOT NULL ENABLE,
+  8  	"OUT" VARCHAR2(80 BYTE),
+  9  	 CONSTRAINT "DISOUT_PK" PRIMARY KEY ("COD")) ;
+  CREATE TABLE "DISOUT"
+               *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+Elapsed: 00:00:00.01
+SQL> 
+SQL> 
+SQL>    COMMENT ON COLUMN "DISOUT"."COD" IS 'Codigo Identificador';
+
+Comment created.
+
+Elapsed: 00:00:00.00
+SQL>    COMMENT ON COLUMN "DISOUT"."MOMCRE" IS 'Momento de creacion';
+
+Comment created.
+
+Elapsed: 00:00:00.01
+SQL>    COMMENT ON COLUMN "DISOUT"."MOMLEC" IS 'Momento de lectura';
+
+Comment created.
+
+Elapsed: 00:00:00.00
+SQL>    COMMENT ON COLUMN "DISOUT"."RECMAQREF" IS 'Referencia Recurso Maquina';
+
+Comment created.
+
+Elapsed: 00:00:00.00
+SQL>    COMMENT ON COLUMN "DISOUT"."SEC" IS 'Secuencia';
+
+Comment created.
+
+Elapsed: 00:00:00.04
+SQL>    COMMENT ON COLUMN "DISOUT"."SEL" IS 'Seleccion (opcion)';
+
+Comment created.
+
+Elapsed: 00:00:00.01
+SQL>    COMMENT ON COLUMN "DISOUT"."OUT" IS 'Output (entrada del usuario)';
+
+Comment created.
+
+Elapsed: 00:00:00.00
+SQL> 
+SQL> 
+SQL> 
+SQL>  -----------------------------------FIN MODIFICACIONES
+SQL> 
+SQL> UPDATE VERSIONES SET VERSION='0124', MOMENTO=SYSDATE WHERE SOFCOD='BD';
+
+1 row updated.
+
+Elapsed: 00:00:00.00
+SQL> COMMIT;
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+SQL> 
+SQL> SPOOL OFF;

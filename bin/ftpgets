@@ -1,0 +1,63 @@
+################################################################################
+#
+# Script encargado de recoger ficheros de la maquina de gestion
+#
+# Autor: Jordi Pasquina
+#
+# Variables de entorno necesarias:
+# ADAIA_DE_GESTION     :Directorio local donde se degan los ficheros a procesar 
+# ADAIA_GES_CPU        :IP o nombre de la maquina de gestion donde va a hacer el
+#                        ftp
+# ADAIA_GES_LOGIN      :usuario de ftp con el que entra
+# ADAIA_GES_PASSWORD   :password del ftp
+# ADAIA_GES_DE_GESTION :Directorio de donde se van a coger los ficheros
+#
+# Parametros:
+#  nombre de fichero (primer trozo antes del punto). Ejemplo TRART, o TRORDEXP
+#
+################################################################################
+
+function Coger_fichero
+{
+   FICHERO=$1
+   ftp -niv $ADAIA_GES_CPU <<?
+quote user $ADAIA_GES_LOGIN
+quote pass $ADAIA_GES_PASSWORD
+cd $ADAIA_GES_DE_GESTION
+ascii
+get $FICHERO
+delete $FICHERO
+quit
+?
+}
+
+# Primero se apunta lo ficheros que va a coger
+#
+cd $ADAIA_DE_GESTION
+ftp -niv $ADAIA_GES_CPU <<?
+quote user $ADAIA_GES_LOGIN
+quote pass $ADAIA_GES_PASSWORD
+ascii
+cd $ADAIA_GES_DE_GESTION
+dir $1.* ficheros
+quit
+?
+
+#Para UNIX
+cat ficheros|awk '{print $9}' >ficheros2
+#Para AS/400
+#cat ficheros|awk '{print $3}' >ficheros2
+#Para Windows NT (comprobarlo)
+#cat ficheros|awk '{print $4}' >ficheros2
+
+# Hace un ftpget (coge el fichero y lo borra del origen) de cada fichero
+#
+for FICHERO in `cat ficheros2`
+do
+   echo "Hora de traspaso:`date`"
+   echo "---------------------------------------"
+   Coger_fichero $FICHERO 
+done
+
+rm ficheros
+rm ficheros2

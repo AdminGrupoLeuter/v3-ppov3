@@ -1,0 +1,7 @@
+case $ADAIA_BD in
+   ORACLE )
+      sqlplus $LOGNAME/$LOGNAME@adaiasrv @$ADAIA_HOME/sql/isqlpro $1;;
+   INFORMIX )
+      export TERM=hp;
+      dbaccess;;
+esac

@@ -1,0 +1,4 @@
+ORACLE_HOME_ORI=$ORACLE_HOME
+ORACLE_HOME=/home/oracle/product/11.2/db_home1
+/home/oracle/product/11.2/db_home1/bin/imp $*
+ORACLE_HOME=$ORACLE_HOME_ORI

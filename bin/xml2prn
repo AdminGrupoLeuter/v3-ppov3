@@ -1,0 +1,1 @@
+nohup java -jar $ADAIA_HOME/bin/xml2prn-1.0-dep.jar $* > /dev/null 2>&1 &
